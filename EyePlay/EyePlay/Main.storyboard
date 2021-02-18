@@ -11,7 +11,7 @@
         <!--Eye Play-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="EyePlay" customModule="Emoji_Bling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="EyePlay" customModule="EyePlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="ARSCNView">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +56,7 @@
         <!--Ball Game-->
         <scene sceneID="KZD-W7-IEh">
             <objects>
-                <viewController id="1AW-XV-VCE" customClass="ballGame" customModule="Emoji_Bling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1AW-XV-VCE" customClass="ballGame" customModule="EyePlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Cx-3f-Aea" customClass="ARSCNView">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
