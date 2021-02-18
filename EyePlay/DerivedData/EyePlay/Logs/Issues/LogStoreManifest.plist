@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>613A4F10-6114-4603-8187-629E48138351</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
+			<key>fileName</key>
+			<string>613A4F10-6114-4603-8187-629E48138351.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>EyePlay-cojgwwdzdwtjrnaozqmgwdpjbnkv</string>
+			<key>timeStartedRecording</key>
+			<real>635366596.39350903</real>
+			<key>timeStoppedRecording</key>
+			<real>635366610.44496298</real>
+			<key>title</key>
+			<string>Build target EyePlay</string>
+			<key>uniqueIdentifier</key>
+			<string>613A4F10-6114-4603-8187-629E48138351</string>
+		</dict>
+	</dict>
+	<key>preserveOldLogs</key>
+	<true/>
+</dict>
+</plist>

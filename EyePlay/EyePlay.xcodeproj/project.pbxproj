@@ -1,0 +1,594 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A1A39B525DA3BF900516AE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A39B425DA3BF900516AE9 /* AppDelegate.swift */; };
+		4A1A39B725DA3BF900516AE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A39B625DA3BF900516AE9 /* SceneDelegate.swift */; };
+		4A1A39B925DA3BF900516AE9 /* EyePlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A39B825DA3BF900516AE9 /* EyePlay.swift */; };
+		4A1A39BE25DA3BFC00516AE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A1A39BD25DA3BFC00516AE9 /* Assets.xcassets */; };
+		4A1A39C125DA3BFC00516AE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A1A39BF25DA3BFC00516AE9 /* LaunchScreen.storyboard */; };
+		4A1A39CC25DA3BFC00516AE9 /* EyePlay_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A39CB25DA3BFC00516AE9 /* EyePlay_Tests.swift */; };
+		4A1A39D725DA3BFC00516AE9 /* EyePlay_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A39D625DA3BFC00516AE9 /* EyePlay_UITests.swift */; };
+		4A1A3A5425DCAD2100516AE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A1A3A5325DCAD2100516AE9 /* Main.storyboard */; };
+		4A1A3A6725DEBE0200516AE9 /* ballGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A3A6625DEBE0100516AE9 /* ballGame.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4A1A39C825DA3BFC00516AE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A1A39A925DA3BF900516AE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A1A39B025DA3BF900516AE9;
+			remoteInfo = "Emoji Bling";
+		};
+		4A1A39D325DA3BFC00516AE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A1A39A925DA3BF900516AE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A1A39B025DA3BF900516AE9;
+			remoteInfo = "Emoji Bling";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4A1A39B125DA3BF900516AE9 /* EyePlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyePlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A1A39B425DA3BF900516AE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4A1A39B625DA3BF900516AE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4A1A39B825DA3BF900516AE9 /* EyePlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyePlay.swift; sourceTree = "<group>"; };
+		4A1A39BD25DA3BFC00516AE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A1A39C025DA3BFC00516AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4A1A39C225DA3BFC00516AE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A1A39C725DA3BFC00516AE9 /* EyePlay Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EyePlay Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A1A39CB25DA3BFC00516AE9 /* EyePlay_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyePlay_Tests.swift; sourceTree = "<group>"; };
+		4A1A39CD25DA3BFC00516AE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A1A39D225DA3BFC00516AE9 /* EyePlay UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EyePlay UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A1A39D625DA3BFC00516AE9 /* EyePlay_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyePlay_UITests.swift; sourceTree = "<group>"; };
+		4A1A39D825DA3BFC00516AE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A1A3A5325DCAD2100516AE9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4A1A3A6625DEBE0100516AE9 /* ballGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ballGame.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A1A39AE25DA3BF900516AE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A1A39C425DA3BFC00516AE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A1A39CF25DA3BFC00516AE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A1A39A825DA3BF900516AE9 = {
+			isa = PBXGroup;
+			children = (
+				4A1A39B325DA3BF900516AE9 /* EyePlay */,
+				4A1A39CA25DA3BFC00516AE9 /* EyePlay Tests */,
+				4A1A39D525DA3BFC00516AE9 /* EyePlay UITests */,
+				4A1A39B225DA3BF900516AE9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A1A39B225DA3BF900516AE9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A1A39B125DA3BF900516AE9 /* EyePlay.app */,
+				4A1A39C725DA3BFC00516AE9 /* EyePlay Tests.xctest */,
+				4A1A39D225DA3BFC00516AE9 /* EyePlay UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A1A39B325DA3BF900516AE9 /* EyePlay */ = {
+			isa = PBXGroup;
+			children = (
+				4A1A39B425DA3BF900516AE9 /* AppDelegate.swift */,
+				4A1A39B625DA3BF900516AE9 /* SceneDelegate.swift */,
+				4A1A39B825DA3BF900516AE9 /* EyePlay.swift */,
+				4A1A3A6625DEBE0100516AE9 /* ballGame.swift */,
+				4A1A3A5325DCAD2100516AE9 /* Main.storyboard */,
+				4A1A39BD25DA3BFC00516AE9 /* Assets.xcassets */,
+				4A1A39BF25DA3BFC00516AE9 /* LaunchScreen.storyboard */,
+				4A1A39C225DA3BFC00516AE9 /* Info.plist */,
+			);
+			path = EyePlay;
+			sourceTree = "<group>";
+		};
+		4A1A39CA25DA3BFC00516AE9 /* EyePlay Tests */ = {
+			isa = PBXGroup;
+			children = (
+				4A1A39CB25DA3BFC00516AE9 /* EyePlay_Tests.swift */,
+				4A1A39CD25DA3BFC00516AE9 /* Info.plist */,
+			);
+			path = "EyePlay Tests";
+			sourceTree = "<group>";
+		};
+		4A1A39D525DA3BFC00516AE9 /* EyePlay UITests */ = {
+			isa = PBXGroup;
+			children = (
+				4A1A39D625DA3BFC00516AE9 /* EyePlay_UITests.swift */,
+				4A1A39D825DA3BFC00516AE9 /* Info.plist */,
+			);
+			path = "EyePlay UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A1A39B025DA3BF900516AE9 /* EyePlay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A1A39DB25DA3BFC00516AE9 /* Build configuration list for PBXNativeTarget "EyePlay" */;
+			buildPhases = (
+				4A1A39AD25DA3BF900516AE9 /* Sources */,
+				4A1A39AE25DA3BF900516AE9 /* Frameworks */,
+				4A1A39AF25DA3BF900516AE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EyePlay;
+			productName = "Emoji Bling";
+			productReference = 4A1A39B125DA3BF900516AE9 /* EyePlay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4A1A39C625DA3BFC00516AE9 /* EyePlay Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A1A39DE25DA3BFC00516AE9 /* Build configuration list for PBXNativeTarget "EyePlay Tests" */;
+			buildPhases = (
+				4A1A39C325DA3BFC00516AE9 /* Sources */,
+				4A1A39C425DA3BFC00516AE9 /* Frameworks */,
+				4A1A39C525DA3BFC00516AE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A1A39C925DA3BFC00516AE9 /* PBXTargetDependency */,
+			);
+			name = "EyePlay Tests";
+			productName = "Emoji BlingTests";
+			productReference = 4A1A39C725DA3BFC00516AE9 /* EyePlay Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4A1A39D125DA3BFC00516AE9 /* EyePlay UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A1A39E125DA3BFC00516AE9 /* Build configuration list for PBXNativeTarget "EyePlay UITests" */;
+			buildPhases = (
+				4A1A39CE25DA3BFC00516AE9 /* Sources */,
+				4A1A39CF25DA3BFC00516AE9 /* Frameworks */,
+				4A1A39D025DA3BFC00516AE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A1A39D425DA3BFC00516AE9 /* PBXTargetDependency */,
+			);
+			name = "EyePlay UITests";
+			productName = "Emoji BlingUITests";
+			productReference = 4A1A39D225DA3BFC00516AE9 /* EyePlay UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A1A39A925DA3BF900516AE9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					4A1A39B025DA3BF900516AE9 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					4A1A39C625DA3BFC00516AE9 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 4A1A39B025DA3BF900516AE9;
+					};
+					4A1A39D125DA3BFC00516AE9 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 4A1A39B025DA3BF900516AE9;
+					};
+				};
+			};
+			buildConfigurationList = 4A1A39AC25DA3BF900516AE9 /* Build configuration list for PBXProject "EyePlay" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A1A39A825DA3BF900516AE9;
+			productRefGroup = 4A1A39B225DA3BF900516AE9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A1A39B025DA3BF900516AE9 /* EyePlay */,
+				4A1A39C625DA3BFC00516AE9 /* EyePlay Tests */,
+				4A1A39D125DA3BFC00516AE9 /* EyePlay UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A1A39AF25DA3BF900516AE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A1A39C125DA3BFC00516AE9 /* LaunchScreen.storyboard in Resources */,
+				4A1A39BE25DA3BFC00516AE9 /* Assets.xcassets in Resources */,
+				4A1A3A5425DCAD2100516AE9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A1A39C525DA3BFC00516AE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A1A39D025DA3BFC00516AE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A1A39AD25DA3BF900516AE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A1A39B925DA3BF900516AE9 /* EyePlay.swift in Sources */,
+				4A1A39B525DA3BF900516AE9 /* AppDelegate.swift in Sources */,
+				4A1A3A6725DEBE0200516AE9 /* ballGame.swift in Sources */,
+				4A1A39B725DA3BF900516AE9 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A1A39C325DA3BFC00516AE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A1A39CC25DA3BFC00516AE9 /* EyePlay_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A1A39CE25DA3BFC00516AE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A1A39D725DA3BFC00516AE9 /* EyePlay_UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4A1A39C925DA3BFC00516AE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A1A39B025DA3BF900516AE9 /* EyePlay */;
+			targetProxy = 4A1A39C825DA3BFC00516AE9 /* PBXContainerItemProxy */;
+		};
+		4A1A39D425DA3BFC00516AE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A1A39B025DA3BF900516AE9 /* EyePlay */;
+			targetProxy = 4A1A39D325DA3BFC00516AE9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4A1A39BF25DA3BFC00516AE9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A1A39C025DA3BFC00516AE9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4A1A39D925DA3BFC00516AE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4A1A39DA25DA3BFC00516AE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4A1A39DC25DA3BFC00516AE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4G34ML3474;
+				INFOPLIST_FILE = EyePlay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.aalmoame.EyePlay;
+				PRODUCT_NAME = EyePlay;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A1A39DD25DA3BFC00516AE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4G34ML3474;
+				INFOPLIST_FILE = EyePlay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.aalmoame.EyePlay;
+				PRODUCT_NAME = EyePlay;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4A1A39DF25DA3BFC00516AE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4G34ML3474;
+				INFOPLIST_FILE = "EyePlay Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.umich.aalmoame.EyePlay-Tests";
+				PRODUCT_NAME = "EyePlay Tests";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Emoji Bling.app/Emoji Bling";
+			};
+			name = Debug;
+		};
+		4A1A39E025DA3BFC00516AE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4G34ML3474;
+				INFOPLIST_FILE = "EyePlay Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.umich.aalmoame.EyePlay-Tests";
+				PRODUCT_NAME = "EyePlay Tests";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Emoji Bling.app/Emoji Bling";
+			};
+			name = Release;
+		};
+		4A1A39E225DA3BFC00516AE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4G34ML3474;
+				INFOPLIST_FILE = "EyePlay UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.umich.aalmoame.EyePlay-UITests";
+				PRODUCT_NAME = "EyePlay UITests";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Emoji Bling";
+			};
+			name = Debug;
+		};
+		4A1A39E325DA3BFC00516AE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4G34ML3474;
+				INFOPLIST_FILE = "EyePlay UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.umich.aalmoame.EyePlay-UITests";
+				PRODUCT_NAME = "EyePlay UITests";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Emoji Bling";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A1A39AC25DA3BF900516AE9 /* Build configuration list for PBXProject "EyePlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A1A39D925DA3BFC00516AE9 /* Debug */,
+				4A1A39DA25DA3BFC00516AE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A1A39DB25DA3BFC00516AE9 /* Build configuration list for PBXNativeTarget "EyePlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A1A39DC25DA3BFC00516AE9 /* Debug */,
+				4A1A39DD25DA3BFC00516AE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A1A39DE25DA3BFC00516AE9 /* Build configuration list for PBXNativeTarget "EyePlay Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A1A39DF25DA3BFC00516AE9 /* Debug */,
+				4A1A39E025DA3BFC00516AE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A1A39E125DA3BFC00516AE9 /* Build configuration list for PBXNativeTarget "EyePlay UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A1A39E225DA3BFC00516AE9 /* Debug */,
+				4A1A39E325DA3BFC00516AE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A1A39A925DA3BF900516AE9 /* Project object */;
+}
