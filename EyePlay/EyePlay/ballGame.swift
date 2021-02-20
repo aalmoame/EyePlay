@@ -24,17 +24,14 @@ class ballGame: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
             
-      // 1
       let configuration = ARFaceTrackingConfiguration()
             
-      // 2
       ballGameView.session.run(configuration)
     }
         
     override func viewWillDisappear(_ animated: Bool) {
       super.viewWillDisappear(animated)
             
-      // 1
       ballGameView.session.pause()
     }
     
@@ -133,13 +130,7 @@ extension ballGame: ARSCNViewDelegate {
         faceGeometry.update(from: faceAnchor.geometry)
 
         let lookPoint = self.sceneNodes.hitTest(leftEyeNode: sceneNodes.leftEyeNode, endPointLeftEye: sceneNodes.endPointLeftEye, rightEyeNode: sceneNodes.rightEyeNode, endPointRightEye: sceneNodes.endPointRightEye, nodeInFrontOfScreen: sceneNodes.nodeInFrontOfScreen)
-        
-        DispatchQueue.main.async {
-            UIView.animate(withDuration: 0.005, animations: {
-                self.cursor.center = lookPoint
-            })
-        }
-
+        self.cursor.center = lookPoint
         collision(faceAnchor: faceAnchor)
         
         

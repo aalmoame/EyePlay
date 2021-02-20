@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  Emoji Bling
-//
-//  Created by Amen Al-Moamen on 2/15/21.
-//
-
 import UIKit
 import ARKit
 import VisionKit
@@ -51,9 +44,6 @@ class EyePlay: UIViewController{
 
 
     }
-    
-    
-    
     
     
     //checks if the cursor is on top of the game button and if the user blinks
@@ -116,15 +106,13 @@ extension EyePlay: ARSCNViewDelegate {
         
         let lookPoint = self.sceneNodes.hitTest(leftEyeNode: sceneNodes.leftEyeNode, endPointLeftEye: sceneNodes.endPointLeftEye, rightEyeNode: sceneNodes.rightEyeNode, endPointRightEye: sceneNodes.endPointRightEye, nodeInFrontOfScreen: sceneNodes.nodeInFrontOfScreen)
         
-        DispatchQueue.main.async {
-            UIView.animate(withDuration: 0.005, animations: {
-                self.cursor.center = lookPoint
-            })
-        }
+        self.cursor.center = lookPoint
         
+        
+        print(lookPoint.debugDescription)
+
         collision(faceAnchor: faceAnchor)
         
     }
     
 }
-

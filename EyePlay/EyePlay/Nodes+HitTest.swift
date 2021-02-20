@@ -89,7 +89,7 @@ class nodes{
             if leftEyeResult.count > 0 || rightEyeResult.count > 0 {
 
                 guard let leftResult = leftEyeResult.first, let rightResult = rightEyeResult.first else {
-                    return CGPoint()
+                    return CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
                 }
 
                 //mapping the position to a 2-D plane
@@ -121,6 +121,11 @@ class nodes{
                 return points.average()
             }
         
-            return CGPoint()
+        return CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
         }
+    
+    func getLookAtPoint() -> CGPoint {
+        return points.average()
+    }
+    
 }
