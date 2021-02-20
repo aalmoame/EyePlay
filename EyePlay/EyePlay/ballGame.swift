@@ -19,55 +19,7 @@ class ballGame: UIViewController{
     @IBOutlet weak var ball: UIImageView!
     @IBOutlet weak var scoreValue: UILabel!
     
-    var leftEyeNode: SCNNode = {
-            let geometry = SCNCone(topRadius: 0.005, bottomRadius: 0, height: 0.1)
-            geometry.radialSegmentCount = 3
-            geometry.firstMaterial?.diffuse.contents = UIColor.clear
-            let node = SCNNode()
-            node.geometry = geometry
-            node.eulerAngles.x = -.pi / 2
-            node.position.z = 0.1
-            let parentNode = SCNNode()
-            parentNode.addChildNode(node)
-            return parentNode
-        }()
-
-    var rightEyeNode: SCNNode = {
-        let geometry = SCNCone(topRadius: 0.005, bottomRadius: 0, height: 0.1)
-        geometry.radialSegmentCount = 3
-        geometry.firstMaterial?.diffuse.contents = UIColor.clear
-        let node = SCNNode()
-        node.geometry = geometry
-        node.eulerAngles.x = -.pi / 2
-        node.position.z = 0.1
-        let parentNode = SCNNode()
-        parentNode.addChildNode(node)
-        return parentNode
-    }()
-
-    var endPointLeftEye: SCNNode = {
-        let node = SCNNode()
-        node.position.z = 2
-        return node
-    }()
-
-    var endPointRightEye: SCNNode = {
-        let node = SCNNode()
-        node.position.z = 2
-        return node
-    }()
-    
-    var nodeInFrontOfScreen: SCNNode = {
-
-            let screenGeometry = SCNPlane(width: 1, height: 1)
-            screenGeometry.firstMaterial?.isDoubleSided = true
-            screenGeometry.firstMaterial?.fillMode = .fill
-            screenGeometry.firstMaterial?.diffuse.contents = UIColor.green.withAlphaComponent(0.5)
-
-            let node = SCNNode()
-            node.geometry = screenGeometry
-            return node
-        }()
+    let sceneNodes = nodes()
     
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
@@ -92,63 +44,12 @@ class ballGame: UIViewController{
             guard ARFaceTrackingConfiguration.isSupported else {
                 fatalError("Face tracking is not supported on this device")
             }
-        ballGameView.pointOfView?.addChildNode(nodeInFrontOfScreen)
+        ballGameView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
         ballGameView.delegate = self
     }
     
     var points: [CGPoint] = []
     
-    
-    func hitTest() {
-
-            var leftEyeLocation = CGPoint()
-            var rightEyeLocation = CGPoint()
-
-            let leftEyeResult = nodeInFrontOfScreen.hitTestWithSegment(from: endPointLeftEye.worldPosition,
-                                                              to: leftEyeNode.worldPosition,
-                                                              options: nil)
-
-            let rightEyeResult = nodeInFrontOfScreen.hitTestWithSegment(from: endPointRightEye.worldPosition,
-                                                              to: rightEyeNode.worldPosition,
-                                                              options: nil)
-
-            if leftEyeResult.count > 0 || rightEyeResult.count > 0 {
-
-                guard let leftResult = leftEyeResult.first, let rightResult = rightEyeResult.first else {
-                    return
-                }
-
-                leftEyeLocation.x = CGFloat(leftResult.localCoordinates.x) / (Constants.Device.screenSize.width / 2) *
-                    Constants.Device.frameSize.width
-                leftEyeLocation.y = CGFloat(leftResult.localCoordinates.y) / (Constants.Device.screenSize.height / 2) *
-                    Constants.Device.frameSize.height
-
-                rightEyeLocation.x = CGFloat(rightResult.localCoordinates.x) / (Constants.Device.screenSize.width / 2) *
-                    Constants.Device.frameSize.width
-                rightEyeLocation.y = CGFloat(rightResult.localCoordinates.y) / (Constants.Device.screenSize.height / 2) *
-                    Constants.Device.frameSize.height
-
-                let point: CGPoint = {
-                    var point = CGPoint()
-                    let pointX = ((leftEyeLocation.x + rightEyeLocation.x) / 2)
-                    let pointY = -(leftEyeLocation.y + rightEyeLocation.y) / 2
-
-                    point.x = pointX.clamped(to: Constants.Ranges.widthRange)
-                    point.y = pointY.clamped(to: Constants.Ranges.heightRange)
-                    return point
-                }()
-
-                points.append(point)
-                points = points.suffix(50).map {$0}
-
-                DispatchQueue.main.async {
-                    UIView.animate(withDuration: 0.05, animations: {
-                        self.cursor.center = self.points.average()
-                    })
-                }
-                
-            }
-        }
     
     func collision(faceAnchor: ARFaceAnchor){
         
@@ -206,10 +107,10 @@ extension ballGame: ARSCNViewDelegate {
         let node = SCNNode(geometry: faceGeometry)
         node.geometry?.firstMaterial?.diffuse.contents = UIColor.clear
 
-        node.addChildNode(leftEyeNode)
-        leftEyeNode.addChildNode(endPointLeftEye)
-        node.addChildNode(rightEyeNode)
-        rightEyeNode.addChildNode(endPointRightEye)
+        node.addChildNode(sceneNodes.leftEyeNode)
+        sceneNodes.leftEyeNode.addChildNode(sceneNodes.endPointLeftEye)
+        node.addChildNode(sceneNodes.rightEyeNode)
+        sceneNodes.rightEyeNode.addChildNode(sceneNodes.endPointRightEye)
 
         return node
       }
@@ -226,11 +127,19 @@ extension ballGame: ARSCNViewDelegate {
       }
         
       // 3
-        leftEyeNode.simdTransform = faceAnchor.leftEyeTransform
-        rightEyeNode.simdTransform = faceAnchor.rightEyeTransform
+        sceneNodes.leftEyeNode.simdTransform = faceAnchor.leftEyeTransform
+        sceneNodes.rightEyeNode.simdTransform = faceAnchor.rightEyeTransform
 
         faceGeometry.update(from: faceAnchor.geometry)
-        hitTest()
+
+        let lookPoint = self.sceneNodes.hitTest(leftEyeNode: sceneNodes.leftEyeNode, endPointLeftEye: sceneNodes.endPointLeftEye, rightEyeNode: sceneNodes.rightEyeNode, endPointRightEye: sceneNodes.endPointRightEye, nodeInFrontOfScreen: sceneNodes.nodeInFrontOfScreen)
+        
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.005, animations: {
+                self.cursor.center = lookPoint
+            })
+        }
+
         collision(faceAnchor: faceAnchor)
         
         
