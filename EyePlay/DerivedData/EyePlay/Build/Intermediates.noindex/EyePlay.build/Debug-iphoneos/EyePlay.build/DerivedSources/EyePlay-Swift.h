@@ -266,7 +266,7 @@ SWIFT_CLASS("_TtC7EyePlay13SceneDelegate")
 @class UILabel;
 
 SWIFT_CLASS("_TtC7EyePlay8ballGame")
-@interface ballGame : UIViewController
+@interface ballGame : UIViewController <ARSessionDelegate>
 @property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified ballGameView;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified score;

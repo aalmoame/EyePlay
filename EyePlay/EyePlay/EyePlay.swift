@@ -4,7 +4,6 @@ import VisionKit
 
 
 
-
 //main view class
 class EyePlay: UIViewController{
     
@@ -47,21 +46,13 @@ class EyePlay: UIViewController{
     
     
     //checks if the cursor is on top of the game button and if the user blinks
-    func collision(faceAnchor: ARFaceAnchor){
-        
-        let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
+    func collisionMenuButton(){
 
-        
-        if cursor.frame.intersects(ballGameButton.frame) &&
-            eyeBlinkValue > 0.5 {
-            
             //go to game screen when user blinks over button
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "BallGameSegue", sender: self)
             }
-        }
     }
-    
 }
 
 extension EyePlay: ARSCNViewDelegate {
@@ -98,20 +89,26 @@ extension EyePlay: ARSCNViewDelegate {
         let faceGeometry = node.geometry as? ARSCNFaceGeometry else {
           return
       }
-        
+
+
         sceneNodes.leftEyeNode.simdTransform = faceAnchor.leftEyeTransform
         sceneNodes.rightEyeNode.simdTransform = faceAnchor.rightEyeTransform
 
         faceGeometry.update(from: faceAnchor.geometry)
         
-        let lookPoint = self.sceneNodes.hitTest(leftEyeNode: sceneNodes.leftEyeNode, endPointLeftEye: sceneNodes.endPointLeftEye, rightEyeNode: sceneNodes.rightEyeNode, endPointRightEye: sceneNodes.endPointRightEye, nodeInFrontOfScreen: sceneNodes.nodeInFrontOfScreen)
+   //     self.sceneNodes.update(withFaceAnchor: faceAnchor, cursor: cursor)
         
-        self.cursor.center = lookPoint
+        self.sceneNodes.hitTest(withFaceAnchor: faceAnchor, cursor: cursor)
+            
         
-        
-        print(lookPoint.debugDescription)
+        let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
 
-        collision(faceAnchor: faceAnchor)
+        
+        if cursor.frame.intersects(ballGameButton.frame) &&
+            eyeBlinkValue > 0.5 {
+
+            collisionMenuButton()
+        }
         
     }
     

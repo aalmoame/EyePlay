@@ -1,16 +1,16 @@
+
 //
 //  Constants_Helpers.swift
 //  EyePlay
 //
 //  Created by Amen Al-Moamen on 2/20/21.
 //
-
 import Foundation
 import UIKit
+import SceneKit
 
 
 //constants and helper functions
-
 
 //simple helper functions for CGPoints
 extension CGPoint {
@@ -51,7 +51,7 @@ extension CGFloat {
 struct Constants {
 
     struct Device {
-        static let screenSize = CGSize(width: 0.061, height: 0.16)
+        static let screenSize = CGSize(width: 0.06, height: 0.16)
         static let frameSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
     }
 
@@ -61,4 +61,29 @@ struct Constants {
         static let heightRange: ClosedRange<CGFloat> = (0...Device.frameSize.height)
     }
 
+}
+
+extension SCNVector3 {
+    func length() -> Float {
+        return sqrtf(x * x + y * y + z * z)
+    }
+}
+
+func - (l: SCNVector3, r: SCNVector3) -> SCNVector3 {
+    return SCNVector3Make(l.x - r.x, l.y - r.y, l.z - r.z)
+}
+
+extension Collection where Element == CGFloat, Index == Int {
+    /// Return the mean of a list of CGFloat. Used with `recentVirtualObjectDistances`.
+    var averages: CGFloat? {
+        guard !isEmpty else {
+            return nil
+        }
+        
+        let sum = reduce(CGFloat(0)) { current, next -> CGFloat in
+            return current + next
+        }
+        
+        return sum / CGFloat(count)
+    }
 }

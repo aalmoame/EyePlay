@@ -4,15 +4,15 @@
 //
 //  Created by Amen Al-Moamen on 2/20/21.
 //
-
 import Foundation
 import UIKit
 import ARKit
 
 //returns a SCNNode corresponding to the left eye
 
-
 class nodes{
+
+    
     var leftEyeNode: SCNNode = {
             let geometry = SCNCone(topRadius: 0.005, bottomRadius: 0, height: 0.1)
             geometry.radialSegmentCount = 3
@@ -69,9 +69,10 @@ class nodes{
     
     
     //maps the left and right eye gaze positions from a 3-D planes (SCNNodes) to 2-D CGPoints
-    func hitTest(leftEyeNode: SCNNode, endPointLeftEye: SCNNode,
-                 rightEyeNode:SCNNode, endPointRightEye: SCNNode,
-                 nodeInFrontOfScreen:SCNNode)->CGPoint{
+    func hitTest(withFaceAnchor anchor: ARFaceAnchor, cursor: UIImageView)->CGPoint{
+        
+        rightEyeNode.simdTransform = anchor.rightEyeTransform
+        leftEyeNode.simdTransform = anchor.leftEyeTransform
 
             var leftEyeLocation = CGPoint()
             var rightEyeLocation = CGPoint()
@@ -115,13 +116,15 @@ class nodes{
                 }()
 
                 points.append(point)
-                points = points.suffix(50).map {$0}
+                points = points.suffix(30).map {$0}
 
                 //placing the cursor at the center of that point
+                cursor.center = points.average()
                 return points.average()
             }
         
         return CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
+    
         }
     
     func getLookAtPoint() -> CGPoint {

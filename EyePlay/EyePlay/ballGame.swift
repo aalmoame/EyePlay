@@ -9,7 +9,7 @@ import UIKit
 import ARKit
 
 
-class ballGame: UIViewController{
+class ballGame: UIViewController, ARSessionDelegate{
     
     @IBOutlet var ballGameView: ARSCNView!
     
@@ -36,11 +36,10 @@ class ballGame: UIViewController{
     }
     
     override func viewDidLoad() {
-            super.viewDidLoad()
+        guard ARFaceTrackingConfiguration.isSupported else {
+            fatalError("Face tracking is not supported on this device")
+        }
 
-            guard ARFaceTrackingConfiguration.isSupported else {
-                fatalError("Face tracking is not supported on this device")
-            }
         ballGameView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
         ballGameView.delegate = self
     }
@@ -48,43 +47,35 @@ class ballGame: UIViewController{
     var points: [CGPoint] = []
     
     
-    func collision(faceAnchor: ARFaceAnchor){
+    func collisionBall(){
+    
+        let val = Int(scoreValue.text!)
         
-        if cursor.frame.intersects(ball.frame){
+        scoreValue.text = String(val! + 1)
 
-            let val = Int(scoreValue.text!)
-            
-            scoreValue.text = String(val! + 1)
+        let xwidth = ball.superview!.bounds.width - ball.frame.width
+        let yheight = ball.superview!.bounds.height - ball.frame.height
 
-            let xwidth = ball.superview!.bounds.width - ball.frame.width
-            let yheight = ball.superview!.bounds.height - ball.frame.height
+        let xoffset = CGFloat(arc4random_uniform(UInt32(xwidth)))
+        let yoffset = CGFloat(arc4random_uniform(UInt32(yheight)))
 
-            let xoffset = CGFloat(arc4random_uniform(UInt32(xwidth)))
-            let yoffset = CGFloat(arc4random_uniform(UInt32(yheight)))
-
-            
-            DispatchQueue.main.async {
-                UIView.animate(withDuration: 0.1, animations: {
-                    self.ball.center.x = xoffset + self.ball.frame.width / 2
-                    self.ball.center.y = yoffset + self.ball.frame.height / 2
-                })
-            }
-            
+        
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.1, animations: {
+                self.ball.center.x = xoffset + self.ball.frame.width / 2
+                self.ball.center.y = yoffset + self.ball.frame.height / 2
+            })
         }
-        
-        let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
-
-        
-        if cursor.frame.intersects(menuButton.frame) &&
-            eyeBlinkValue > 0.5{
             
-            DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "MainScreenSegue", sender: self)
-
-            }
-            
+        
+    }
+        
+    func collisionMenuButton(){
+        
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "MainScreenSegue", sender: self)
+        
         }
-        
     }
     
     
@@ -123,16 +114,28 @@ extension ballGame: ARSCNViewDelegate {
           return
       }
         
-      // 3
+
         sceneNodes.leftEyeNode.simdTransform = faceAnchor.leftEyeTransform
         sceneNodes.rightEyeNode.simdTransform = faceAnchor.rightEyeTransform
 
         faceGeometry.update(from: faceAnchor.geometry)
-
-        let lookPoint = self.sceneNodes.hitTest(leftEyeNode: sceneNodes.leftEyeNode, endPointLeftEye: sceneNodes.endPointLeftEye, rightEyeNode: sceneNodes.rightEyeNode, endPointRightEye: sceneNodes.endPointRightEye, nodeInFrontOfScreen: sceneNodes.nodeInFrontOfScreen)
-        self.cursor.center = lookPoint
-        collision(faceAnchor: faceAnchor)
         
+   //     self.sceneNodes.update(withFaceAnchor: faceAnchor, cursor: cursor)
+        
+        self.sceneNodes.hitTest(withFaceAnchor: faceAnchor, cursor: cursor)
+        
+        if cursor.frame.intersects(ball.frame){
+            collisionBall()
+        }
+        
+        let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
+        
+        if cursor.frame.intersects(menuButton.frame) &&
+            eyeBlinkValue > 0.5{
+            
+            collisionMenuButton()
+            
+        }
         
     }
     

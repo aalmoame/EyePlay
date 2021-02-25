@@ -40,7 +40,7 @@
 			<key>uniqueIdentifier</key>
 			<string>13497F70-2F84-4E46-9C4D-D4DE6550306F</string>
 		</dict>
-		<key>3881DE32-4139-4753-BCF1-141C50D7A678</key>
+		<key>A7EFBC6A-9898-4D15-92D1-E76BB7133141</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -49,7 +49,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>3881DE32-4139-4753-BCF1-141C50D7A678.xcactivitylog</string>
+			<string>A7EFBC6A-9898-4D15-92D1-E76BB7133141.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -66,15 +66,15 @@
 			<key>signature</key>
 			<string>Build EyePlay</string>
 			<key>timeStartedRecording</key>
-			<real>635366585.30000997</real>
+			<real>635914026.43431997</real>
 			<key>timeStoppedRecording</key>
-			<real>635366585.39723003</real>
+			<real>635914027.36432195</real>
 			<key>title</key>
 			<string>Build EyePlay</string>
 			<key>uniqueIdentifier</key>
-			<string>3881DE32-4139-4753-BCF1-141C50D7A678</string>
+			<string>A7EFBC6A-9898-4D15-92D1-E76BB7133141</string>
 		</dict>
-		<key>A73C883F-C25F-4BC0-A4D4-2F88DC91609D</key>
+		<key>C8C374D5-38C8-4899-896D-9A4B7EB0B221</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -83,13 +83,13 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>A73C883F-C25F-4BC0-A4D4-2F88DC91609D.xcactivitylog</string>
+			<string>C8C374D5-38C8-4899-896D-9A4B7EB0B221.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>S</string>
+				<string>W</string>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>EyePlay project</string>
@@ -100,13 +100,13 @@
 			<key>signature</key>
 			<string>Build EyePlay</string>
 			<key>timeStartedRecording</key>
-			<real>635366456.138533</real>
+			<real>635914032.77453601</real>
 			<key>timeStoppedRecording</key>
-			<real>635366456.27944696</real>
+			<real>635914037.70563996</real>
 			<key>title</key>
 			<string>Build EyePlay</string>
 			<key>uniqueIdentifier</key>
-			<string>A73C883F-C25F-4BC0-A4D4-2F88DC91609D</string>
+			<string>C8C374D5-38C8-4899-896D-9A4B7EB0B221</string>
 		</dict>
 	</dict>
 </dict>
