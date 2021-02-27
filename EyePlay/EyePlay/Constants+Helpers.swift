@@ -15,6 +15,7 @@ import SceneKit
 //simple helper functions for CGPoints
 
 var cursorSize = CGSize(width: 50.0, height: 50.0);
+var cursorColor = UIColor.blue
 
 
 extension CGPoint {

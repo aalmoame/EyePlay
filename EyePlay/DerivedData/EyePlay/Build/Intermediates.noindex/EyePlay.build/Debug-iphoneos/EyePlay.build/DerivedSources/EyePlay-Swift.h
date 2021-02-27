@@ -221,11 +221,40 @@ SWIFT_CLASS("_TtC7EyePlay11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UIImageView;
 @class ARSCNView;
 @class UIButton;
+@class UIImageView;
 @class NSBundle;
 @class NSCoder;
+
+SWIFT_CLASS("_TtC7EyePlay11CursorColor")
+@interface CursorColor : UIViewController <ARSessionDelegate>
+@property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified cursorColorView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified blueButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified redButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified grayButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified settingsButton;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
+- (IBAction)blueButtonTouch:(id _Nonnull)sender;
+- (IBAction)redButtonTouch:(id _Nonnull)sender;
+- (IBAction)grayButtonTouch:(id _Nonnull)sender;
+- (IBAction)settingsButtonTouch:(id _Nonnull)sender;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@protocol SCNSceneRenderer;
+@class ARAnchor;
+@class SCNNode;
+
+@interface CursorColor (SWIFT_EXTENSION(EyePlay)) <ARSCNViewDelegate>
+- (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
+- (void)renderer:(id <SCNSceneRenderer> _Nonnull)renderer didUpdateNode:(SCNNode * _Nonnull)node forAnchor:(ARAnchor * _Nonnull)anchor;
+@end
+
 
 SWIFT_CLASS("_TtC7EyePlay10CursorSize")
 @interface CursorSize : UIViewController <ARSessionDelegate>
@@ -246,9 +275,6 @@ SWIFT_CLASS("_TtC7EyePlay10CursorSize")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@protocol SCNSceneRenderer;
-@class ARAnchor;
-@class SCNNode;
 
 @interface CursorSize (SWIFT_EXTENSION(EyePlay)) <ARSCNViewDelegate>
 - (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
@@ -297,6 +323,7 @@ SWIFT_CLASS("_TtC7EyePlay8Settings")
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified sizeButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified colorButton;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)viewDidLoad;
@@ -313,7 +340,7 @@ SWIFT_CLASS("_TtC7EyePlay8Settings")
 @class UILabel;
 
 SWIFT_CLASS("_TtC7EyePlay8ballGame")
-@interface ballGame : UIViewController <ARSessionDelegate>
+@interface ballGame : UIViewController
 @property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified ballGameView;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified score;

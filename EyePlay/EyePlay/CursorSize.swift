@@ -28,6 +28,7 @@ class CursorSize: UIViewController, ARSessionDelegate{
     @IBAction func settingsButtonTouch(_ sender: Any) {
         collisionSettingsButton();
     }
+    
     let sceneNodes = nodes()
     
     //sets the view up
@@ -55,6 +56,7 @@ class CursorSize: UIViewController, ARSessionDelegate{
         }
 
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
+        cursor.tintColor = cursorColor;
         cursor.layer.zPosition = 1;
         smallButton.layer.cornerRadius = 10;
         mediumButton.layer.cornerRadius = 10;

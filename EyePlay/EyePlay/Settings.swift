@@ -12,6 +12,7 @@ class Settings: UIViewController, ARSessionDelegate{
     @IBOutlet weak var cursor: UIImageView!
     @IBOutlet weak var sizeButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var colorButton: UIButton!
     
     let sceneNodes = nodes()
     
@@ -40,9 +41,11 @@ class Settings: UIViewController, ARSessionDelegate{
         }
 
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
+        cursor.tintColor = cursorColor
         cursor.layer.zPosition = 1;
         sizeButton.layer.cornerRadius = 10;
         menuButton.layer.cornerRadius = 10;
+        colorButton.layer.cornerRadius = 10;
         
         settingsView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
         settingsView.scene.background.contents = UIColor.black
@@ -53,16 +56,20 @@ class Settings: UIViewController, ARSessionDelegate{
 
     func collisionMenuButton(){
 
-            //go to game screen when user blinks over button
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "MainScreenSegue", sender: self)
             }
     }
     func collisionSizeButton(){
 
-            //go to game screen when user blinks over button
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "SizeSegue", sender: self)
+            }
+    }
+    func collisionColorButton(){
+
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "ColorSegue", sender: self)
             }
     }
 }
@@ -118,6 +125,11 @@ extension Settings: ARSCNViewDelegate {
             eyeBlinkValue > 0.5 {
 
             collisionSizeButton()
+        }
+        else if cursor.frame.intersects(colorButton.frame) &&
+            eyeBlinkValue > 0.5 {
+
+            collisionColorButton()
         }
         else if cursor.frame.intersects(menuButton.frame) &&
             eyeBlinkValue > 0.5 {

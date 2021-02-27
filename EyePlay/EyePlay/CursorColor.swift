@@ -2,31 +2,49 @@ import UIKit
 import ARKit
 import VisionKit
 
+
+
 //main view class
-class EyePlay: UIViewController{
-    
-    //Elements connected to the storyboard
-    @IBOutlet var mainView: ARSCNView!
-    @IBOutlet weak var cursor: UIImageView!
-    @IBOutlet weak var ballGameButton: UIButton!
+class CursorColor: UIViewController, ARSessionDelegate{
+
+    @IBOutlet var cursorColorView: ARSCNView!
+    @IBOutlet weak var blueButton: UIButton!
+    @IBOutlet weak var redButton: UIButton!
+    @IBOutlet weak var grayButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var cursor: UIImageView!
+    
+    @IBAction func blueButtonTouch(_ sender: Any) {
+        collisionBlueButton()
+    }
+    @IBAction func redButtonTouch(_ sender: Any) {
+        collisionRedButton()
+    }
+    @IBAction func grayButtonTouch(_ sender: Any) {
+        collisionGrayButton()
+    }
+    @IBAction func settingsButtonTouch(_ sender: Any) {
+        collisionSettingsButton()
+    }
+    
+    
     
     let sceneNodes = nodes()
-
-
+    
     //sets the view up
+    
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
             
       let configuration = ARFaceTrackingConfiguration()
-      mainView.session.run(configuration)
+      cursorColorView.session.run(configuration)
     }
     
     
     // pauses the view
     override func viewWillDisappear(_ animated: Bool) {
       super.viewWillDisappear(animated)
-      mainView.session.pause()
+      cursorColorView.session.pause()
     }
     
     //configures the screen once its loaded up
@@ -38,43 +56,48 @@ class EyePlay: UIViewController{
         }
 
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
-        cursor.tintColor = cursorColor
+        cursor.tintColor = cursorColor;
         cursor.layer.zPosition = 1;
-        ballGameButton.layer.cornerRadius = 10;
+        blueButton.layer.cornerRadius = 10;
+        redButton.layer.cornerRadius = 10;
+        grayButton.layer.cornerRadius = 10;
         settingsButton.layer.cornerRadius = 10;
-        
-        mainView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
-        mainView.scene.background.contents = UIColor.black
-        mainView.delegate = self
 
+        
+        cursorColorView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
+        cursorColorView.scene.background.contents = UIColor.black
+        cursorColorView.delegate = self
 
     }
     
-    
-    //checks if the cursor is on top of the game button and if the user blinks
-    func collisionMenuButton(){
 
-            //go to game screen when user blinks over button
-            DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "BallGameSegue", sender: self)
-            }
+    func collisionBlueButton(){
+        cursorColor = UIColor.blue
+        cursor.tintColor = cursorColor
+    }
+    func collisionRedButton(){
+        cursorColor = UIColor.red
+        cursor.tintColor = cursorColor
+    }
+    func collisionGrayButton(){
+        cursorColor = UIColor.gray
+        cursor.tintColor = cursorColor
     }
     func collisionSettingsButton(){
-
-            //go to game screen when user blinks over button
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "SettingsSegue", sender: self)
             }
     }
+    
 }
 
-extension EyePlay: ARSCNViewDelegate {
+extension CursorColor: ARSCNViewDelegate {
     
     //a scene renderer that returns a scene node given a face anchor, runs once
     
       func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         
-        guard let device = mainView.device else {
+        guard let device = cursorColorView.device else {
           return nil
         }
         
@@ -104,27 +127,38 @@ extension EyePlay: ARSCNViewDelegate {
       }
 
 
-        sceneNodes.leftEyeNode.simdTransform = faceAnchor.leftEyeTransform
-        sceneNodes.rightEyeNode.simdTransform = faceAnchor.rightEyeTransform
+        sceneNodes.leftEyeNode.simdTransform = faceAnchor.leftEyeTransform;
+        sceneNodes.rightEyeNode.simdTransform = faceAnchor.rightEyeTransform;
 
-        faceGeometry.update(from: faceAnchor.geometry)
-        
+        faceGeometry.update(from: faceAnchor.geometry);
+
         self.sceneNodes.hitTest(withFaceAnchor: faceAnchor, cursor: cursor)
             
         
         let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
 
         
-        if cursor.frame.intersects(ballGameButton.frame) &&
+        if cursor.frame.intersects(blueButton.frame) &&
             eyeBlinkValue > 0.5 {
 
-            collisionMenuButton();
+            collisionBlueButton();
+        }
+        else if cursor.frame.intersects(redButton.frame) &&
+            eyeBlinkValue > 0.5 {
+
+            collisionRedButton();
+        }
+        else if cursor.frame.intersects(grayButton.frame) &&
+            eyeBlinkValue > 0.5 {
+
+            collisionGrayButton();
         }
         else if cursor.frame.intersects(settingsButton.frame) &&
             eyeBlinkValue > 0.5 {
 
             collisionSettingsButton();
         }
+        
         
     }
     

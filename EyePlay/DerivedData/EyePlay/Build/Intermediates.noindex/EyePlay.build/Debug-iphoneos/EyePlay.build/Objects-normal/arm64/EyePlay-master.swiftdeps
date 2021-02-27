@@ -1,12 +1,13 @@
 version: "Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
 options: "28be3206b6209ced48b71c986996f895"
-build_time: [1614409583, 54335000]
+build_time: [1614460360, 455681000]
 inputs:
-  "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/EyePlay.swift": [1614408392, 580364941]
-  "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/Nodes+HitTest.swift": [1614407446, 306648023]
+  "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/EyePlay.swift": [1614458964, 145739910]
+  "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/Nodes+HitTest.swift": [1614457312, 760874839]
   "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/AppDelegate.swift": [1614221093, 112593275]
-  "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/ballGame.swift": [1614408616, 398192674]
-  "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/CursorSize.swift": [1614409395, 90467802]
-  "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/Settings.swift": [1614408388, 665107821]
+  "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/ballGame.swift": [1614459012, 572051049]
+  "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/CursorSize.swift": [1614459023, 856775239]
+  "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/CursorColor.swift": [1614460339, 417586649]
+  "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/Settings.swift": [1614460360, 338510003]
   "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/SceneDelegate.swift": [1614221093, 114147299]
-  "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/Constants+Helpers.swift": [1614408392, 471950074]
+  "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/Constants+Helpers.swift": [1614458678, 224434292]

@@ -124,8 +124,4 @@ class nodes{
     
         }
     
-    func getLookAtPoint() -> CGPoint {
-        return points.average()
-    }
-    
 }

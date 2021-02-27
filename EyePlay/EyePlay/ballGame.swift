@@ -9,7 +9,7 @@ import UIKit
 import ARKit
 
 
-class ballGame: UIViewController, ARSessionDelegate{
+class ballGame: UIViewController{
     
     @IBOutlet var ballGameView: ARSCNView!
     
@@ -41,6 +41,7 @@ class ballGame: UIViewController, ARSessionDelegate{
         }
         
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
+        cursor.tintColor = cursorColor;
         cursor.layer.zPosition = 1
         menuButton.layer.cornerRadius = 10;
         
@@ -110,7 +111,6 @@ extension ballGame: ARSCNViewDelegate {
       didUpdate node: SCNNode,
       for anchor: ARAnchor) {
        
-      // 2
       guard let faceAnchor = anchor as? ARFaceAnchor,
         let faceGeometry = node.geometry as? ARSCNFaceGeometry else {
           return
@@ -121,18 +121,17 @@ extension ballGame: ARSCNViewDelegate {
         sceneNodes.rightEyeNode.simdTransform = faceAnchor.rightEyeTransform
 
         faceGeometry.update(from: faceAnchor.geometry)
-        
-   //     self.sceneNodes.update(withFaceAnchor: faceAnchor, cursor: cursor)
-        
+                
         self.sceneNodes.hitTest(withFaceAnchor: faceAnchor, cursor: cursor)
+        
+        let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
+
         
         if cursor.frame.intersects(ball.frame){
             collisionBall()
         }
         
-        let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
-        
-        if cursor.frame.intersects(menuButton.frame) &&
+        else if cursor.frame.intersects(menuButton.frame) &&
             eyeBlinkValue > 0.5{
             
             collisionMenuButton()
