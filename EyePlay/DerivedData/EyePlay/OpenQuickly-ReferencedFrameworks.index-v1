@@ -4,10 +4,10 @@
 <array>
 	<string>SceneKit</string>
 	<string>Foundation</string>
-	<string>Emoji</string>
-	<string>ARKit</string>
-	<string>VisionKit</string>
-	<string>UIKit</string>
 	<string>XCTest</string>
+	<string>VisionKit</string>
+	<string>Emoji</string>
+	<string>UIKit</string>
+	<string>ARKit</string>
 </array>
 </plist>

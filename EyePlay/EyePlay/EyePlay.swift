@@ -40,7 +40,7 @@ class EyePlay: UIViewController{
         }
 
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
-        cursor.layer.zPosition = 1
+        cursor.layer.zPosition = 1;
         ballGameButton.layer.cornerRadius = 10;
         settingsButton.layer.cornerRadius = 10;
         
@@ -109,8 +109,6 @@ extension EyePlay: ARSCNViewDelegate {
         sceneNodes.rightEyeNode.simdTransform = faceAnchor.rightEyeTransform
 
         faceGeometry.update(from: faceAnchor.geometry)
-        
-   //     self.sceneNodes.update(withFaceAnchor: faceAnchor, cursor: cursor)
         
         self.sceneNodes.hitTest(withFaceAnchor: faceAnchor, cursor: cursor)
             
