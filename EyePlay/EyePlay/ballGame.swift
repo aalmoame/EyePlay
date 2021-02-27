@@ -39,14 +39,16 @@ class ballGame: UIViewController, ARSessionDelegate{
         guard ARFaceTrackingConfiguration.isSupported else {
             fatalError("Face tracking is not supported on this device")
         }
-
-        ballGameView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
-        ballGameView.delegate = self
+        
+        cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
+        cursor.layer.zPosition = 1
+        menuButton.layer.cornerRadius = 10;
+        
+        ballGameView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen);
+        ballGameView.scene.background.contents = UIColor.black;
+        ballGameView.delegate = self;
     }
-    
-    var points: [CGPoint] = []
-    
-    
+        
     func collisionBall(){
     
         let val = Int(scoreValue.text!)

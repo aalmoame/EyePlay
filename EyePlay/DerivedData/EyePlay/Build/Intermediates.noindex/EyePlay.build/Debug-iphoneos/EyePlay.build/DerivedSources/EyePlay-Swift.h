@@ -221,17 +221,24 @@ SWIFT_CLASS("_TtC7EyePlay11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class ARSCNView;
 @class UIImageView;
+@class ARSCNView;
 @class UIButton;
 @class NSBundle;
 @class NSCoder;
 
-SWIFT_CLASS("_TtC7EyePlay7EyePlay")
-@interface EyePlay : UIViewController
-@property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified mainView;
+SWIFT_CLASS("_TtC7EyePlay10CursorSize")
+@interface CursorSize : UIViewController <ARSessionDelegate>
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
-@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified ballGameButton;
+@property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified cursorSizeView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified smallButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified mediumButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified largeButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified settingsButton;
+- (IBAction)smallButtonTouch:(id _Nonnull)sender;
+- (IBAction)mediumButtonTouch:(id _Nonnull)sender;
+- (IBAction)largeButtonTouch:(id _Nonnull)sender;
+- (IBAction)settingsButtonTouch:(id _Nonnull)sender;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)viewDidLoad;
@@ -242,6 +249,26 @@ SWIFT_CLASS("_TtC7EyePlay7EyePlay")
 @protocol SCNSceneRenderer;
 @class ARAnchor;
 @class SCNNode;
+
+@interface CursorSize (SWIFT_EXTENSION(EyePlay)) <ARSCNViewDelegate>
+- (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
+- (void)renderer:(id <SCNSceneRenderer> _Nonnull)renderer didUpdateNode:(SCNNode * _Nonnull)node forAnchor:(ARAnchor * _Nonnull)anchor;
+@end
+
+
+SWIFT_CLASS("_TtC7EyePlay7EyePlay")
+@interface EyePlay : UIViewController
+@property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified mainView;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified ballGameButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified settingsButton;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 @interface EyePlay (SWIFT_EXTENSION(EyePlay)) <ARSCNViewDelegate>
 - (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
@@ -261,6 +288,26 @@ SWIFT_CLASS("_TtC7EyePlay13SceneDelegate")
 - (void)sceneWillEnterForeground:(UIScene * _Nonnull)scene;
 - (void)sceneDidEnterBackground:(UIScene * _Nonnull)scene;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC7EyePlay8Settings")
+@interface Settings : UIViewController <ARSessionDelegate>
+@property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified settingsView;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified sizeButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface Settings (SWIFT_EXTENSION(EyePlay)) <ARSCNViewDelegate>
+- (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
+- (void)renderer:(id <SCNSceneRenderer> _Nonnull)renderer didUpdateNode:(SCNNode * _Nonnull)node forAnchor:(ARAnchor * _Nonnull)anchor;
 @end
 
 @class UILabel;

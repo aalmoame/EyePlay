@@ -69,7 +69,7 @@ class nodes{
     
     
     //maps the left and right eye gaze positions from a 3-D planes (SCNNodes) to 2-D CGPoints
-    func hitTest(withFaceAnchor anchor: ARFaceAnchor, cursor: UIImageView)->CGPoint{
+    func hitTest(withFaceAnchor anchor: ARFaceAnchor, cursor: UIImageView){
         
         rightEyeNode.simdTransform = anchor.rightEyeTransform
         leftEyeNode.simdTransform = anchor.leftEyeTransform
@@ -90,7 +90,7 @@ class nodes{
             if leftEyeResult.count > 0 || rightEyeResult.count > 0 {
 
                 guard let leftResult = leftEyeResult.first, let rightResult = rightEyeResult.first else {
-                    return CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
+                    return
                 }
 
                 //mapping the position to a 2-D plane
@@ -120,10 +120,7 @@ class nodes{
 
                 //placing the cursor at the center of that point
                 cursor.center = points.average()
-                return points.average()
             }
-        
-        return CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
     
         }
     

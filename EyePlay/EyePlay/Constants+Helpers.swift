@@ -13,6 +13,10 @@ import SceneKit
 //constants and helper functions
 
 //simple helper functions for CGPoints
+
+var cursorSize = CGSize(width: 50.0, height: 50.0);
+
+
 extension CGPoint {
     func add(point: CGPoint) -> CGPoint {
         return CGPoint(x: self.x + point.x, y: self.y + point.y)

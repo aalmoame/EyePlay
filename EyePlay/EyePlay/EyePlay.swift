@@ -11,6 +11,7 @@ class EyePlay: UIViewController{
     @IBOutlet var mainView: ARSCNView!
     @IBOutlet weak var cursor: UIImageView!
     @IBOutlet weak var ballGameButton: UIButton!
+    @IBOutlet weak var settingsButton: UIButton!
     
     let sceneNodes = nodes()
 
@@ -38,7 +39,13 @@ class EyePlay: UIViewController{
             fatalError("Face tracking is not supported on this device")
         }
 
+        cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
+        cursor.layer.zPosition = 1
+        ballGameButton.layer.cornerRadius = 10;
+        settingsButton.layer.cornerRadius = 10;
+        
         mainView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
+        mainView.scene.background.contents = UIColor.black
         mainView.delegate = self
 
 
@@ -51,6 +58,13 @@ class EyePlay: UIViewController{
             //go to game screen when user blinks over button
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "BallGameSegue", sender: self)
+            }
+    }
+    func collisionSettingsButton(){
+
+            //go to game screen when user blinks over button
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "SettingsSegue", sender: self)
             }
     }
 }
@@ -107,7 +121,12 @@ extension EyePlay: ARSCNViewDelegate {
         if cursor.frame.intersects(ballGameButton.frame) &&
             eyeBlinkValue > 0.5 {
 
-            collisionMenuButton()
+            collisionMenuButton();
+        }
+        else if cursor.frame.intersects(settingsButton.frame) &&
+            eyeBlinkValue > 0.5 {
+
+            collisionSettingsButton();
         }
         
     }

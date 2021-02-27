@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,22 +16,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23W-Y0-Q8K">
-                                <rect key="frame" x="322" y="694" width="185" height="82"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Ball Game">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="51N-JD-YKu" appends="YES" id="VeD-78-Ict"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="93C-Ja-UTQ">
-                                <rect key="frame" x="392" y="571.5" width="50" height="51"/>
+                                <rect key="frame" x="392" y="265.5" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="297-ZF-eLf">
+                                <rect key="frame" x="167" y="821" width="500" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="jrH-20-b6d" appends="YES" id="1wH-2d-1yh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fd-fz-AjV">
+                                <rect key="frame" x="167" y="497" width="500" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Ball Game">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -40,15 +49,21 @@
                     </view>
                     <navigationItem key="navigationItem" id="FTV-Pe-vnG"/>
                     <connections>
-                        <outlet property="ballGameButton" destination="23W-Y0-Q8K" id="jYh-p0-fVV"/>
+                        <outlet property="ballGameButton" destination="7fd-fz-AjV" id="B4h-6p-sav"/>
                         <outlet property="cursor" destination="93C-Ja-UTQ" id="ng0-Ng-1vY"/>
                         <outlet property="mainView" destination="8bC-Xf-vdC" id="rIs-8k-R5D"/>
+                        <outlet property="settingsButton" destination="297-ZF-eLf" id="yov-wo-WUz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="51N-JD-YKu">
                     <connections>
                         <segue destination="1AW-XV-VCE" kind="presentation" identifier="BallGameSegue" modalPresentationStyle="fullScreen" id="ZVp-ay-ckj"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="jrH-20-b6d">
+                    <connections>
+                        <segue destination="NHp-vb-Hu3" kind="presentation" identifier="SettingsSegue" modalPresentationStyle="fullScreen" id="IJG-yJ-LpU"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -95,7 +110,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="E6U-ic-2RX">
-                                <rect key="frame" x="392" y="571.5" width="50" height="51"/>
+                                <rect key="frame" x="392" y="571.5" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -121,7 +136,171 @@
             </objects>
             <point key="canvasLocation" x="862.58992805755406" y="42.713567839195981"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="nAU-ER-63w">
+            <objects>
+                <viewController id="NHp-vb-Hu3" customClass="Settings" customModule="EyePlay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NMZ-pJ-dCz" customClass="ARSCNView">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74p-og-FW9">
+                                <rect key="frame" x="167" y="150" width="500" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Cursor Size">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ZoI-Wc-Jvm" appends="YES" id="2Du-e8-A8o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPr-1W-5oW">
+                                <rect key="frame" x="167" y="497" width="500" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Main Menu">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="CZQ-Vv-hpg" appends="YES" id="TNa-Ac-65y"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ozu-pC-p2U">
+                                <rect key="frame" x="392" y="831.5" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pSg-w5-ekP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="q4s-tN-dM7"/>
+                    <connections>
+                        <outlet property="cursor" destination="ozu-pC-p2U" id="ZLF-pJ-Uu3"/>
+                        <outlet property="menuButton" destination="pPr-1W-5oW" id="7t1-tv-CLY"/>
+                        <outlet property="settingsView" destination="NMZ-pJ-dCz" id="4og-xb-qLi"/>
+                        <outlet property="sizeButton" destination="74p-og-FW9" id="f4V-BW-aS2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Je7-fY-YbI" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ZoI-Wc-Jvm">
+                    <connections>
+                        <segue destination="HcT-UW-2Pu" kind="presentation" identifier="SizeSegue" modalPresentationStyle="fullScreen" id="EQ3-Oj-U8i"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="CZQ-Vv-hpg">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="MainScreenSegue" modalPresentationStyle="fullScreen" id="Lb4-yX-g3k"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="138.12949640287772" y="739.69849246231161"/>
+        </scene>
+        <!--Cursor Size-->
+        <scene sceneID="DgD-V0-QiW">
+            <objects>
+                <viewController id="HcT-UW-2Pu" customClass="CursorSize" customModule="EyePlay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IAO-El-92E" customClass="ARSCNView">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bV0-Fg-aY8">
+                                <rect key="frame" x="747" y="769" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ys-9Y-bQB">
+                                <rect key="frame" x="167" y="49" width="500" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Small">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="smallButtonTouch:" destination="HcT-UW-2Pu" eventType="touchDown" id="jZb-Iy-c4T"/>
+                                    <outletCollection property="gestureRecognizers" destination="xhg-Y0-IMY" appends="YES" id="CnC-xg-wyh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9r3-iu-mgl">
+                                <rect key="frame" x="167" y="329" width="500" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Medium">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="mediumButtonTouch:" destination="HcT-UW-2Pu" eventType="touchDown" id="Pwe-2W-Bt5"/>
+                                    <outletCollection property="gestureRecognizers" destination="zpK-7V-Xpl" appends="YES" id="IYr-Ta-lFx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwu-Nj-B6S">
+                                <rect key="frame" x="167" y="902" width="500" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Back to Settings">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="settingsButtonTouch:" destination="HcT-UW-2Pu" eventType="touchDown" id="Ya3-7l-DIe"/>
+                                    <outletCollection property="gestureRecognizers" destination="vh1-9k-M6q" appends="YES" id="eL0-lR-oJQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUb-qP-h4P">
+                                <rect key="frame" x="167" y="620" width="500" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Large">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="largeButtonTouch:" destination="HcT-UW-2Pu" eventType="touchDown" id="SUf-3g-P2D"/>
+                                    <outletCollection property="gestureRecognizers" destination="Ja9-OY-bB8" appends="YES" id="lei-c2-jx5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9ce-vF-1Dw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xly-8s-pVf"/>
+                    <connections>
+                        <outlet property="cursor" destination="bV0-Fg-aY8" id="1Rn-lV-QTE"/>
+                        <outlet property="cursorSizeView" destination="IAO-El-92E" id="NTc-VO-KFp"/>
+                        <outlet property="largeButton" destination="WUb-qP-h4P" id="DRh-Br-Ytw"/>
+                        <outlet property="mediumButton" destination="9r3-iu-mgl" id="DuR-Ex-RjB"/>
+                        <outlet property="settingsButton" destination="jwu-Nj-B6S" id="9yE-1u-xIs"/>
+                        <outlet property="smallButton" destination="0Ys-9Y-bQB" id="fc4-sU-vcn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yBJ-G1-fBd" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="xhg-Y0-IMY"/>
+                <tapGestureRecognizer id="zpK-7V-Xpl"/>
+                <tapGestureRecognizer id="Ja9-OY-bB8"/>
+                <tapGestureRecognizer id="vh1-9k-M6q">
+                    <connections>
+                        <segue destination="NHp-vb-Hu3" kind="presentation" identifier="SettingsSegue" modalPresentationStyle="fullScreen" id="KRt-Ww-5U8"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="862.58992805755406" y="739.69849246231161"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="KRt-Ww-5U8"/>
+        <segue reference="Lb4-yX-g3k"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">

@@ -33,7 +33,6 @@ depends-top-level:
 - "SCNPlane"
 - "UIColor"
 - "UIImageView"
-- !private "UIScreen"
 - !private "endPointLeftEye"
 - !private "endPointRightEye"
 - !private "leftEyeNode"
@@ -88,15 +87,12 @@ depends-member:
 - !private ["So7CGPointV", "init"]
 - !private ["So7CGPointV", "x"]
 - !private ["So7CGPointV", "y"]
-- !private ["So6CGRectV", "height"]
-- !private ["So6CGRectV", "width"]
 - !private ["So6CGSizeV", "height"]
 - !private ["So6CGSizeV", "width"]
 - ["s7CVarArgP", ""]
 - ["s7CVarArgP", "addChildNode"]
 - !private ["s7CVarArgP", "append"]
 - !private ["s7CVarArgP", "average"]
-- !private ["s7CVarArgP", "bounds"]
 - !private ["s7CVarArgP", "center"]
 - !private ["s7CVarArgP", "clamped"]
 - ["s7CVarArgP", "clear"]
@@ -114,7 +110,6 @@ depends-member:
 - ["s7CVarArgP", "isDoubleSided"]
 - !private ["s7CVarArgP", "leftEyeTransform"]
 - !private ["s7CVarArgP", "localCoordinates"]
-- !private ["s7CVarArgP", "main"]
 - !private ["s7CVarArgP", "map"]
 - ["s7CVarArgP", "pi"]
 - ["s7CVarArgP", "position"]
@@ -147,7 +142,6 @@ depends-member:
 - ["s28CustomDebugStringConvertibleP", "addChildNode"]
 - !private ["s28CustomDebugStringConvertibleP", "append"]
 - !private ["s28CustomDebugStringConvertibleP", "average"]
-- !private ["s28CustomDebugStringConvertibleP", "bounds"]
 - !private ["s28CustomDebugStringConvertibleP", "center"]
 - ["s28CustomDebugStringConvertibleP", "clear"]
 - ["s28CustomDebugStringConvertibleP", "contents"]
@@ -165,7 +159,6 @@ depends-member:
 - ["s28CustomDebugStringConvertibleP", "isDoubleSided"]
 - !private ["s28CustomDebugStringConvertibleP", "leftEyeTransform"]
 - !private ["s28CustomDebugStringConvertibleP", "localCoordinates"]
-- !private ["s28CustomDebugStringConvertibleP", "main"]
 - !private ["s28CustomDebugStringConvertibleP", "map"]
 - ["s28CustomDebugStringConvertibleP", "pi"]
 - ["s28CustomDebugStringConvertibleP", "position"]
@@ -195,7 +188,6 @@ depends-member:
 - ["s23CustomStringConvertibleP", "addChildNode"]
 - !private ["s23CustomStringConvertibleP", "append"]
 - !private ["s23CustomStringConvertibleP", "average"]
-- !private ["s23CustomStringConvertibleP", "bounds"]
 - !private ["s23CustomStringConvertibleP", "center"]
 - !private ["s23CustomStringConvertibleP", "clamped"]
 - ["s23CustomStringConvertibleP", "clear"]
@@ -213,7 +205,6 @@ depends-member:
 - ["s23CustomStringConvertibleP", "isDoubleSided"]
 - !private ["s23CustomStringConvertibleP", "leftEyeTransform"]
 - !private ["s23CustomStringConvertibleP", "localCoordinates"]
-- !private ["s23CustomStringConvertibleP", "main"]
 - !private ["s23CustomStringConvertibleP", "map"]
 - ["s23CustomStringConvertibleP", "pi"]
 - ["s23CustomStringConvertibleP", "position"]
@@ -263,7 +254,6 @@ depends-member:
 - ["SQ", "addChildNode"]
 - !private ["SQ", "append"]
 - !private ["SQ", "average"]
-- !private ["SQ", "bounds"]
 - !private ["SQ", "center"]
 - !private ["SQ", "clamped"]
 - ["SQ", "clear"]
@@ -283,7 +273,6 @@ depends-member:
 - ["SQ", "isDoubleSided"]
 - !private ["SQ", "leftEyeTransform"]
 - !private ["SQ", "localCoordinates"]
-- !private ["SQ", "main"]
 - !private ["SQ", "map"]
 - ["SQ", "pi"]
 - ["SQ", "position"]
@@ -378,7 +367,6 @@ depends-member:
 - ["SH", "addChildNode"]
 - !private ["SH", "append"]
 - !private ["SH", "average"]
-- !private ["SH", "bounds"]
 - !private ["SH", "center"]
 - !private ["SH", "clamped"]
 - ["SH", "clear"]
@@ -397,7 +385,6 @@ depends-member:
 - ["SH", "isDoubleSided"]
 - !private ["SH", "leftEyeTransform"]
 - !private ["SH", "localCoordinates"]
-- !private ["SH", "main"]
 - !private ["SH", "map"]
 - ["SH", "pi"]
 - ["SH", "position"]
@@ -474,7 +461,6 @@ depends-member:
 - ["So21NSItemProviderWritingP", "withAlphaComponent"]
 - ["So8NSObjectC", ""]
 - ["So8NSObjectC", "addChildNode"]
-- !private ["So8NSObjectC", "bounds"]
 - !private ["So8NSObjectC", "center"]
 - ["So8NSObjectC", "clear"]
 - ["So8NSObjectC", "colorWithAlphaComponent"]
@@ -493,7 +479,6 @@ depends-member:
 - ["So8NSObjectC", "isDoubleSided"]
 - !private ["So8NSObjectC", "leftEyeTransform"]
 - !private ["So8NSObjectC", "localCoordinates"]
-- !private ["So8NSObjectC", "main"]
 - ["So8NSObjectC", "node"]
 - ["So8NSObjectC", "nodeWithGeometry"]
 - ["So8NSObjectC", "planeWithWidth"]
@@ -505,7 +490,6 @@ depends-member:
 - !private ["So8NSObjectC", "worldPosition"]
 - ["So8NSObjectP", ""]
 - ["So8NSObjectP", "addChildNode"]
-- !private ["So8NSObjectP", "bounds"]
 - !private ["So8NSObjectP", "center"]
 - ["So8NSObjectP", "clear"]
 - ["So8NSObjectP", "colorWithAlphaComponent"]
@@ -524,7 +508,6 @@ depends-member:
 - ["So8NSObjectP", "isDoubleSided"]
 - !private ["So8NSObjectP", "leftEyeTransform"]
 - !private ["So8NSObjectP", "localCoordinates"]
-- !private ["So8NSObjectP", "main"]
 - ["So8NSObjectP", "node"]
 - ["So8NSObjectP", "nodeWithGeometry"]
 - ["So8NSObjectP", "planeWithWidth"]
@@ -716,11 +699,7 @@ depends-member:
 - !private ["So11UIResponderC", "center"]
 - !private ["So30UIResponderStandardEditActionsP", ""]
 - !private ["So30UIResponderStandardEditActionsP", "center"]
-- !private ["So8UIScreenC", "bounds"]
-- !private ["So8UIScreenC", "main"]
-- !private ["So18UITraitEnvironmentP", "bounds"]
 - !private ["So18UITraitEnvironmentP", "center"]
-- !private ["So18UITraitEnvironmentP", "main"]
 - !private ["So23UIUserActivityRestoringP", ""]
 - !private ["So23UIUserActivityRestoringP", "center"]
 - ["So6UIViewC", ""]
@@ -773,7 +752,6 @@ depends-member:
 - ["s35_HasCustomAnyHashableRepresentationP", "pi"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "suffix"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "addChildNode"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "bounds"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "center"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "clear"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "contents"]
@@ -788,7 +766,6 @@ depends-member:
 - ["10Foundation27_KeyValueCodingAndObservingP", "isDoubleSided"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "leftEyeTransform"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "localCoordinates"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "main"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "position"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "radialSegmentCount"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "rightEyeTransform"]
@@ -796,7 +773,6 @@ depends-member:
 - ["10Foundation27_KeyValueCodingAndObservingP", "withAlphaComponent"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "worldPosition"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "addChildNode"]
-- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "bounds"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "center"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "clear"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "contents"]
@@ -811,7 +787,6 @@ depends-member:
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "isDoubleSided"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "leftEyeTransform"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "localCoordinates"]
-- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "main"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "position"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "radialSegmentCount"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "rightEyeTransform"]
@@ -842,7 +817,6 @@ depends-member:
 - ["7EyePlay5nodesC", "SCNPlane"]
 - ["7EyePlay5nodesC", "UIColor"]
 - ["7EyePlay5nodesC", "UIImageView"]
-- !private ["7EyePlay5nodesC", "UIScreen"]
 - ["7EyePlay5nodesC", "deinit"]
 - ["7EyePlay5nodesC", "endPointLeftEye"]
 - ["7EyePlay5nodesC", "endPointRightEye"]
@@ -866,7 +840,6 @@ depends-nominal:
 - !private "So15CALayerDelegateP"
 - !private "12CoreGraphics7CGFloatV"
 - !private "So7CGPointV"
-- !private "So6CGRectV"
 - !private "So6CGSizeV"
 - "s7CVarArgP"
 - "Sl"
@@ -942,7 +915,6 @@ depends-nominal:
 - !private "So30UIPasteConfigurationSupportingP"
 - "So11UIResponderC"
 - !private "So30UIResponderStandardEditActionsP"
-- !private "So8UIScreenC"
 - !private "So18UITraitEnvironmentP"
 - !private "So23UIUserActivityRestoringP"
 - "So6UIViewC"
@@ -1023,4 +995,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "af6a0aa7c0d5b991766bda55bf8ea03d"
+interface-hash: "db4beeefb00590874eaa06a029ce23d7"

@@ -16,6 +16,8 @@
 		4A1A39D725DA3BFC00516AE9 /* EyePlay_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A39D625DA3BFC00516AE9 /* EyePlay_UITests.swift */; };
 		4A1A3A5425DCAD2100516AE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A1A3A5325DCAD2100516AE9 /* Main.storyboard */; };
 		4A1A3A6725DEBE0200516AE9 /* ballGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A3A6625DEBE0100516AE9 /* ballGame.swift */; };
+		4A83F99D25EA147800482A7E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F99C25EA147700482A7E /* Settings.swift */; };
+		4A83F9A225EA1A4B00482A7E /* CursorSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F9A125EA1A4B00482A7E /* CursorSize.swift */; };
 		AF56586425E321B700E1F2B5 /* Nodes+HitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF56586325E321B700E1F2B5 /* Nodes+HitTest.swift */; };
 		AF56586925E321E600E1F2B5 /* Constants+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF56586825E321E600E1F2B5 /* Constants+Helpers.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,8 @@
 		4A1A39D825DA3BFC00516AE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A1A3A5325DCAD2100516AE9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4A1A3A6625DEBE0100516AE9 /* ballGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ballGame.swift; sourceTree = "<group>"; };
+		4A83F99C25EA147700482A7E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		4A83F9A125EA1A4B00482A7E /* CursorSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorSize.swift; sourceTree = "<group>"; };
 		AF56586325E321B700E1F2B5 /* Nodes+HitTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nodes+HitTest.swift"; sourceTree = "<group>"; };
 		AF56586825E321E600E1F2B5 /* Constants+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constants+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,8 +111,10 @@
 			children = (
 				4A1A39B425DA3BF900516AE9 /* AppDelegate.swift */,
 				4A1A39B625DA3BF900516AE9 /* SceneDelegate.swift */,
+				4A83F9A125EA1A4B00482A7E /* CursorSize.swift */,
 				4A1A39B825DA3BF900516AE9 /* EyePlay.swift */,
 				4A1A3A6625DEBE0100516AE9 /* ballGame.swift */,
+				4A83F99C25EA147700482A7E /* Settings.swift */,
 				4A1A3A5325DCAD2100516AE9 /* Main.storyboard */,
 				4A1A39BD25DA3BFC00516AE9 /* Assets.xcassets */,
 				AF56586325E321B700E1F2B5 /* Nodes+HitTest.swift */,
@@ -271,6 +277,8 @@
 				AF56586425E321B700E1F2B5 /* Nodes+HitTest.swift in Sources */,
 				4A1A39B525DA3BF900516AE9 /* AppDelegate.swift in Sources */,
 				4A1A3A6725DEBE0200516AE9 /* ballGame.swift in Sources */,
+				4A83F9A225EA1A4B00482A7E /* CursorSize.swift in Sources */,
+				4A83F99D25EA147800482A7E /* Settings.swift in Sources */,
 				4A1A39B725DA3BF900516AE9 /* SceneDelegate.swift in Sources */,
 				AF56586925E321E600E1F2B5 /* Constants+Helpers.swift in Sources */,
 			);
