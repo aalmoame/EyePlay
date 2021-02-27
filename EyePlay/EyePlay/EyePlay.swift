@@ -2,8 +2,6 @@ import UIKit
 import ARKit
 import VisionKit
 
-
-
 //main view class
 class EyePlay: UIViewController{
     

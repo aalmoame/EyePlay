@@ -107,9 +107,7 @@ extension Settings: ARSCNViewDelegate {
         sceneNodes.rightEyeNode.simdTransform = faceAnchor.rightEyeTransform
 
         faceGeometry.update(from: faceAnchor.geometry)
-        
-   //     self.sceneNodes.update(withFaceAnchor: faceAnchor, cursor: cursor)
-        
+                
         self.sceneNodes.hitTest(withFaceAnchor: faceAnchor, cursor: cursor)
             
         
