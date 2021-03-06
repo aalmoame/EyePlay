@@ -1,33 +1,37 @@
+//
+//  LevelOne.swift
+//  EyePlay
+//
+//  Created by Abdullah Ramzan on 3/5/21.
+//
+
 import UIKit
 import ARKit
 import VisionKit
 
-//main view class
-class EyePlay: UIViewController{
-    
-    //Elements connected to the storyboard
-    @IBOutlet var mainView: ARSCNView!
+class LevelOne: UIViewController, ARSessionDelegate {
+        
+    @IBOutlet var levelOneView: ARSCNView!
+
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var cursor: UIImageView!
-    @IBOutlet weak var ballGameButton: UIButton!
-    @IBOutlet weak var settingsButton: UIButton!
-    @IBOutlet weak var playNowButton: UIButton!
+    @IBOutlet weak var goalBlock: UIButton!
     
     let sceneNodes = nodes()
-
 
     //sets the view up
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
             
       let configuration = ARFaceTrackingConfiguration()
-      mainView.session.run(configuration)
+      levelOneView.session.run(configuration)
     }
     
     
     // pauses the view
     override func viewWillDisappear(_ animated: Bool) {
       super.viewWillDisappear(animated)
-      mainView.session.pause()
+      levelOneView.session.pause()
     }
     
     //configures the screen once its loaded up
@@ -41,50 +45,37 @@ class EyePlay: UIViewController{
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor
         cursor.layer.zPosition = 1;
-        ballGameButton.layer.cornerRadius = 10;
-        settingsButton.layer.cornerRadius = 10;
-        playNowButton.layer.cornerRadius =
-            10;
+        menuButton.layer.cornerRadius = 10;
         
-        mainView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
-        mainView.scene.background.contents = UIColor.black
-        mainView.delegate = self
-
+        levelOneView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
+        levelOneView.scene.background.contents = UIColor.black
+        levelOneView.delegate = self
 
     }
     
-    
-    //checks if the cursor is on top of the game button and if the user blinks
     func collisionMenuButton(){
 
-            //go to game screen when user blinks over button
             DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "BallGameSegue", sender: self)
-            }
-    }
-    func collisionSettingsButton(){
-
-            //go to game screen when user blinks over button
-            DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "SettingsSegue", sender: self)
+                self.performSegue(withIdentifier: "MainScreenSegue", sender: self)
             }
     }
     
-    func collisionPlayNowButton() {
-        //go to level one when user blinks over button
-        DispatchQueue.main.async {
-            self.performSegue(withIdentifier: "LevelOneSegue", sender: self)
-        }
+    func collisionGoalBlock(){
+
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "MainScreenSegue", sender: self)
+            }
     }
+
 }
 
-extension EyePlay: ARSCNViewDelegate {
+extension LevelOne: ARSCNViewDelegate {
     
     //a scene renderer that returns a scene node given a face anchor, runs once
     
       func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         
-        guard let device = mainView.device else {
+        guard let device = levelOneView.device else {
           return nil
         }
         
@@ -118,29 +109,23 @@ extension EyePlay: ARSCNViewDelegate {
         sceneNodes.rightEyeNode.simdTransform = faceAnchor.rightEyeTransform
 
         faceGeometry.update(from: faceAnchor.geometry)
-        
+                
         self.sceneNodes.hitTest(withFaceAnchor: faceAnchor, cursor: cursor)
             
         
         let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
 
-        
-        if cursor.frame.intersects(ballGameButton.frame) &&
+          if cursor.frame.intersects(menuButton.frame) &&
             eyeBlinkValue > 0.5 {
 
-            collisionMenuButton();
-        }
-        else if cursor.frame.intersects(settingsButton.frame) &&
+            collisionMenuButton()
+          }
+          else if cursor.frame.intersects(goalBlock.frame) &&
             eyeBlinkValue > 0.5 {
-
-            collisionSettingsButton();
-        }
-        else if cursor.frame.intersects(playNowButton.frame) &&
-            eyeBlinkValue > 0.5 {
-            
-            collisionPlayNowButton();
-        }
+            collisionGoalBlock()
+          }
         
     }
     
 }
+
