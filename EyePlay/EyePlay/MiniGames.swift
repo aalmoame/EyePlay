@@ -2,35 +2,30 @@ import UIKit
 import ARKit
 import VisionKit
 
-//main view class
-class EyePlay: UIViewController{
-    
-    //Elements connected to the storyboard
-    @IBOutlet var mainView: ARSCNView!
+
+
+class MiniGames: UIViewController, ARSessionDelegate{
+
+    @IBOutlet var miniGameView: ARSCNView!
     @IBOutlet weak var cursor: UIImageView!
-    @IBOutlet weak var settingsButton: UIButton!
-    @IBOutlet weak var playNowButton: UIButton!
-    @IBOutlet weak var miniGameButton: UIButton!
-    
-    
-    
+    @IBOutlet weak var TicTacToeButton: UIButton!
+    @IBOutlet weak var mainMenuButton: UIButton!
+    @IBOutlet weak var ballGameButton: UIButton!
     
     let sceneNodes = nodes()
-
-
-    //sets the view up
+    
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
             
       let configuration = ARFaceTrackingConfiguration()
-      mainView.session.run(configuration)
+      miniGameView.session.run(configuration)
     }
     
     
     // pauses the view
     override func viewWillDisappear(_ animated: Bool) {
       super.viewWillDisappear(animated)
-      mainView.session.pause()
+      miniGameView.session.pause()
     }
     
     //configures the screen once its loaded up
@@ -44,50 +39,44 @@ class EyePlay: UIViewController{
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor
         cursor.layer.zPosition = 1;
-        miniGameButton.layer.cornerRadius = 10;
-        settingsButton.layer.cornerRadius = 10;
-        playNowButton.layer.cornerRadius =
-            10;
+        TicTacToeButton.layer.cornerRadius = 10;
+        mainMenuButton.layer.cornerRadius = 10;
+        ballGameButton.layer.cornerRadius = 10;
         
-        mainView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
-        mainView.scene.background.contents = UIColor.black
-        mainView.delegate = self
-
+        miniGameView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
+        miniGameView.scene.background.contents = UIColor.black
+        miniGameView.delegate = self
 
     }
     
-    
-    //checks if the cursor is on top of the game button and if the user blinks
+
     func collisionMenuButton(){
 
-            //go to game screen when user blinks over button
             DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "MiniGameSegue", sender: self)
+                self.performSegue(withIdentifier: "MainMenuSegue", sender: self)
             }
     }
-    func collisionSettingsButton(){
+    func collisionBallGameButton(){
 
-            //go to game screen when user blinks over button
             DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "SettingsSegue", sender: self)
+                self.performSegue(withIdentifier: "BallGameSegue", sender: self)
             }
     }
-    
-    func collisionPlayNowButton() {
-        //go to level one when user blinks over button
-        DispatchQueue.main.async {
-            self.performSegue(withIdentifier: "LevelOneSegue", sender: self)
-        }
+    func collisionTicTacToeButton(){
+
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "TicTacToeSegue", sender: self)
+            }
     }
 }
 
-extension EyePlay: ARSCNViewDelegate {
+extension MiniGames: ARSCNViewDelegate {
     
     //a scene renderer that returns a scene node given a face anchor, runs once
     
       func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         
-        guard let device = mainView.device else {
+        guard let device = miniGameView.device else {
           return nil
         }
         
@@ -121,27 +110,27 @@ extension EyePlay: ARSCNViewDelegate {
         sceneNodes.rightEyeNode.simdTransform = faceAnchor.rightEyeTransform
 
         faceGeometry.update(from: faceAnchor.geometry)
-        
+                
         self.sceneNodes.hitTest(withFaceAnchor: faceAnchor, cursor: cursor)
             
         
         let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
 
         
-        if cursor.frame.intersects(miniGameButton.frame) &&
+        if cursor.frame.intersects(mainMenuButton.frame) &&
             eyeBlinkValue > 0.5 {
 
-            collisionMenuButton();
+            collisionMenuButton()
         }
-        else if cursor.frame.intersects(settingsButton.frame) &&
+        else if cursor.frame.intersects(TicTacToeButton.frame) &&
             eyeBlinkValue > 0.5 {
 
-            collisionSettingsButton();
+            collisionTicTacToeButton()
         }
-        else if cursor.frame.intersects(playNowButton.frame) &&
+        else if cursor.frame.intersects(ballGameButton.frame) &&
             eyeBlinkValue > 0.5 {
-            
-            collisionPlayNowButton();
+
+            collisionBallGameButton()
         }
         
     }

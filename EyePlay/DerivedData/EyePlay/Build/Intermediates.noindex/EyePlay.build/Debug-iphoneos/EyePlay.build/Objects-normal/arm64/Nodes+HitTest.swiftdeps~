@@ -25,6 +25,7 @@ depends-top-level:
 - !private "CGFloat"
 - "CGPoint"
 - "Constants"
+- !private "DispatchQueue"
 - "FloatLiteralType"
 - "IntegerLiteralType"
 - "SCNCone"
@@ -37,7 +38,7 @@ depends-top-level:
 - !private "leftEyeNode"
 - !private "nodeInFrontOfScreen"
 - "nodes"
-- !private "points"
+- "points"
 - !private "rightEyeNode"
 - !private "||"
 depends-member:
@@ -91,6 +92,7 @@ depends-member:
 - ["s7CVarArgP", ""]
 - ["s7CVarArgP", "addChildNode"]
 - !private ["s7CVarArgP", "append"]
+- !private ["s7CVarArgP", "async"]
 - !private ["s7CVarArgP", "average"]
 - !private ["s7CVarArgP", "center"]
 - !private ["s7CVarArgP", "clamped"]
@@ -109,6 +111,7 @@ depends-member:
 - ["s7CVarArgP", "isDoubleSided"]
 - !private ["s7CVarArgP", "leftEyeTransform"]
 - !private ["s7CVarArgP", "localCoordinates"]
+- !private ["s7CVarArgP", "main"]
 - !private ["s7CVarArgP", "map"]
 - ["s7CVarArgP", "pi"]
 - ["s7CVarArgP", "position"]
@@ -140,6 +143,7 @@ depends-member:
 - !private ["10Foundation15ContiguousBytesP", "suffix"]
 - ["s28CustomDebugStringConvertibleP", "addChildNode"]
 - !private ["s28CustomDebugStringConvertibleP", "append"]
+- !private ["s28CustomDebugStringConvertibleP", "async"]
 - !private ["s28CustomDebugStringConvertibleP", "average"]
 - !private ["s28CustomDebugStringConvertibleP", "center"]
 - ["s28CustomDebugStringConvertibleP", "clear"]
@@ -158,6 +162,7 @@ depends-member:
 - ["s28CustomDebugStringConvertibleP", "isDoubleSided"]
 - !private ["s28CustomDebugStringConvertibleP", "leftEyeTransform"]
 - !private ["s28CustomDebugStringConvertibleP", "localCoordinates"]
+- !private ["s28CustomDebugStringConvertibleP", "main"]
 - !private ["s28CustomDebugStringConvertibleP", "map"]
 - ["s28CustomDebugStringConvertibleP", "pi"]
 - ["s28CustomDebugStringConvertibleP", "position"]
@@ -186,6 +191,7 @@ depends-member:
 - ["s23CustomStringConvertibleP", ""]
 - ["s23CustomStringConvertibleP", "addChildNode"]
 - !private ["s23CustomStringConvertibleP", "append"]
+- !private ["s23CustomStringConvertibleP", "async"]
 - !private ["s23CustomStringConvertibleP", "average"]
 - !private ["s23CustomStringConvertibleP", "center"]
 - !private ["s23CustomStringConvertibleP", "clamped"]
@@ -204,6 +210,7 @@ depends-member:
 - ["s23CustomStringConvertibleP", "isDoubleSided"]
 - !private ["s23CustomStringConvertibleP", "leftEyeTransform"]
 - !private ["s23CustomStringConvertibleP", "localCoordinates"]
+- !private ["s23CustomStringConvertibleP", "main"]
 - !private ["s23CustomStringConvertibleP", "map"]
 - ["s23CustomStringConvertibleP", "pi"]
 - ["s23CustomStringConvertibleP", "position"]
@@ -235,6 +242,13 @@ depends-member:
 - !private ["Se", "y"]
 - !private ["7EyePlay9ConstantsV6DeviceV", "frameSize"]
 - !private ["7EyePlay9ConstantsV6DeviceV", "screenSize"]
+- ["So18OS_dispatch_objectC", ""]
+- !private ["So18OS_dispatch_objectC", "async"]
+- !private ["So18OS_dispatch_objectC", "init"]
+- !private ["So18OS_dispatch_objectC", "main"]
+- !private ["So18OS_dispatch_objectC", "sync"]
+- !private ["So17OS_dispatch_queueC", "async"]
+- !private ["So17OS_dispatch_queueC", "main"]
 - ["Sd", "pi"]
 - !private ["SE", "append"]
 - !private ["SE", "average"]
@@ -252,6 +266,7 @@ depends-member:
 - ["SQ", ""]
 - ["SQ", "addChildNode"]
 - !private ["SQ", "append"]
+- !private ["SQ", "async"]
 - !private ["SQ", "average"]
 - !private ["SQ", "center"]
 - !private ["SQ", "clamped"]
@@ -272,6 +287,7 @@ depends-member:
 - ["SQ", "isDoubleSided"]
 - !private ["SQ", "leftEyeTransform"]
 - !private ["SQ", "localCoordinates"]
+- !private ["SQ", "main"]
 - !private ["SQ", "map"]
 - ["SQ", "pi"]
 - ["SQ", "position"]
@@ -365,6 +381,7 @@ depends-member:
 - ["SH", ""]
 - ["SH", "addChildNode"]
 - !private ["SH", "append"]
+- !private ["SH", "async"]
 - !private ["SH", "average"]
 - !private ["SH", "center"]
 - !private ["SH", "clamped"]
@@ -384,6 +401,7 @@ depends-member:
 - ["SH", "isDoubleSided"]
 - !private ["SH", "leftEyeTransform"]
 - !private ["SH", "localCoordinates"]
+- !private ["SH", "main"]
 - !private ["SH", "map"]
 - ["SH", "pi"]
 - ["SH", "position"]
@@ -459,7 +477,9 @@ depends-member:
 - ["So21NSItemProviderWritingP", "green"]
 - ["So21NSItemProviderWritingP", "withAlphaComponent"]
 - ["So8NSObjectC", ""]
+- !private ["So8NSObjectC", "activate"]
 - ["So8NSObjectC", "addChildNode"]
+- !private ["So8NSObjectC", "async"]
 - !private ["So8NSObjectC", "center"]
 - ["So8NSObjectC", "clear"]
 - ["So8NSObjectC", "colorWithAlphaComponent"]
@@ -478,17 +498,24 @@ depends-member:
 - ["So8NSObjectC", "isDoubleSided"]
 - !private ["So8NSObjectC", "leftEyeTransform"]
 - !private ["So8NSObjectC", "localCoordinates"]
+- !private ["So8NSObjectC", "main"]
 - ["So8NSObjectC", "node"]
 - ["So8NSObjectC", "nodeWithGeometry"]
 - ["So8NSObjectC", "planeWithWidth"]
 - ["So8NSObjectC", "position"]
 - ["So8NSObjectC", "radialSegmentCount"]
+- !private ["So8NSObjectC", "resume"]
 - !private ["So8NSObjectC", "rightEyeTransform"]
+- !private ["So8NSObjectC", "setTarget"]
 - !private ["So8NSObjectC", "simdTransform"]
+- !private ["So8NSObjectC", "suspend"]
+- !private ["So8NSObjectC", "sync"]
 - ["So8NSObjectC", "withAlphaComponent"]
 - !private ["So8NSObjectC", "worldPosition"]
 - ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "activate"]
 - ["So8NSObjectP", "addChildNode"]
+- !private ["So8NSObjectP", "async"]
 - !private ["So8NSObjectP", "center"]
 - ["So8NSObjectP", "clear"]
 - ["So8NSObjectP", "colorWithAlphaComponent"]
@@ -507,13 +534,18 @@ depends-member:
 - ["So8NSObjectP", "isDoubleSided"]
 - !private ["So8NSObjectP", "leftEyeTransform"]
 - !private ["So8NSObjectP", "localCoordinates"]
+- !private ["So8NSObjectP", "main"]
 - ["So8NSObjectP", "node"]
 - ["So8NSObjectP", "nodeWithGeometry"]
 - ["So8NSObjectP", "planeWithWidth"]
 - ["So8NSObjectP", "position"]
 - ["So8NSObjectP", "radialSegmentCount"]
+- !private ["So8NSObjectP", "resume"]
 - !private ["So8NSObjectP", "rightEyeTransform"]
+- !private ["So8NSObjectP", "setTarget"]
 - !private ["So8NSObjectP", "simdTransform"]
+- !private ["So8NSObjectP", "suspend"]
+- !private ["So8NSObjectP", "sync"]
 - ["So8NSObjectP", "withAlphaComponent"]
 - !private ["So8NSObjectP", "worldPosition"]
 - ["So14NSSecureCodingP", ""]
@@ -545,6 +577,15 @@ depends-member:
 - !private ["Sj", "init"]
 - !private ["Sj", "magnitude"]
 - ["Sj", "pi"]
+- ["So9OS_objectC", ""]
+- !private ["So9OS_objectC", "activate"]
+- !private ["So9OS_objectC", "async"]
+- !private ["So9OS_objectC", "init"]
+- !private ["So9OS_objectC", "main"]
+- !private ["So9OS_objectC", "resume"]
+- !private ["So9OS_objectC", "setTarget"]
+- !private ["So9OS_objectC", "suspend"]
+- !private ["So9OS_objectC", "sync"]
 - !private ["Sk", ""]
 - !private ["Sk", "append"]
 - !private ["Sk", "average"]
@@ -638,6 +679,8 @@ depends-member:
 - !private ["So10SCNVector3V", "y"]
 - ["So10SCNVector3V", "z"]
 - ["s10SIMDScalarP", "pi"]
+- !private ["7Combine9SchedulerP", "async"]
+- !private ["7Combine9SchedulerP", "main"]
 - !private ["ST", "Element"]
 - ["ST", ""]
 - !private ["ST", "append"]
@@ -751,6 +794,7 @@ depends-member:
 - ["s35_HasCustomAnyHashableRepresentationP", "pi"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "suffix"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "addChildNode"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "async"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "center"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "clear"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "contents"]
@@ -765,6 +809,7 @@ depends-member:
 - ["10Foundation27_KeyValueCodingAndObservingP", "isDoubleSided"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "leftEyeTransform"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "localCoordinates"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "main"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "position"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "radialSegmentCount"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "rightEyeTransform"]
@@ -772,6 +817,7 @@ depends-member:
 - ["10Foundation27_KeyValueCodingAndObservingP", "withAlphaComponent"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "worldPosition"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "addChildNode"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "async"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "center"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "clear"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "contents"]
@@ -786,6 +832,7 @@ depends-member:
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "isDoubleSided"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "leftEyeTransform"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "localCoordinates"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "main"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "position"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "radialSegmentCount"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "rightEyeTransform"]
@@ -811,6 +858,7 @@ depends-member:
 - !private ["7EyePlay5nodesC", "CGFloat"]
 - ["7EyePlay5nodesC", "CGPoint"]
 - !private ["7EyePlay5nodesC", "Constants"]
+- !private ["7EyePlay5nodesC", "DispatchQueue"]
 - ["7EyePlay5nodesC", "SCNCone"]
 - ["7EyePlay5nodesC", "SCNNode"]
 - ["7EyePlay5nodesC", "SCNPlane"]
@@ -850,6 +898,8 @@ depends-nominal:
 - !private "10Foundation12DataProtocolP"
 - "Se"
 - !private "7EyePlay9ConstantsV6DeviceV"
+- "So18OS_dispatch_objectC"
+- !private "So17OS_dispatch_queueC"
 - "Sd"
 - "SE"
 - "SQ"
@@ -875,6 +925,7 @@ depends-nominal:
 - "So8NSObjectP"
 - "So14NSSecureCodingP"
 - "Sj"
+- "So9OS_objectC"
 - !private "Sk"
 - !private "Sm"
 - !private "7EyePlay9ConstantsV6RangesV"
@@ -893,6 +944,7 @@ depends-nominal:
 - "So11SCNShadableP"
 - "So10SCNVector3V"
 - "s10SIMDScalarP"
+- !private "7Combine9SchedulerP"
 - "ST"
 - "s13SignedNumericP"
 - "Sx"
@@ -963,34 +1015,34 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/SceneKit.swiftmodule/arm64-apple-ios.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/SpriteKit.swiftmodule/arm64-apple-ios.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/SwiftOnoneSupport.swiftmodule/arm64-apple-ios.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/usr/include/mach-o/dyld.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/usr/include/objc/ObjectiveC.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/CoreML.framework/Headers/CoreML.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/ModelIO.framework/Headers/ModelIO.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/usr/include/mach-o/dyld.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CoreML.framework/Headers/CoreML.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/ModelIO.framework/Headers/ModelIO.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/QuickLook.framework/Headers/QuickLook.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/usr/include/Darwin.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/Vision.framework/Headers/Vision.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/CoreAudioTypes.framework/Headers/CoreAudioTypes.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/UniformTypeIdentifiers.framework/Headers/UniformTypeIdentifiers.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/GLKit.framework/Headers/GLKit.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/SceneKit.framework/Headers/SceneKit.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/SpriteKit.framework/Headers/SpriteKit.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/VisionKit.framework/Headers/VisionKit.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/QuickLook.framework/Headers/QuickLook.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/Vision.framework/Headers/Vision.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CoreAudioTypes.framework/Headers/CoreAudioTypes.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/UniformTypeIdentifiers.framework/Headers/UniformTypeIdentifiers.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/GLKit.framework/Headers/GLKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/SceneKit.framework/Headers/SceneKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/SpriteKit.framework/Headers/SpriteKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/VisionKit.framework/Headers/VisionKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
 interface-hash: "c71787ed2eec0571c3cfb1e3e02708ba"

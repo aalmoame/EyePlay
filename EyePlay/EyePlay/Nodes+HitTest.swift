@@ -119,7 +119,9 @@ class nodes{
                 points = points.suffix(30).map {$0}
 
                 //placing the cursor at the center of that point
-                cursor.center = points.average()
+                DispatchQueue.main.async {
+                    cursor.center = self.points.average()
+                }
             }
     
         }
