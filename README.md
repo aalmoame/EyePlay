@@ -18,9 +18,15 @@ been updated already. Additionally, change the team to your personal team. Add a
 7. Set the active scheme located at the top of XCode to your connected iPad device (it may be set to an iPod Touch simulator by default).
 
 8. Click on the build and run button at the top of XCode (it should look like a 'play' button).
+
     i. If this is your first time building and running the app, you may encounter an error related to an untrusted developer or something similar.
+    
     ii. To alleviate this, navigate to the settings of your iPad
+    
     iii. Open "General"
+    
     iv. Open "Device Management"
+    
     v. Click on "Apple Development" and approve the app.
+    
     vi. Build and run the app again and it should work.
