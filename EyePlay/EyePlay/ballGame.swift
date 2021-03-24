@@ -20,6 +20,7 @@ class ballGame: UIViewController{
     @IBOutlet weak var scoreValue: UILabel!
     
     let sceneNodes = nodes()
+    let mainThread = DispatchQueue.main
     
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
@@ -44,6 +45,7 @@ class ballGame: UIViewController{
         cursor.tintColor = cursorColor;
         cursor.layer.zPosition = 1
         menuButton.layer.cornerRadius = 10;
+        menuButton.layer.borderWidth = 10.0;
         
         ballGameView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen);
         ballGameView.scene.background.contents = UIColor.black;
@@ -63,7 +65,7 @@ class ballGame: UIViewController{
         let yoffset = CGFloat(arc4random_uniform(UInt32(yheight)))
 
         
-        DispatchQueue.main.async {
+        mainThread.async {
             UIView.animate(withDuration: 0.1, animations: {
                 self.ball.center.x = xoffset + self.ball.frame.width / 2
                 self.ball.center.y = yoffset + self.ball.frame.height / 2
@@ -75,7 +77,7 @@ class ballGame: UIViewController{
         
     func collisionMenuButton(){
         
-        DispatchQueue.main.async {
+        mainThread.async {
             self.performSegue(withIdentifier: "MainScreenSegue", sender: self)
         
         }
@@ -125,17 +127,26 @@ extension ballGame: ARSCNViewDelegate {
         self.sceneNodes.hitTest(withFaceAnchor: faceAnchor, cursor: cursor)
         
         let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
+        
+        mainThread.async {
+            if self.cursor.frame.intersects(self.ball.frame){
+                self.collisionBall()
+                self.menuButton.layer.borderColor = UIColor.clear.cgColor
 
-        
-        if cursor.frame.intersects(ball.frame){
-            collisionBall()
-        }
-        
-        else if cursor.frame.intersects(menuButton.frame) &&
-            eyeBlinkValue > 0.5{
+            }
             
-            collisionMenuButton()
-            
+            else if self.cursor.frame.intersects(self.menuButton.frame){
+                
+                self.menuButton.layer.borderColor = UIColor.red.cgColor
+                
+                if eyeBlinkValue > 0.5{
+                    self.collisionMenuButton()
+                }
+                
+            }
+            else{
+                self.menuButton.layer.borderColor = UIColor.clear.cgColor
+            }
         }
         
     }

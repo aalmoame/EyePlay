@@ -14,6 +14,8 @@ class MiniGames: UIViewController, ARSessionDelegate{
     
     let sceneNodes = nodes()
     
+    let mainThread = DispatchQueue.main
+    
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
             
@@ -43,6 +45,10 @@ class MiniGames: UIViewController, ARSessionDelegate{
         mainMenuButton.layer.cornerRadius = 10;
         ballGameButton.layer.cornerRadius = 10;
         
+        TicTacToeButton.layer.borderWidth = 10;
+        mainMenuButton.layer.borderWidth = 10;
+        ballGameButton.layer.borderWidth = 10;
+        
         miniGameView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
         miniGameView.scene.background.contents = UIColor.black
         miniGameView.delegate = self
@@ -52,19 +58,19 @@ class MiniGames: UIViewController, ARSessionDelegate{
 
     func collisionMenuButton(){
 
-            DispatchQueue.main.async {
+            mainThread.async {
                 self.performSegue(withIdentifier: "MainMenuSegue", sender: self)
             }
     }
     func collisionBallGameButton(){
 
-            DispatchQueue.main.async {
+            mainThread.async {
                 self.performSegue(withIdentifier: "BallGameSegue", sender: self)
             }
     }
     func collisionTicTacToeButton(){
 
-            DispatchQueue.main.async {
+            mainThread.async {
                 self.performSegue(withIdentifier: "TicTacToeSegue", sender: self)
             }
     }
@@ -117,20 +123,33 @@ extension MiniGames: ARSCNViewDelegate {
         let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
 
         
-        if cursor.frame.intersects(mainMenuButton.frame) &&
-            eyeBlinkValue > 0.5 {
+        mainThread.async {
+            if self.cursor.frame.intersects(self.mainMenuButton.frame){
+                self.mainMenuButton.layer.borderColor = UIColor.red.cgColor
+                if eyeBlinkValue > 0.5{
+                    self.collisionMenuButton()
+                }
+            }
+            else if self.cursor.frame.intersects(self.TicTacToeButton.frame){
+                self.TicTacToeButton.layer.borderColor = UIColor.red.cgColor
+                if eyeBlinkValue > 0.5{
+                    self.collisionTicTacToeButton()
 
-            collisionMenuButton()
-        }
-        else if cursor.frame.intersects(TicTacToeButton.frame) &&
-            eyeBlinkValue > 0.5 {
+                }
+            }
+            else if self.cursor.frame.intersects(self.ballGameButton.frame){
+                self.ballGameButton.layer.borderColor = UIColor.red.cgColor
+                if eyeBlinkValue > 0.5{
+                    self.collisionBallGameButton()
 
-            collisionTicTacToeButton()
-        }
-        else if cursor.frame.intersects(ballGameButton.frame) &&
-            eyeBlinkValue > 0.5 {
+                }
+            }
+            else{
+                self.mainMenuButton.layer.borderColor = UIColor.clear.cgColor
+                self.TicTacToeButton.layer.borderColor = UIColor.clear.cgColor
+                self.ballGameButton.layer.borderColor = UIColor.clear.cgColor
 
-            collisionBallGameButton()
+            }
         }
         
     }

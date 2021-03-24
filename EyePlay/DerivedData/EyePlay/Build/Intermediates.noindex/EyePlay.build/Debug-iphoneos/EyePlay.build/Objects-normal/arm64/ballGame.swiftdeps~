@@ -180,7 +180,7 @@ depends-member:
 - !private ["So19AVAudioStereoMixingP", ""]
 - !private ["s18AdditiveArithmeticP", ""]
 - !private ["s18AdditiveArithmeticP", "init"]
-- !private ["SK", ""]
+- ["SK", ""]
 - !private ["SK", "init"]
 - !private ["SB", "binade"]
 - !private ["SB", "exponentBitCount"]
@@ -291,10 +291,10 @@ depends-member:
 - !private ["s7CVarArgP", "viewWillAppear"]
 - !private ["s7CVarArgP", "viewWillDisappear"]
 - !private ["s7CVarArgP", "zPosition"]
-- !private ["Sl", ""]
+- ["Sl", ""]
 - !private ["Sl", "init"]
 - !private ["Sl", "subscript"]
-- !private ["SL", ""]
+- ["SL", ""]
 - !private ["SL", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "ARFaceTrackingConfiguration"]
 - !private ["s28CustomDebugStringConvertibleP", "ARSCNFaceGeometry"]
@@ -583,7 +583,7 @@ depends-member:
 - !private ["SQ", "zPosition"]
 - !private ["s27ExpressibleByBooleanLiteralP", "floatValue"]
 - !private ["s30ExpressibleByDictionaryLiteralP", "subscript"]
-- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", ""]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", ""]
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
 - !private ["s25ExpressibleByFloatLiteralP", ""]
 - !private ["s25ExpressibleByFloatLiteralP", "floatValue"]
@@ -603,11 +603,11 @@ depends-member:
 - !private ["s23ExpressibleByNilLiteralP", "superview"]
 - !private ["s23ExpressibleByNilLiteralP", "text"]
 - !private ["s23ExpressibleByNilLiteralP", "tintColor"]
-- !private ["s32ExpressibleByStringInterpolationP", ""]
+- ["s32ExpressibleByStringInterpolationP", ""]
 - !private ["s32ExpressibleByStringInterpolationP", "init"]
-- !private ["s26ExpressibleByStringLiteralP", ""]
+- ["s26ExpressibleByStringLiteralP", ""]
 - !private ["s26ExpressibleByStringLiteralP", "init"]
-- !private ["s33ExpressibleByUnicodeScalarLiteralP", ""]
+- ["s33ExpressibleByUnicodeScalarLiteralP", ""]
 - !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
 - !private ["s17FixedWidthIntegerP", "init"]
 - !private ["SF", "*"]
@@ -734,7 +734,7 @@ depends-member:
 - !private ["SH", "viewWillDisappear"]
 - !private ["SH", "zPosition"]
 - !private ["Si", "init"]
-- !private ["s25LosslessStringConvertibleP", ""]
+- ["s25LosslessStringConvertibleP", ""]
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["So17MTLCommandEncoderP", ""]
 - !private ["s10MirrorPathP", "init"]
@@ -974,6 +974,7 @@ depends-member:
 - !private ["So8NSObjectP", "ARFaceTrackingConfiguration"]
 - !private ["So8NSObjectP", "ARSCNFaceGeometry"]
 - ["So8NSObjectP", "ARSCNView"]
+- ["So8NSObjectP", "Bool"]
 - !private ["So8NSObjectP", "CGFloat"]
 - !private ["So8NSObjectP", "CGSize"]
 - !private ["So8NSObjectP", "DispatchQueue"]
@@ -1207,7 +1208,7 @@ depends-member:
 - !private ["s10SIMDScalarP", "init"]
 - !private ["7Combine9SchedulerP", "async"]
 - !private ["7Combine9SchedulerP", "main"]
-- !private ["ST", ""]
+- ["ST", ""]
 - !private ["ST", "init"]
 - !private ["ST", "subscript"]
 - !private ["SZ", "init"]
@@ -1221,9 +1222,9 @@ depends-member:
 - !private ["Sx", "init"]
 - !private ["SS", "init"]
 - !private ["Sy", "init"]
-- !private ["s16TextOutputStreamP", ""]
+- ["s16TextOutputStreamP", ""]
 - !private ["s16TextOutputStreamP", "init"]
-- !private ["s20TextOutputStreamableP", ""]
+- ["s20TextOutputStreamableP", ""]
 - !private ["s20TextOutputStreamableP", "init"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "center"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "frame"]
@@ -1512,6 +1513,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "ARFaceTrackingConfiguration"]
 - !private ["So30UIPasteConfigurationSupportingP", "ARSCNFaceGeometry"]
 - ["So30UIPasteConfigurationSupportingP", "ARSCNView"]
+- ["So30UIPasteConfigurationSupportingP", "Bool"]
 - !private ["So30UIPasteConfigurationSupportingP", "CGFloat"]
 - !private ["So30UIPasteConfigurationSupportingP", "CGSize"]
 - !private ["So30UIPasteConfigurationSupportingP", "DispatchQueue"]
@@ -1629,6 +1631,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "ARFaceTrackingConfiguration"]
 - !private ["So30UIResponderStandardEditActionsP", "ARSCNFaceGeometry"]
 - ["So30UIResponderStandardEditActionsP", "ARSCNView"]
+- ["So30UIResponderStandardEditActionsP", "Bool"]
 - !private ["So30UIResponderStandardEditActionsP", "CGFloat"]
 - !private ["So30UIResponderStandardEditActionsP", "CGSize"]
 - !private ["So30UIResponderStandardEditActionsP", "DispatchQueue"]
@@ -1789,6 +1792,7 @@ depends-member:
 - !private ["So23UIUserActivityRestoringP", "ARFaceTrackingConfiguration"]
 - !private ["So23UIUserActivityRestoringP", "ARSCNFaceGeometry"]
 - ["So23UIUserActivityRestoringP", "ARSCNView"]
+- ["So23UIUserActivityRestoringP", "Bool"]
 - !private ["So23UIUserActivityRestoringP", "CGFloat"]
 - !private ["So23UIUserActivityRestoringP", "CGSize"]
 - !private ["So23UIUserActivityRestoringP", "DispatchQueue"]
@@ -1911,12 +1915,12 @@ depends-member:
 - !private ["s30_CustomPlaygroundQuickLookableP", "width"]
 - !private ["s30_CustomPlaygroundQuickLookableP", "x"]
 - !private ["s30_CustomPlaygroundQuickLookableP", "y"]
-- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
 - !private ["s33_ExpressibleByBuiltinFloatLiteralP", "init"]
 - !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
 - !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
-- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
 - !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
 - !private ["s26_ExpressibleByColorLiteralP", "black"]
 - !private ["s26_ExpressibleByColorLiteralP", "clear"]
@@ -2164,7 +2168,7 @@ depends-nominal:
 - !private "So15AVAudio3DMixingP"
 - !private "So19AVAudioStereoMixingP"
 - !private "s18AdditiveArithmeticP"
-- !private "SK"
+- "SK"
 - !private "SB"
 - !private "Sz"
 - !private "So20ARBlendShapeLocationa"
@@ -2176,8 +2180,8 @@ depends-nominal:
 - !private "So6CGRectV"
 - !private "So6CGSizeV"
 - "s7CVarArgP"
-- !private "Sl"
-- !private "SL"
+- "Sl"
+- "SL"
 - "s28CustomDebugStringConvertibleP"
 - !private "s17CustomReflectableP"
 - "s23CustomStringConvertibleP"
@@ -2189,18 +2193,18 @@ depends-nominal:
 - "SQ"
 - !private "s27ExpressibleByBooleanLiteralP"
 - !private "s30ExpressibleByDictionaryLiteralP"
-- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
 - !private "s25ExpressibleByFloatLiteralP"
 - !private "s27ExpressibleByIntegerLiteralP"
 - !private "s23ExpressibleByNilLiteralP"
-- !private "s32ExpressibleByStringInterpolationP"
-- !private "s26ExpressibleByStringLiteralP"
-- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "s32ExpressibleByStringInterpolationP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
 - !private "s17FixedWidthIntegerP"
 - !private "SF"
 - "SH"
 - !private "Si"
-- !private "s25LosslessStringConvertibleP"
+- "s25LosslessStringConvertibleP"
 - !private "So17MTLCommandEncoderP"
 - !private "s10MirrorPathP"
 - "So8NSCodingP"
@@ -2233,14 +2237,14 @@ depends-nominal:
 - "So7SCNViewC"
 - !private "s10SIMDScalarP"
 - !private "7Combine9SchedulerP"
-- !private "ST"
+- "ST"
 - !private "SZ"
 - !private "s13SignedNumericP"
 - !private "Sx"
 - !private "SS"
 - !private "Sy"
-- !private "s16TextOutputStreamP"
-- !private "s20TextOutputStreamableP"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
 - !private "So48UIAccessibilityContentSizeCategoryImageAdjustingP"
 - !private "So29UIAccessibilityIdentificationP"
 - !private "So12UIAppearanceP"
@@ -2273,11 +2277,11 @@ depends-nominal:
 - !private "s15_CVarArgAlignedP"
 - !private "s22_CVarArgPassedAsDoubleP"
 - !private "s30_CustomPlaygroundQuickLookableP"
-- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
 - !private "s33_ExpressibleByBuiltinFloatLiteralP"
 - !private "s35_ExpressibleByBuiltinIntegerLiteralP"
 - !private "s34_ExpressibleByBuiltinStringLiteralP"
-- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
 - !private "s26_ExpressibleByColorLiteralP"
 - !private "s19_HasContiguousBytesP"
 - !private "s35_HasCustomAnyHashableRepresentationP"

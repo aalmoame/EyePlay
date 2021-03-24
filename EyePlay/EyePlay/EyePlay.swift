@@ -16,6 +16,7 @@ class EyePlay: UIViewController{
     
     
     let sceneNodes = nodes()
+    let mainThread = DispatchQueue.main
 
 
     //sets the view up
@@ -30,7 +31,7 @@ class EyePlay: UIViewController{
     // pauses the view
     override func viewWillDisappear(_ animated: Bool) {
       super.viewWillDisappear(animated)
-      mainView.session.pause()
+        mainView.session.pause()
     }
     
     //configures the screen once its loaded up
@@ -41,6 +42,10 @@ class EyePlay: UIViewController{
             fatalError("Face tracking is not supported on this device")
         }
 
+        miniGameButton.layer.borderWidth = CGFloat(10.0)
+        settingsButton.layer.borderWidth = CGFloat(10.0)
+        playNowButton.layer.borderWidth = CGFloat(10.0)
+        
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor
         cursor.layer.zPosition = 1;
@@ -61,21 +66,21 @@ class EyePlay: UIViewController{
     func collisionMenuButton(){
 
             //go to game screen when user blinks over button
-            DispatchQueue.main.async {
+            mainThread.async {
                 self.performSegue(withIdentifier: "MiniGameSegue", sender: self)
             }
     }
     func collisionSettingsButton(){
 
             //go to game screen when user blinks over button
-            DispatchQueue.main.async {
+            mainThread.async {
                 self.performSegue(withIdentifier: "SettingsSegue", sender: self)
             }
     }
     
     func collisionPlayNowButton() {
         //go to level one when user blinks over button
-        DispatchQueue.main.async {
+        mainThread.async {
             self.performSegue(withIdentifier: "LevelOneSegue", sender: self)
         }
     }
@@ -126,23 +131,44 @@ extension EyePlay: ARSCNViewDelegate {
             
         
         let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
+        
+        mainThread.async {
+            if self.cursor.frame.intersects(self.miniGameButton.frame){
+
+                self.miniGameButton.layer.borderColor = UIColor.red.cgColor
+                
+                if eyeBlinkValue > 0.5{
+                
+                    self.collisionMenuButton();
+                }
+            }
+            else if self.cursor.frame.intersects(self.settingsButton.frame){
+                
+                self.settingsButton.layer.borderColor = UIColor.red.cgColor
+
+                if eyeBlinkValue > 0.5{
+                    self.collisionSettingsButton();
+                }
+                
+            }
+            else if self.cursor.frame.intersects(self.playNowButton.frame){
+                
+                self.playNowButton.layer.borderColor = UIColor.red.cgColor
+                
+                if eyeBlinkValue > 0.5 {
+                
+                    self.collisionPlayNowButton();
+                }
+            }
+            else{
+                self.miniGameButton.layer.borderColor = UIColor.clear.cgColor
+                self.settingsButton.layer.borderColor = UIColor.clear.cgColor
+                self.playNowButton.layer.borderColor = UIColor.clear.cgColor
+
+            }
+        }
 
         
-        if cursor.frame.intersects(miniGameButton.frame) &&
-            eyeBlinkValue > 0.5 {
-
-            collisionMenuButton();
-        }
-        else if cursor.frame.intersects(settingsButton.frame) &&
-            eyeBlinkValue > 0.5 {
-
-            collisionSettingsButton();
-        }
-        else if cursor.frame.intersects(playNowButton.frame) &&
-            eyeBlinkValue > 0.5 {
-            
-            collisionPlayNowButton();
-        }
         
     }
     

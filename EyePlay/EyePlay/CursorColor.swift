@@ -31,6 +31,8 @@ class CursorColor: UIViewController, ARSessionDelegate{
     
     let sceneNodes = nodes()
     
+    let mainThread = DispatchQueue.main
+    
     //sets the view up
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,11 +60,16 @@ class CursorColor: UIViewController, ARSessionDelegate{
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor;
         cursor.layer.zPosition = 1;
+        
         blueButton.layer.cornerRadius = 10;
         redButton.layer.cornerRadius = 10;
         grayButton.layer.cornerRadius = 10;
         settingsButton.layer.cornerRadius = 10;
 
+        blueButton.layer.borderWidth = 10;
+        redButton.layer.borderWidth = 10;
+        grayButton.layer.borderWidth = 10;
+        settingsButton.layer.borderWidth = 10;
         
         cursorColorView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
         cursorColorView.scene.background.contents = UIColor.black
@@ -84,7 +91,7 @@ class CursorColor: UIViewController, ARSessionDelegate{
         cursor.tintColor = cursorColor
     }
     func collisionSettingsButton(){
-            DispatchQueue.main.async {
+            mainThread.async {
                 self.performSegue(withIdentifier: "SettingsSegue", sender: self)
             }
     }
@@ -136,27 +143,49 @@ extension CursorColor: ARSCNViewDelegate {
             
         
         let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
-
         
-        if cursor.frame.intersects(blueButton.frame) &&
-            eyeBlinkValue > 0.5 {
+        mainThread.async {
+            
+            if self.cursor.frame.intersects(self.blueButton.frame){
+                
+                self.blueButton.layer.borderColor = UIColor.red.cgColor
+                
+                if eyeBlinkValue > 0.5{
+                    self.collisionBlueButton();
 
-            collisionBlueButton();
-        }
-        else if cursor.frame.intersects(redButton.frame) &&
-            eyeBlinkValue > 0.5 {
+                }
 
-            collisionRedButton();
-        }
-        else if cursor.frame.intersects(grayButton.frame) &&
-            eyeBlinkValue > 0.5 {
+            }
+            else if self.cursor.frame.intersects(self.redButton.frame){
+                self.redButton.layer.borderColor = UIColor.red.cgColor
+                
+                if eyeBlinkValue > 0.5{
+                    self.collisionRedButton();
 
-            collisionGrayButton();
-        }
-        else if cursor.frame.intersects(settingsButton.frame) &&
-            eyeBlinkValue > 0.5 {
+                }
+            }
+            else if self.cursor.frame.intersects(self.grayButton.frame) {
+                self.grayButton.layer.borderColor = UIColor.red.cgColor
+                
+                if eyeBlinkValue > 0.5{
+                    self.collisionGrayButton();
 
-            collisionSettingsButton();
+                }
+            }
+            else if self.cursor.frame.intersects(self.settingsButton.frame){
+                self.settingsButton.layer.borderColor = UIColor.red.cgColor
+                
+                if eyeBlinkValue > 0.5{
+                    self.collisionSettingsButton();
+
+                }
+            }
+            else{
+                self.blueButton.layer.borderColor = UIColor.clear.cgColor
+                self.redButton.layer.borderColor = UIColor.clear.cgColor
+                self.grayButton.layer.borderColor = UIColor.clear.cgColor
+                self.settingsButton.layer.borderColor = UIColor.clear.cgColor                
+            }
         }
         
         

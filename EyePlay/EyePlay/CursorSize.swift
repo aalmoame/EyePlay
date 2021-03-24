@@ -30,7 +30,7 @@ class CursorSize: UIViewController, ARSessionDelegate{
     }
     
     let sceneNodes = nodes()
-    
+    let mainThread = DispatchQueue.main
     //sets the view up
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,10 +60,13 @@ class CursorSize: UIViewController, ARSessionDelegate{
         cursor.layer.zPosition = 1;
         smallButton.layer.cornerRadius = 10;
         mediumButton.layer.cornerRadius = 10;
-        mediumButton.layer.cornerRadius = 10;
         largeButton.layer.cornerRadius = 10;
         settingsButton.layer.cornerRadius = 10;
 
+        smallButton.layer.borderWidth = 10;
+        mediumButton.layer.borderWidth = 10;
+        largeButton.layer.borderWidth = 10;
+        settingsButton.layer.borderWidth = 10;
         
         cursorSizeView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
         cursorSizeView.scene.background.contents = UIColor.black
@@ -88,7 +91,7 @@ class CursorSize: UIViewController, ARSessionDelegate{
         cursorSize.height = 150.0;
     }
     func collisionSettingsButton(){
-            DispatchQueue.main.async {
+            mainThread.async {
                 self.performSegue(withIdentifier: "SettingsSegue", sender: self)
             }
     }
@@ -140,29 +143,48 @@ extension CursorSize: ARSCNViewDelegate {
             
         
         let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
-
         
-        if cursor.frame.intersects(smallButton.frame) &&
-            eyeBlinkValue > 0.5 {
+        mainThread.async {
 
-            collisionSmallButton();
-        }
-        else if cursor.frame.intersects(mediumButton.frame) &&
-            eyeBlinkValue > 0.5 {
+            
+            if self.cursor.frame.intersects(self.smallButton.frame){
+                
+                self.smallButton.layer.borderColor = UIColor.red.cgColor
+                
+                if eyeBlinkValue > 0.5{
+                    self.collisionSmallButton();
+                }
 
-            collisionMediumButton();
-        }
-        else if cursor.frame.intersects(largeButton.frame) &&
-            eyeBlinkValue > 0.5 {
+            }
+            else if self.cursor.frame.intersects(self.mediumButton.frame){
 
-            collisionLargeButton();
+                self.mediumButton.layer.borderColor = UIColor.red.cgColor
+                
+                if eyeBlinkValue > 0.5{
+                    self.collisionMediumButton();
+                }
+            }
+            else if self.cursor.frame.intersects(self.largeButton.frame){
+                self.largeButton.layer.borderColor = UIColor.red.cgColor
+                
+                if eyeBlinkValue > 0.5{
+                    self.collisionLargeButton();
+                }
+            }
+            else if self.cursor.frame.intersects(self.settingsButton.frame){
+                self.settingsButton.layer.borderColor = UIColor.red.cgColor
+                
+                if eyeBlinkValue > 0.5{
+                    self.collisionSettingsButton();
+                }
+            }
+            else{
+                self.smallButton.layer.borderColor = UIColor.clear.cgColor
+                self.mediumButton.layer.borderColor = UIColor.clear.cgColor
+                self.largeButton.layer.borderColor = UIColor.clear.cgColor
+                self.settingsButton.layer.borderColor = UIColor.clear.cgColor
+            }
         }
-        else if cursor.frame.intersects(settingsButton.frame) &&
-            eyeBlinkValue > 0.5 {
-
-            collisionSettingsButton();
-        }
-        
         
     }
     

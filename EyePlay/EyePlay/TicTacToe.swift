@@ -119,6 +119,9 @@ class TicTacToe: UIViewController{
     
     
     let sceneNodes = nodes()
+    
+    let mainThread = DispatchQueue.main
+    
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
             
@@ -148,6 +151,7 @@ class TicTacToe: UIViewController{
         menuButton.layer.cornerRadius = 10;
         restartButton.layer.cornerRadius = 10;
         miniGamesButton.layer.cornerRadius = 10;
+        
         zero.layer.cornerRadius = 10;
         one.layer.cornerRadius = 10;
         two.layer.cornerRadius = 10;
@@ -157,6 +161,16 @@ class TicTacToe: UIViewController{
         six.layer.cornerRadius = 10;
         seven.layer.cornerRadius = 10;
         eight.layer.cornerRadius = 10;
+        
+        zero.layer.borderWidth = 10;
+        one.layer.borderWidth = 10;
+        two.layer.borderWidth = 10;
+        three.layer.borderWidth = 10;
+        four.layer.borderWidth = 10;
+        five.layer.borderWidth = 10;
+        six.layer.borderWidth = 10;
+        seven.layer.borderWidth = 10;
+        eight.layer.borderWidth = 10;
         
         
         gameView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
@@ -171,14 +185,14 @@ class TicTacToe: UIViewController{
     func collisionMenuButton(){
 
             //go to game screen when user blinks over button
-            DispatchQueue.main.async {
+            mainThread.async {
                 self.performSegue(withIdentifier: "mainMenuSegue", sender: self)
             }
     }
     func collisionMiniGamesButton(){
 
             //go to game screen when user blinks over button
-            DispatchQueue.main.async {
+            mainThread.async {
                 self.performSegue(withIdentifier: "miniGameSegue", sender: self)
             }
     }
@@ -190,7 +204,7 @@ class TicTacToe: UIViewController{
         
         playerOneTurn = true
         
-        DispatchQueue.main.async {
+        mainThread.async {
             
             self.zero.setImage(nil, for: UIControl.State.normal)
             self.one.setImage(nil, for: UIControl.State.normal)
@@ -253,7 +267,7 @@ class TicTacToe: UIViewController{
                 
                 player1.board[cellRow][cellCol] = 1;
                 
-                DispatchQueue.main.async {
+                mainThread.async {
                     cellRef?.setImage(self.circle, for: UIControl.State.normal)
                     self.playerOneTurn = false
                     
@@ -299,7 +313,7 @@ class TicTacToe: UIViewController{
             else{
                 player2.board[cellRow][cellCol] = 1;
                 
-                DispatchQueue.main.async {
+                mainThread.async {
                     cellRef?.setImage(self.xmark, for: UIControl.State.normal)
                     self.playerOneTurn = true
                     
@@ -392,59 +406,122 @@ extension TicTacToe: ARSCNViewDelegate {
         let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
         
         
-        
-        if !playerOneTurn && zero.isEnabled{
-            cursor.tintColor = UIColor.clear
-        }
-        else if (playerOneTurn && zero.isEnabled) || (!zero.isEnabled){
-            cursor.tintColor = cursorColor
-        }
-        
+        mainThread.async {
+            
+            if !self.playerOneTurn && self.zero.isEnabled{
+                self.cursor.tintColor = UIColor.clear
+            }
+            else if (self.playerOneTurn && self.zero.isEnabled) || (!self.zero.isEnabled){
+                self.cursor.tintColor = cursorColor
+            }
+            
 
-        
-        if (cursor.frame.intersects(menuButton.frame) &&
-                eyeBlinkValue > 0.5) {
-            collisionMenuButton();
+            
+            if (self.cursor.frame.intersects(self.menuButton.frame)){
+                
+                self.menuButton.layer.borderColor = UIColor.red.cgColor
+                
+                if eyeBlinkValue > 0.5 {
+                    self.collisionMenuButton();
+                }
+                
+            }
+            else if (self.cursor.frame.intersects(self.restartButton.frame)) {
+                self.restartButton.layer.borderColor = UIColor.red.cgColor
+                
+                if eyeBlinkValue > 0.5 {
+                    self.restart();
+                }
+            }
+            else if (self.cursor.frame.intersects(self.miniGamesButton.frame)){
+                
+                self.miniGamesButton.layer.borderColor = UIColor.red.cgColor
+                
+                if eyeBlinkValue > 0.5 {
+                    self.collisionMiniGamesButton();
+                }
+            }
+            
+            
+            else if self.cursor.frame.intersects(self.zero.frame) && self.playerOneTurn{
+                self.zero.layer.borderColor = UIColor.red.cgColor
+                if eyeBlinkValue > 0.5{
+                    self.collisionCell(cellNumber: 0, isPlayer1: self.playerOneTurn)
+
+                }
+            }
+            else if self.cursor.frame.intersects(self.one.frame) && self.playerOneTurn{
+                self.one.layer.borderColor = UIColor.red.cgColor
+                if eyeBlinkValue > 0.5{
+                    self.collisionCell(cellNumber: 1, isPlayer1: self.playerOneTurn)
+
+                }
+            }
+            else if self.cursor.frame.intersects(self.two.frame) && self.playerOneTurn{
+                self.two.layer.borderColor = UIColor.red.cgColor
+                if eyeBlinkValue > 0.5{
+                    self.collisionCell(cellNumber: 2, isPlayer1: self.playerOneTurn)
+
+                }
+            }
+            else if self.cursor.frame.intersects(self.three.frame) && self.playerOneTurn{
+                self.three.layer.borderColor = UIColor.red.cgColor
+                if eyeBlinkValue > 0.5{
+                    self.collisionCell(cellNumber: 3, isPlayer1: self.playerOneTurn)
+
+                }
+            }
+            else if self.cursor.frame.intersects(self.four.frame) && self.playerOneTurn{
+                self.four.layer.borderColor = UIColor.red.cgColor
+                if eyeBlinkValue > 0.5{
+                    self.collisionCell(cellNumber: 4, isPlayer1: self.playerOneTurn)
+
+                }
+            }
+            else if self.cursor.frame.intersects(self.five.frame) && self.playerOneTurn{
+                self.five.layer.borderColor = UIColor.red.cgColor
+                if eyeBlinkValue > 0.5{
+                    self.collisionCell(cellNumber: 5, isPlayer1: self.playerOneTurn)
+
+                }
+            }
+            else if self.cursor.frame.intersects(self.six.frame) && eyeBlinkValue > 0.5 && self.playerOneTurn{
+                self.six.layer.borderColor = UIColor.red.cgColor
+                if eyeBlinkValue > 0.5{
+                    self.collisionCell(cellNumber: 6, isPlayer1: self.playerOneTurn)
+
+                }
+            }
+            else if self.cursor.frame.intersects(self.seven.frame) && self.playerOneTurn{
+                self.seven.layer.borderColor = UIColor.red.cgColor
+                if eyeBlinkValue > 0.5{
+                    self.collisionCell(cellNumber: 7, isPlayer1: self.playerOneTurn)
+
+                }
+            }
+            else if self.cursor.frame.intersects(self.eight.frame) && self.playerOneTurn{
+                self.eight.layer.borderColor = UIColor.red.cgColor
+                if eyeBlinkValue > 0.5{
+                    self.collisionCell(cellNumber: 8, isPlayer1: self.playerOneTurn)
+
+                }
+            }
+            else{
+                self.menuButton.layer.borderColor = UIColor.clear.cgColor
+                self.restartButton.layer.borderColor = UIColor.clear.cgColor
+                self.miniGamesButton.layer.borderColor = UIColor.clear.cgColor
+                self.zero.layer.borderColor = UIColor.clear.cgColor
+                self.one.layer.borderColor = UIColor.clear.cgColor
+                self.two.layer.borderColor = UIColor.clear.cgColor
+                self.three.layer.borderColor = UIColor.clear.cgColor
+                self.four.layer.borderColor = UIColor.clear.cgColor
+                self.five.layer.borderColor = UIColor.clear.cgColor
+                self.six.layer.borderColor = UIColor.clear.cgColor
+                self.seven.layer.borderColor = UIColor.clear.cgColor
+                self.eight.layer.borderColor = UIColor.clear.cgColor
+
+            }
         }
-        else if (cursor.frame.intersects(restartButton.frame) &&
-                eyeBlinkValue > 0.5) {
-            restart();
-        }
-        else if (cursor.frame.intersects(miniGamesButton.frame) &&
-                eyeBlinkValue > 0.5) {
-            collisionMiniGamesButton();
-        }
-        
-        
-        else if cursor.frame.intersects(zero.frame) &&
-            eyeBlinkValue > 0.5 {
-            collisionCell(cellNumber: 0, isPlayer1: playerOneTurn)
-        }
-        else if cursor.frame.intersects(one.frame) && eyeBlinkValue > 0.5 && playerOneTurn{
-            collisionCell(cellNumber: 1, isPlayer1: playerOneTurn)
-        }
-        else if cursor.frame.intersects(two.frame) && eyeBlinkValue > 0.5 && playerOneTurn{
-            collisionCell(cellNumber: 2, isPlayer1: playerOneTurn)
-        }
-        else if cursor.frame.intersects(three.frame) && eyeBlinkValue > 0.5 && playerOneTurn{
-            collisionCell(cellNumber: 3, isPlayer1: playerOneTurn)
-        }
-        else if cursor.frame.intersects(four.frame) && eyeBlinkValue > 0.5 && playerOneTurn{
-            collisionCell(cellNumber: 4, isPlayer1: playerOneTurn)
-        }
-        else if cursor.frame.intersects(five.frame) && eyeBlinkValue > 0.5 && playerOneTurn{
-            collisionCell(cellNumber: 5, isPlayer1: playerOneTurn)
-        }
-        else if cursor.frame.intersects(six.frame) && eyeBlinkValue > 0.5 && playerOneTurn{
-            collisionCell(cellNumber: 6, isPlayer1: playerOneTurn)
-        }
-        else if cursor.frame.intersects(seven.frame) && eyeBlinkValue > 0.5 && playerOneTurn{
-            collisionCell(cellNumber: 7, isPlayer1: playerOneTurn)
-        }
-        else if cursor.frame.intersects(eight.frame) && eyeBlinkValue > 0.5 && playerOneTurn{
-            collisionCell(cellNumber: 8, isPlayer1: playerOneTurn)
-        }
-        
         
     }
     
