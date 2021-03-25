@@ -217,6 +217,179 @@
             </objects>
             <point key="canvasLocation" x="862.58992805755406" y="-663.3165829145729"/>
         </scene>
+        <!--Level Four-->
+        <scene sceneID="fHU-GH-RSQ">
+            <objects>
+                <viewController id="QpT-tL-L4g" customClass="LevelFour" customModule="EyePlay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9BM-5h-KYi" customClass="ARSCNView">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bak-Am-HEl">
+                                <rect key="frame" x="283" y="20" width="268" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Main Menu">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSE-dq-Es2">
+                                <rect key="frame" x="113" y="115" width="609" height="134"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3hF-ev-azw">
+                                <rect key="frame" x="548" y="731" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vua-bf-Nnp">
+                                <rect key="frame" x="113" y="1058" width="609" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="click me!">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3Ye-Zn-XAE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fjw-b5-6xJ"/>
+                    <connections>
+                        <outlet property="cursor" destination="3hF-ev-azw" id="KwB-9d-HjR"/>
+                        <outlet property="goalBlock" destination="vua-bf-Nnp" id="dXW-fK-YOc"/>
+                        <outlet property="levelFourView" destination="9BM-5h-KYi" id="SRW-jY-Wug"/>
+                        <outlet property="menuButton" destination="Bak-Am-HEl" id="pS2-Cm-TzM"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="MainScreenSegue" modalPresentationStyle="fullScreen" id="XMu-oS-so7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mdj-Vy-X30" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2117" y="-649"/>
+        </scene>
+        <!--Level Three-->
+        <scene sceneID="SVa-W4-eUe">
+            <objects>
+                <viewController id="kbB-ZR-ogM" customClass="LevelThree" customModule="EyePlay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xup-HQ-211" customClass="ARSCNView">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pZF-Ll-PZ7">
+                                <rect key="frame" x="498" y="630" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXX-48-CWc">
+                                <rect key="frame" x="283" y="20" width="268" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Main Menu">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkK-i0-7c3">
+                                <rect key="frame" x="113" y="115" width="609" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="click me!">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7W6-Kl-BEP">
+                                <rect key="frame" x="113" y="1060" width="609" height="134"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="H8k-G5-stX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="g7c-xw-C5x"/>
+                    <connections>
+                        <outlet property="cursor" destination="pZF-Ll-PZ7" id="65S-hd-u01"/>
+                        <outlet property="goalBlock" destination="dkK-i0-7c3" id="dC1-0G-QjA"/>
+                        <outlet property="levelThreeView" destination="xup-HQ-211" id="WnH-Qc-PEi"/>
+                        <outlet property="menuButton" destination="eXX-48-CWc" id="0V5-Qo-9Wz"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="MainScreenSegue" modalPresentationStyle="fullScreen" id="1u1-pj-70V"/>
+                        <segue destination="QpT-tL-L4g" kind="presentation" identifier="LevelFourSegue" modalPresentationStyle="fullScreen" id="RuK-5V-wBt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dcw-cK-EG5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2123.0215827338129" y="37.688442211055275"/>
+        </scene>
+        <!--Level Two-->
+        <scene sceneID="Qoi-sn-30C">
+            <objects>
+                <viewController id="ykE-9t-Bfo" customClass="LevelTwo" customModule="EyePlay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ndx-r4-431" customClass="ARSCNView">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHa-5V-8TN">
+                                <rect key="frame" x="0.0" y="228" width="174" height="849"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rH-Hx-L5e">
+                                <rect key="frame" x="660" y="228" width="174" height="849"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="click me!">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyX-gd-D0s">
+                                <rect key="frame" x="283" y="0.0" width="268" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Main Menu">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dMH-ql-Nmh">
+                                <rect key="frame" x="329" y="749" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gbx-AW-XS1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1aN-bV-n4x"/>
+                    <connections>
+                        <outlet property="cursor" destination="dMH-ql-Nmh" id="SbD-TZ-ELb"/>
+                        <outlet property="goalBlock" destination="5rH-Hx-L5e" id="T36-3w-5V9"/>
+                        <outlet property="levelTwoView" destination="Ndx-r4-431" id="Raw-nJ-Yv1"/>
+                        <outlet property="menuButton" destination="XyX-gd-D0s" id="esJ-aA-FJG"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="MainScreenSegue" modalPresentationStyle="fullScreen" id="H8S-Rn-tO5"/>
+                        <segue destination="kbB-ZR-ogM" kind="presentation" identifier="LevelThreeSegue" modalPresentationStyle="fullScreen" id="e6N-px-NC3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4eO-ea-nLO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1364.0287769784175" y="50.753768844221106"/>
+        </scene>
         <!--Level One-->
         <scene sceneID="dzx-d2-3fP">
             <objects>
@@ -280,14 +453,11 @@
                         <outlet property="levelOneView" destination="AqU-ca-4l8" id="P2f-wv-h8h"/>
                         <outlet property="menuButton" destination="sfE-YY-iEd" id="Crm-AL-dfS"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="MainScreenSegue" modalPresentationStyle="fullScreen" id="vzW-wh-OsR"/>
+                        <segue destination="ykE-9t-Bfo" kind="presentation" identifier="LevelTwoSegue" modalPresentationStyle="fullScreen" id="mir-m6-Bf9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSe-2E-SQ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="o7K-7W-dKk">
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="eyv-H2-aKt"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="o7K-7W-dKk"/>
             </objects>
             <point key="canvasLocation" x="-655.39568345323744" y="39.698492462311556"/>
         </scene>
@@ -367,11 +537,7 @@
                         <segue destination="NHp-vb-Hu3" kind="presentation" identifier="SettingsSegue" modalPresentationStyle="fullScreen" id="IJG-yJ-LpU"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="GEQ-d5-iQa">
-                    <connections>
-                        <segue destination="g6E-ax-Wgk" kind="presentation" modalPresentationStyle="fullScreen" id="aLB-Mk-gb7"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="GEQ-d5-iQa"/>
             </objects>
             <point key="canvasLocation" x="138.12949640287772" y="43.21608040201005"/>
         </scene>
@@ -796,8 +962,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="Mz8-fw-bzg"/>
         <segue reference="IJG-yJ-LpU"/>
-        <segue reference="NCS-Ra-KX1"/>
-        <segue reference="r54-Rz-WKa"/>
+        <segue reference="H8S-Rn-tO5"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="circle.fill" catalog="system" width="128" height="121"/>

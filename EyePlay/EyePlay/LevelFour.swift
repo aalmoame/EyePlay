@@ -1,38 +1,38 @@
 //
-//  LevelOne.swift
+//  LevelFour.swift
 //  EyePlay
 //
-//  Created by Abdullah Ramzan on 3/5/21.
+//  Created by Abdullah Ramzan on 3/21/21.
 //
 
 import UIKit
 import ARKit
 import VisionKit
 
-class LevelOne: UIViewController, ARSessionDelegate {
-        
-    @IBOutlet var levelOneView: ARSCNView!
-
+class LevelFour: UIViewController, ARSessionDelegate {
+    
+    
+    @IBOutlet var levelFourView: ARSCNView!
+    
+    @IBOutlet weak var goalBlock: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var cursor: UIImageView!
-    @IBOutlet weak var goalBlock: UIButton!
-    
     let sceneNodes = nodes()
     let mainThread = DispatchQueue.main
-
+    
     //sets the view up
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
             
       let configuration = ARFaceTrackingConfiguration()
-      levelOneView.session.run(configuration)
+      levelFourView.session.run(configuration)
     }
     
     
     // pauses the view
     override func viewWillDisappear(_ animated: Bool) {
       super.viewWillDisappear(animated)
-      levelOneView.session.pause()
+      levelFourView.session.pause()
     }
     
     //configures the screen once its loaded up
@@ -46,14 +46,11 @@ class LevelOne: UIViewController, ARSessionDelegate {
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor
         cursor.layer.zPosition = 1;
-        
         menuButton.layer.cornerRadius = 10;
-        menuButton.layer.borderWidth = 10;
-
         
-        levelOneView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
-        levelOneView.scene.background.contents = UIColor.black
-        levelOneView.delegate = self
+        levelFourView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
+        levelFourView.scene.background.contents = UIColor.black
+        levelFourView.delegate = self
 
     }
     
@@ -65,21 +62,21 @@ class LevelOne: UIViewController, ARSessionDelegate {
     }
     
     func collisionGoalBlock(){
+
             mainThread.async {
-                self.performSegue(withIdentifier: "LevelTwoSegue", sender: self)
+                self.performSegue(withIdentifier: "MainScreenSegue", sender: self)
             }
     }
-    
+
 }
 
-
-extension LevelOne: ARSCNViewDelegate {
+extension LevelFour: ARSCNViewDelegate {
     
     //a scene renderer that returns a scene node given a face anchor, runs once
     
       func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         
-        guard let device = levelOneView.device else {
+        guard let device = levelFourView.device else {
           return nil
         }
         
@@ -118,7 +115,7 @@ extension LevelOne: ARSCNViewDelegate {
             
         
         let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
-        
+
         mainThread.async {
             if self.cursor.frame.intersects(self.menuButton.frame){
                 self.menuButton.layer.borderColor = UIColor.red.cgColor
