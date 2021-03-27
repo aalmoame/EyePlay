@@ -11,9 +11,7 @@ class EyePlay: UIViewController{
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var playNowButton: UIButton!
     @IBOutlet weak var miniGameButton: UIButton!
-    
-    
-    
+    @IBOutlet weak var levelButton: UIButton!
     
     let sceneNodes = nodes()
     let mainThread = DispatchQueue.main
@@ -45,14 +43,15 @@ class EyePlay: UIViewController{
         miniGameButton.layer.borderWidth = CGFloat(10.0)
         settingsButton.layer.borderWidth = CGFloat(10.0)
         playNowButton.layer.borderWidth = CGFloat(10.0)
+        levelButton.layer.borderWidth = CGFloat(10.0)
         
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor
         cursor.layer.zPosition = 1;
         miniGameButton.layer.cornerRadius = 10;
         settingsButton.layer.cornerRadius = 10;
-        playNowButton.layer.cornerRadius =
-            10;
+        playNowButton.layer.cornerRadius = 10;
+        levelButton.layer.cornerRadius = 10;
         
         mainView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
         mainView.scene.background.contents = UIColor.black
@@ -84,6 +83,14 @@ class EyePlay: UIViewController{
             self.performSegue(withIdentifier: "LevelOneSegue", sender: self)
         }
     }
+    
+    func collisionLevelButton() {
+        //go to level one when user blinks over button
+        mainThread.async {
+            self.performSegue(withIdentifier: "LevelSelectorSegue", sender: self)
+        }
+    }
+    
 }
 
 extension EyePlay: ARSCNViewDelegate {
@@ -160,10 +167,20 @@ extension EyePlay: ARSCNViewDelegate {
                     self.collisionPlayNowButton();
                 }
             }
+            else if self.cursor.frame.intersects(self.levelButton.frame){
+                
+                self.levelButton.layer.borderColor = UIColor.red.cgColor
+                
+                if eyeBlinkValue > 0.5 {
+                
+                    self.collisionLevelButton();
+                }
+            }
             else{
                 self.miniGameButton.layer.borderColor = UIColor.clear.cgColor
                 self.settingsButton.layer.borderColor = UIColor.clear.cgColor
                 self.playNowButton.layer.borderColor = UIColor.clear.cgColor
+                self.levelButton.layer.borderColor = UIColor.clear.cgColor
 
             }
         }

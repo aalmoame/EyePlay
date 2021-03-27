@@ -46,7 +46,9 @@ class LevelEight: UIViewController, ARSessionDelegate {
         cursor.tintColor = cursorColor
         cursor.layer.zPosition = 1;
         menuButton.layer.cornerRadius = 10;
-        
+        menuButton.layer.borderWidth = 10;
+        goalBlock.layer.cornerRadius = 10;
+        goalBlock.layer.borderWidth = 10;
         levelEightView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
         levelEightView.scene.background.contents = UIColor.black
         levelEightView.delegate = self

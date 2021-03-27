@@ -48,7 +48,9 @@ class LevelSeven: UIViewController, ARSessionDelegate {
         cursor.tintColor = cursorColor
         cursor.layer.zPosition = 1;
         menuButton.layer.cornerRadius = 10;
-        
+        menuButton.layer.borderWidth = 10;
+        goalBlock.layer.cornerRadius = 10;
+        goalBlock.layer.borderWidth = 10;
         levelSevenView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
         levelSevenView.scene.background.contents = UIColor.black
         levelSevenView.delegate = self

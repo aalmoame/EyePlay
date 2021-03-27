@@ -47,7 +47,9 @@ class LevelFour: UIViewController, ARSessionDelegate {
         cursor.tintColor = cursorColor
         cursor.layer.zPosition = 1;
         menuButton.layer.cornerRadius = 10;
-        
+        menuButton.layer.borderWidth = 10;
+        goalBlock.layer.cornerRadius = 10;
+        goalBlock.layer.borderWidth = 10;
         levelFourView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
         levelFourView.scene.background.contents = UIColor.black
         levelFourView.delegate = self

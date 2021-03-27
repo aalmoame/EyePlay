@@ -31,6 +31,7 @@
 		F608FB6525F312F60098F037 /* LevelOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = F608FB6425F312F60098F037 /* LevelOne.swift */; };
 		F6269D09260EC09600440BF2 /* LevelSeven.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6269D08260EC09600440BF2 /* LevelSeven.swift */; };
 		F6269D0E260EC40600440BF2 /* LevelEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6269D0D260EC40600440BF2 /* LevelEight.swift */; };
+		F676E7EF260FE85100C9A63F /* LevelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F676E7EE260FE85100C9A63F /* LevelSelector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		F608FB6425F312F60098F037 /* LevelOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOne.swift; sourceTree = "<group>"; };
 		F6269D08260EC09600440BF2 /* LevelSeven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSeven.swift; sourceTree = "<group>"; };
 		F6269D0D260EC40600440BF2 /* LevelEight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelEight.swift; sourceTree = "<group>"; };
+		F676E7EE260FE85100C9A63F /* LevelSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				F6038711260EB8BB00ED73DC /* LevelSix.swift */,
 				F6269D08260EC09600440BF2 /* LevelSeven.swift */,
 				F6269D0D260EC40600440BF2 /* LevelEight.swift */,
+				F676E7EE260FE85100C9A63F /* LevelSelector.swift */,
 			);
 			path = EyePlay;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				4A1A39B925DA3BF900516AE9 /* EyePlay.swift in Sources */,
 				AF56586425E321B700E1F2B5 /* Nodes+HitTest.swift in Sources */,
 				4A1A39B525DA3BF900516AE9 /* AppDelegate.swift in Sources */,
+				F676E7EF260FE85100C9A63F /* LevelSelector.swift in Sources */,
 				F60386F7260817B000ED73DC /* LevelThree.swift in Sources */,
 				4A1A3A6725DEBE0200516AE9 /* ballGame.swift in Sources */,
 				F6269D09260EC09600440BF2 /* LevelSeven.swift in Sources */,

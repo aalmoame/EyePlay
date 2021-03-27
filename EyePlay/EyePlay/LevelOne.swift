@@ -49,7 +49,8 @@ class LevelOne: UIViewController, ARSessionDelegate {
         
         menuButton.layer.cornerRadius = 10;
         menuButton.layer.borderWidth = 10;
-
+        goalBlock.layer.cornerRadius = 10;
+        goalBlock.layer.borderWidth = 10;
         
         levelOneView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
         levelOneView.scene.background.contents = UIColor.black

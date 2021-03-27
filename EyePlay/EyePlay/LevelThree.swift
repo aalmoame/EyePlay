@@ -46,6 +46,9 @@ class LevelThree: UIViewController, ARSessionDelegate {
         cursor.tintColor = cursorColor
         cursor.layer.zPosition = 1;
         menuButton.layer.cornerRadius = 10;
+        menuButton.layer.borderWidth = 10;
+        goalBlock.layer.cornerRadius = 10;
+        goalBlock.layer.borderWidth = 10;
         
         levelThreeView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
         levelThreeView.scene.background.contents = UIColor.black
