@@ -26,7 +26,11 @@
 		F60386E9260809C900ED73DC /* LevelTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60386E8260809C900ED73DC /* LevelTwo.swift */; };
 		F60386F7260817B000ED73DC /* LevelThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60386F6260817B000ED73DC /* LevelThree.swift */; };
 		F60386FF2608237100ED73DC /* LevelFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60386FE2608237100ED73DC /* LevelFour.swift */; };
+		F603870D260EB19E00ED73DC /* LevelFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F603870C260EB19E00ED73DC /* LevelFive.swift */; };
+		F6038712260EB8BB00ED73DC /* LevelSix.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6038711260EB8BB00ED73DC /* LevelSix.swift */; };
 		F608FB6525F312F60098F037 /* LevelOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = F608FB6425F312F60098F037 /* LevelOne.swift */; };
+		F6269D09260EC09600440BF2 /* LevelSeven.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6269D08260EC09600440BF2 /* LevelSeven.swift */; };
+		F6269D0E260EC40600440BF2 /* LevelEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6269D0D260EC40600440BF2 /* LevelEight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +76,11 @@
 		F60386E8260809C900ED73DC /* LevelTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwo.swift; sourceTree = "<group>"; };
 		F60386F6260817B000ED73DC /* LevelThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelThree.swift; sourceTree = "<group>"; };
 		F60386FE2608237100ED73DC /* LevelFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelFour.swift; sourceTree = "<group>"; };
+		F603870C260EB19E00ED73DC /* LevelFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelFive.swift; sourceTree = "<group>"; };
+		F6038711260EB8BB00ED73DC /* LevelSix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSix.swift; sourceTree = "<group>"; };
 		F608FB6425F312F60098F037 /* LevelOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOne.swift; sourceTree = "<group>"; };
+		F6269D08260EC09600440BF2 /* LevelSeven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSeven.swift; sourceTree = "<group>"; };
+		F6269D0D260EC40600440BF2 /* LevelEight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelEight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +150,10 @@
 				F60386FE2608237100ED73DC /* LevelFour.swift */,
 				4AEBADBC25F5E744003FFBF5 /* TicTacToe.swift */,
 				4AEBADC125F5EDD1003FFBF5 /* MiniGames.swift */,
+				F603870C260EB19E00ED73DC /* LevelFive.swift */,
+				F6038711260EB8BB00ED73DC /* LevelSix.swift */,
+				F6269D08260EC09600440BF2 /* LevelSeven.swift */,
+				F6269D0D260EC40600440BF2 /* LevelEight.swift */,
 			);
 			path = EyePlay;
 			sourceTree = "<group>";
@@ -295,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F60386E9260809C900ED73DC /* LevelTwo.swift in Sources */,
+				F6269D0E260EC40600440BF2 /* LevelEight.swift in Sources */,
 				4AEBADC225F5EDD1003FFBF5 /* MiniGames.swift in Sources */,
 				F60386FF2608237100ED73DC /* LevelFour.swift in Sources */,
 				4A1A39B925DA3BF900516AE9 /* EyePlay.swift in Sources */,
@@ -302,10 +315,13 @@
 				4A1A39B525DA3BF900516AE9 /* AppDelegate.swift in Sources */,
 				F60386F7260817B000ED73DC /* LevelThree.swift in Sources */,
 				4A1A3A6725DEBE0200516AE9 /* ballGame.swift in Sources */,
+				F6269D09260EC09600440BF2 /* LevelSeven.swift in Sources */,
 				4A83F9A225EA1A4B00482A7E /* CursorSize.swift in Sources */,
 				4AEBADBD25F5E744003FFBF5 /* TicTacToe.swift in Sources */,
+				F6038712260EB8BB00ED73DC /* LevelSix.swift in Sources */,
 				F608FB6525F312F60098F037 /* LevelOne.swift in Sources */,
 				4A22F34B25EAE48C008AD154 /* CursorColor.swift in Sources */,
+				F603870D260EB19E00ED73DC /* LevelFive.swift in Sources */,
 				4A83F99D25EA147800482A7E /* Settings.swift in Sources */,
 				4A1A39B725DA3BF900516AE9 /* SceneDelegate.swift in Sources */,
 				AF56586925E321E600E1F2B5 /* Constants+Helpers.swift in Sources */,

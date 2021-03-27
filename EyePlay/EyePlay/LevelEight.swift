@@ -1,22 +1,21 @@
 //
-//  LevelFour.swift
+//  LevelEight.swift
 //  EyePlay
 //
-//  Created by Abdullah Ramzan on 3/21/21.
+//  Created by Abdullah Ramzan on 3/26/21.
 //
 
 import UIKit
 import ARKit
 import VisionKit
 
-class LevelFour: UIViewController, ARSessionDelegate {
+class LevelEight: UIViewController, ARSessionDelegate {
     
-    
-    @IBOutlet var levelFourView: ARSCNView!
-    
-    @IBOutlet weak var goalBlock: UIButton!
+    @IBOutlet var levelEightView: ARSCNView!
     @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var goalBlock: UIButton!
     @IBOutlet weak var cursor: UIImageView!
+    
     let sceneNodes = nodes()
     let mainThread = DispatchQueue.main
     
@@ -25,14 +24,14 @@ class LevelFour: UIViewController, ARSessionDelegate {
       super.viewWillAppear(animated)
             
       let configuration = ARFaceTrackingConfiguration()
-      levelFourView.session.run(configuration)
+      levelEightView.session.run(configuration)
     }
     
     
     // pauses the view
     override func viewWillDisappear(_ animated: Bool) {
       super.viewWillDisappear(animated)
-      levelFourView.session.pause()
+      levelEightView.session.pause()
     }
     
     //configures the screen once its loaded up
@@ -48,9 +47,9 @@ class LevelFour: UIViewController, ARSessionDelegate {
         cursor.layer.zPosition = 1;
         menuButton.layer.cornerRadius = 10;
         
-        levelFourView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
-        levelFourView.scene.background.contents = UIColor.black
-        levelFourView.delegate = self
+        levelEightView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
+        levelEightView.scene.background.contents = UIColor.black
+        levelEightView.delegate = self
 
     }
     
@@ -64,19 +63,19 @@ class LevelFour: UIViewController, ARSessionDelegate {
     func collisionGoalBlock(){
 
             mainThread.async {
-                self.performSegue(withIdentifier: "LevelFiveSegue", sender: self)
+                self.performSegue(withIdentifier: "MainScreenSegue", sender: self)
             }
     }
 
 }
 
-extension LevelFour: ARSCNViewDelegate {
+extension LevelEight: ARSCNViewDelegate {
     
     //a scene renderer that returns a scene node given a face anchor, runs once
     
       func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         
-        guard let device = levelFourView.device else {
+        guard let device = levelEightView.device else {
           return nil
         }
         
