@@ -17,6 +17,30 @@ class Settings: UIViewController, ARSessionDelegate{
     let sceneNodes = nodes()
     let mainThread = DispatchQueue.main
     
+    var seconds = 2
+    var timer = Timer()
+    var isTimerRunning = false
+    var hoveringMenu = false
+    var hoveringSize = false
+    var hoveringColor = false
+
+    
+    func runTimer(button: UIButton) {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(Settings.updateTimer)), userInfo: nil, repeats: true)
+        isTimerRunning = true
+        animate(button: button)
+    }
+    @objc func updateTimer() {
+        seconds -= 1
+    }
+    func resetTimer(){
+        timer.invalidate()
+        isTimerRunning = false
+        seconds = 2
+    }
+    func resetColor(button: UIButton){
+        button.layer.backgroundColor = UIColor.white.cgColor
+    }
     
     //sets the view up
     override func viewWillAppear(_ animated: Bool) {
@@ -44,9 +68,9 @@ class Settings: UIViewController, ARSessionDelegate{
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor
         cursor.layer.zPosition = 1;
-        sizeButton.layer.cornerRadius = 10;
-        menuButton.layer.cornerRadius = 10;
-        colorButton.layer.cornerRadius = 10;
+        sizeButton.layer.cornerRadius = 5;
+        menuButton.layer.cornerRadius = 5;
+        colorButton.layer.cornerRadius = 5;
         sizeButton.layer.borderWidth = 10;
         menuButton.layer.borderWidth = 10;
         colorButton.layer.borderWidth = 10;
@@ -120,38 +144,92 @@ extension Settings: ARSCNViewDelegate {
                 
         self.sceneNodes.hitTest(withFaceAnchor: faceAnchor, cursor: cursor)
             
-        
-        let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
-        
         mainThread.async {
 
             if self.cursor.frame.intersects(self.sizeButton.frame){
-                self.sizeButton.layer.borderColor = UIColor.red.cgColor
+                self.sizeButton.layer.borderColor = UIColor.systemBlue.cgColor
 
-                if eyeBlinkValue > 0.5{
-                    self.collisionSizeButton()
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.sizeButton)
                 }
-
+                
+                if self.hoveringSize && self.seconds <= 0 {
+                    self.collisionSizeButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringSize{
+                    self.resetTimer()
+                }
+                
+                self.hoveringSize = true
+                self.hoveringMenu = false
+                self.hoveringColor = false
+                
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.colorButton)
             }
             else if self.cursor.frame.intersects(self.colorButton.frame) {
-                self.colorButton.layer.borderColor = UIColor.red.cgColor
+                self.colorButton.layer.borderColor = UIColor.systemBlue.cgColor
 
-                if eyeBlinkValue > 0.5{
-                    self.collisionColorButton()
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.colorButton)
                 }
+                
+                if self.hoveringColor && self.seconds <= 0 {
+                    self.collisionColorButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringColor{
+                    self.resetTimer()
+                }
+                
+                self.hoveringSize = false
+                self.hoveringMenu = false
+                self.hoveringColor = true
+                
+                self.resetColor(button: self.sizeButton)
+                self.resetColor(button: self.menuButton)
                 
             }
             else if self.cursor.frame.intersects(self.menuButton.frame) {
-                self.menuButton.layer.borderColor = UIColor.red.cgColor
+                self.menuButton.layer.borderColor = UIColor.systemBlue.cgColor
 
-                if eyeBlinkValue > 0.5{
-                    self.collisionMenuButton()
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.menuButton)
                 }
+                
+                if self.hoveringMenu && self.seconds <= 0 {
+                    self.collisionMenuButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringMenu{
+                    self.resetTimer()
+                }
+                
+                self.hoveringSize = false
+                self.hoveringMenu = true
+                self.hoveringColor = false
+                
+                self.resetColor(button: self.sizeButton)
+                self.resetColor(button: self.colorButton)
             }
             else{
                 self.sizeButton.layer.borderColor = UIColor.clear.cgColor
                 self.colorButton.layer.borderColor = UIColor.clear.cgColor
                 self.menuButton.layer.borderColor = UIColor.clear.cgColor
+                
+                self.hoveringColor = false
+                self.hoveringSize = false
+                self.hoveringMenu = false
+
+                self.resetColor(button: self.colorButton)
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.sizeButton)
+                
+                self.resetTimer()
             }
 
         }

@@ -239,6 +239,7 @@ SWIFT_CLASS("_TtC7EyePlay11CursorColor")
 - (IBAction)redButtonTouch:(id _Nonnull)sender;
 - (IBAction)grayButtonTouch:(id _Nonnull)sender;
 - (IBAction)settingsButtonTouch:(id _Nonnull)sender;
+- (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)viewDidLoad;
@@ -268,6 +269,7 @@ SWIFT_CLASS("_TtC7EyePlay10CursorSize")
 - (IBAction)mediumButtonTouch:(id _Nonnull)sender;
 - (IBAction)largeButtonTouch:(id _Nonnull)sender;
 - (IBAction)settingsButtonTouch:(id _Nonnull)sender;
+- (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)viewDidLoad;
@@ -289,6 +291,8 @@ SWIFT_CLASS("_TtC7EyePlay7EyePlay")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified settingsButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified playNowButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified miniGameButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified levelButton;
+- (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)viewDidLoad;
@@ -303,12 +307,76 @@ SWIFT_CLASS("_TtC7EyePlay7EyePlay")
 @end
 
 
+SWIFT_CLASS("_TtC7EyePlay10LevelEight")
+@interface LevelEight : UIViewController <ARSessionDelegate>
+@property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified levelEightView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified goalBlock;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
+- (void)updateTimer;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface LevelEight (SWIFT_EXTENSION(EyePlay)) <ARSCNViewDelegate>
+- (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
+- (void)renderer:(id <SCNSceneRenderer> _Nonnull)renderer didUpdateNode:(SCNNode * _Nonnull)node forAnchor:(ARAnchor * _Nonnull)anchor;
+@end
+
+
+SWIFT_CLASS("_TtC7EyePlay9LevelFive")
+@interface LevelFive : UIViewController <ARSessionDelegate>
+@property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified levelFiveView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified goalBlock;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
+- (void)updateTimer;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface LevelFive (SWIFT_EXTENSION(EyePlay)) <ARSCNViewDelegate>
+- (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
+- (void)renderer:(id <SCNSceneRenderer> _Nonnull)renderer didUpdateNode:(SCNNode * _Nonnull)node forAnchor:(ARAnchor * _Nonnull)anchor;
+@end
+
+
+SWIFT_CLASS("_TtC7EyePlay9LevelFour")
+@interface LevelFour : UIViewController <ARSessionDelegate>
+@property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified levelFourView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified goalBlock;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
+- (void)updateTimer;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface LevelFour (SWIFT_EXTENSION(EyePlay)) <ARSCNViewDelegate>
+- (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
+- (void)renderer:(id <SCNSceneRenderer> _Nonnull)renderer didUpdateNode:(SCNNode * _Nonnull)node forAnchor:(ARAnchor * _Nonnull)anchor;
+@end
+
+
 SWIFT_CLASS("_TtC7EyePlay8LevelOne")
 @interface LevelOne : UIViewController <ARSessionDelegate>
 @property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified levelOneView;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified goalBlock;
+- (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)viewDidLoad;
@@ -323,6 +391,118 @@ SWIFT_CLASS("_TtC7EyePlay8LevelOne")
 @end
 
 
+SWIFT_CLASS("_TtC7EyePlay13LevelSelector")
+@interface LevelSelector : UIViewController
+@property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified levelSelectorView;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified levelOneButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified levelTwoButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified levelThreeButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified levelFourButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified levelFiveButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified levelSixButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified levelSevenButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified levelEightButton;
+- (void)updateTimer;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface LevelSelector (SWIFT_EXTENSION(EyePlay)) <ARSCNViewDelegate>
+- (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
+- (void)renderer:(id <SCNSceneRenderer> _Nonnull)renderer didUpdateNode:(SCNNode * _Nonnull)node forAnchor:(ARAnchor * _Nonnull)anchor;
+@end
+
+
+SWIFT_CLASS("_TtC7EyePlay10LevelSeven")
+@interface LevelSeven : UIViewController <ARSessionDelegate>
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
+@property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified levelSevenView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified goalBlock;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
+- (void)updateTimer;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface LevelSeven (SWIFT_EXTENSION(EyePlay)) <ARSCNViewDelegate>
+- (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
+- (void)renderer:(id <SCNSceneRenderer> _Nonnull)renderer didUpdateNode:(SCNNode * _Nonnull)node forAnchor:(ARAnchor * _Nonnull)anchor;
+@end
+
+
+SWIFT_CLASS("_TtC7EyePlay8LevelSix")
+@interface LevelSix : UIViewController <ARSessionDelegate>
+@property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified levelSixView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified goalBlock;
+- (void)updateTimer;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface LevelSix (SWIFT_EXTENSION(EyePlay)) <ARSCNViewDelegate>
+- (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
+- (void)renderer:(id <SCNSceneRenderer> _Nonnull)renderer didUpdateNode:(SCNNode * _Nonnull)node forAnchor:(ARAnchor * _Nonnull)anchor;
+@end
+
+
+SWIFT_CLASS("_TtC7EyePlay10LevelThree")
+@interface LevelThree : UIViewController <ARSessionDelegate>
+@property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified levelThreeView;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified goalBlock;
+- (void)updateTimer;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface LevelThree (SWIFT_EXTENSION(EyePlay)) <ARSCNViewDelegate>
+- (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
+- (void)renderer:(id <SCNSceneRenderer> _Nonnull)renderer didUpdateNode:(SCNNode * _Nonnull)node forAnchor:(ARAnchor * _Nonnull)anchor;
+@end
+
+
+SWIFT_CLASS("_TtC7EyePlay8LevelTwo")
+@interface LevelTwo : UIViewController <ARSessionDelegate>
+@property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified levelTwoView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified goalBlock;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
+- (void)updateTimer;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface LevelTwo (SWIFT_EXTENSION(EyePlay)) <ARSCNViewDelegate>
+- (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
+- (void)renderer:(id <SCNSceneRenderer> _Nonnull)renderer didUpdateNode:(SCNNode * _Nonnull)node forAnchor:(ARAnchor * _Nonnull)anchor;
+@end
+
+
 SWIFT_CLASS("_TtC7EyePlay9MiniGames")
 @interface MiniGames : UIViewController <ARSessionDelegate>
 @property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified miniGameView;
@@ -330,6 +510,7 @@ SWIFT_CLASS("_TtC7EyePlay9MiniGames")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified TicTacToeButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified mainMenuButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified ballGameButton;
+- (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)viewDidLoad;
@@ -366,6 +547,7 @@ SWIFT_CLASS("_TtC7EyePlay8Settings")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified sizeButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified colorButton;
+- (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)viewDidLoad;
@@ -408,6 +590,7 @@ SWIFT_CLASS("_TtC7EyePlay9TicTacToe")
 - (IBAction)sixButtonTap:(id _Nonnull)sender;
 - (IBAction)sevenButtonTap:(id _Nonnull)sender;
 - (IBAction)eightButtonTap:(id _Nonnull)sender;
+- (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)viewDidLoad;
@@ -425,11 +608,13 @@ SWIFT_CLASS("_TtC7EyePlay9TicTacToe")
 SWIFT_CLASS("_TtC7EyePlay8ballGame")
 @interface ballGame : UIViewController
 @property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified ballGameView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified miniGamesButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified score;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified ball;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified scoreValue;
+- (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)viewDidLoad;

@@ -15,6 +15,33 @@ class EyePlay: UIViewController{
     
     let sceneNodes = nodes()
     let mainThread = DispatchQueue.main
+    
+    var seconds = 2
+    var timer = Timer()
+    var isTimerRunning = false
+    var hoveringMiniGames = false
+    var hoveringSetting = false
+    var hoveringPlay = false
+    var hoveringLevelSelect = false
+
+    
+    func runTimer(button: UIButton) {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(EyePlay.updateTimer)), userInfo: nil, repeats: true)
+        isTimerRunning = true
+        animate(button: button)
+    }
+    @objc func updateTimer() {
+        seconds -= 1
+    }
+    func resetTimer(){
+        timer.invalidate()
+        isTimerRunning = false
+        seconds = 2
+    }
+    func resetColor(button: UIButton){
+        button.layer.backgroundColor = UIColor.white.cgColor
+    }
+
 
 
     //sets the view up
@@ -48,10 +75,10 @@ class EyePlay: UIViewController{
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor
         cursor.layer.zPosition = 1;
-        miniGameButton.layer.cornerRadius = 10;
-        settingsButton.layer.cornerRadius = 10;
-        playNowButton.layer.cornerRadius = 10;
-        levelButton.layer.cornerRadius = 10;
+        miniGameButton.layer.cornerRadius = 5;
+        settingsButton.layer.cornerRadius = 5;
+        playNowButton.layer.cornerRadius = 5;
+        levelButton.layer.cornerRadius = 5;
         
         mainView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
         mainView.scene.background.contents = UIColor.black
@@ -62,7 +89,7 @@ class EyePlay: UIViewController{
     
     
     //checks if the cursor is on top of the game button and if the user blinks
-    func collisionMenuButton(){
+    func collisionMiniGameButton(){
 
             //go to game screen when user blinks over button
             mainThread.async {
@@ -135,52 +162,126 @@ extension EyePlay: ARSCNViewDelegate {
         faceGeometry.update(from: faceAnchor.geometry)
         
         self.sceneNodes.hitTest(withFaceAnchor: faceAnchor, cursor: cursor)
-            
         
-        let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
         
         mainThread.async {
             if self.cursor.frame.intersects(self.miniGameButton.frame){
 
-                self.miniGameButton.layer.borderColor = UIColor.red.cgColor
+                self.miniGameButton.layer.borderColor = UIColor.systemBlue.cgColor
                 
-                if eyeBlinkValue > 0.5{
-                
-                    self.collisionMenuButton();
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.miniGameButton)
                 }
+                
+                if self.hoveringMiniGames && self.seconds <= 0 {
+                    self.collisionMiniGameButton()
+                }
+                else if !self.hoveringMiniGames{
+                    self.resetTimer()
+                }
+                
+                self.hoveringSetting = false
+                self.hoveringPlay = false
+                self.hoveringLevelSelect = false
+                self.hoveringMiniGames = true
+                self.resetColor(button: self.playNowButton)
+                self.resetColor(button: self.levelButton)
+                self.resetColor(button: self.settingsButton)
+                
             }
             else if self.cursor.frame.intersects(self.settingsButton.frame){
                 
-                self.settingsButton.layer.borderColor = UIColor.red.cgColor
+                self.settingsButton.layer.borderColor = UIColor.systemBlue.cgColor
 
-                if eyeBlinkValue > 0.5{
-                    self.collisionSettingsButton();
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.settingsButton)
                 }
+                
+                if self.hoveringSetting && self.seconds <= 0 {
+                    self.collisionSettingsButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringSetting{
+                    self.resetTimer()
+                }
+                
+                self.hoveringSetting = true
+                self.hoveringPlay = false
+                self.hoveringLevelSelect = false
+                self.hoveringMiniGames = false
+                
+                self.resetColor(button: self.playNowButton)
+                self.resetColor(button: self.levelButton)
+                self.resetColor(button: self.miniGameButton)
+                
                 
             }
             else if self.cursor.frame.intersects(self.playNowButton.frame){
                 
-                self.playNowButton.layer.borderColor = UIColor.red.cgColor
+                self.playNowButton.layer.borderColor = UIColor.systemBlue.cgColor
                 
-                if eyeBlinkValue > 0.5 {
-                
-                    self.collisionPlayNowButton();
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.playNowButton)
                 }
+                
+                if self.hoveringPlay && self.seconds <= 0 {
+                    self.collisionPlayNowButton()
+                    self.resetTimer()
+                }
+                else if !self.hoveringPlay{
+                    self.resetTimer()
+                }
+                
+                self.hoveringSetting = false
+                self.hoveringPlay = true
+                self.hoveringLevelSelect = false
+                self.hoveringMiniGames = false
+                self.resetColor(button: self.settingsButton)
+                self.resetColor(button: self.levelButton)
+                self.resetColor(button: self.miniGameButton)
             }
             else if self.cursor.frame.intersects(self.levelButton.frame){
                 
-                self.levelButton.layer.borderColor = UIColor.red.cgColor
+                self.levelButton.layer.borderColor = UIColor.systemBlue.cgColor
                 
-                if eyeBlinkValue > 0.5 {
-                
-                    self.collisionLevelButton();
+
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.levelButton)
                 }
+                
+                if self.hoveringLevelSelect && self.seconds <= 0 {
+                    self.collisionLevelButton()
+                    self.resetTimer()
+                }
+                else if !self.hoveringLevelSelect{
+                    self.resetTimer()
+                }
+                
+                self.hoveringSetting = false
+                self.hoveringPlay = false
+                self.hoveringLevelSelect = true
+                self.hoveringMiniGames = false
+                self.resetColor(button: self.playNowButton)
+                self.resetColor(button: self.settingsButton)
+                self.resetColor(button: self.miniGameButton)
             }
             else{
                 self.miniGameButton.layer.borderColor = UIColor.clear.cgColor
                 self.settingsButton.layer.borderColor = UIColor.clear.cgColor
                 self.playNowButton.layer.borderColor = UIColor.clear.cgColor
                 self.levelButton.layer.borderColor = UIColor.clear.cgColor
+                
+                self.hoveringSetting = false
+                self.hoveringPlay = false
+                self.hoveringLevelSelect = false
+                self.hoveringMiniGames = false
+                self.resetColor(button: self.playNowButton)
+                self.resetColor(button: self.settingsButton)
+                self.resetColor(button: self.miniGameButton)
+                self.resetColor(button: self.levelButton)
+                
+                self.resetTimer()
 
             }
         }

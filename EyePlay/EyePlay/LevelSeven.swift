@@ -21,6 +21,29 @@ class LevelSeven: UIViewController, ARSessionDelegate {
     let sceneNodes = nodes()
     let mainThread = DispatchQueue.main
     
+    var seconds = 2
+    var timer = Timer()
+    var isTimerRunning = false
+    var hoveringMenu = false
+    var hoveringGoal = false
+    
+    func runTimer(button: UIButton) {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(LevelSeven.updateTimer)), userInfo: nil, repeats: true)
+        isTimerRunning = true
+        animate(button: button)
+    }
+    @objc func updateTimer() {
+        seconds -= 1
+    }
+    func resetTimer(){
+        timer.invalidate()
+        isTimerRunning = false
+        seconds = 2
+    }
+    func resetColor(button: UIButton){
+        button.layer.backgroundColor = UIColor.white.cgColor
+    }
+    
     //sets the view up
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
@@ -47,9 +70,9 @@ class LevelSeven: UIViewController, ARSessionDelegate {
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor
         cursor.layer.zPosition = 1;
-        menuButton.layer.cornerRadius = 10;
+        menuButton.layer.cornerRadius = 5;
         menuButton.layer.borderWidth = 10;
-        goalBlock.layer.cornerRadius = 10;
+        goalBlock.layer.cornerRadius = 5;
         goalBlock.layer.borderWidth = 10;
         levelSevenView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
         levelSevenView.scene.background.contents = UIColor.black
@@ -117,24 +140,53 @@ extension LevelSeven: ARSCNViewDelegate {
         self.sceneNodes.hitTest(withFaceAnchor: faceAnchor, cursor: cursor)
             
         
-        let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
 
         mainThread.async {
             if self.cursor.frame.intersects(self.menuButton.frame){
-                self.menuButton.layer.borderColor = UIColor.red.cgColor
-                if eyeBlinkValue > 0.5{
-                    self.collisionMenuButton()
+                self.menuButton.layer.borderColor = UIColor.systemBlue.cgColor
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.menuButton)
                 }
+                
+                if self.hoveringMenu && self.seconds <= 0 {
+                    self.collisionMenuButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringMenu{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = true
+                self.hoveringGoal = false
             }
             else if self.cursor.frame.intersects(self.goalBlock.frame){
-                self.goalBlock.layer.borderColor = UIColor.red.cgColor
-                if eyeBlinkValue > 0.5{
-                    self.collisionGoalBlock()
+                self.goalBlock.layer.borderColor = UIColor.systemBlue.cgColor
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.goalBlock)
                 }
+                
+                if self.hoveringGoal && self.seconds <= 0 {
+                    self.collisionGoalBlock()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringGoal{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringGoal = true
             }
             else{
                 self.menuButton.layer.borderColor = UIColor.clear.cgColor
                 self.goalBlock.layer.borderColor = UIColor.clear.cgColor
+                
+                self.hoveringMenu = false
+                self.hoveringGoal = false
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.goalBlock)
+                self.resetTimer()
             }
         }
         

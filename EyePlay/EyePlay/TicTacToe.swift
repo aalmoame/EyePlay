@@ -122,6 +122,41 @@ class TicTacToe: UIViewController{
     
     let mainThread = DispatchQueue.main
     
+    var seconds = 2
+    var timer = Timer()
+    var isTimerRunning = false
+    var hoveringMenu = false
+    var hoveringRestart = false
+    var hoveringMiniGames = false
+    var hoveringZero = false
+    var hoveringOne = false
+    var hoveringTwo = false
+    var hoveringThree = false
+    var hoveringFour = false
+    var hoveringFive = false
+    var hoveringSix = false
+    var hoveringSeven = false
+    var hoveringEight = false
+
+
+    
+    func runTimer(button: UIButton) {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(TicTacToe.updateTimer)), userInfo: nil, repeats: true)
+        isTimerRunning = true
+        animate(button: button)
+    }
+    @objc func updateTimer() {
+        seconds -= 1
+    }
+    func resetTimer(){
+        timer.invalidate()
+        isTimerRunning = false
+        seconds = 2
+    }
+    func resetColor(button: UIButton){
+        button.layer.backgroundColor = UIColor.white.cgColor
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
             
@@ -148,19 +183,19 @@ class TicTacToe: UIViewController{
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor
         cursor.layer.zPosition = 1;
-        menuButton.layer.cornerRadius = 10;
-        restartButton.layer.cornerRadius = 10;
-        miniGamesButton.layer.cornerRadius = 10;
+        menuButton.layer.cornerRadius = 5;
+        restartButton.layer.cornerRadius = 5;
+        miniGamesButton.layer.cornerRadius = 5;
         
-        zero.layer.cornerRadius = 10;
-        one.layer.cornerRadius = 10;
-        two.layer.cornerRadius = 10;
-        three.layer.cornerRadius = 10;
-        four.layer.cornerRadius = 10;
-        five.layer.cornerRadius = 10;
-        six.layer.cornerRadius = 10;
-        seven.layer.cornerRadius = 10;
-        eight.layer.cornerRadius = 10;
+        zero.layer.cornerRadius = 5;
+        one.layer.cornerRadius = 5;
+        two.layer.cornerRadius = 5;
+        three.layer.cornerRadius = 5;
+        four.layer.cornerRadius = 5;
+        five.layer.cornerRadius = 5;
+        six.layer.cornerRadius = 5;
+        seven.layer.cornerRadius = 5;
+        eight.layer.cornerRadius = 5;
         
         zero.layer.borderWidth = 10;
         one.layer.borderWidth = 10;
@@ -380,10 +415,7 @@ extension TicTacToe: ARSCNViewDelegate {
 
         return node
       }
-    
-    /*this renderer takes as input the previous renderer's scene node, and runs continuously
-     with that node given the value has changed, if yes, then it uses that new node */
-    
+
     func renderer(
       _ renderer: SCNSceneRenderer,
       didUpdate node: SCNNode,
@@ -419,92 +451,583 @@ extension TicTacToe: ARSCNViewDelegate {
             
             if (self.cursor.frame.intersects(self.menuButton.frame)){
                 
-                self.menuButton.layer.borderColor = UIColor.red.cgColor
+                self.menuButton.layer.borderColor = UIColor.systemBlue.cgColor
                 
-                if eyeBlinkValue > 0.5 {
-                    self.collisionMenuButton();
+                
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.menuButton)
                 }
                 
+                if self.hoveringMenu && self.seconds <= 0 {
+                    self.collisionMenuButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringMenu{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = true
+                self.hoveringRestart = false
+                self.hoveringMiniGames = false
+                self.hoveringZero = false
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = false
+                
+                self.resetColor(button: self.miniGamesButton)
+                self.resetColor(button: self.restartButton)
+                self.resetColor(button: self.zero)
+                self.resetColor(button: self.one)
+                self.resetColor(button: self.two)
+                self.resetColor(button: self.three)
+                self.resetColor(button: self.four)
+                self.resetColor(button: self.five)
+                self.resetColor(button: self.six)
+                self.resetColor(button: self.seven)
+                self.resetColor(button: self.eight)
+
             }
             else if (self.cursor.frame.intersects(self.restartButton.frame)) {
-                self.restartButton.layer.borderColor = UIColor.red.cgColor
+                self.restartButton.layer.borderColor = UIColor.systemBlue.cgColor
                 
-                if eyeBlinkValue > 0.5 {
-                    self.restart();
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.restartButton)
                 }
+                
+                if self.hoveringRestart && self.seconds <= 0 {
+                    self.restart()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringRestart{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringRestart = true
+                self.hoveringMiniGames = false
+                self.hoveringZero = false
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = false
+                
+                self.resetColor(button: self.miniGamesButton)
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.zero)
+                self.resetColor(button: self.one)
+                self.resetColor(button: self.two)
+                self.resetColor(button: self.three)
+                self.resetColor(button: self.four)
+                self.resetColor(button: self.five)
+                self.resetColor(button: self.six)
+                self.resetColor(button: self.seven)
+                self.resetColor(button: self.eight)
             }
             else if (self.cursor.frame.intersects(self.miniGamesButton.frame)){
                 
-                self.miniGamesButton.layer.borderColor = UIColor.red.cgColor
+                self.miniGamesButton.layer.borderColor = UIColor.systemBlue.cgColor
                 
-                if eyeBlinkValue > 0.5 {
-                    self.collisionMiniGamesButton();
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.miniGamesButton)
                 }
+                
+                if self.hoveringMiniGames && self.seconds <= 0 {
+                    self.collisionMiniGamesButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringMiniGames{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringRestart = false
+                self.hoveringMiniGames = true
+                self.hoveringZero = false
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = false
+                
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.restartButton)
+                self.resetColor(button: self.zero)
+                self.resetColor(button: self.one)
+                self.resetColor(button: self.two)
+                self.resetColor(button: self.three)
+                self.resetColor(button: self.four)
+                self.resetColor(button: self.five)
+                self.resetColor(button: self.six)
+                self.resetColor(button: self.seven)
+                self.resetColor(button: self.eight)
             }
             
             
             else if self.cursor.frame.intersects(self.zero.frame) && self.playerOneTurn{
-                self.zero.layer.borderColor = UIColor.red.cgColor
-                if eyeBlinkValue > 0.5{
-                    self.collisionCell(cellNumber: 0, isPlayer1: self.playerOneTurn)
+                
+                self.zero.layer.borderColor = UIColor.systemBlue.cgColor
+                self.one.layer.borderColor = UIColor.clear.cgColor
+                self.two.layer.borderColor = UIColor.clear.cgColor
+                self.three.layer.borderColor = UIColor.clear.cgColor
+                self.four.layer.borderColor = UIColor.clear.cgColor
+                self.five.layer.borderColor = UIColor.clear.cgColor
+                self.six.layer.borderColor = UIColor.clear.cgColor
+                self.seven.layer.borderColor = UIColor.clear.cgColor
+                self.eight.layer.borderColor = UIColor.clear.cgColor
 
+                
+                
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.zero)
                 }
+                
+                if self.hoveringZero && self.seconds <= 0 {
+                    self.collisionCell(cellNumber: 0, isPlayer1: self.playerOneTurn)
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringZero{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringRestart = false
+                self.hoveringMiniGames = false
+                self.hoveringZero = true
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = false
+                
+                self.resetColor(button: self.miniGamesButton)
+                self.resetColor(button: self.restartButton)
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.one)
+                self.resetColor(button: self.two)
+                self.resetColor(button: self.three)
+                self.resetColor(button: self.four)
+                self.resetColor(button: self.five)
+                self.resetColor(button: self.six)
+                self.resetColor(button: self.seven)
+                self.resetColor(button: self.eight)
             }
             else if self.cursor.frame.intersects(self.one.frame) && self.playerOneTurn{
-                self.one.layer.borderColor = UIColor.red.cgColor
-                if eyeBlinkValue > 0.5{
-                    self.collisionCell(cellNumber: 1, isPlayer1: self.playerOneTurn)
-
+                
+                self.zero.layer.borderColor = UIColor.clear.cgColor
+                self.one.layer.borderColor = UIColor.systemBlue.cgColor
+                self.two.layer.borderColor = UIColor.clear.cgColor
+                self.three.layer.borderColor = UIColor.clear.cgColor
+                self.four.layer.borderColor = UIColor.clear.cgColor
+                self.five.layer.borderColor = UIColor.clear.cgColor
+                self.six.layer.borderColor = UIColor.clear.cgColor
+                self.seven.layer.borderColor = UIColor.clear.cgColor
+                self.eight.layer.borderColor = UIColor.clear.cgColor
+                
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.one)
                 }
+                
+                if self.hoveringOne && self.seconds <= 0 {
+                    self.collisionCell(cellNumber: 1, isPlayer1: self.playerOneTurn)
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringOne{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringRestart = false
+                self.hoveringMiniGames = false
+                self.hoveringZero = false
+                self.hoveringOne = true
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = false
+                
+                self.resetColor(button: self.miniGamesButton)
+                self.resetColor(button: self.restartButton)
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.zero)
+                self.resetColor(button: self.two)
+                self.resetColor(button: self.three)
+                self.resetColor(button: self.four)
+                self.resetColor(button: self.five)
+                self.resetColor(button: self.six)
+                self.resetColor(button: self.seven)
+                self.resetColor(button: self.eight)
             }
             else if self.cursor.frame.intersects(self.two.frame) && self.playerOneTurn{
-                self.two.layer.borderColor = UIColor.red.cgColor
-                if eyeBlinkValue > 0.5{
-                    self.collisionCell(cellNumber: 2, isPlayer1: self.playerOneTurn)
+                self.zero.layer.borderColor = UIColor.clear.cgColor
+                self.one.layer.borderColor = UIColor.clear.cgColor
+                self.two.layer.borderColor = UIColor.systemBlue.cgColor
+                self.three.layer.borderColor = UIColor.clear.cgColor
+                self.four.layer.borderColor = UIColor.clear.cgColor
+                self.five.layer.borderColor = UIColor.clear.cgColor
+                self.six.layer.borderColor = UIColor.clear.cgColor
+                self.seven.layer.borderColor = UIColor.clear.cgColor
+                self.eight.layer.borderColor = UIColor.clear.cgColor
 
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.two)
                 }
+                
+                if self.hoveringTwo && self.seconds <= 0 {
+                    self.collisionCell(cellNumber: 2, isPlayer1: self.playerOneTurn)
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringTwo{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringRestart = false
+                self.hoveringMiniGames = false
+                self.hoveringZero = false
+                self.hoveringOne = false
+                self.hoveringTwo = true
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = false
+                
+                self.resetColor(button: self.miniGamesButton)
+                self.resetColor(button: self.restartButton)
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.zero)
+                self.resetColor(button: self.one)
+                self.resetColor(button: self.three)
+                self.resetColor(button: self.four)
+                self.resetColor(button: self.five)
+                self.resetColor(button: self.six)
+                self.resetColor(button: self.seven)
+                self.resetColor(button: self.eight)
             }
             else if self.cursor.frame.intersects(self.three.frame) && self.playerOneTurn{
-                self.three.layer.borderColor = UIColor.red.cgColor
-                if eyeBlinkValue > 0.5{
-                    self.collisionCell(cellNumber: 3, isPlayer1: self.playerOneTurn)
+                
+                self.zero.layer.borderColor = UIColor.clear.cgColor
+                self.one.layer.borderColor = UIColor.clear.cgColor
+                self.two.layer.borderColor = UIColor.clear.cgColor
+                self.three.layer.borderColor = UIColor.systemBlue.cgColor
+                self.four.layer.borderColor = UIColor.clear.cgColor
+                self.five.layer.borderColor = UIColor.clear.cgColor
+                self.six.layer.borderColor = UIColor.clear.cgColor
+                self.seven.layer.borderColor = UIColor.clear.cgColor
+                self.eight.layer.borderColor = UIColor.clear.cgColor
 
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.three)
                 }
+                
+                if self.hoveringThree && self.seconds <= 0 {
+                    self.collisionCell(cellNumber: 3, isPlayer1: self.playerOneTurn)
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringThree{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringRestart = false
+                self.hoveringMiniGames = false
+                self.hoveringZero = false
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = true
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = false
+                
+                self.resetColor(button: self.miniGamesButton)
+                self.resetColor(button: self.restartButton)
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.zero)
+                self.resetColor(button: self.one)
+                self.resetColor(button: self.two)
+                self.resetColor(button: self.four)
+                self.resetColor(button: self.five)
+                self.resetColor(button: self.six)
+                self.resetColor(button: self.seven)
+                self.resetColor(button: self.eight)
             }
             else if self.cursor.frame.intersects(self.four.frame) && self.playerOneTurn{
-                self.four.layer.borderColor = UIColor.red.cgColor
-                if eyeBlinkValue > 0.5{
-                    self.collisionCell(cellNumber: 4, isPlayer1: self.playerOneTurn)
 
+                self.zero.layer.borderColor = UIColor.clear.cgColor
+                self.one.layer.borderColor = UIColor.clear.cgColor
+                self.two.layer.borderColor = UIColor.clear.cgColor
+                self.three.layer.borderColor = UIColor.clear.cgColor
+                self.four.layer.borderColor = UIColor.systemBlue.cgColor
+                self.five.layer.borderColor = UIColor.clear.cgColor
+                self.six.layer.borderColor = UIColor.clear.cgColor
+                self.seven.layer.borderColor = UIColor.clear.cgColor
+                self.eight.layer.borderColor = UIColor.clear.cgColor
+                
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.four)
                 }
+                
+                if self.hoveringFour && self.seconds <= 0 {
+                    self.collisionCell(cellNumber: 4, isPlayer1: self.playerOneTurn)
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringFour{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringRestart = false
+                self.hoveringMiniGames = false
+                self.hoveringZero = false
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = true
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = false
+                
+                self.resetColor(button: self.miniGamesButton)
+                self.resetColor(button: self.restartButton)
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.zero)
+                self.resetColor(button: self.one)
+                self.resetColor(button: self.three)
+                self.resetColor(button: self.two)
+                self.resetColor(button: self.five)
+                self.resetColor(button: self.six)
+                self.resetColor(button: self.seven)
+                self.resetColor(button: self.eight)
             }
             else if self.cursor.frame.intersects(self.five.frame) && self.playerOneTurn{
-                self.five.layer.borderColor = UIColor.red.cgColor
-                if eyeBlinkValue > 0.5{
+
+                self.zero.layer.borderColor = UIColor.clear.cgColor
+                self.one.layer.borderColor = UIColor.clear.cgColor
+                self.two.layer.borderColor = UIColor.clear.cgColor
+                self.three.layer.borderColor = UIColor.clear.cgColor
+                self.four.layer.borderColor = UIColor.clear.cgColor
+                self.five.layer.borderColor = UIColor.systemBlue.cgColor
+                self.six.layer.borderColor = UIColor.clear.cgColor
+                self.seven.layer.borderColor = UIColor.clear.cgColor
+                self.eight.layer.borderColor = UIColor.clear.cgColor
+
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.five)
+                }
+                
+                if self.hoveringFive && self.seconds <= 0 {
                     self.collisionCell(cellNumber: 5, isPlayer1: self.playerOneTurn)
-
+                    self.resetTimer()
+                    
                 }
+                else if !self.hoveringFive{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringRestart = false
+                self.hoveringMiniGames = false
+                self.hoveringZero = false
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = true
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = false
+                
+                self.resetColor(button: self.miniGamesButton)
+                self.resetColor(button: self.restartButton)
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.zero)
+                self.resetColor(button: self.one)
+                self.resetColor(button: self.three)
+                self.resetColor(button: self.four)
+                self.resetColor(button: self.two)
+                self.resetColor(button: self.six)
+                self.resetColor(button: self.seven)
+                self.resetColor(button: self.eight)
             }
-            else if self.cursor.frame.intersects(self.six.frame) && eyeBlinkValue > 0.5 && self.playerOneTurn{
-                self.six.layer.borderColor = UIColor.red.cgColor
-                if eyeBlinkValue > 0.5{
-                    self.collisionCell(cellNumber: 6, isPlayer1: self.playerOneTurn)
+            else if self.cursor.frame.intersects(self.six.frame) && self.playerOneTurn{
 
+                self.zero.layer.borderColor = UIColor.clear.cgColor
+                self.one.layer.borderColor = UIColor.clear.cgColor
+                self.two.layer.borderColor = UIColor.clear.cgColor
+                self.three.layer.borderColor = UIColor.clear.cgColor
+                self.four.layer.borderColor = UIColor.clear.cgColor
+                self.five.layer.borderColor = UIColor.clear.cgColor
+                self.six.layer.borderColor = UIColor.systemBlue.cgColor
+                self.seven.layer.borderColor = UIColor.clear.cgColor
+                self.eight.layer.borderColor = UIColor.clear.cgColor
+
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.six)
                 }
+                
+                if self.hoveringSix && self.seconds <= 0 {
+                    self.collisionCell(cellNumber: 6, isPlayer1: self.playerOneTurn)
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringSix{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringRestart = false
+                self.hoveringMiniGames = false
+                self.hoveringZero = false
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = true
+                self.hoveringSeven = false
+                self.hoveringEight = false
+                
+                self.resetColor(button: self.miniGamesButton)
+                self.resetColor(button: self.restartButton)
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.zero)
+                self.resetColor(button: self.one)
+                self.resetColor(button: self.three)
+                self.resetColor(button: self.four)
+                self.resetColor(button: self.five)
+                self.resetColor(button: self.two)
+                self.resetColor(button: self.seven)
+                self.resetColor(button: self.eight)
             }
             else if self.cursor.frame.intersects(self.seven.frame) && self.playerOneTurn{
-                self.seven.layer.borderColor = UIColor.red.cgColor
-                if eyeBlinkValue > 0.5{
-                    self.collisionCell(cellNumber: 7, isPlayer1: self.playerOneTurn)
 
+                self.zero.layer.borderColor = UIColor.clear.cgColor
+                self.one.layer.borderColor = UIColor.clear.cgColor
+                self.two.layer.borderColor = UIColor.clear.cgColor
+                self.three.layer.borderColor = UIColor.clear.cgColor
+                self.four.layer.borderColor = UIColor.clear.cgColor
+                self.five.layer.borderColor = UIColor.clear.cgColor
+                self.six.layer.borderColor = UIColor.clear.cgColor
+                self.seven.layer.borderColor = UIColor.systemBlue.cgColor
+                self.eight.layer.borderColor = UIColor.clear.cgColor
+
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.seven)
                 }
+                
+                if self.hoveringSeven && self.seconds <= 0 {
+                    self.collisionCell(cellNumber: 7, isPlayer1: self.playerOneTurn)
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringSeven{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringRestart = false
+                self.hoveringMiniGames = false
+                self.hoveringZero = false
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = true
+                self.hoveringEight = false
+                
+                self.resetColor(button: self.miniGamesButton)
+                self.resetColor(button: self.restartButton)
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.zero)
+                self.resetColor(button: self.one)
+                self.resetColor(button: self.three)
+                self.resetColor(button: self.four)
+                self.resetColor(button: self.five)
+                self.resetColor(button: self.six)
+                self.resetColor(button: self.two)
+                self.resetColor(button: self.eight)
             }
             else if self.cursor.frame.intersects(self.eight.frame) && self.playerOneTurn{
-                self.eight.layer.borderColor = UIColor.red.cgColor
-                if eyeBlinkValue > 0.5{
-                    self.collisionCell(cellNumber: 8, isPlayer1: self.playerOneTurn)
-
+                
+                self.zero.layer.borderColor = UIColor.clear.cgColor
+                self.one.layer.borderColor = UIColor.clear.cgColor
+                self.two.layer.borderColor = UIColor.clear.cgColor
+                self.three.layer.borderColor = UIColor.clear.cgColor
+                self.four.layer.borderColor = UIColor.clear.cgColor
+                self.five.layer.borderColor = UIColor.clear.cgColor
+                self.six.layer.borderColor = UIColor.clear.cgColor
+                self.seven.layer.borderColor = UIColor.clear.cgColor
+                self.eight.layer.borderColor = UIColor.systemBlue.cgColor
+                
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.eight)
                 }
+                
+                if self.hoveringEight && self.seconds <= 0 {
+                    self.collisionCell(cellNumber: 8, isPlayer1: self.playerOneTurn)
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringEight{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringRestart = false
+                self.hoveringMiniGames = false
+                self.hoveringZero = false
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = true
+                
+                self.resetColor(button: self.miniGamesButton)
+                self.resetColor(button: self.restartButton)
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.zero)
+                self.resetColor(button: self.one)
+                self.resetColor(button: self.three)
+                self.resetColor(button: self.four)
+                self.resetColor(button: self.five)
+                self.resetColor(button: self.six)
+                self.resetColor(button: self.seven)
+                self.resetColor(button: self.two)
             }
             else{
                 self.menuButton.layer.borderColor = UIColor.clear.cgColor
@@ -519,7 +1042,34 @@ extension TicTacToe: ARSCNViewDelegate {
                 self.six.layer.borderColor = UIColor.clear.cgColor
                 self.seven.layer.borderColor = UIColor.clear.cgColor
                 self.eight.layer.borderColor = UIColor.clear.cgColor
+                
+                self.hoveringMenu = false
+                self.hoveringRestart = false
+                self.hoveringMiniGames = false
+                self.hoveringZero = false
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = false
 
+                self.resetColor(button: self.restartButton)
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.miniGamesButton)
+                self.resetColor(button: self.zero)
+                self.resetColor(button: self.one)
+                self.resetColor(button: self.two)
+                self.resetColor(button: self.three)
+                self.resetColor(button: self.four)
+                self.resetColor(button: self.five)
+                self.resetColor(button: self.six)
+                self.resetColor(button: self.seven)
+                self.resetColor(button: self.eight)
+                
+                self.resetTimer()
             }
         }
         

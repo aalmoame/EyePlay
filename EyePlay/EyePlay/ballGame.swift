@@ -13,6 +13,7 @@ class ballGame: UIViewController{
     
     @IBOutlet var ballGameView: ARSCNView!
     
+    @IBOutlet weak var miniGamesButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var score: UILabel!
     @IBOutlet weak var cursor: UIImageView!
@@ -21,6 +22,31 @@ class ballGame: UIViewController{
     
     let sceneNodes = nodes()
     let mainThread = DispatchQueue.main
+    
+    var seconds = 2
+    var timer = Timer()
+    var isTimerRunning = false
+    var hoveringMenu = false
+    var hoveringMiniGames = false
+
+    
+    func runTimer(button: UIButton) {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ballGame.updateTimer)), userInfo: nil, repeats: true)
+        isTimerRunning = true
+        animate(button: button)
+    }
+    @objc func updateTimer() {
+        seconds -= 1
+    }
+    func resetTimer(){
+        timer.invalidate()
+        isTimerRunning = false
+        seconds = 2
+    }
+    func resetColor(button: UIButton){
+        button.layer.backgroundColor = UIColor.white.cgColor
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
@@ -44,8 +70,10 @@ class ballGame: UIViewController{
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor;
         cursor.layer.zPosition = 1
-        menuButton.layer.cornerRadius = 10;
+        menuButton.layer.cornerRadius = 5;
         menuButton.layer.borderWidth = 10.0;
+        miniGamesButton.layer.cornerRadius = 5;
+        miniGamesButton.layer.borderWidth = 10.0;
         
         ballGameView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen);
         ballGameView.scene.background.contents = UIColor.black;
@@ -79,6 +107,13 @@ class ballGame: UIViewController{
         
         mainThread.async {
             self.performSegue(withIdentifier: "MainScreenSegue", sender: self)
+        
+        }
+    }
+    func collisionMiniGames(){
+        
+        mainThread.async {
+            self.performSegue(withIdentifier: "MiniGamesSegue", sender: self)
         
         }
     }
@@ -125,27 +160,71 @@ extension ballGame: ARSCNViewDelegate {
         faceGeometry.update(from: faceAnchor.geometry)
                 
         self.sceneNodes.hitTest(withFaceAnchor: faceAnchor, cursor: cursor)
-        
-        let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
-        
+                
         mainThread.async {
             if self.cursor.frame.intersects(self.ball.frame){
                 self.collisionBall()
-                self.menuButton.layer.borderColor = UIColor.clear.cgColor
 
             }
             
             else if self.cursor.frame.intersects(self.menuButton.frame){
                 
-                self.menuButton.layer.borderColor = UIColor.red.cgColor
+                self.menuButton.layer.borderColor = UIColor.systemBlue.cgColor
                 
-                if eyeBlinkValue > 0.5{
-                    self.collisionMenuButton()
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.menuButton)
                 }
+                
+                if self.hoveringMenu && self.seconds <= 0 {
+                    self.collisionMenuButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringMenu{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = true
+                self.hoveringMiniGames = false
+                
+                self.resetColor(button: self.miniGamesButton)
+                
+            }
+            else if self.cursor.frame.intersects(self.miniGamesButton.frame){
+                
+                self.miniGamesButton.layer.borderColor = UIColor.systemBlue.cgColor
+                
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.miniGamesButton)
+                }
+                
+                if self.hoveringMiniGames && self.seconds <= 0 {
+                    self.collisionMiniGames()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringMiniGames{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringMiniGames = true
+                
+                self.resetColor(button: self.menuButton)
                 
             }
             else{
                 self.menuButton.layer.borderColor = UIColor.clear.cgColor
+                self.miniGamesButton.layer.borderColor = UIColor.clear.cgColor
+                
+                self.hoveringMenu = false
+                self.hoveringMiniGames = false
+
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.miniGamesButton)
+                
+                self.resetTimer()
+
             }
         }
         

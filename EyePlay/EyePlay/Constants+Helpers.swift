@@ -118,3 +118,10 @@ func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
 
     return newImage!
 }
+
+
+func animate(button: UIButton){
+    UIView.animate(withDuration: 2.5) {
+        button.layer.backgroundColor = UIColor.systemBlue.withAlphaComponent(1.0).cgColor
+    }
+}

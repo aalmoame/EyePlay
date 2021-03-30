@@ -20,6 +20,37 @@ class LevelSelector: UIViewController{
     @IBOutlet weak var levelEightButton: UIButton!
     let sceneNodes = nodes()
     let mainThread = DispatchQueue.main
+    
+    var seconds = 2
+    var timer = Timer()
+    var isTimerRunning = false
+    var hoveringMenu = false
+    var hoveringOne = false
+    var hoveringTwo = false
+    var hoveringThree = false
+    var hoveringFour = false
+    var hoveringFive = false
+    var hoveringSix = false
+    var hoveringSeven = false
+    var hoveringEight = false
+
+    
+    func runTimer(button: UIButton) {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(LevelSelector.updateTimer)), userInfo: nil, repeats: true)
+        isTimerRunning = true
+        animate(button: button)
+    }
+    @objc func updateTimer() {
+        seconds -= 1
+    }
+    func resetTimer(){
+        timer.invalidate()
+        isTimerRunning = false
+        seconds = 2
+    }
+    func resetColor(button: UIButton){
+        button.layer.backgroundColor = UIColor.white.cgColor
+    }
 
     //sets the view up
     override func viewWillAppear(_ animated: Bool) {
@@ -56,15 +87,15 @@ class LevelSelector: UIViewController{
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor
         cursor.layer.zPosition = 1;
-        menuButton.layer.cornerRadius = 10;
-        levelOneButton.layer.cornerRadius = 10;
-        levelTwoButton.layer.cornerRadius = 10;
-        levelThreeButton.layer.cornerRadius = 10;
-        levelFourButton.layer.cornerRadius = 10;
-        levelFiveButton.layer.cornerRadius = 10;
-        levelSixButton.layer.cornerRadius = 10;
-        levelSevenButton.layer.cornerRadius = 10;
-        levelEightButton.layer.cornerRadius = 10;
+        menuButton.layer.cornerRadius = 5;
+        levelOneButton.layer.cornerRadius = 5;
+        levelTwoButton.layer.cornerRadius = 5;
+        levelThreeButton.layer.cornerRadius = 5;
+        levelFourButton.layer.cornerRadius = 5;
+        levelFiveButton.layer.cornerRadius = 5;
+        levelSixButton.layer.cornerRadius = 5;
+        levelSevenButton.layer.cornerRadius = 5;
+        levelEightButton.layer.cornerRadius = 5;
 
         levelSelectorView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
         levelSelectorView.scene.background.contents = UIColor.black
@@ -183,91 +214,333 @@ extension LevelSelector: ARSCNViewDelegate {
         faceGeometry.update(from: faceAnchor.geometry)
         
         self.sceneNodes.hitTest(withFaceAnchor: faceAnchor, cursor: cursor)
-            
-        
-        let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
         
         mainThread.async {
             if self.cursor.frame.intersects(self.menuButton.frame){
 
-                self.menuButton.layer.borderColor = UIColor.red.cgColor
+                self.menuButton.layer.borderColor = UIColor.systemBlue.cgColor
                 
-                if eyeBlinkValue > 0.5{
-                
-                    self.collisionMenuButton();
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.menuButton)
                 }
+                
+                if self.hoveringMenu && self.seconds <= 0 {
+                    self.collisionMenuButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringMenu{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = true
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = false
+                
+                self.resetColor(button: self.levelOneButton)
+                self.resetColor(button: self.levelTwoButton)
+                self.resetColor(button: self.levelThreeButton)
+                self.resetColor(button: self.levelFourButton)
+                self.resetColor(button: self.levelFiveButton)
+                self.resetColor(button: self.levelSixButton)
+                self.resetColor(button: self.levelSevenButton)
+                self.resetColor(button: self.levelEightButton)
+
             }
             else if self.cursor.frame.intersects(self.levelOneButton.frame){
                 
-                self.levelOneButton.layer.borderColor = UIColor.red.cgColor
+                self.levelOneButton.layer.borderColor = UIColor.systemBlue.cgColor
 
-                if eyeBlinkValue > 0.5{
-                    self.collisionOneButton();
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.levelOneButton)
                 }
+                
+                if self.hoveringOne && self.seconds <= 0 {
+                    self.collisionOneButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringOne{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringOne = true
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = false
+                
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.levelTwoButton)
+                self.resetColor(button: self.levelThreeButton)
+                self.resetColor(button: self.levelFourButton)
+                self.resetColor(button: self.levelFiveButton)
+                self.resetColor(button: self.levelSixButton)
+                self.resetColor(button: self.levelSevenButton)
+                self.resetColor(button: self.levelEightButton)
                 
             }
             else if self.cursor.frame.intersects(self.levelTwoButton.frame){
                 
-                self.levelTwoButton.layer.borderColor = UIColor.red.cgColor
+                self.levelTwoButton.layer.borderColor = UIColor.systemBlue.cgColor
                 
-                if eyeBlinkValue > 0.5 {
-                
-                    self.collisionTwoButton();
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.levelTwoButton)
                 }
+                
+                if self.hoveringTwo && self.seconds <= 0 {
+                    self.collisionTwoButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringTwo{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringOne = false
+                self.hoveringTwo = true
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = false
+                
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.levelOneButton)
+                self.resetColor(button: self.levelThreeButton)
+                self.resetColor(button: self.levelFourButton)
+                self.resetColor(button: self.levelFiveButton)
+                self.resetColor(button: self.levelSixButton)
+                self.resetColor(button: self.levelSevenButton)
+                self.resetColor(button: self.levelEightButton)
             }
             else if self.cursor.frame.intersects(self.levelThreeButton.frame){
                 
-                self.levelThreeButton.layer.borderColor = UIColor.red.cgColor
+                self.levelThreeButton.layer.borderColor = UIColor.systemBlue.cgColor
                 
-                if eyeBlinkValue > 0.5 {
-                
-                    self.collisionThreeButton();
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.levelThreeButton)
                 }
+                
+                if self.hoveringThree && self.seconds <= 0 {
+                    self.collisionThreeButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringThree{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = true
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = false
+                
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.levelOneButton)
+                self.resetColor(button: self.levelTwoButton)
+                self.resetColor(button: self.levelFourButton)
+                self.resetColor(button: self.levelFiveButton)
+                self.resetColor(button: self.levelSixButton)
+                self.resetColor(button: self.levelSevenButton)
+                self.resetColor(button: self.levelEightButton)
             }
             else if self.cursor.frame.intersects(self.levelFourButton.frame){
                 
-                self.levelFourButton.layer.borderColor = UIColor.red.cgColor
+                self.levelFourButton.layer.borderColor = UIColor.systemBlue.cgColor
                 
-                if eyeBlinkValue > 0.5 {
-                
-                    self.collisionFourButton();
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.levelFourButton)
                 }
+                
+                if self.hoveringFour && self.seconds <= 0 {
+                    self.collisionFourButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringFour{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = true
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = false
+                
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.levelOneButton)
+                self.resetColor(button: self.levelThreeButton)
+                self.resetColor(button: self.levelTwoButton)
+                self.resetColor(button: self.levelFiveButton)
+                self.resetColor(button: self.levelSixButton)
+                self.resetColor(button: self.levelSevenButton)
+                self.resetColor(button: self.levelEightButton)
             }
             else if self.cursor.frame.intersects(self.levelFiveButton.frame){
                 
-                self.levelFiveButton.layer.borderColor = UIColor.red.cgColor
+                self.levelFiveButton.layer.borderColor = UIColor.systemBlue.cgColor
                 
-                if eyeBlinkValue > 0.5 {
-                
-                    self.collisionFiveButton();
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.levelFiveButton)
                 }
+                
+                if self.hoveringFive && self.seconds <= 0 {
+                    self.collisionFiveButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringFive{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = true
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = false
+                
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.levelOneButton)
+                self.resetColor(button: self.levelThreeButton)
+                self.resetColor(button: self.levelFourButton)
+                self.resetColor(button: self.levelTwoButton)
+                self.resetColor(button: self.levelSixButton)
+                self.resetColor(button: self.levelSevenButton)
+                self.resetColor(button: self.levelEightButton)
             }
             else if self.cursor.frame.intersects(self.levelSixButton.frame){
                 
-                self.levelSixButton.layer.borderColor = UIColor.red.cgColor
+                self.levelSixButton.layer.borderColor = UIColor.systemBlue.cgColor
                 
-                if eyeBlinkValue > 0.5 {
-                
-                    self.collisionSixButton();
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.levelSixButton)
                 }
+                
+                if self.hoveringSix && self.seconds <= 0 {
+                    self.collisionSixButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringSix{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = true
+                self.hoveringSeven = false
+                self.hoveringEight = false
+                
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.levelOneButton)
+                self.resetColor(button: self.levelThreeButton)
+                self.resetColor(button: self.levelFourButton)
+                self.resetColor(button: self.levelFiveButton)
+                self.resetColor(button: self.levelTwoButton)
+                self.resetColor(button: self.levelSevenButton)
+                self.resetColor(button: self.levelEightButton)
             }
             else if self.cursor.frame.intersects(self.levelSevenButton.frame){
                 
-                self.levelSevenButton.layer.borderColor = UIColor.red.cgColor
+                self.levelSevenButton.layer.borderColor = UIColor.systemBlue.cgColor
                 
-                if eyeBlinkValue > 0.5 {
-                
-                    self.collisionSevenButton();
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.levelSevenButton)
                 }
+                
+                if self.hoveringSeven && self.seconds <= 0 {
+                    self.collisionSevenButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringSeven{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = true
+                self.hoveringEight = false
+                
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.levelOneButton)
+                self.resetColor(button: self.levelThreeButton)
+                self.resetColor(button: self.levelFourButton)
+                self.resetColor(button: self.levelFiveButton)
+                self.resetColor(button: self.levelSixButton)
+                self.resetColor(button: self.levelTwoButton)
+                self.resetColor(button: self.levelEightButton)
             }
             else if self.cursor.frame.intersects(self.levelEightButton.frame){
                 
-                self.levelEightButton.layer.borderColor = UIColor.red.cgColor
+                self.levelEightButton.layer.borderColor = UIColor.systemBlue.cgColor
                 
-                if eyeBlinkValue > 0.5 {
-                
-                    self.collisionEightButton();
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.levelEightButton)
                 }
+                
+                if self.hoveringEight && self.seconds <= 0 {
+                    self.collisionEightButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringEight{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = true
+                
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.levelOneButton)
+                self.resetColor(button: self.levelThreeButton)
+                self.resetColor(button: self.levelFourButton)
+                self.resetColor(button: self.levelFiveButton)
+                self.resetColor(button: self.levelSixButton)
+                self.resetColor(button: self.levelSevenButton)
+                self.resetColor(button: self.levelTwoButton)
             }
             else{
                 self.menuButton.layer.borderColor = UIColor.clear.cgColor
@@ -279,6 +552,28 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.levelSixButton.layer.borderColor = UIColor.clear.cgColor
                 self.levelSevenButton.layer.borderColor = UIColor.clear.cgColor
                 self.levelEightButton.layer.borderColor = UIColor.clear.cgColor
+                
+                self.hoveringMenu = false
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = false
+
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.levelOneButton)
+                self.resetColor(button: self.levelTwoButton)
+                self.resetColor(button: self.levelThreeButton)
+                self.resetColor(button: self.levelFourButton)
+                self.resetColor(button: self.levelFiveButton)
+                self.resetColor(button: self.levelSixButton)
+                self.resetColor(button: self.levelSevenButton)
+                self.resetColor(button: self.levelEightButton)
+
+                self.resetTimer()
             }
         }
 

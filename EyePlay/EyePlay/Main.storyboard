@@ -424,7 +424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nH4-pr-DGf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1413" y="-1291"/>
+            <point key="canvasLocation" x="-1389" y="-1298"/>
         </scene>
         <!--Level Seven-->
         <scene sceneID="4YJ-aE-NYs">
@@ -692,7 +692,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4eO-ea-nLO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1364.0287769784175" y="50.753768844221106"/>
+            <point key="canvasLocation" x="-1389" y="40"/>
         </scene>
         <!--Level One-->
         <scene sceneID="dzx-d2-3fP">
@@ -871,14 +871,14 @@
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lM2-DX-Ub8">
-                                <rect key="frame" x="122" y="20" width="50" height="87"/>
+                                <rect key="frame" x="122" y="20" width="50" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bx2-nO-jm7">
-                                <rect key="frame" x="20" y="20" width="94" height="87"/>
+                                <rect key="frame" x="20" y="20" width="94" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -889,7 +889,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqn-a6-q3i">
-                                <rect key="frame" x="283" y="20" width="268" height="87"/>
+                                <rect key="frame" x="224" y="20" width="268" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
@@ -899,6 +899,19 @@
                                 </state>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="zhF-j1-cNC" appends="YES" id="wgD-oL-OJi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnL-iA-JEI">
+                                <rect key="frame" x="546" y="20" width="268" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Mini Games">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0SQ-To-I4o" appends="YES" id="2S4-tf-NPu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -911,6 +924,7 @@
                         <outlet property="ballGameView" destination="5Cx-3f-Aea" id="U7q-dh-DIN"/>
                         <outlet property="cursor" destination="E6U-ic-2RX" id="uBH-ol-kve"/>
                         <outlet property="menuButton" destination="Mqn-a6-q3i" id="1AH-fk-a0C"/>
+                        <outlet property="miniGamesButton" destination="wnL-iA-JEI" id="ROe-2v-epB"/>
                         <outlet property="score" destination="bx2-nO-jm7" id="hn4-3Q-yGo"/>
                         <outlet property="scoreValue" destination="lM2-DX-Ub8" id="Jzf-0d-jW0"/>
                     </connections>
@@ -919,6 +933,11 @@
                 <tapGestureRecognizer id="zhF-j1-cNC">
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="MainScreenSegue" modalPresentationStyle="fullScreen" id="r9a-3V-6gO"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="0SQ-To-I4o">
+                    <connections>
+                        <segue destination="Kd9-Hl-M1C" kind="presentation" identifier="MiniGamesSegue" modalPresentationStyle="fullScreen" id="M8S-ia-Ok8"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -1401,16 +1420,16 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Mz8-fw-bzg"/>
+        <segue reference="M8S-ia-Ok8"/>
         <segue reference="IJG-yJ-LpU"/>
-        <segue reference="X0W-O2-43U"/>
+        <segue reference="r9a-3V-6gO"/>
         <segue reference="r54-Rz-WKa"/>
         <segue reference="4Zh-1V-K52"/>
-        <segue reference="zRy-Cz-G7P"/>
-        <segue reference="4zb-KR-wVt"/>
+        <segue reference="e6N-px-NC3"/>
+        <segue reference="J7Y-HT-NAf"/>
         <segue reference="Brb-QM-2Lx"/>
         <segue reference="gVo-2G-pr4"/>
-        <segue reference="3V7-mB-oQc"/>
+        <segue reference="uHu-rc-ReU"/>
         <segue reference="o5y-0L-a9B"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -16,6 +16,31 @@ class MiniGames: UIViewController, ARSessionDelegate{
     
     let mainThread = DispatchQueue.main
     
+    var seconds = 2
+    var timer = Timer()
+    var isTimerRunning = false
+    var hoveringMenu = false
+    var hoveringBallGame = false
+    var hoveringTicTacToe = false
+
+    
+    func runTimer(button: UIButton) {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(MiniGames.updateTimer)), userInfo: nil, repeats: true)
+        isTimerRunning = true
+        animate(button: button)
+    }
+    @objc func updateTimer() {
+        seconds -= 1
+    }
+    func resetTimer(){
+        timer.invalidate()
+        isTimerRunning = false
+        seconds = 2
+    }
+    func resetColor(button: UIButton){
+        button.layer.backgroundColor = UIColor.white.cgColor
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
             
@@ -41,9 +66,9 @@ class MiniGames: UIViewController, ARSessionDelegate{
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor
         cursor.layer.zPosition = 1;
-        TicTacToeButton.layer.cornerRadius = 10;
-        mainMenuButton.layer.cornerRadius = 10;
-        ballGameButton.layer.cornerRadius = 10;
+        TicTacToeButton.layer.cornerRadius = 5;
+        mainMenuButton.layer.cornerRadius = 5;
+        ballGameButton.layer.cornerRadius = 5;
         
         TicTacToeButton.layer.borderWidth = 10;
         mainMenuButton.layer.borderWidth = 10;
@@ -118,36 +143,88 @@ extension MiniGames: ARSCNViewDelegate {
         faceGeometry.update(from: faceAnchor.geometry)
                 
         self.sceneNodes.hitTest(withFaceAnchor: faceAnchor, cursor: cursor)
-            
-        
-        let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
-
         
         mainThread.async {
             if self.cursor.frame.intersects(self.mainMenuButton.frame){
-                self.mainMenuButton.layer.borderColor = UIColor.red.cgColor
-                if eyeBlinkValue > 0.5{
-                    self.collisionMenuButton()
+                self.mainMenuButton.layer.borderColor = UIColor.systemBlue.cgColor
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.mainMenuButton)
                 }
+                
+                if self.hoveringMenu && self.seconds <= 0 {
+                    self.collisionMenuButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringMenu{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = true
+                self.hoveringBallGame = false
+                self.hoveringTicTacToe = false
+                
+                self.resetColor(button: self.ballGameButton)
+                self.resetColor(button: self.TicTacToeButton)
             }
             else if self.cursor.frame.intersects(self.TicTacToeButton.frame){
-                self.TicTacToeButton.layer.borderColor = UIColor.red.cgColor
-                if eyeBlinkValue > 0.5{
-                    self.collisionTicTacToeButton()
-
+                self.TicTacToeButton.layer.borderColor = UIColor.systemBlue.cgColor
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.TicTacToeButton)
                 }
+                
+                if self.hoveringTicTacToe && self.seconds <= 0 {
+                    self.collisionTicTacToeButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringTicTacToe{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringBallGame = false
+                self.hoveringTicTacToe = true
+                
+                self.resetColor(button: self.ballGameButton)
+                self.resetColor(button: self.mainMenuButton)
             }
             else if self.cursor.frame.intersects(self.ballGameButton.frame){
-                self.ballGameButton.layer.borderColor = UIColor.red.cgColor
-                if eyeBlinkValue > 0.5{
-                    self.collisionBallGameButton()
-
+                self.ballGameButton.layer.borderColor = UIColor.systemBlue.cgColor
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.ballGameButton)
                 }
+                
+                if self.hoveringBallGame && self.seconds <= 0 {
+                    self.collisionBallGameButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringBallGame{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringBallGame = true
+                self.hoveringTicTacToe = false
+                
+                self.resetColor(button: self.mainMenuButton)
+                self.resetColor(button: self.TicTacToeButton)
             }
             else{
                 self.mainMenuButton.layer.borderColor = UIColor.clear.cgColor
                 self.TicTacToeButton.layer.borderColor = UIColor.clear.cgColor
                 self.ballGameButton.layer.borderColor = UIColor.clear.cgColor
+                
+                self.hoveringTicTacToe = false
+                self.hoveringBallGame = false
+                self.hoveringMenu = false
+
+                self.resetColor(button: self.TicTacToeButton)
+                self.resetColor(button: self.mainMenuButton)
+                self.resetColor(button: self.ballGameButton)
+                
+                self.resetTimer()
 
             }
         }

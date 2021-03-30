@@ -33,6 +33,32 @@ class CursorSize: UIViewController, ARSessionDelegate{
     let mainThread = DispatchQueue.main
     //sets the view up
     
+    var seconds = 2
+    var timer = Timer()
+    var isTimerRunning = false
+    var hoveringSmall = false
+    var hoveringMedium = false
+    var hoveringLarge = false
+    var hoveringSettings = false
+
+    
+    func runTimer(button: UIButton) {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(CursorSize.updateTimer)), userInfo: nil, repeats: true)
+        isTimerRunning = true
+        animate(button: button)
+    }
+    @objc func updateTimer() {
+        seconds -= 1
+    }
+    func resetTimer(){
+        timer.invalidate()
+        isTimerRunning = false
+        seconds = 2
+    }
+    func resetColor(button: UIButton){
+        button.layer.backgroundColor = UIColor.white.cgColor
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
             
@@ -58,10 +84,10 @@ class CursorSize: UIViewController, ARSessionDelegate{
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor;
         cursor.layer.zPosition = 1;
-        smallButton.layer.cornerRadius = 10;
-        mediumButton.layer.cornerRadius = 10;
-        largeButton.layer.cornerRadius = 10;
-        settingsButton.layer.cornerRadius = 10;
+        smallButton.layer.cornerRadius = 5;
+        mediumButton.layer.cornerRadius = 5;
+        largeButton.layer.cornerRadius = 5;
+        settingsButton.layer.cornerRadius = 5;
 
         smallButton.layer.borderWidth = 10;
         mediumButton.layer.borderWidth = 10;
@@ -141,48 +167,128 @@ extension CursorSize: ARSCNViewDelegate {
 
         self.sceneNodes.hitTest(withFaceAnchor: faceAnchor, cursor: cursor)
             
-        
-        let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
-        
         mainThread.async {
 
             
             if self.cursor.frame.intersects(self.smallButton.frame){
                 
-                self.smallButton.layer.borderColor = UIColor.red.cgColor
+                self.smallButton.layer.borderColor = UIColor.systemBlue.cgColor
                 
-                if eyeBlinkValue > 0.5{
-                    self.collisionSmallButton();
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.smallButton)
                 }
+                
+                if self.hoveringSmall && self.seconds <= 0 {
+                    self.collisionSmallButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringSmall{
+                    self.resetTimer()
+                }
+                
+                self.hoveringSmall = true
+                self.hoveringMedium = false
+                self.hoveringLarge = false
+                self.hoveringSettings = false
+                
+                self.resetColor(button: self.mediumButton)
+                self.resetColor(button: self.largeButton)
+                self.resetColor(button: self.settingsButton)
 
             }
             else if self.cursor.frame.intersects(self.mediumButton.frame){
 
-                self.mediumButton.layer.borderColor = UIColor.red.cgColor
+                self.mediumButton.layer.borderColor = UIColor.systemBlue.cgColor
                 
-                if eyeBlinkValue > 0.5{
-                    self.collisionMediumButton();
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.mediumButton)
                 }
+                
+                if self.hoveringMedium && self.seconds <= 0 {
+                    self.collisionMediumButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringMedium{
+                    self.resetTimer()
+                }
+                
+                self.hoveringSmall = false
+                self.hoveringMedium = true
+                self.hoveringLarge = false
+                self.hoveringSettings = false
+                
+                self.resetColor(button: self.smallButton)
+                self.resetColor(button: self.largeButton)
+                self.resetColor(button: self.settingsButton)
             }
             else if self.cursor.frame.intersects(self.largeButton.frame){
-                self.largeButton.layer.borderColor = UIColor.red.cgColor
+                self.largeButton.layer.borderColor = UIColor.systemBlue.cgColor
                 
-                if eyeBlinkValue > 0.5{
-                    self.collisionLargeButton();
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.largeButton)
                 }
+                
+                if self.hoveringLarge && self.seconds <= 0 {
+                    self.collisionLargeButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringLarge{
+                    self.resetTimer()
+                }
+                
+                self.hoveringSmall = false
+                self.hoveringMedium = false
+                self.hoveringLarge = true
+                self.hoveringSettings = false
+                
+                self.resetColor(button: self.mediumButton)
+                self.resetColor(button: self.smallButton)
+                self.resetColor(button: self.settingsButton)
             }
             else if self.cursor.frame.intersects(self.settingsButton.frame){
-                self.settingsButton.layer.borderColor = UIColor.red.cgColor
+                self.settingsButton.layer.borderColor = UIColor.systemBlue.cgColor
                 
-                if eyeBlinkValue > 0.5{
-                    self.collisionSettingsButton();
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.settingsButton)
                 }
+                
+                if self.hoveringSettings && self.seconds <= 0 {
+                    self.collisionSettingsButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringSettings{
+                    self.resetTimer()
+                }
+                
+                self.hoveringSmall = false
+                self.hoveringMedium = false
+                self.hoveringLarge = false
+                self.hoveringSettings = true
+                
+                self.resetColor(button: self.smallButton)
+                self.resetColor(button: self.mediumButton)
+                self.resetColor(button: self.largeButton)
             }
             else{
                 self.smallButton.layer.borderColor = UIColor.clear.cgColor
                 self.mediumButton.layer.borderColor = UIColor.clear.cgColor
                 self.largeButton.layer.borderColor = UIColor.clear.cgColor
                 self.settingsButton.layer.borderColor = UIColor.clear.cgColor
+                
+                self.hoveringSettings = false
+                self.hoveringSmall = false
+                self.hoveringMedium = false
+                self.hoveringLarge = false
+                self.resetColor(button: self.smallButton)
+                self.resetColor(button: self.settingsButton)
+                self.resetColor(button: self.mediumButton)
+                self.resetColor(button: self.largeButton)
+                
+                self.resetTimer()
             }
         }
         
