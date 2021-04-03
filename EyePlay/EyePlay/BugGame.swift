@@ -28,6 +28,11 @@ class BugGame: UIViewController{
     var hoveringMenu = false
     var hoveringMiniGames = false
     
+    @IBAction func tapRoach(_ sender: Any) {
+        if self.time_over{
+            collisionRoach()
+        }
+    }
     
     
     var player: AVAudioPlayer?
@@ -111,6 +116,7 @@ class BugGame: UIViewController{
         bugGameView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen);
         bugGameView.scene.background.contents = UIColor.black;
         bugGameView.delegate = self;
+        
     }
         
     func collisionRoach(){
@@ -146,6 +152,16 @@ class BugGame: UIViewController{
         runTimerRoach()
         
     }
+    func roachOffScreen(){
+        
+            
+        roach.isHidden = true
+        
+        resetTimerRoach()
+        
+        runTimerRoach()
+        
+    }
     
     func spawnRoach(){
         
@@ -154,8 +170,6 @@ class BugGame: UIViewController{
 
         let xoffset = CGFloat(arc4random_uniform(UInt32(xwidth)))
         let yoffset = CGFloat(arc4random_uniform(UInt32(yheight)))
-        
-        
         
         mainThread.async {
             self.roach.frame.origin.x = xoffset;
@@ -220,6 +234,7 @@ extension BugGame: ARSCNViewDelegate {
 
         sceneNodes.leftEyeNode.simdTransform = faceAnchor.leftEyeTransform
         sceneNodes.rightEyeNode.simdTransform = faceAnchor.rightEyeTransform
+        
 
         faceGeometry.update(from: faceAnchor.geometry)
                 
@@ -227,13 +242,16 @@ extension BugGame: ARSCNViewDelegate {
                 
         mainThread.async {
             
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tapRoach(_:)))
+            self.roach.isUserInteractionEnabled = true
+            self.roach.addGestureRecognizer(tapGestureRecognizer)
+            
             if (self.roach.center.y <= -200 || self.roach.center.x <= -200) && self.time_over{
-                self.collisionRoach()
+                self.roachOffScreen()
             }
             
-            
             if !self.roach.isHidden{
-                let posNeg = [-5, -5, -5, -5, -5, -5, 5, 5, 5]
+                let posNeg = [-5, -5, -5, -5, -5, -5, 5, 5, 5, -10, -10, -10, -10, -10, -10, 10, 10, 10]
                 UIView.animate(withDuration: 0.2){
                     self.roach.center.x += CGFloat(posNeg.randomElement()!)
                     self.roach.center.y += CGFloat(posNeg.randomElement()!)
@@ -241,7 +259,6 @@ extension BugGame: ARSCNViewDelegate {
                 }
                 
             }
-            
             if self.cursor.frame.intersects(self.roach.frame) && self.time_over{
                 self.collisionRoach()
 
@@ -268,6 +285,7 @@ extension BugGame: ARSCNViewDelegate {
                 self.hoveringMiniGames = false
                 
                 self.resetColor(button: self.miniGamesButton)
+                self.miniGamesButton.layer.borderColor = UIColor.clear.cgColor
                 
             }
             else if self.cursor.frame.intersects(self.miniGamesButton.frame){
@@ -291,7 +309,8 @@ extension BugGame: ARSCNViewDelegate {
                 self.hoveringMiniGames = true
                 
                 self.resetColor(button: self.menuButton)
-                
+                self.menuButton.layer.borderColor = UIColor.clear.cgColor
+
             }
             else{
                 self.menuButton.layer.borderColor = UIColor.clear.cgColor

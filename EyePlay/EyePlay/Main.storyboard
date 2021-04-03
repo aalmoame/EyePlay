@@ -1623,13 +1623,13 @@
                                     <outletCollection property="gestureRecognizers" destination="piw-j1-eck" appends="YES" id="JrB-Vt-PW0"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="swatter.png" translatesAutoresizingMaskIntoConstraints="NO" id="yUb-gh-CHM">
-                                <rect key="frame" x="292" y="637" width="250" height="250"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="cockroach.png" translatesAutoresizingMaskIntoConstraints="NO" id="4st-uP-yr5">
-                                <rect key="frame" x="317" y="228" width="200" height="200"/>
+                                <rect key="frame" x="317" y="228" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mvp-M0-g7k" appends="YES" id="aWK-RO-f7i"/>
+                                </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="house.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lEq-Ek-pjy">
                                 <rect key="frame" x="244" y="50" width="40" height="40"/>
@@ -1640,6 +1640,10 @@
                                 <rect key="frame" x="565" y="51" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="swatter.png" translatesAutoresizingMaskIntoConstraints="NO" id="yUb-gh-CHM">
+                                <rect key="frame" x="342" y="616" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UVE-DB-G6V"/>
@@ -1657,17 +1661,29 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KA8-PJ-jd7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="KfQ-kj-Vuk"/>
-                <tapGestureRecognizer id="piw-j1-eck"/>
+                <tapGestureRecognizer id="KfQ-kj-Vuk">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="MainScreenSegue" modalPresentationStyle="fullScreen" id="STq-sg-CUa"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="piw-j1-eck">
+                    <connections>
+                        <segue destination="Kd9-Hl-M1C" kind="presentation" identifier="MiniGamesSegue" modalPresentationStyle="fullScreen" id="2rt-Tb-Z7G"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="mvp-M0-g7k">
+                    <connections>
+                        <action selector="tapRoach:" destination="eBa-9N-bIR" id="WOc-zf-rYQ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="135.97122302158274" y="-1298.4924623115578"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Yf1-jF-tJa"/>
-        <segue reference="M8S-ia-Ok8"/>
+        <segue reference="2rt-Tb-Z7G"/>
         <segue reference="PUu-fv-gDm"/>
-        <segue reference="1u1-pj-70V"/>
+        <segue reference="STq-sg-CUa"/>
         <segue reference="POx-jN-7AF"/>
         <segue reference="4Zh-1V-K52"/>
         <segue reference="zRy-Cz-G7P"/>

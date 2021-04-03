@@ -237,6 +237,7 @@ SWIFT_CLASS("_TtC7EyePlay7BugGame")
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified roach;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified scoreValue;
+- (IBAction)tapRoach:(id _Nonnull)sender;
 - (void)updateTimerRoach;
 - (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
