@@ -435,9 +435,6 @@ extension TicTacToe: ARSCNViewDelegate {
         self.sceneNodes.hitTest(withFaceAnchor: faceAnchor, cursor: cursor)
             
         
-        let eyeBlinkValue = faceAnchor.blendShapes[.eyeBlinkLeft]?.floatValue ?? 0.0
-        
-        
         mainThread.async {
             
             if !self.playerOneTurn && self.zero.isEnabled{

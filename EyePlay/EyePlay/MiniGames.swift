@@ -11,6 +11,7 @@ class MiniGames: UIViewController, ARSessionDelegate{
     @IBOutlet weak var TicTacToeButton: UIButton!
     @IBOutlet weak var mainMenuButton: UIButton!
     @IBOutlet weak var ballGameButton: UIButton!
+    @IBOutlet weak var bugGameButton: UIButton!
     
     let sceneNodes = nodes()
     
@@ -22,6 +23,7 @@ class MiniGames: UIViewController, ARSessionDelegate{
     var hoveringMenu = false
     var hoveringBallGame = false
     var hoveringTicTacToe = false
+    var hoveringBugGame = false
 
     
     func runTimer(button: UIButton) {
@@ -69,10 +71,12 @@ class MiniGames: UIViewController, ARSessionDelegate{
         TicTacToeButton.layer.cornerRadius = 5;
         mainMenuButton.layer.cornerRadius = 5;
         ballGameButton.layer.cornerRadius = 5;
+        bugGameButton.layer.cornerRadius = 5;
         
         TicTacToeButton.layer.borderWidth = 10;
         mainMenuButton.layer.borderWidth = 10;
         ballGameButton.layer.borderWidth = 10;
+        bugGameButton.layer.borderWidth = 10;
         
         miniGameView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
         miniGameView.scene.background.contents = UIColor.black
@@ -97,6 +101,12 @@ class MiniGames: UIViewController, ARSessionDelegate{
 
             mainThread.async {
                 self.performSegue(withIdentifier: "TicTacToeSegue", sender: self)
+            }
+    }
+    func collisionBugGameButton(){
+
+            mainThread.async {
+                self.performSegue(withIdentifier: "BugGameSegue", sender: self)
             }
     }
 }
@@ -163,9 +173,12 @@ extension MiniGames: ARSCNViewDelegate {
                 self.hoveringMenu = true
                 self.hoveringBallGame = false
                 self.hoveringTicTacToe = false
+                self.hoveringBugGame = false
                 
                 self.resetColor(button: self.ballGameButton)
                 self.resetColor(button: self.TicTacToeButton)
+                self.resetColor(button: self.bugGameButton)
+
             }
             else if self.cursor.frame.intersects(self.TicTacToeButton.frame){
                 self.TicTacToeButton.layer.borderColor = UIColor.systemBlue.cgColor
@@ -182,12 +195,15 @@ extension MiniGames: ARSCNViewDelegate {
                     self.resetTimer()
                 }
                 
+                self.hoveringBugGame = false
                 self.hoveringMenu = false
                 self.hoveringBallGame = false
                 self.hoveringTicTacToe = true
                 
                 self.resetColor(button: self.ballGameButton)
                 self.resetColor(button: self.mainMenuButton)
+                self.resetColor(button: self.bugGameButton)
+
             }
             else if self.cursor.frame.intersects(self.ballGameButton.frame){
                 self.ballGameButton.layer.borderColor = UIColor.systemBlue.cgColor
@@ -204,25 +220,56 @@ extension MiniGames: ARSCNViewDelegate {
                     self.resetTimer()
                 }
                 
+                self.hoveringBugGame = false
                 self.hoveringMenu = false
                 self.hoveringBallGame = true
                 self.hoveringTicTacToe = false
                 
                 self.resetColor(button: self.mainMenuButton)
                 self.resetColor(button: self.TicTacToeButton)
+                self.resetColor(button: self.bugGameButton)
+
+            }
+            else if self.cursor.frame.intersects(self.bugGameButton.frame){
+                self.bugGameButton.layer.borderColor = UIColor.systemBlue.cgColor
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.bugGameButton)
+                }
+                
+                if self.hoveringBugGame && self.seconds <= 0 {
+                    self.collisionBugGameButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringBugGame{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringBugGame = true
+                self.hoveringTicTacToe = false
+                self.hoveringBallGame = false
+                
+                
+                self.resetColor(button: self.mainMenuButton)
+                self.resetColor(button: self.TicTacToeButton)
+                self.resetColor(button: self.ballGameButton)
             }
             else{
                 self.mainMenuButton.layer.borderColor = UIColor.clear.cgColor
                 self.TicTacToeButton.layer.borderColor = UIColor.clear.cgColor
                 self.ballGameButton.layer.borderColor = UIColor.clear.cgColor
+                self.bugGameButton.layer.borderColor = UIColor.clear.cgColor
                 
                 self.hoveringTicTacToe = false
                 self.hoveringBallGame = false
                 self.hoveringMenu = false
+                self.hoveringBugGame = false
 
                 self.resetColor(button: self.TicTacToeButton)
                 self.resetColor(button: self.mainMenuButton)
                 self.resetColor(button: self.ballGameButton)
+                self.resetColor(button: self.bugGameButton)
                 
                 self.resetTimer()
 

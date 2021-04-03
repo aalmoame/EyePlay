@@ -223,9 +223,38 @@ SWIFT_CLASS("_TtC7EyePlay11AppDelegate")
 
 @class ARSCNView;
 @class UIButton;
+@class UILabel;
 @class UIImageView;
 @class NSBundle;
 @class NSCoder;
+
+SWIFT_CLASS("_TtC7EyePlay7BugGame")
+@interface BugGame : UIViewController
+@property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified bugGameView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified miniGamesButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified score;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified roach;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified scoreValue;
+- (void)updateTimerRoach;
+- (void)updateTimer;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@protocol SCNSceneRenderer;
+@class ARAnchor;
+@class SCNNode;
+
+@interface BugGame (SWIFT_EXTENSION(EyePlay)) <ARSCNViewDelegate>
+- (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
+- (void)renderer:(id <SCNSceneRenderer> _Nonnull)renderer didUpdateNode:(SCNNode * _Nonnull)node forAnchor:(ARAnchor * _Nonnull)anchor;
+@end
+
 
 SWIFT_CLASS("_TtC7EyePlay11CursorColor")
 @interface CursorColor : UIViewController <ARSessionDelegate>
@@ -247,9 +276,6 @@ SWIFT_CLASS("_TtC7EyePlay11CursorColor")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@protocol SCNSceneRenderer;
-@class ARAnchor;
-@class SCNNode;
 
 @interface CursorColor (SWIFT_EXTENSION(EyePlay)) <ARSCNViewDelegate>
 - (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
@@ -510,6 +536,7 @@ SWIFT_CLASS("_TtC7EyePlay9MiniGames")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified TicTacToeButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified mainMenuButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified ballGameButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified bugGameButton;
 - (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
@@ -561,7 +588,6 @@ SWIFT_CLASS("_TtC7EyePlay8Settings")
 - (void)renderer:(id <SCNSceneRenderer> _Nonnull)renderer didUpdateNode:(SCNNode * _Nonnull)node forAnchor:(ARAnchor * _Nonnull)anchor;
 @end
 
-@class UILabel;
 
 SWIFT_CLASS("_TtC7EyePlay9TicTacToe")
 @interface TicTacToe : UIViewController
