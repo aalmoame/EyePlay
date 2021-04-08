@@ -1681,9 +1681,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="q3A-WE-iC3"/>
         <segue reference="2rt-Tb-Z7G"/>
         <segue reference="PUu-fv-gDm"/>
-        <segue reference="STq-sg-CUa"/>
+        <segue reference="ct6-or-KSl"/>
         <segue reference="POx-jN-7AF"/>
         <segue reference="4Zh-1V-K52"/>
         <segue reference="zRy-Cz-G7P"/>

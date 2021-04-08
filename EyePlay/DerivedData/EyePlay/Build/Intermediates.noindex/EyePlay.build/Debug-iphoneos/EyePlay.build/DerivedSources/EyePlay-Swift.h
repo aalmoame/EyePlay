@@ -225,6 +225,8 @@ SWIFT_CLASS("_TtC7EyePlay11AppDelegate")
 @class UIButton;
 @class UILabel;
 @class UIImageView;
+@class UIView;
+@class UITapGestureRecognizer;
 @class NSBundle;
 @class NSCoder;
 
@@ -237,7 +239,9 @@ SWIFT_CLASS("_TtC7EyePlay7BugGame")
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified roach;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified scoreValue;
-- (IBAction)tapRoach:(id _Nonnull)sender;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified popUpView;
+@property (nonatomic, strong) IBOutlet UITapGestureRecognizer * _Null_unspecified tapRoach;
+- (IBAction)tappedRoach:(id _Nonnull)sender;
 - (void)updateTimerRoach;
 - (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
@@ -332,6 +336,42 @@ SWIFT_CLASS("_TtC7EyePlay7EyePlay")
 - (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
 - (void)renderer:(id <SCNSceneRenderer> _Nonnull)renderer didUpdateNode:(SCNNode * _Nonnull)node forAnchor:(ARAnchor * _Nonnull)anchor;
 @end
+
+@class UITouch;
+@class UIEvent;
+
+/// Custom modal controller
+SWIFT_CLASS("_TtC7EyePlay12JSSAlertView")
+@interface JSSAlertView : UIViewController
+/// Public contructor overriding parent
+/// \param nibNameOrNil Nib name is never used, should be always nil, there is no nib in JSSAlertView
+///
+/// \param nibBundleOrNil Nib bundle is never used there is no nib bundle in JJSAlertView Controller
+///
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)viewDidLayoutSubviews;
+/// Method for removing JSSAlertView from view when there are no buttons
+- (void)buttonTap;
+/// Cancel button tap
+- (void)cancelButtonTap;
+/// Tracks touches used when there are no buttons to remove view
+/// \param touches touched actions form user
+///
+/// \param event touches event
+///
+- (void)touchesEnded:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+/// Memory management not actually needed
+- (void)didReceiveMemoryWarning;
+@end
+
+
+
+@interface JSSAlertView (SWIFT_EXTENSION(EyePlay))
+/// Updates the timer label every second and close alert when time exceeds
+- (void)updateTimerLabel;
+@end
+
 
 
 SWIFT_CLASS("_TtC7EyePlay10LevelEight")
@@ -630,6 +670,7 @@ SWIFT_CLASS("_TtC7EyePlay9TicTacToe")
 - (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
 - (void)renderer:(id <SCNSceneRenderer> _Nonnull)renderer didUpdateNode:(SCNNode * _Nonnull)node forAnchor:(ARAnchor * _Nonnull)anchor;
 @end
+
 
 
 SWIFT_CLASS("_TtC7EyePlay8ballGame")

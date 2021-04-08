@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>33C80185-FA18-44B5-A1B1-BCF60EC89788</key>
+		<key>8B87C4E2-34D6-40FB-B573-F5EC95DD5B23</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogMajorGroupSection</string>
@@ -15,24 +15,24 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
 			<key>fileName</key>
-			<string>33C80185-FA18-44B5-A1B1-BCF60EC89788.xcactivitylog</string>
+			<string>8B87C4E2-34D6-40FB-B573-F5EC95DD5B23.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>S</string>
+				<string>W</string>
 			</dict>
 			<key>signature</key>
 			<string>EyePlay-cojgwwdzdwtjrnaozqmgwdpjbnkv</string>
 			<key>timeStartedRecording</key>
-			<real>639166629.31064796</real>
+			<real>639584367.19574201</real>
 			<key>timeStoppedRecording</key>
-			<real>639166631.89026797</real>
+			<real>639584374.83741701</real>
 			<key>title</key>
 			<string>Build target EyePlay</string>
 			<key>uniqueIdentifier</key>
-			<string>33C80185-FA18-44B5-A1B1-BCF60EC89788</string>
+			<string>8B87C4E2-34D6-40FB-B573-F5EC95DD5B23</string>
 		</dict>
 	</dict>
 	<key>preserveOldLogs</key>

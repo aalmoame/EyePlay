@@ -6,12 +6,17 @@ class BugGame: UIViewController{
     
     @IBOutlet var bugGameView: ARSCNView!
     
+    
+    
     @IBOutlet weak var miniGamesButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var score: UILabel!
     @IBOutlet weak var cursor: UIImageView!
     @IBOutlet weak var roach: UIImageView!
     @IBOutlet weak var scoreValue: UILabel!
+    @IBOutlet weak var popUpView: UIView!
+    
+
     
     let sceneNodes = nodes()
     let mainThread = DispatchQueue.main
@@ -20,7 +25,7 @@ class BugGame: UIViewController{
     var roach_seconds = Int.random(in: 2...5)
     var isTimerRunningRoach = false
     var time_over = true
-    
+        
     var seconds = 2
     var timer = Timer()
     var isTimerRunning = false
@@ -28,8 +33,12 @@ class BugGame: UIViewController{
     var hoveringMenu = false
     var hoveringMiniGames = false
     
-    @IBAction func tapRoach(_ sender: Any) {
-        if self.time_over{
+    var presentedPopup = false
+    
+    @IBOutlet var tapRoach: UITapGestureRecognizer!
+    @IBAction func tappedRoach(_ sender: Any) {
+        if time_over{
+            
             collisionRoach()
         }
     }
@@ -107,6 +116,7 @@ class BugGame: UIViewController{
             fatalError("Face tracking is not supported on this device")
         }
         
+
         cursor.layer.zPosition = 1
         menuButton.layer.cornerRadius = 5;
         menuButton.layer.borderWidth = 10.0;
@@ -116,7 +126,7 @@ class BugGame: UIViewController{
         bugGameView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen);
         bugGameView.scene.background.contents = UIColor.black;
         bugGameView.delegate = self;
-        
+
     }
         
     func collisionRoach(){
@@ -242,9 +252,23 @@ extension BugGame: ARSCNViewDelegate {
                 
         mainThread.async {
             
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tapRoach(_:)))
-            self.roach.isUserInteractionEnabled = true
-            self.roach.addGestureRecognizer(tapGestureRecognizer)
+            if !self.presentedPopup{
+                var image = UIImage(systemName: "ladybug")
+                image = image?.withTintColor(UIColor.black)
+                
+                JSSAlertView().show(
+                    self,
+                      title: "Tip",
+                      text: "Don't Hurt the Lady Bugs",
+                      buttonText: "OK",
+                    color: UIColor.white,
+                    iconImage: image,
+                    delay: 3.0
+                )
+                
+                self.presentedPopup = true
+            }
+
             
             if (self.roach.center.y <= -200 || self.roach.center.x <= -200) && self.time_over{
                 self.roachOffScreen()
@@ -253,6 +277,7 @@ extension BugGame: ARSCNViewDelegate {
             if !self.roach.isHidden{
                 let posNeg = [-5, -5, -5, -5, -5, -5, 5, 5, 5, -10, -10, -10, -10, -10, -10, 10, 10, 10]
                 UIView.animate(withDuration: 0.2){
+                    
                     self.roach.center.x += CGFloat(posNeg.randomElement()!)
                     self.roach.center.y += CGFloat(posNeg.randomElement()!)
                     

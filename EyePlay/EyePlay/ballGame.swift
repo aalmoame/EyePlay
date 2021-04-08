@@ -20,8 +20,11 @@ class ballGame: UIViewController{
     @IBOutlet weak var ball: UIImageView!
     @IBOutlet weak var scoreValue: UILabel!
     
+    
     let sceneNodes = nodes()
     let mainThread = DispatchQueue.main
+    
+    var presentedPopUp = false
     
     var seconds = 2
     var timer = Timer()
@@ -162,6 +165,11 @@ extension ballGame: ARSCNViewDelegate {
         self.sceneNodes.hitTest(withFaceAnchor: faceAnchor, cursor: cursor)
                 
         mainThread.async {
+            
+            if !self.presentedPopUp{
+                
+            }
+            
             if self.cursor.frame.intersects(self.ball.frame){
                 self.collisionBall()
 

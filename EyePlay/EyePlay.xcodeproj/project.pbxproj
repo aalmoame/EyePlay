@@ -24,6 +24,11 @@
 		4A22F34B25EAE48C008AD154 /* CursorColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A22F34A25EAE48C008AD154 /* CursorColor.swift */; };
 		4A83F99D25EA147800482A7E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F99C25EA147700482A7E /* Settings.swift */; };
 		4A83F9A225EA1A4B00482A7E /* CursorSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F9A125EA1A4B00482A7E /* CursorSize.swift */; };
+		4ADBC462261F3D39001F42B0 /* JSSAlertViewResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADBC45D261F3D39001F42B0 /* JSSAlertViewResponder.swift */; };
+		4ADBC463261F3D39001F42B0 /* JSSAlertView+Predefined.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADBC45E261F3D39001F42B0 /* JSSAlertView+Predefined.swift */; };
+		4ADBC464261F3D39001F42B0 /* JSSAlertView+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADBC45F261F3D39001F42B0 /* JSSAlertView+UIColor.swift */; };
+		4ADBC465261F3D39001F42B0 /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADBC460261F3D39001F42B0 /* JSSAlertView.swift */; };
+		4ADBC466261F3D39001F42B0 /* JSSAlertView+Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADBC461261F3D39001F42B0 /* JSSAlertView+Timer.swift */; };
 		4AEBADBD25F5E744003FFBF5 /* TicTacToe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBADBC25F5E744003FFBF5 /* TicTacToe.swift */; };
 		4AEBADC225F5EDD1003FFBF5 /* MiniGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBADC125F5EDD1003FFBF5 /* MiniGames.swift */; };
 		AF56586425E321B700E1F2B5 /* Nodes+HitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF56586325E321B700E1F2B5 /* Nodes+HitTest.swift */; };
@@ -80,6 +85,11 @@
 		4A22F34A25EAE48C008AD154 /* CursorColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorColor.swift; sourceTree = "<group>"; };
 		4A83F99C25EA147700482A7E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4A83F9A125EA1A4B00482A7E /* CursorSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorSize.swift; sourceTree = "<group>"; };
+		4ADBC45D261F3D39001F42B0 /* JSSAlertViewResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertViewResponder.swift; sourceTree = "<group>"; };
+		4ADBC45E261F3D39001F42B0 /* JSSAlertView+Predefined.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSSAlertView+Predefined.swift"; sourceTree = "<group>"; };
+		4ADBC45F261F3D39001F42B0 /* JSSAlertView+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSSAlertView+UIColor.swift"; sourceTree = "<group>"; };
+		4ADBC460261F3D39001F42B0 /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
+		4ADBC461261F3D39001F42B0 /* JSSAlertView+Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSSAlertView+Timer.swift"; sourceTree = "<group>"; };
 		4AEBADBC25F5E744003FFBF5 /* TicTacToe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToe.swift; sourceTree = "<group>"; };
 		4AEBADC125F5EDD1003FFBF5 /* MiniGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGames.swift; sourceTree = "<group>"; };
 		AF56586325E321B700E1F2B5 /* Nodes+HitTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nodes+HitTest.swift"; sourceTree = "<group>"; };
@@ -161,6 +171,7 @@
 		4A1A39B325DA3BF900516AE9 /* EyePlay */ = {
 			isa = PBXGroup;
 			children = (
+				4ADBC459261F3CAD001F42B0 /* popUps */,
 				4A1356CA2616692D00F5FAB0 /* images */,
 				4A1356C626165E9600F5FAB0 /* sounds */,
 				4A1A39B425DA3BF900516AE9 /* AppDelegate.swift */,
@@ -208,6 +219,18 @@
 				4A1A39D825DA3BFC00516AE9 /* Info.plist */,
 			);
 			path = "EyePlay UITests";
+			sourceTree = "<group>";
+		};
+		4ADBC459261F3CAD001F42B0 /* popUps */ = {
+			isa = PBXGroup;
+			children = (
+				4ADBC460261F3D39001F42B0 /* JSSAlertView.swift */,
+				4ADBC45E261F3D39001F42B0 /* JSSAlertView+Predefined.swift */,
+				4ADBC461261F3D39001F42B0 /* JSSAlertView+Timer.swift */,
+				4ADBC45F261F3D39001F42B0 /* JSSAlertView+UIColor.swift */,
+				4ADBC45D261F3D39001F42B0 /* JSSAlertViewResponder.swift */,
+			);
+			path = popUps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,17 +367,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ADBC464261F3D39001F42B0 /* JSSAlertView+UIColor.swift in Sources */,
 				F60386E9260809C900ED73DC /* LevelTwo.swift in Sources */,
 				F6269D0E260EC40600440BF2 /* LevelEight.swift in Sources */,
 				4AEBADC225F5EDD1003FFBF5 /* MiniGames.swift in Sources */,
 				F60386FF2608237100ED73DC /* LevelFour.swift in Sources */,
 				4A1A39B925DA3BF900516AE9 /* EyePlay.swift in Sources */,
 				AF56586425E321B700E1F2B5 /* Nodes+HitTest.swift in Sources */,
+				4ADBC465261F3D39001F42B0 /* JSSAlertView.swift in Sources */,
 				4A1356E52616823500F5FAB0 /* BugGame.swift in Sources */,
 				4A1A39B525DA3BF900516AE9 /* AppDelegate.swift in Sources */,
 				F676E7EF260FE85100C9A63F /* LevelSelector.swift in Sources */,
 				F60386F7260817B000ED73DC /* LevelThree.swift in Sources */,
+				4ADBC463261F3D39001F42B0 /* JSSAlertView+Predefined.swift in Sources */,
 				4A1A3A6725DEBE0200516AE9 /* ballGame.swift in Sources */,
+				4ADBC466261F3D39001F42B0 /* JSSAlertView+Timer.swift in Sources */,
 				F6269D09260EC09600440BF2 /* LevelSeven.swift in Sources */,
 				4A83F9A225EA1A4B00482A7E /* CursorSize.swift in Sources */,
 				4AEBADBD25F5E744003FFBF5 /* TicTacToe.swift in Sources */,
@@ -363,6 +390,7 @@
 				4A22F34B25EAE48C008AD154 /* CursorColor.swift in Sources */,
 				F603870D260EB19E00ED73DC /* LevelFive.swift in Sources */,
 				4A83F99D25EA147800482A7E /* Settings.swift in Sources */,
+				4ADBC462261F3D39001F42B0 /* JSSAlertViewResponder.swift in Sources */,
 				4A1A39B725DA3BF900516AE9 /* SceneDelegate.swift in Sources */,
 				AF56586925E321E600E1F2B5 /* Constants+Helpers.swift in Sources */,
 			);

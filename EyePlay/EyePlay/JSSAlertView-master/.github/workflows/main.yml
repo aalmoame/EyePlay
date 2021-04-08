@@ -1,0 +1,17 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: macOS-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run tests
+      run: xcodebuild -workspace 'Example/JSSAlertView.xcworkspace' -scheme 'JSSAlertView-Example' -destination 'platform=iOS Simulator,name=iPhone 8' test
+    - name: Build App
+      run: xcodebuild -workspace 'Example/JSSAlertView.xcworkspace' -scheme 'JSSAlertView-Example' -destination 'generic/platform=iOS' -configuration Release build CODE_SIGNING_ALLOWED=NO
+    - name: Lint Podspec
+      run: pod lib lint JSSAlertView.podspec
