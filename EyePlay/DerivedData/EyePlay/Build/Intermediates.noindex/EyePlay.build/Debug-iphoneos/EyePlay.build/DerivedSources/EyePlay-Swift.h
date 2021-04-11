@@ -240,6 +240,7 @@ SWIFT_CLASS("_TtC7EyePlay7BugGame")
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified roach;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified scoreValue;
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified popUpView;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified ladybug;
 @property (nonatomic, strong) IBOutlet UITapGestureRecognizer * _Null_unspecified tapRoach;
 - (IBAction)tappedRoach:(id _Nonnull)sender;
 - (void)updateTimerRoach;

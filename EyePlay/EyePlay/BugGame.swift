@@ -15,6 +15,7 @@ class BugGame: UIViewController{
     @IBOutlet weak var roach: UIImageView!
     @IBOutlet weak var scoreValue: UILabel!
     @IBOutlet weak var popUpView: UIView!
+    @IBOutlet weak var ladybug: UIImageView!
     
 
     
@@ -34,6 +35,8 @@ class BugGame: UIViewController{
     var hoveringMiniGames = false
     
     var presentedPopup = false
+    
+    var isRoach = true
     
     @IBOutlet var tapRoach: UITapGestureRecognizer!
     @IBAction func tappedRoach(_ sender: Any) {
@@ -73,7 +76,16 @@ class BugGame: UIViewController{
     @objc func updateTimerRoach() {
         roach_seconds -= 1
         if roach_seconds == 0{
-            spawnRoach()
+            let rand_tf = [0,1]
+            let roach_lady = rand_tf.randomElement()
+            if (roach_lady == 0){
+                isRoach = true
+                spawnRoach()
+            }
+            else{
+                isRoach = false
+                spawnLadyBug()
+            }
             time_over = true
         }
     }
@@ -162,10 +174,38 @@ class BugGame: UIViewController{
         runTimerRoach()
         
     }
+    
+    func collisionLadyBug(){
+        
+        playSquashSound()
+            
+        ladybug.isHidden = true
+        
+        resetTimerRoach()
+        
+        let val = Int(scoreValue.text!)
+        
+        scoreValue.text = String(val! - 1)
+        
+        runTimerRoach()
+        
+    }
+    
     func roachOffScreen(){
         
             
         roach.isHidden = true
+        
+        resetTimerRoach()
+        
+        runTimerRoach()
+        
+    }
+    
+    func ladybugOffScreen(){
+        
+            
+        ladybug.isHidden = true
         
         resetTimerRoach()
         
@@ -188,6 +228,24 @@ class BugGame: UIViewController{
         }
         
         roach.isHidden = false
+                
+    }
+    
+    func spawnLadyBug(){
+        
+        let xwidth = ladybug.superview!.bounds.width - roach.frame.width
+        let yheight = ladybug.superview!.bounds.height - roach.frame.height
+
+        let xoffset = CGFloat(arc4random_uniform(UInt32(xwidth)))
+        let yoffset = CGFloat(arc4random_uniform(UInt32(yheight)))
+        
+        mainThread.async {
+            self.ladybug.frame.origin.x = xoffset;
+            self.ladybug.frame.origin.y = yoffset;
+            
+        }
+        
+        ladybug.isHidden = false
                 
     }
         
@@ -263,15 +321,18 @@ extension BugGame: ARSCNViewDelegate {
                       buttonText: "OK",
                     color: UIColor.white,
                     iconImage: image,
-                    delay: 3.0
+                    delay: 4.0
                 )
                 
                 self.presentedPopup = true
             }
 
             
-            if (self.roach.center.y <= -200 || self.roach.center.x <= -200) && self.time_over{
+            if (self.roach.center.y <= -200 || self.roach.center.x <= -200) && self.time_over && self.isRoach{
                 self.roachOffScreen()
+            }
+            if (self.ladybug.center.y <= -200 || self.ladybug.center.x <= -200) && self.time_over && !self.isRoach{
+                self.ladybugOffScreen()
             }
             
             if !self.roach.isHidden{
@@ -284,8 +345,24 @@ extension BugGame: ARSCNViewDelegate {
                 }
                 
             }
-            if self.cursor.frame.intersects(self.roach.frame) && self.time_over{
+            
+            if !self.ladybug.isHidden{
+                let posNeg = [-5, -5, -5, -5, -5, -5, 5, 5, 5, -10, -10, -10, -10, -10, -10, 10, 10, 10]
+                UIView.animate(withDuration: 0.2){
+                    
+                    self.ladybug.center.x += CGFloat(posNeg.randomElement()!)
+                    self.ladybug.center.y += CGFloat(posNeg.randomElement()!)
+                    
+                }
+                
+            }
+            
+            if self.cursor.frame.intersects(self.roach.frame) && self.time_over && self.isRoach{
                 self.collisionRoach()
+
+            }
+            else if self.cursor.frame.intersects(self.ladybug.frame) && self.time_over && !self.isRoach{
+                self.collisionLadyBug()
 
             }
             

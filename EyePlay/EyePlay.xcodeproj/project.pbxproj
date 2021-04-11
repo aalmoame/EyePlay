@@ -29,6 +29,7 @@
 		4ADBC464261F3D39001F42B0 /* JSSAlertView+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADBC45F261F3D39001F42B0 /* JSSAlertView+UIColor.swift */; };
 		4ADBC465261F3D39001F42B0 /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADBC460261F3D39001F42B0 /* JSSAlertView.swift */; };
 		4ADBC466261F3D39001F42B0 /* JSSAlertView+Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADBC461261F3D39001F42B0 /* JSSAlertView+Timer.swift */; };
+		4ADBC46B2623B0C7001F42B0 /* lady_bug.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADBC46A2623B0C6001F42B0 /* lady_bug.png */; };
 		4AEBADBD25F5E744003FFBF5 /* TicTacToe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBADBC25F5E744003FFBF5 /* TicTacToe.swift */; };
 		4AEBADC225F5EDD1003FFBF5 /* MiniGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBADC125F5EDD1003FFBF5 /* MiniGames.swift */; };
 		AF56586425E321B700E1F2B5 /* Nodes+HitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF56586325E321B700E1F2B5 /* Nodes+HitTest.swift */; };
@@ -90,6 +91,7 @@
 		4ADBC45F261F3D39001F42B0 /* JSSAlertView+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSSAlertView+UIColor.swift"; sourceTree = "<group>"; };
 		4ADBC460261F3D39001F42B0 /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
 		4ADBC461261F3D39001F42B0 /* JSSAlertView+Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSSAlertView+Timer.swift"; sourceTree = "<group>"; };
+		4ADBC46A2623B0C6001F42B0 /* lady_bug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lady_bug.png; sourceTree = "<group>"; };
 		4AEBADBC25F5E744003FFBF5 /* TicTacToe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToe.swift; sourceTree = "<group>"; };
 		4AEBADC125F5EDD1003FFBF5 /* MiniGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGames.swift; sourceTree = "<group>"; };
 		AF56586325E321B700E1F2B5 /* Nodes+HitTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nodes+HitTest.swift"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		4A1356CA2616692D00F5FAB0 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4ADBC46A2623B0C6001F42B0 /* lady_bug.png */,
 				4A1356DF2616806100F5FAB0 /* swatter.png */,
 				4A1356DA26166B0400F5FAB0 /* cockroach.png */,
 				4A1356CB26166AA000F5FAB0 /* cockroach_dead.png */,
@@ -342,6 +345,7 @@
 				4A1A39C125DA3BFC00516AE9 /* LaunchScreen.storyboard in Resources */,
 				4A1A39BE25DA3BFC00516AE9 /* Assets.xcassets in Resources */,
 				4A1A3A5425DCAD2100516AE9 /* Main.storyboard in Resources */,
+				4ADBC46B2623B0C7001F42B0 /* lady_bug.png in Resources */,
 				4A1356CD26166AA100F5FAB0 /* cockroach_dead.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

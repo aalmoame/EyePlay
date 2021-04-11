@@ -77,6 +77,9 @@ class TicTacToe: UIViewController{
     @IBOutlet weak var seven: UIButton!
     @IBOutlet weak var eight: UIButton!
     
+    var presentedPopup = false
+
+    
     var player1 = player()
     var player2 = player()
     
@@ -338,7 +341,7 @@ class TicTacToe: UIViewController{
                         self.cursor.tintColor = cursorColor
                     }
                     else{
-                        self.textBox.text = "Player 2 Turn"
+                        self.textBox.text = "Player 2's Turn"
                     }
 
                 }
@@ -382,7 +385,7 @@ class TicTacToe: UIViewController{
                         self.cursor.tintColor = cursorColor
                     }
                     else{
-                        self.textBox.text = "Player 1 Turn"
+                        self.textBox.text = "Player 1's Turn"
                     }
                 }
                 
@@ -436,6 +439,23 @@ extension TicTacToe: ARSCNViewDelegate {
             
         
         mainThread.async {
+            
+            if !self.presentedPopup{
+                var image = UIImage(systemName: "grid")
+                image = image?.withTintColor(UIColor.black)
+                
+                JSSAlertView().show(
+                    self,
+                      title: "Tip",
+                      text: "Player 1 uses your eyes, Player 2 use your fingers!",
+                      buttonText: "OK",
+                    color: UIColor.white,
+                    iconImage: image,
+                    delay: 5.0
+                )
+                
+                self.presentedPopup = true
+            }
             
             if !self.playerOneTurn && self.zero.isEnabled{
                 self.cursor.tintColor = UIColor.clear
