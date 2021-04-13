@@ -210,6 +210,40 @@
 			<key>uniqueIdentifier</key>
 			<string>356F7849-84B8-4001-A7C7-06471A3FDF17</string>
 		</dict>
+		<key>3F15DC83-82FF-462C-B303-A52C15A5CAFA</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>3F15DC83-82FF-462C-B303-A52C15A5CAFA.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>EyePlay project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>EyePlay</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build EyePlay</string>
+			<key>timeStartedRecording</key>
+			<real>640014888.09128594</real>
+			<key>timeStoppedRecording</key>
+			<real>640014896.40238595</real>
+			<key>title</key>
+			<string>Build EyePlay</string>
+			<key>uniqueIdentifier</key>
+			<string>3F15DC83-82FF-462C-B303-A52C15A5CAFA</string>
+		</dict>
 		<key>4049B64D-A9F7-43B2-9980-30BB187FB360</key>
 		<dict>
 			<key>className</key>
