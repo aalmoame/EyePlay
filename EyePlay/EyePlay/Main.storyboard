@@ -812,6 +812,9 @@
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="9yC-33-WHo" appends="YES" id="sPx-Xc-uYU"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="scv-mc-dVX">
                                 <rect key="frame" x="501" y="629.5" width="50" height="50"/>
@@ -842,7 +845,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSe-2E-SQ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="o7K-7W-dKk"/>
+                <tapGestureRecognizer id="o7K-7W-dKk">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="levelOneMenuTap" modalPresentationStyle="fullScreen" id="yfe-rP-ppg"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="9yC-33-WHo">
+                    <connections>
+                        <segue destination="ykE-9t-Bfo" kind="presentation" identifier="levelTwoTap" modalPresentationStyle="fullScreen" id="MHa-OC-Cs1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-655.39568345323744" y="39.698492462311556"/>
         </scene>
@@ -878,6 +890,9 @@
                                 <state key="normal" title="Levels">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="EMH-3U-XNp" appends="YES" id="RQf-Yx-6hn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="297-ZF-eLf">
                                 <rect key="frame" x="167" y="974" width="500" height="200"/>
@@ -955,7 +970,16 @@
                         <segue destination="NHp-vb-Hu3" kind="presentation" identifier="SettingsSegue" modalPresentationStyle="fullScreen" id="IJG-yJ-LpU"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="GEQ-d5-iQa"/>
+                <tapGestureRecognizer id="GEQ-d5-iQa">
+                    <connections>
+                        <segue destination="g6E-ax-Wgk" kind="presentation" identifier="LevelOneSegueTap" modalPresentationStyle="fullScreen" id="1WL-zY-KiT"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="EMH-3U-XNp">
+                    <connections>
+                        <segue destination="FSq-CB-tc1" kind="presentation" identifier="LevelSelectorTap" modalPresentationStyle="fullScreen" id="OLQ-Dw-1fg"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="138.12949640287772" y="43.21608040201005"/>
         </scene>
@@ -1845,18 +1869,18 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="q3A-WE-iC3"/>
-        <segue reference="2rt-Tb-Z7G"/>
-        <segue reference="PUu-fv-gDm"/>
-        <segue reference="ct6-or-KSl"/>
-        <segue reference="POx-jN-7AF"/>
-        <segue reference="4Zh-1V-K52"/>
+        <segue reference="Mz8-fw-bzg"/>
+        <segue reference="IJG-yJ-LpU"/>
+        <segue reference="OLQ-Dw-1fg"/>
+        <segue reference="yfe-rP-ppg"/>
+        <segue reference="1WL-zY-KiT"/>
+        <segue reference="MHa-OC-Cs1"/>
         <segue reference="zRy-Cz-G7P"/>
         <segue reference="4zb-KR-wVt"/>
         <segue reference="Brb-QM-2Lx"/>
         <segue reference="gVo-2G-pr4"/>
         <segue reference="3V7-mB-oQc"/>
-        <segue reference="RuK-5V-wBt"/>
+        <segue reference="o5y-0L-a9B"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
