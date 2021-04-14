@@ -1209,6 +1209,9 @@
                                 <state key="normal" title="Main Menu">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Jjt-d6-60a" appends="YES" id="eq9-b2-ujJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDP-dL-jTA">
                                 <rect key="frame" x="85" y="200" width="226" height="176"/>
@@ -1218,6 +1221,9 @@
                                 <state key="normal" title="Level 1">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fIU-Fs-qlH" appends="YES" id="WhF-cg-QQu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPl-CG-m4Z">
                                 <rect key="frame" x="524" y="200" width="226" height="176"/>
@@ -1227,6 +1233,9 @@
                                 <state key="normal" title="Level 2">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Vxi-aa-IyI" appends="YES" id="8Rm-Pe-Jdw"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0j9-ZO-fgG">
                                 <rect key="frame" x="362" y="323.5" width="50" height="50"/>
@@ -1240,6 +1249,9 @@
                                 <state key="normal" title="Level 3">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JFL-nd-bFr" appends="YES" id="Wef-M9-iB7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gww-9k-Qia">
                                 <rect key="frame" x="524" y="449" width="226" height="176"/>
@@ -1249,6 +1261,9 @@
                                 <state key="normal" title="Level 4">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="e5A-u0-U8G" appends="YES" id="42Q-EG-uUc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqv-6O-4Rs">
                                 <rect key="frame" x="85" y="699" width="226" height="176"/>
@@ -1258,6 +1273,9 @@
                                 <state key="normal" title="Level 5">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="COS-Xa-7Tr" appends="YES" id="WZG-Hm-tcp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsM-V8-Pxo">
                                 <rect key="frame" x="524" y="699" width="226" height="176"/>
@@ -1267,6 +1285,9 @@
                                 <state key="normal" title="Level 6">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="97O-uT-Kbo" appends="YES" id="t1E-1R-QEP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYS-KA-8Ta">
                                 <rect key="frame" x="85" y="946" width="226" height="176"/>
@@ -1276,6 +1297,9 @@
                                 <state key="normal" title="Level 7">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1ia-qq-iGd" appends="YES" id="PuJ-4N-27y"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEF-dG-00K">
                                 <rect key="frame" x="524" y="946" width="226" height="176"/>
@@ -1285,6 +1309,9 @@
                                 <state key="normal" title="Level 8">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="xlo-7u-43f" appends="YES" id="wUG-mR-aqD"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="house.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mkL-xM-cEf">
                                 <rect key="frame" x="261" y="57" width="50" height="50"/>
@@ -1320,6 +1347,51 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRA-og-9sC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Jjt-d6-60a">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="mainScreenTap" modalPresentationStyle="fullScreen" id="QPb-b4-1ri"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="fIU-Fs-qlH">
+                    <connections>
+                        <segue destination="g6E-ax-Wgk" kind="presentation" identifier="levelOneTap" modalPresentationStyle="fullScreen" id="TSi-Uq-TRG"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Vxi-aa-IyI">
+                    <connections>
+                        <segue destination="ykE-9t-Bfo" kind="presentation" identifier="levelTwoTap" modalPresentationStyle="fullScreen" id="Tcj-Jm-8bc"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="JFL-nd-bFr">
+                    <connections>
+                        <segue destination="kbB-ZR-ogM" kind="presentation" identifier="levelThreeTap" modalPresentationStyle="fullScreen" id="OjZ-dT-6Nr"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="e5A-u0-U8G">
+                    <connections>
+                        <segue destination="QpT-tL-L4g" kind="presentation" identifier="levelFourTap" modalPresentationStyle="fullScreen" id="VUj-RN-4qu"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="COS-Xa-7Tr">
+                    <connections>
+                        <segue destination="uPl-hb-gts" kind="presentation" identifier="levelFiveTap" modalPresentationStyle="fullScreen" id="70f-Ee-scQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="97O-uT-Kbo">
+                    <connections>
+                        <segue destination="o7g-UP-N1f" kind="presentation" identifier="levelSixTap" modalPresentationStyle="fullScreen" id="2fS-1o-VjY"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="1ia-qq-iGd">
+                    <connections>
+                        <segue destination="943-oj-qKQ" kind="presentation" identifier="levelSevenTap" modalPresentationStyle="fullScreen" id="JBf-mq-54y"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="xlo-7u-43f">
+                    <connections>
+                        <segue destination="wGo-JX-wed" kind="presentation" identifier="levelEightTap" modalPresentationStyle="fullScreen" id="icC-nz-vy5"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-652.51798561151088" y="751.75879396984919"/>
         </scene>
@@ -1984,15 +2056,15 @@
         <segue reference="Mz8-fw-bzg"/>
         <segue reference="IJG-yJ-LpU"/>
         <segue reference="OLQ-Dw-1fg"/>
-        <segue reference="uVn-yW-d6I"/>
-        <segue reference="1wX-EK-saR"/>
-        <segue reference="MHa-OC-Cs1"/>
-        <segue reference="vwj-Zv-Wpd"/>
-        <segue reference="hck-7b-GtW"/>
-        <segue reference="Ph1-8d-zNB"/>
-        <segue reference="XwQ-xU-y2d"/>
-        <segue reference="3V7-mB-oQc"/>
-        <segue reference="o5y-0L-a9B"/>
+        <segue reference="QPb-b4-1ri"/>
+        <segue reference="TSi-Uq-TRG"/>
+        <segue reference="Tcj-Jm-8bc"/>
+        <segue reference="OjZ-dT-6Nr"/>
+        <segue reference="2fS-1o-VjY"/>
+        <segue reference="JBf-mq-54y"/>
+        <segue reference="icC-nz-vy5"/>
+        <segue reference="70f-Ee-scQ"/>
+        <segue reference="VUj-RN-4qu"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
