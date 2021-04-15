@@ -56,12 +56,12 @@ class EyePlay: UIViewController{
         button.layer.backgroundColor = UIColor.white.cgColor
     }
 
+    
 
 
     //sets the view up
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
-            
       let configuration = ARFaceTrackingConfiguration()
       mainView.session.run(configuration)
     }

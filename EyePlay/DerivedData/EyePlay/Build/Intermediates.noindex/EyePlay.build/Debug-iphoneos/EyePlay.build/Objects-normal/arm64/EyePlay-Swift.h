@@ -633,6 +633,43 @@ SWIFT_CLASS("_TtC7EyePlay8Settings")
 @end
 
 
+SWIFT_CLASS("_TtC7EyePlay10SoundBoard")
+@interface SoundBoard : UIViewController
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified miniGamesButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified fartButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified moneyButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified woofButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified meowButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified policeButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified fairyButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified punchButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified raceCarButton;
+@property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified soundBoardView;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
+- (IBAction)fartTapped:(id _Nonnull)sender;
+- (IBAction)moneyTapped:(id _Nonnull)sender;
+- (IBAction)woofTapped:(id _Nonnull)sender;
+- (IBAction)meowTapped:(id _Nonnull)sender;
+- (IBAction)policeTapped:(id _Nonnull)sender;
+- (IBAction)fairyTapped:(id _Nonnull)sender;
+- (IBAction)punchTapped:(id _Nonnull)sender;
+- (IBAction)raceCarTapped:(id _Nonnull)sender;
+- (void)updateTimer;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface SoundBoard (SWIFT_EXTENSION(EyePlay)) <ARSCNViewDelegate>
+- (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
+- (void)renderer:(id <SCNSceneRenderer> _Nonnull)renderer didUpdateNode:(SCNNode * _Nonnull)node forAnchor:(ARAnchor * _Nonnull)anchor;
+@end
+
+
 SWIFT_CLASS("_TtC7EyePlay9TicTacToe")
 @interface TicTacToe : UIViewController
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;

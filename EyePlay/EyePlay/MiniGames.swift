@@ -89,11 +89,13 @@ class MiniGames: UIViewController, ARSessionDelegate{
         mainMenuButton.layer.cornerRadius = 5;
         ballGameButton.layer.cornerRadius = 5;
         bugGameButton.layer.cornerRadius = 5;
+        soundBoardButton.layer.cornerRadius = 5;
         
         TicTacToeButton.layer.borderWidth = 10;
         mainMenuButton.layer.borderWidth = 10;
         ballGameButton.layer.borderWidth = 10;
         bugGameButton.layer.borderWidth = 10;
+        soundBoardButton.layer.borderWidth = 10;
         
         miniGameView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
         miniGameView.scene.background.contents = UIColor.black

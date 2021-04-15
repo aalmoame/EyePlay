@@ -1960,24 +1960,29 @@
             </objects>
             <point key="canvasLocation" x="135.97122302158274" y="-1298.4924623115578"/>
         </scene>
-        <!--View Controller-->
+        <!--Sound Board-->
         <scene sceneID="sZh-rR-bdz">
             <objects>
-                <viewController id="CSP-GB-2YO" sceneMemberID="viewController">
+                <viewController id="CSP-GB-2YO" customClass="SoundBoard" customModule="EyePlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J5t-w4-TwG" customClass="ARSCNView">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hs3-IB-qa9">
-                                <rect key="frame" x="39" y="354" width="350" height="150"/>
+                                <rect key="frame" x="38" y="395" width="350" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Fart">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="O3Z-oO-hcQ" appends="YES" id="BRR-km-foB"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pick a Sound!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWi-4C-JDX">
-                                <rect key="frame" x="17" y="171" width="800" height="120"/>
+                                <rect key="frame" x="17" y="212" width="800" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
@@ -1985,63 +1990,102 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOk-cx-7c4">
-                                <rect key="frame" x="39" y="537" width="350" height="150"/>
+                                <rect key="frame" x="38" y="578" width="350" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Woof">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="VYH-f2-Cdb" appends="YES" id="Rb9-X9-KMc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgB-O9-R7D">
-                                <rect key="frame" x="39" y="721" width="350" height="150"/>
+                                <rect key="frame" x="38" y="762" width="350" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Police">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="EEO-zq-Fc5" appends="YES" id="Ja6-2R-4uZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CsF-4d-q0Z">
-                                <rect key="frame" x="39" y="924" width="350" height="150"/>
+                                <rect key="frame" x="38" y="965" width="350" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Punch">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="SWy-5Y-oQc" appends="YES" id="Nfv-0P-RSv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNW-4I-rC1">
-                                <rect key="frame" x="447" y="354" width="350" height="150"/>
+                                <rect key="frame" x="447" y="395" width="350" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Money">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="oJR-jg-1D1" appends="YES" id="Epe-p3-jy4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HnY-XD-M5q">
-                                <rect key="frame" x="447" y="537" width="350" height="150"/>
+                                <rect key="frame" x="447" y="578" width="350" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Meow">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="owm-t4-OED" appends="YES" id="nP1-J1-Ud7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqe-mK-c6L">
-                                <rect key="frame" x="447" y="721" width="350" height="150"/>
+                                <rect key="frame" x="447" y="762" width="350" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Fairy">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="sNJ-qq-IAs" appends="YES" id="vrg-HZ-yUO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTX-8M-x1o">
-                                <rect key="frame" x="446" y="924" width="350" height="150"/>
+                                <rect key="frame" x="446" y="965" width="350" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Race Cars">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bVM-M9-PrC" appends="YES" id="41p-iv-f1U"/>
+                                </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0KI-py-koh">
+                                <rect key="frame" x="392" y="1101.5" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bV-GB-HJD">
-                                <rect key="frame" x="445" y="39" width="351" height="100"/>
+                                <rect key="frame" x="445" y="56" width="351" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
@@ -2049,9 +2093,12 @@
                                 <state key="normal" title="Mini Games">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="hMa-n0-g5b" appends="YES" id="UHZ-Uu-4dn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bG6-HN-GUE">
-                                <rect key="frame" x="38" y="39" width="350" height="100"/>
+                                <rect key="frame" x="38" y="56" width="350" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
@@ -2059,14 +2106,17 @@
                                 <state key="normal" title="Main Menu">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ckd-Gf-19E" appends="YES" id="EsC-QD-3yb"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="house.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QfF-fX-Svx">
-                                <rect key="frame" x="63" y="71" width="40" height="40"/>
+                                <rect key="frame" x="63" y="88" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="gamecontroller.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-Vt-Mg5">
-                                <rect key="frame" x="469" y="69" width="40" height="40"/>
+                                <rect key="frame" x="469" y="86" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -2074,18 +2124,82 @@
                         <viewLayoutGuide key="safeArea" id="IoE-Ep-A8Z"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="cursor" destination="0KI-py-koh" id="hip-ME-JpI"/>
+                        <outlet property="fairyButton" destination="Lqe-mK-c6L" id="RTP-Ko-8cG"/>
+                        <outlet property="fartButton" destination="hs3-IB-qa9" id="9Zw-RE-hI7"/>
+                        <outlet property="menuButton" destination="bG6-HN-GUE" id="df6-r3-Lk6"/>
+                        <outlet property="meowButton" destination="HnY-XD-M5q" id="9ad-Bi-gNI"/>
+                        <outlet property="miniGamesButton" destination="4bV-GB-HJD" id="v6i-PZ-8hA"/>
+                        <outlet property="moneyButton" destination="tNW-4I-rC1" id="gzf-SV-bC6"/>
+                        <outlet property="policeButton" destination="IgB-O9-R7D" id="FNj-Lh-26s"/>
+                        <outlet property="punchButton" destination="CsF-4d-q0Z" id="TZp-5e-wlu"/>
+                        <outlet property="raceCarButton" destination="gTX-8M-x1o" id="7sx-wh-Kc1"/>
+                        <outlet property="soundBoardView" destination="J5t-w4-TwG" id="HY8-Fo-G78"/>
+                        <outlet property="view" destination="J5t-w4-TwG" id="PJs-yW-mhu"/>
+                        <outlet property="woofButton" destination="hOk-cx-7c4" id="S3K-sU-98Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1na-Ml-hYP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ckd-Gf-19E">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="MainMenuSegue" modalPresentationStyle="fullScreen" id="ONv-mP-K8R"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="hMa-n0-g5b">
+                    <connections>
+                        <segue destination="Kd9-Hl-M1C" kind="presentation" identifier="MiniGameSegue" modalPresentationStyle="fullScreen" id="xf7-p9-tQx"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="O3Z-oO-hcQ">
+                    <connections>
+                        <action selector="fartTapped:" destination="CSP-GB-2YO" id="HTQ-Px-Juv"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="oJR-jg-1D1">
+                    <connections>
+                        <action selector="moneyTapped:" destination="CSP-GB-2YO" id="C4q-5a-72M"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="VYH-f2-Cdb">
+                    <connections>
+                        <action selector="woofTapped:" destination="CSP-GB-2YO" id="9BR-T3-zji"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="owm-t4-OED">
+                    <connections>
+                        <action selector="meowTapped:" destination="CSP-GB-2YO" id="11Y-GE-USs"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="EEO-zq-Fc5">
+                    <connections>
+                        <action selector="policeTapped:" destination="CSP-GB-2YO" id="iDN-hp-aWq"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="sNJ-qq-IAs">
+                    <connections>
+                        <action selector="fairyTapped:" destination="CSP-GB-2YO" id="bbo-LE-tJQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="SWy-5Y-oQc">
+                    <connections>
+                        <action selector="punchTapped:" destination="CSP-GB-2YO" id="vKM-Aj-4ou"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="bVM-M9-PrC">
+                    <connections>
+                        <action selector="raceCarTapped:" destination="CSP-GB-2YO" id="Muk-uo-gGw"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="862.58992805755406" y="-1298.4924623115578"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="q3A-WE-iC3"/>
-        <segue reference="2rt-Tb-Z7G"/>
+        <segue reference="xf7-p9-tQx"/>
         <segue reference="IJG-yJ-LpU"/>
         <segue reference="OLQ-Dw-1fg"/>
-        <segue reference="jDd-vV-VsM"/>
+        <segue reference="ONv-mP-K8R"/>
         <segue reference="r54-Rz-WKa"/>
         <segue reference="Tcj-Jm-8bc"/>
         <segue reference="OjZ-dT-6Nr"/>
