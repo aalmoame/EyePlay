@@ -33,6 +33,21 @@ class LevelSelector: UIViewController{
     var hoveringSix = false
     var hoveringSeven = false
     var hoveringEight = false
+    
+    var player: AVAudioPlayer?
+    
+    func playSelectionSound() {
+                
+        let path = Bundle.main.path(forResource: "select.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
 
     
     func runTimer(button: UIButton) {
@@ -70,9 +85,9 @@ class LevelSelector: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard ARFaceTrackingConfiguration.isSupported else {
-            fatalError("Face tracking is not supported on this device")
-        }
+        //guard ARFaceTrackingConfiguration.isSupported else {
+            //fatalError("Face tracking is not supported on this device")
+        //}
 
         menuButton.layer.borderWidth = CGFloat(10.0)
         levelOneButton.layer.borderWidth = CGFloat(10.0)
@@ -106,7 +121,7 @@ class LevelSelector: UIViewController{
     
     //checks if the cursor is on top of the game button and if the user blinks
     func collisionMenuButton(){
-
+        playSelectionSound()
             //go to game screen when user blinks over button
             mainThread.async {
                 self.performSegue(withIdentifier: "MainScreenSegue", sender: self)
@@ -114,7 +129,7 @@ class LevelSelector: UIViewController{
     }
     
     func collisionOneButton(){
-
+        playSelectionSound()
             //go to game screen when user blinks over button
             mainThread.async {
                 self.performSegue(withIdentifier: "LevelOneSegue", sender: self)
@@ -122,6 +137,7 @@ class LevelSelector: UIViewController{
     }
     
     func collisionTwoButton() {
+        playSelectionSound()
         //go to level one when user blinks over button
         mainThread.async {
             self.performSegue(withIdentifier: "LevelTwoSegue", sender: self)
@@ -129,6 +145,7 @@ class LevelSelector: UIViewController{
     }
     
     func collisionThreeButton() {
+        playSelectionSound()
         //go to level one when user blinks over button
         mainThread.async {
             self.performSegue(withIdentifier: "LevelThreeSegue", sender: self)
@@ -136,6 +153,7 @@ class LevelSelector: UIViewController{
     }
     
     func collisionFourButton() {
+        playSelectionSound()
         //go to level one when user blinks over button
         mainThread.async {
             self.performSegue(withIdentifier: "LevelFourSegue", sender: self)
@@ -143,6 +161,7 @@ class LevelSelector: UIViewController{
     }
     
     func collisionFiveButton() {
+        playSelectionSound()
         //go to level one when user blinks over button
         mainThread.async {
             self.performSegue(withIdentifier: "LevelFiveSegue", sender: self)
@@ -150,6 +169,7 @@ class LevelSelector: UIViewController{
     }
     
     func collisionSixButton() {
+        playSelectionSound()
         //go to level one when user blinks over button
         mainThread.async {
             self.performSegue(withIdentifier: "LevelSixSegue", sender: self)
@@ -157,6 +177,7 @@ class LevelSelector: UIViewController{
     }
     
     func collisionSevenButton() {
+        playSelectionSound()
         //go to level one when user blinks over button
         mainThread.async {
             self.performSegue(withIdentifier: "LevelSevenSegue", sender: self)
@@ -164,6 +185,7 @@ class LevelSelector: UIViewController{
     }
     
     func collisionEightButton() {
+        playSelectionSound()
         //go to level one when user blinks over button
         mainThread.async {
             self.performSegue(withIdentifier: "LevelEightSegue", sender: self)

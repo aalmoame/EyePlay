@@ -23,8 +23,22 @@ class Settings: UIViewController, ARSessionDelegate{
     var hoveringMenu = false
     var hoveringSize = false
     var hoveringColor = false
-
     
+    var player: AVAudioPlayer?
+    
+    func playSelectionSound() {
+                
+        let path = Bundle.main.path(forResource: "select.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
+
     func runTimer(button: UIButton) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(Settings.updateTimer)), userInfo: nil, repeats: true)
         isTimerRunning = true
@@ -61,9 +75,9 @@ class Settings: UIViewController, ARSessionDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard ARFaceTrackingConfiguration.isSupported else {
-            fatalError("Face tracking is not supported on this device")
-        }
+        //guard ARFaceTrackingConfiguration.isSupported else {
+            //fatalError("Face tracking is not supported on this device")
+        //}
 
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor
@@ -82,19 +96,19 @@ class Settings: UIViewController, ARSessionDelegate{
     
 
     func collisionMenuButton(){
-
+        playSelectionSound()
             mainThread.async {
                 self.performSegue(withIdentifier: "MainScreenSegue", sender: self)
             }
     }
     func collisionSizeButton(){
-
+        playSelectionSound()
             mainThread.async {
                 self.performSegue(withIdentifier: "SizeSegue", sender: self)
             }
     }
     func collisionColorButton(){
-
+        playSelectionSound()
             mainThread.async {
                 self.performSegue(withIdentifier: "ColorSegue", sender: self)
             }

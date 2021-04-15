@@ -6,6 +6,40 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
+		<key>0F0EB346-1F0A-447C-BD06-E0D0C7DD9880</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>0F0EB346-1F0A-447C-BD06-E0D0C7DD9880.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>EyePlay project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>EyePlay</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build EyePlay</string>
+			<key>timeStartedRecording</key>
+			<real>640185888.719396</real>
+			<key>timeStoppedRecording</key>
+			<real>640185888.89643896</real>
+			<key>title</key>
+			<string>Build EyePlay</string>
+			<key>uniqueIdentifier</key>
+			<string>0F0EB346-1F0A-447C-BD06-E0D0C7DD9880</string>
+		</dict>
 		<key>3F15DC83-82FF-462C-B303-A52C15A5CAFA</key>
 		<dict>
 			<key>className</key>
@@ -73,6 +107,40 @@
 			<string>Build EyePlay</string>
 			<key>uniqueIdentifier</key>
 			<string>92563450-1A70-4329-B83C-0AD9DA77C590</string>
+		</dict>
+		<key>928872A6-8413-498F-A498-3ED35F7042FE</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>928872A6-8413-498F-A498-3ED35F7042FE.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>EyePlay project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>EyePlay</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build EyePlay</string>
+			<key>timeStartedRecording</key>
+			<real>640185916.58656895</real>
+			<key>timeStoppedRecording</key>
+			<real>640185930.03207397</real>
+			<key>title</key>
+			<string>Build EyePlay</string>
+			<key>uniqueIdentifier</key>
+			<string>928872A6-8413-498F-A498-3ED35F7042FE</string>
 		</dict>
 	</dict>
 </dict>

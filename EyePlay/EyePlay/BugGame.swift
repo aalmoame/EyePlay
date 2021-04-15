@@ -62,6 +62,19 @@ class BugGame: UIViewController{
         }
     }
     
+    func playSelectionSound() {
+                
+        let path = Bundle.main.path(forResource: "select.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
+    
     func runTimerRoach() {
         time_over = false
         timerRoach = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(BugGame.updateTimerRoach)), userInfo: nil, repeats: true)
@@ -124,9 +137,9 @@ class BugGame: UIViewController{
     }
     
     override func viewDidLoad() {
-        guard ARFaceTrackingConfiguration.isSupported else {
-            fatalError("Face tracking is not supported on this device")
-        }
+        //guard ARFaceTrackingConfiguration.isSupported else {
+            //fatalError("Face tracking is not supported on this device")
+        //}
         
 
         cursor.layer.zPosition = 1
@@ -250,14 +263,14 @@ class BugGame: UIViewController{
     }
         
     func collisionMenuButton(){
-        
+        playSelectionSound()
         mainThread.async {
             self.performSegue(withIdentifier: "MainScreenSegue", sender: self)
         
         }
     }
     func collisionMiniGames(){
-        
+        playSelectionSound()
         mainThread.async {
             self.performSegue(withIdentifier: "MiniGamesSegue", sender: self)
         

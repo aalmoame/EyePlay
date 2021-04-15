@@ -40,6 +40,21 @@ class CursorSize: UIViewController, ARSessionDelegate{
     var hoveringMedium = false
     var hoveringLarge = false
     var hoveringSettings = false
+    
+    var player: AVAudioPlayer?
+    
+    func playSelectionSound() {
+                
+        let path = Bundle.main.path(forResource: "select.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
 
     
     func runTimer(button: UIButton) {
@@ -77,9 +92,9 @@ class CursorSize: UIViewController, ARSessionDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard ARFaceTrackingConfiguration.isSupported else {
-            fatalError("Face tracking is not supported on this device")
-        }
+        //guard ARFaceTrackingConfiguration.isSupported else {
+            //fatalError("Face tracking is not supported on this device")
+        //}
 
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor;
@@ -102,21 +117,25 @@ class CursorSize: UIViewController, ARSessionDelegate{
     
 
     func collisionSmallButton(){
+        playSelectionSound()
         cursor.frame.size = CGSize(width: 50.0, height: 50.0);
         cursorSize.width = 50.0;
         cursorSize.height = 50.0;
     }
     func collisionMediumButton(){
+        playSelectionSound()
         cursor.frame.size = CGSize(width: 100.0, height: 100.0);
         cursorSize.width = 100.0;
         cursorSize.height = 100.0;
     }
     func collisionLargeButton(){
+        playSelectionSound()
         cursor.frame.size = CGSize(width: 150.0, height: 150.0);
         cursorSize.width = 150.0;
         cursorSize.height = 150.0;
     }
     func collisionSettingsButton(){
+        playSelectionSound()
             mainThread.async {
                 self.performSegue(withIdentifier: "SettingsSegue", sender: self)
             }

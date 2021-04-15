@@ -34,6 +34,7 @@
 		4AEBADC225F5EDD1003FFBF5 /* MiniGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBADC125F5EDD1003FFBF5 /* MiniGames.swift */; };
 		AF56586425E321B700E1F2B5 /* Nodes+HitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF56586325E321B700E1F2B5 /* Nodes+HitTest.swift */; };
 		AF56586925E321E600E1F2B5 /* Constants+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF56586825E321E600E1F2B5 /* Constants+Helpers.swift */; };
+		AFF93E472627D2DF0004F7DA /* select.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AFF93E462627D2DF0004F7DA /* select.mp3 */; };
 		F60386E9260809C900ED73DC /* LevelTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60386E8260809C900ED73DC /* LevelTwo.swift */; };
 		F60386F7260817B000ED73DC /* LevelThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60386F6260817B000ED73DC /* LevelThree.swift */; };
 		F60386FF2608237100ED73DC /* LevelFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60386FE2608237100ED73DC /* LevelFour.swift */; };
@@ -96,6 +97,7 @@
 		4AEBADC125F5EDD1003FFBF5 /* MiniGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGames.swift; sourceTree = "<group>"; };
 		AF56586325E321B700E1F2B5 /* Nodes+HitTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nodes+HitTest.swift"; sourceTree = "<group>"; };
 		AF56586825E321E600E1F2B5 /* Constants+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constants+Helpers.swift"; sourceTree = "<group>"; };
+		AFF93E462627D2DF0004F7DA /* select.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = select.mp3; sourceTree = "<group>"; };
 		F60386E8260809C900ED73DC /* LevelTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwo.swift; sourceTree = "<group>"; };
 		F60386F6260817B000ED73DC /* LevelThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelThree.swift; sourceTree = "<group>"; };
 		F60386FE2608237100ED73DC /* LevelFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelFour.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		4A1356C626165E9600F5FAB0 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				AFF93E462627D2DF0004F7DA /* select.mp3 */,
 				4A1356D226166AAA00F5FAB0 /* bug_splat.wav */,
 			);
 			path = sounds;
@@ -339,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFF93E472627D2DF0004F7DA /* select.mp3 in Resources */,
 				4A1356D326166AAA00F5FAB0 /* bug_splat.wav in Resources */,
 				4A1356E02616806100F5FAB0 /* swatter.png in Resources */,
 				4A1356DB26166B0400F5FAB0 /* cockroach.png in Resources */,

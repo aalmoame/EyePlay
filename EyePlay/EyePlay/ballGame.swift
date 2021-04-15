@@ -31,6 +31,22 @@ class ballGame: UIViewController{
     var isTimerRunning = false
     var hoveringMenu = false
     var hoveringMiniGames = false
+    
+    var player: AVAudioPlayer?
+    
+    func playSelectionSound() {
+                
+        let path = Bundle.main.path(forResource: "select.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
+
 
     
     func runTimer(button: UIButton) {
@@ -66,9 +82,9 @@ class ballGame: UIViewController{
     }
     
     override func viewDidLoad() {
-        guard ARFaceTrackingConfiguration.isSupported else {
-            fatalError("Face tracking is not supported on this device")
-        }
+        //guard ARFaceTrackingConfiguration.isSupported else {
+            //fatalError("Face tracking is not supported on this device")
+        //}
         
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor;
@@ -84,7 +100,7 @@ class ballGame: UIViewController{
     }
         
     func collisionBall(){
-    
+        playSelectionSound()
         let val = Int(scoreValue.text!)
         
         scoreValue.text = String(val! + 1)
@@ -107,14 +123,14 @@ class ballGame: UIViewController{
     }
         
     func collisionMenuButton(){
-        
+        playSelectionSound()
         mainThread.async {
             self.performSegue(withIdentifier: "MainScreenSegue", sender: self)
         
         }
     }
     func collisionMiniGames(){
-        
+        playSelectionSound()
         mainThread.async {
             self.performSegue(withIdentifier: "MiniGamesSegue", sender: self)
         
