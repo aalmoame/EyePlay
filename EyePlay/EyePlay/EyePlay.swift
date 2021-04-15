@@ -23,7 +23,21 @@ class EyePlay: UIViewController{
     var hoveringSetting = false
     var hoveringPlay = false
     var hoveringLevelSelect = false
+    
+    var player: AVAudioPlayer?
+    
+    func playSelectionSound() {
+                
+        let path = Bundle.main.path(forResource: "select.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
 
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
     
     func runTimer(button: UIButton) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(EyePlay.updateTimer)), userInfo: nil, repeats: true)
@@ -63,9 +77,9 @@ class EyePlay: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard ARFaceTrackingConfiguration.isSupported else {
-            fatalError("Face tracking is not supported on this device")
-        }
+        //guard ARFaceTrackingConfiguration.isSupported else {
+            //fatalError("Face tracking is not supported on this device")
+        //}
 
         miniGameButton.layer.borderWidth = CGFloat(10.0)
         settingsButton.layer.borderWidth = CGFloat(10.0)
@@ -90,14 +104,14 @@ class EyePlay: UIViewController{
     
     //checks if the cursor is on top of the game button and if the user blinks
     func collisionMiniGameButton(){
-
+        playSelectionSound()
             //go to game screen when user blinks over button
             mainThread.async {
                 self.performSegue(withIdentifier: "MiniGameSegue", sender: self)
             }
     }
     func collisionSettingsButton(){
-
+        playSelectionSound()
             //go to game screen when user blinks over button
             mainThread.async {
                 self.performSegue(withIdentifier: "SettingsSegue", sender: self)
@@ -105,6 +119,7 @@ class EyePlay: UIViewController{
     }
     
     func collisionPlayNowButton() {
+        playSelectionSound()
         //go to level one when user blinks over button
         mainThread.async {
             self.performSegue(withIdentifier: "LevelOneSegue", sender: self)
@@ -113,6 +128,7 @@ class EyePlay: UIViewController{
     
     func collisionLevelButton() {
         //go to level one when user blinks over button
+        playSelectionSound()
         mainThread.async {
             self.performSegue(withIdentifier: "LevelSelectorSegue", sender: self)
         }

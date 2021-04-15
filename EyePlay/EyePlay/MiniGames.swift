@@ -24,6 +24,21 @@ class MiniGames: UIViewController, ARSessionDelegate{
     var hoveringBallGame = false
     var hoveringTicTacToe = false
     var hoveringBugGame = false
+    
+    var player: AVAudioPlayer?
+    
+    func playSelectionSound() {
+                
+        let path = Bundle.main.path(forResource: "select.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
 
     
     func runTimer(button: UIButton) {
@@ -61,9 +76,9 @@ class MiniGames: UIViewController, ARSessionDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard ARFaceTrackingConfiguration.isSupported else {
-            fatalError("Face tracking is not supported on this device")
-        }
+        //guard ARFaceTrackingConfiguration.isSupported else {
+            //fatalError("Face tracking is not supported on this device")
+        //}
 
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor
@@ -86,25 +101,25 @@ class MiniGames: UIViewController, ARSessionDelegate{
     
 
     func collisionMenuButton(){
-
+        playSelectionSound()
             mainThread.async {
                 self.performSegue(withIdentifier: "MainMenuSegue", sender: self)
             }
     }
     func collisionBallGameButton(){
-
+        playSelectionSound()
             mainThread.async {
                 self.performSegue(withIdentifier: "BallGameSegue", sender: self)
             }
     }
     func collisionTicTacToeButton(){
-
+        playSelectionSound()
             mainThread.async {
                 self.performSegue(withIdentifier: "TicTacToeSegue", sender: self)
             }
     }
     func collisionBugGameButton(){
-
+        playSelectionSound()
             mainThread.async {
                 self.performSegue(withIdentifier: "BugGameSegue", sender: self)
             }

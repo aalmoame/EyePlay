@@ -141,7 +141,20 @@ class TicTacToe: UIViewController{
     var hoveringSeven = false
     var hoveringEight = false
 
+    var soundPlayer: AVAudioPlayer?
+    
+    func playSelectionSound() {
+                
+        let path = Bundle.main.path(forResource: "select.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
 
+        do {
+            soundPlayer = try AVAudioPlayer(contentsOf: url)
+            soundPlayer?.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
     
     func runTimer(button: UIButton) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(TicTacToe.updateTimer)), userInfo: nil, repeats: true)
@@ -179,9 +192,9 @@ class TicTacToe: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard ARFaceTrackingConfiguration.isSupported else {
-            fatalError("Face tracking is not supported on this device")
-        }
+        //guard ARFaceTrackingConfiguration.isSupported else {
+            //fatalError("Face tracking is not supported on this device")
+        //}
 
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor
@@ -221,14 +234,14 @@ class TicTacToe: UIViewController{
     
     //checks if the cursor is on top of the game button and if the user blinks
     func collisionMenuButton(){
-
+        playSelectionSound()
             //go to game screen when user blinks over button
             mainThread.async {
                 self.performSegue(withIdentifier: "mainMenuSegue", sender: self)
             }
     }
     func collisionMiniGamesButton(){
-
+        playSelectionSound()
             //go to game screen when user blinks over button
             mainThread.async {
                 self.performSegue(withIdentifier: "miniGameSegue", sender: self)
@@ -271,7 +284,7 @@ class TicTacToe: UIViewController{
     }
     
     func collisionCell(cellNumber:Int, isPlayer1: Bool){
-                
+        playSelectionSound()
         let cellRow = cellNumber / 3;
         let cellCol = cellNumber - (3 * cellRow);
         

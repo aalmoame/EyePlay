@@ -42,8 +42,22 @@ class CursorColor: UIViewController, ARSessionDelegate{
     var hoveringRed = false
     var hoveringGray = false
     var hoveringSettings = false
-
     
+    var player: AVAudioPlayer?
+    
+    func playSelectionSound() {
+                
+        let path = Bundle.main.path(forResource: "select.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
+
     func runTimer(button: UIButton) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(CursorColor.updateTimer)), userInfo: nil, repeats: true)
         isTimerRunning = true
@@ -79,9 +93,9 @@ class CursorColor: UIViewController, ARSessionDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard ARFaceTrackingConfiguration.isSupported else {
-            fatalError("Face tracking is not supported on this device")
-        }
+        //guard ARFaceTrackingConfiguration.isSupported else {
+            //fatalError("Face tracking is not supported on this device")
+        //}
 
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor;
@@ -105,18 +119,22 @@ class CursorColor: UIViewController, ARSessionDelegate{
     
 
     func collisionBlueButton(){
+        playSelectionSound()
         cursorColor = UIColor.blue
         cursor.tintColor = cursorColor
     }
     func collisionRedButton(){
+        playSelectionSound()
         cursorColor = UIColor.red
         cursor.tintColor = cursorColor
     }
     func collisionGrayButton(){
+        playSelectionSound()
         cursorColor = UIColor.gray
         cursor.tintColor = cursorColor
     }
     func collisionSettingsButton(){
+        playSelectionSound()
             mainThread.async {
                 self.performSegue(withIdentifier: "SettingsSegue", sender: self)
             }
