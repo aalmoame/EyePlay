@@ -579,6 +579,7 @@ SWIFT_CLASS("_TtC7EyePlay9MiniGames")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified mainMenuButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified ballGameButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified bugGameButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified soundBoardButton;
 - (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
