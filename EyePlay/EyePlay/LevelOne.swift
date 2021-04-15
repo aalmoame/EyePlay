@@ -16,6 +16,7 @@ class LevelOne: UIViewController, ARSessionDelegate {
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var cursor: UIImageView!
     @IBOutlet weak var goalBlock: UIButton!
+    @IBOutlet weak var popUpView: UIView!
     
     let sceneNodes = nodes()
     let mainThread = DispatchQueue.main
@@ -25,6 +26,7 @@ class LevelOne: UIViewController, ARSessionDelegate {
     var isTimerRunning = false
     var hoveringMenu = false
     var hoveringGoal = false
+    var presentedPopup = false
     
     func runTimer(button: UIButton) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(LevelOne.updateTimer)), userInfo: nil, repeats: true)
@@ -142,6 +144,21 @@ extension LevelOne: ARSCNViewDelegate {
 
         
         mainThread.async {
+            
+            if !self.presentedPopup{
+                JSSAlertView().show(
+                    self,
+                      title: "Tip",
+                      text: "Shift your gaze to the star block in order to win!",
+                      buttonText: "OK",
+                    color: UIColor.white,
+                    delay: 4.0
+                )
+                
+                self.presentedPopup = true
+            }
+
+            
             if self.cursor.frame.intersects(self.menuButton.frame){
                 self.menuButton.layer.borderColor = UIColor.systemBlue.cgColor
                 

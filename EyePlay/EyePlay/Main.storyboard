@@ -235,6 +235,9 @@
                                 <state key="normal" title="Main Menu">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="thA-Yp-uC0" appends="YES" id="lHT-sD-1G7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSE-dq-Es2">
                                 <rect key="frame" x="177" y="115" width="457" height="134"/>
@@ -257,6 +260,9 @@
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="CxJ-CA-UPt" appends="YES" id="TgI-FR-TAZ"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="house.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="CYG-Me-f2X">
                                 <rect key="frame" x="300" y="43" width="40" height="40"/>
@@ -283,6 +289,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdj-Vy-X30" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="thA-Yp-uC0">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="mainScreenTap" modalPresentationStyle="fullScreen" id="Rq9-bt-jOq"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="CxJ-CA-UPt">
+                    <connections>
+                        <segue destination="uPl-hb-gts" kind="presentation" identifier="levelFiveTap" modalPresentationStyle="fullScreen" id="fth-eR-n52"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2117.2661870503598" y="-649.2462311557789"/>
         </scene>
@@ -303,6 +319,9 @@
                                 <state key="normal" title="Main Menu">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ytI-Cy-KAt" appends="YES" id="ZVU-iH-22T"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kOC-4U-Rlb">
                                 <rect key="frame" x="523" y="454.5" width="50" height="50"/>
@@ -343,6 +362,9 @@
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="RmP-Of-x0K" appends="YES" id="zgx-Sc-kyE"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="house.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1Ql-XZ-qB1">
                                 <rect key="frame" x="298" y="43" width="40" height="40"/>
@@ -369,6 +391,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bWI-Up-ajS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ytI-Cy-KAt">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="mainScreenTap" modalPresentationStyle="fullScreen" id="shJ-Zq-nHm"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="RmP-Of-x0K">
+                    <connections>
+                        <segue destination="o7g-UP-N1f" kind="presentation" identifier="levelSixTap" modalPresentationStyle="fullScreen" id="hck-7b-GtW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1389.2086330935253" y="-649.2462311557789"/>
         </scene>
@@ -389,6 +421,9 @@
                                 <state key="normal" title="Main Menu">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="uJR-Mh-yPp" appends="YES" id="WrO-AV-tSg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRa-Mf-gwv">
                                 <rect key="frame" x="20" y="20" width="184" height="186"/>
@@ -429,6 +464,9 @@
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="aDf-se-MAk" appends="YES" id="n1x-xX-eVj"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="house.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2Np-5R-zZq">
                                 <rect key="frame" x="303" y="43" width="40" height="40"/>
@@ -454,6 +492,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nH4-pr-DGf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="uJR-Mh-yPp">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="mainScreenTap" modalPresentationStyle="fullScreen" id="nlA-b9-ehK"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="aDf-se-MAk">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="finishedTap" modalPresentationStyle="fullScreen" id="uVn-yW-d6I"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1389" y="-1298"/>
         </scene>
@@ -474,6 +522,9 @@
                                 <state key="normal" title="Main Menu">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0xv-Mo-uCL" appends="YES" id="F9i-mN-Twf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dmh-Xz-X9Q">
                                 <rect key="frame" x="20" y="988" width="184" height="186"/>
@@ -510,6 +561,9 @@
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fVP-IL-tQ1" appends="YES" id="eS9-Bn-9xP"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="icG-nE-VE8">
                                 <rect key="frame" x="591" y="441" width="50" height="50"/>
@@ -540,6 +594,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BHt-nI-E8G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0xv-Mo-uCL">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="mainScreenTap" modalPresentationStyle="fullScreen" id="CJN-ZR-eHf"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="fVP-IL-tQ1">
+                    <connections>
+                        <segue destination="wGo-JX-wed" kind="presentation" identifier="levelEightTap" modalPresentationStyle="fullScreen" id="XwQ-xU-y2d"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-643" y="-1298"/>
         </scene>
@@ -560,6 +624,9 @@
                                 <state key="normal" title="Main Menu">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ppf-id-q16" appends="YES" id="73Z-uR-mbX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQg-2D-bZa">
                                 <rect key="frame" x="20" y="20" width="184" height="186"/>
@@ -596,6 +663,9 @@
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="TAn-sI-e43" appends="YES" id="I8f-eX-tSr"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9SB-zV-qm0">
                                 <rect key="frame" x="312" y="517" width="50" height="50"/>
@@ -626,6 +696,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Xr-0m-aaH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ppf-id-q16">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="mainScreenTap" modalPresentationStyle="fullScreen" id="Ev6-9I-OuN"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="TAn-sI-e43">
+                    <connections>
+                        <segue destination="943-oj-qKQ" kind="presentation" identifier="levelSevenTap" modalPresentationStyle="fullScreen" id="djv-2b-Gob"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-643" y="-641"/>
         </scene>
@@ -650,6 +730,9 @@
                                 <state key="normal" title="Main Menu">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="pDS-tb-iFp" appends="YES" id="Uvl-33-VvJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkK-i0-7c3">
                                 <rect key="frame" x="195" y="115" width="446" height="116"/>
@@ -659,6 +742,9 @@
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ZQ5-zD-UCM" appends="YES" id="k7M-3J-02n"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7W6-Kl-BEP">
                                 <rect key="frame" x="195" y="1060" width="446" height="134"/>
@@ -694,6 +780,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dcw-cK-EG5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="pDS-tb-iFp">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="mainScreenTap" modalPresentationStyle="fullScreen" id="CP4-Sa-d3H"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ZQ5-zD-UCM">
+                    <connections>
+                        <segue destination="QpT-tL-L4g" kind="presentation" identifier="levelFourTap" modalPresentationStyle="fullScreen" id="1ie-tA-y9K"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2123.0215827338129" y="37.688442211055275"/>
         </scene>
@@ -722,6 +818,9 @@
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="nAZ-hY-mjL" appends="YES" id="Bkj-30-LXr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyX-gd-D0s">
                                 <rect key="frame" x="283" y="0.0" width="268" height="87"/>
@@ -732,6 +831,9 @@
                                 <state key="normal" title="Main Menu">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="XLb-0k-G7a" appends="YES" id="ImX-83-BBC"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dMH-ql-Nmh">
                                 <rect key="frame" x="329" y="749" width="50" height="50"/>
@@ -762,6 +864,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4eO-ea-nLO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="XLb-0k-G7a">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="mainScreenTap" modalPresentationStyle="fullScreen" id="V9t-4h-rf4"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="nAZ-hY-mjL">
+                    <connections>
+                        <segue destination="kbB-ZR-ogM" kind="presentation" identifier="levelThreeTap" modalPresentationStyle="fullScreen" id="vwj-Zv-Wpd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1389.2086330935253" y="39.698492462311556"/>
         </scene>
@@ -812,6 +924,9 @@
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="9yC-33-WHo" appends="YES" id="sPx-Xc-uYU"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="scv-mc-dVX">
                                 <rect key="frame" x="501" y="629.5" width="50" height="50"/>
@@ -842,7 +957,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSe-2E-SQ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="o7K-7W-dKk"/>
+                <tapGestureRecognizer id="o7K-7W-dKk">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="levelOneMenuTap" modalPresentationStyle="fullScreen" id="yfe-rP-ppg"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="9yC-33-WHo">
+                    <connections>
+                        <segue destination="ykE-9t-Bfo" kind="presentation" identifier="levelTwoTap" modalPresentationStyle="fullScreen" id="MHa-OC-Cs1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-655.39568345323744" y="39.698492462311556"/>
         </scene>
@@ -878,6 +1002,9 @@
                                 <state key="normal" title="Levels">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="EMH-3U-XNp" appends="YES" id="RQf-Yx-6hn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="297-ZF-eLf">
                                 <rect key="frame" x="167" y="974" width="500" height="200"/>
@@ -955,7 +1082,16 @@
                         <segue destination="NHp-vb-Hu3" kind="presentation" identifier="SettingsSegue" modalPresentationStyle="fullScreen" id="IJG-yJ-LpU"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="GEQ-d5-iQa"/>
+                <tapGestureRecognizer id="GEQ-d5-iQa">
+                    <connections>
+                        <segue destination="g6E-ax-Wgk" kind="presentation" identifier="LevelOneSegueTap" modalPresentationStyle="fullScreen" id="1WL-zY-KiT"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="EMH-3U-XNp">
+                    <connections>
+                        <segue destination="FSq-CB-tc1" kind="presentation" identifier="LevelSelectorTap" modalPresentationStyle="fullScreen" id="OLQ-Dw-1fg"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="138.12949640287772" y="43.21608040201005"/>
         </scene>
@@ -1073,6 +1209,9 @@
                                 <state key="normal" title="Main Menu">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Jjt-d6-60a" appends="YES" id="eq9-b2-ujJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDP-dL-jTA">
                                 <rect key="frame" x="85" y="200" width="226" height="176"/>
@@ -1082,6 +1221,9 @@
                                 <state key="normal" title="Level 1">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fIU-Fs-qlH" appends="YES" id="WhF-cg-QQu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPl-CG-m4Z">
                                 <rect key="frame" x="524" y="200" width="226" height="176"/>
@@ -1091,6 +1233,9 @@
                                 <state key="normal" title="Level 2">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Vxi-aa-IyI" appends="YES" id="8Rm-Pe-Jdw"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0j9-ZO-fgG">
                                 <rect key="frame" x="362" y="323.5" width="50" height="50"/>
@@ -1104,6 +1249,9 @@
                                 <state key="normal" title="Level 3">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JFL-nd-bFr" appends="YES" id="Wef-M9-iB7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gww-9k-Qia">
                                 <rect key="frame" x="524" y="449" width="226" height="176"/>
@@ -1113,6 +1261,9 @@
                                 <state key="normal" title="Level 4">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="e5A-u0-U8G" appends="YES" id="42Q-EG-uUc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqv-6O-4Rs">
                                 <rect key="frame" x="85" y="699" width="226" height="176"/>
@@ -1122,6 +1273,9 @@
                                 <state key="normal" title="Level 5">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="COS-Xa-7Tr" appends="YES" id="WZG-Hm-tcp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsM-V8-Pxo">
                                 <rect key="frame" x="524" y="699" width="226" height="176"/>
@@ -1131,6 +1285,9 @@
                                 <state key="normal" title="Level 6">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="97O-uT-Kbo" appends="YES" id="t1E-1R-QEP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYS-KA-8Ta">
                                 <rect key="frame" x="85" y="946" width="226" height="176"/>
@@ -1140,6 +1297,9 @@
                                 <state key="normal" title="Level 7">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1ia-qq-iGd" appends="YES" id="PuJ-4N-27y"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEF-dG-00K">
                                 <rect key="frame" x="524" y="946" width="226" height="176"/>
@@ -1149,6 +1309,9 @@
                                 <state key="normal" title="Level 8">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="xlo-7u-43f" appends="YES" id="wUG-mR-aqD"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="house.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mkL-xM-cEf">
                                 <rect key="frame" x="261" y="57" width="50" height="50"/>
@@ -1184,6 +1347,51 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRA-og-9sC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Jjt-d6-60a">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="mainScreenTap" modalPresentationStyle="fullScreen" id="QPb-b4-1ri"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="fIU-Fs-qlH">
+                    <connections>
+                        <segue destination="g6E-ax-Wgk" kind="presentation" identifier="levelOneTap" modalPresentationStyle="fullScreen" id="TSi-Uq-TRG"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Vxi-aa-IyI">
+                    <connections>
+                        <segue destination="ykE-9t-Bfo" kind="presentation" identifier="levelTwoTap" modalPresentationStyle="fullScreen" id="Tcj-Jm-8bc"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="JFL-nd-bFr">
+                    <connections>
+                        <segue destination="kbB-ZR-ogM" kind="presentation" identifier="levelThreeTap" modalPresentationStyle="fullScreen" id="OjZ-dT-6Nr"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="e5A-u0-U8G">
+                    <connections>
+                        <segue destination="QpT-tL-L4g" kind="presentation" identifier="levelFourTap" modalPresentationStyle="fullScreen" id="VUj-RN-4qu"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="COS-Xa-7Tr">
+                    <connections>
+                        <segue destination="uPl-hb-gts" kind="presentation" identifier="levelFiveTap" modalPresentationStyle="fullScreen" id="70f-Ee-scQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="97O-uT-Kbo">
+                    <connections>
+                        <segue destination="o7g-UP-N1f" kind="presentation" identifier="levelSixTap" modalPresentationStyle="fullScreen" id="2fS-1o-VjY"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="1ia-qq-iGd">
+                    <connections>
+                        <segue destination="943-oj-qKQ" kind="presentation" identifier="levelSevenTap" modalPresentationStyle="fullScreen" id="JBf-mq-54y"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="xlo-7u-43f">
+                    <connections>
+                        <segue destination="wGo-JX-wed" kind="presentation" identifier="levelEightTap" modalPresentationStyle="fullScreen" id="icC-nz-vy5"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-652.51798561151088" y="751.75879396984919"/>
         </scene>
@@ -1869,18 +2077,18 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="q3A-WE-iC3"/>
-        <segue reference="2rt-Tb-Z7G"/>
-        <segue reference="PUu-fv-gDm"/>
-        <segue reference="ct6-or-KSl"/>
-        <segue reference="POx-jN-7AF"/>
-        <segue reference="4Zh-1V-K52"/>
-        <segue reference="zRy-Cz-G7P"/>
-        <segue reference="4zb-KR-wVt"/>
-        <segue reference="Brb-QM-2Lx"/>
-        <segue reference="gVo-2G-pr4"/>
-        <segue reference="3V7-mB-oQc"/>
-        <segue reference="RuK-5V-wBt"/>
+        <segue reference="Mz8-fw-bzg"/>
+        <segue reference="IJG-yJ-LpU"/>
+        <segue reference="OLQ-Dw-1fg"/>
+        <segue reference="QPb-b4-1ri"/>
+        <segue reference="TSi-Uq-TRG"/>
+        <segue reference="Tcj-Jm-8bc"/>
+        <segue reference="OjZ-dT-6Nr"/>
+        <segue reference="2fS-1o-VjY"/>
+        <segue reference="JBf-mq-54y"/>
+        <segue reference="icC-nz-vy5"/>
+        <segue reference="70f-Ee-scQ"/>
+        <segue reference="VUj-RN-4qu"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
