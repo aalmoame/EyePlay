@@ -444,6 +444,7 @@ SWIFT_CLASS("_TtC7EyePlay8LevelOne")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified goalBlock;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified popUpView;
 - (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
