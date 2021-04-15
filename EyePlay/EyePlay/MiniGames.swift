@@ -12,6 +12,7 @@ class MiniGames: UIViewController, ARSessionDelegate{
     @IBOutlet weak var mainMenuButton: UIButton!
     @IBOutlet weak var ballGameButton: UIButton!
     @IBOutlet weak var bugGameButton: UIButton!
+    @IBOutlet weak var soundBoardButton: UIButton!
     
     let sceneNodes = nodes()
     
@@ -24,7 +25,7 @@ class MiniGames: UIViewController, ARSessionDelegate{
     var hoveringBallGame = false
     var hoveringTicTacToe = false
     var hoveringBugGame = false
-    
+
     var player: AVAudioPlayer?
     
     func playSelectionSound() {
@@ -39,6 +40,7 @@ class MiniGames: UIViewController, ARSessionDelegate{
             // couldn't load file :(
         }
     }
+    var hoveringSoundBoard = false
 
     
     func runTimer(button: UIButton) {
@@ -124,6 +126,12 @@ class MiniGames: UIViewController, ARSessionDelegate{
                 self.performSegue(withIdentifier: "BugGameSegue", sender: self)
             }
     }
+    func collisionSoundBoardButton(){
+
+            mainThread.async {
+                self.performSegue(withIdentifier: "SoundBoardSegue", sender: self)
+            }
+    }
 }
 
 extension MiniGames: ARSCNViewDelegate {
@@ -189,10 +197,41 @@ extension MiniGames: ARSCNViewDelegate {
                 self.hoveringBallGame = false
                 self.hoveringTicTacToe = false
                 self.hoveringBugGame = false
+                self.hoveringSoundBoard = false
                 
                 self.resetColor(button: self.ballGameButton)
                 self.resetColor(button: self.TicTacToeButton)
                 self.resetColor(button: self.bugGameButton)
+                self.resetColor(button: self.soundBoardButton)
+
+
+            }
+            else if self.cursor.frame.intersects(self.soundBoardButton.frame){
+                self.soundBoardButton.layer.borderColor = UIColor.systemBlue.cgColor
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.soundBoardButton)
+                }
+                
+                if self.hoveringSoundBoard && self.seconds <= 0 {
+                    self.collisionSoundBoardButton()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringSoundBoard{
+                    self.resetTimer()
+                }
+                
+                self.hoveringBugGame = false
+                self.hoveringMenu = false
+                self.hoveringBallGame = false
+                self.hoveringTicTacToe = false
+                self.hoveringSoundBoard = true
+                
+                self.resetColor(button: self.ballGameButton)
+                self.resetColor(button: self.mainMenuButton)
+                self.resetColor(button: self.bugGameButton)
+                self.resetColor(button: self.TicTacToeButton)
+
 
             }
             else if self.cursor.frame.intersects(self.TicTacToeButton.frame){
@@ -214,10 +253,13 @@ extension MiniGames: ARSCNViewDelegate {
                 self.hoveringMenu = false
                 self.hoveringBallGame = false
                 self.hoveringTicTacToe = true
+                self.hoveringSoundBoard = false
                 
                 self.resetColor(button: self.ballGameButton)
                 self.resetColor(button: self.mainMenuButton)
                 self.resetColor(button: self.bugGameButton)
+                self.resetColor(button: self.soundBoardButton)
+
 
             }
             else if self.cursor.frame.intersects(self.ballGameButton.frame){
@@ -239,10 +281,13 @@ extension MiniGames: ARSCNViewDelegate {
                 self.hoveringMenu = false
                 self.hoveringBallGame = true
                 self.hoveringTicTacToe = false
+                self.hoveringSoundBoard = false
                 
                 self.resetColor(button: self.mainMenuButton)
                 self.resetColor(button: self.TicTacToeButton)
                 self.resetColor(button: self.bugGameButton)
+                self.resetColor(button: self.soundBoardButton)
+
 
             }
             else if self.cursor.frame.intersects(self.bugGameButton.frame){
@@ -264,27 +309,34 @@ extension MiniGames: ARSCNViewDelegate {
                 self.hoveringBugGame = true
                 self.hoveringTicTacToe = false
                 self.hoveringBallGame = false
+                self.hoveringSoundBoard = false
                 
                 
                 self.resetColor(button: self.mainMenuButton)
                 self.resetColor(button: self.TicTacToeButton)
                 self.resetColor(button: self.ballGameButton)
+                self.resetColor(button: self.soundBoardButton)
+
             }
             else{
                 self.mainMenuButton.layer.borderColor = UIColor.clear.cgColor
                 self.TicTacToeButton.layer.borderColor = UIColor.clear.cgColor
                 self.ballGameButton.layer.borderColor = UIColor.clear.cgColor
                 self.bugGameButton.layer.borderColor = UIColor.clear.cgColor
+                self.soundBoardButton.layer.borderColor = UIColor.clear.cgColor
+
                 
                 self.hoveringTicTacToe = false
                 self.hoveringBallGame = false
                 self.hoveringMenu = false
                 self.hoveringBugGame = false
+                self.hoveringSoundBoard = false
 
                 self.resetColor(button: self.TicTacToeButton)
                 self.resetColor(button: self.mainMenuButton)
                 self.resetColor(button: self.ballGameButton)
                 self.resetColor(button: self.bugGameButton)
+                self.resetColor(button: self.soundBoardButton)
                 
                 self.resetTimer()
 
