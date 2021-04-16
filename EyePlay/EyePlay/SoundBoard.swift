@@ -194,6 +194,8 @@ class SoundBoard: UIViewController{
     }
     func collisionMeow(){
         //playSound(sound: "police.mp3")
+        let cats = ["meow1.mp3", "meow2.mp3"]
+        playSound(sound: cats.randomElement()!)
     }
     func collisionPolice(){
         playSound(sound: "police.mp3")
@@ -294,6 +296,17 @@ extension SoundBoard: ARSCNViewDelegate {
                 self.resetColor(button: self.fairyButton)
                 self.resetColor(button: self.punchButton)
                 self.resetColor(button: self.raceCarButton)
+                
+                
+                self.miniGamesButton.layer.borderColor = UIColor.clear.cgColor
+                self.fartButton.layer.borderColor = UIColor.clear.cgColor
+                self.moneyButton.layer.borderColor = UIColor.clear.cgColor
+                self.woofButton.layer.borderColor = UIColor.clear.cgColor
+                self.meowButton.layer.borderColor = UIColor.clear.cgColor
+                self.policeButton.layer.borderColor = UIColor.clear.cgColor
+                self.fairyButton.layer.borderColor = UIColor.clear.cgColor
+                self.punchButton.layer.borderColor = UIColor.clear.cgColor
+                self.raceCarButton.layer.borderColor = UIColor.clear.cgColor
 
             }
             else if self.cursor.frame.intersects(self.miniGamesButton.frame){
@@ -332,6 +345,16 @@ extension SoundBoard: ARSCNViewDelegate {
                 self.resetColor(button: self.fairyButton)
                 self.resetColor(button: self.punchButton)
                 self.resetColor(button: self.raceCarButton)
+                
+                self.menuButton.layer.borderColor = UIColor.clear.cgColor
+                self.fartButton.layer.borderColor = UIColor.clear.cgColor
+                self.moneyButton.layer.borderColor = UIColor.clear.cgColor
+                self.woofButton.layer.borderColor = UIColor.clear.cgColor
+                self.meowButton.layer.borderColor = UIColor.clear.cgColor
+                self.policeButton.layer.borderColor = UIColor.clear.cgColor
+                self.fairyButton.layer.borderColor = UIColor.clear.cgColor
+                self.punchButton.layer.borderColor = UIColor.clear.cgColor
+                self.raceCarButton.layer.borderColor = UIColor.clear.cgColor
             }
             else if self.cursor.frame.intersects(self.fartButton.frame) {
                 self.fartButton.layer.borderColor = UIColor.systemBlue.cgColor
@@ -369,6 +392,16 @@ extension SoundBoard: ARSCNViewDelegate {
                 self.resetColor(button: self.fairyButton)
                 self.resetColor(button: self.punchButton)
                 self.resetColor(button: self.raceCarButton)
+                
+                self.menuButton.layer.borderColor = UIColor.clear.cgColor
+                self.miniGamesButton.layer.borderColor = UIColor.clear.cgColor
+                self.moneyButton.layer.borderColor = UIColor.clear.cgColor
+                self.woofButton.layer.borderColor = UIColor.clear.cgColor
+                self.meowButton.layer.borderColor = UIColor.clear.cgColor
+                self.policeButton.layer.borderColor = UIColor.clear.cgColor
+                self.fairyButton.layer.borderColor = UIColor.clear.cgColor
+                self.punchButton.layer.borderColor = UIColor.clear.cgColor
+                self.raceCarButton.layer.borderColor = UIColor.clear.cgColor
             }
             else if self.cursor.frame.intersects(self.moneyButton.frame){
                 self.moneyButton.layer.borderColor = UIColor.systemBlue.cgColor
@@ -406,6 +439,16 @@ extension SoundBoard: ARSCNViewDelegate {
                 self.resetColor(button: self.fairyButton)
                 self.resetColor(button: self.punchButton)
                 self.resetColor(button: self.raceCarButton)
+                
+                self.menuButton.layer.borderColor = UIColor.clear.cgColor
+                self.miniGamesButton.layer.borderColor = UIColor.clear.cgColor
+                self.fartButton.layer.borderColor = UIColor.clear.cgColor
+                self.woofButton.layer.borderColor = UIColor.clear.cgColor
+                self.meowButton.layer.borderColor = UIColor.clear.cgColor
+                self.policeButton.layer.borderColor = UIColor.clear.cgColor
+                self.fairyButton.layer.borderColor = UIColor.clear.cgColor
+                self.punchButton.layer.borderColor = UIColor.clear.cgColor
+                self.raceCarButton.layer.borderColor = UIColor.clear.cgColor
             }
             else if self.cursor.frame.intersects(self.woofButton.frame){
                 self.woofButton.layer.borderColor = UIColor.systemBlue.cgColor
@@ -443,6 +486,16 @@ extension SoundBoard: ARSCNViewDelegate {
                 self.resetColor(button: self.fairyButton)
                 self.resetColor(button: self.punchButton)
                 self.resetColor(button: self.raceCarButton)
+                
+                self.menuButton.layer.borderColor = UIColor.clear.cgColor
+                self.miniGamesButton.layer.borderColor = UIColor.clear.cgColor
+                self.fartButton.layer.borderColor = UIColor.clear.cgColor
+                self.moneyButton.layer.borderColor = UIColor.clear.cgColor
+                self.meowButton.layer.borderColor = UIColor.clear.cgColor
+                self.policeButton.layer.borderColor = UIColor.clear.cgColor
+                self.fairyButton.layer.borderColor = UIColor.clear.cgColor
+                self.punchButton.layer.borderColor = UIColor.clear.cgColor
+                self.raceCarButton.layer.borderColor = UIColor.clear.cgColor
             }
             else if self.cursor.frame.intersects(self.meowButton.frame){
                 self.meowButton.layer.borderColor = UIColor.systemBlue.cgColor
@@ -480,6 +533,16 @@ extension SoundBoard: ARSCNViewDelegate {
                 self.resetColor(button: self.fairyButton)
                 self.resetColor(button: self.punchButton)
                 self.resetColor(button: self.raceCarButton)
+                
+                self.menuButton.layer.borderColor = UIColor.clear.cgColor
+                self.miniGamesButton.layer.borderColor = UIColor.clear.cgColor
+                self.fartButton.layer.borderColor = UIColor.clear.cgColor
+                self.moneyButton.layer.borderColor = UIColor.clear.cgColor
+                self.woofButton.layer.borderColor = UIColor.clear.cgColor
+                self.policeButton.layer.borderColor = UIColor.clear.cgColor
+                self.fairyButton.layer.borderColor = UIColor.clear.cgColor
+                self.punchButton.layer.borderColor = UIColor.clear.cgColor
+                self.raceCarButton.layer.borderColor = UIColor.clear.cgColor
             }
             else if self.cursor.frame.intersects(self.policeButton.frame){
                 self.policeButton.layer.borderColor = UIColor.systemBlue.cgColor
@@ -517,6 +580,16 @@ extension SoundBoard: ARSCNViewDelegate {
                 self.resetColor(button: self.fairyButton)
                 self.resetColor(button: self.punchButton)
                 self.resetColor(button: self.raceCarButton)
+                
+                self.menuButton.layer.borderColor = UIColor.clear.cgColor
+                self.miniGamesButton.layer.borderColor = UIColor.clear.cgColor
+                self.fartButton.layer.borderColor = UIColor.clear.cgColor
+                self.moneyButton.layer.borderColor = UIColor.clear.cgColor
+                self.woofButton.layer.borderColor = UIColor.clear.cgColor
+                self.meowButton.layer.borderColor = UIColor.clear.cgColor
+                self.fairyButton.layer.borderColor = UIColor.clear.cgColor
+                self.punchButton.layer.borderColor = UIColor.clear.cgColor
+                self.raceCarButton.layer.borderColor = UIColor.clear.cgColor
             }
             else if self.cursor.frame.intersects(self.fairyButton.frame){
                 self.fairyButton.layer.borderColor = UIColor.systemBlue.cgColor
@@ -554,6 +627,16 @@ extension SoundBoard: ARSCNViewDelegate {
                 self.resetColor(button: self.moneyButton)
                 self.resetColor(button: self.punchButton)
                 self.resetColor(button: self.raceCarButton)
+                
+                self.menuButton.layer.borderColor = UIColor.clear.cgColor
+                self.miniGamesButton.layer.borderColor = UIColor.clear.cgColor
+                self.fartButton.layer.borderColor = UIColor.clear.cgColor
+                self.moneyButton.layer.borderColor = UIColor.clear.cgColor
+                self.woofButton.layer.borderColor = UIColor.clear.cgColor
+                self.meowButton.layer.borderColor = UIColor.clear.cgColor
+                self.policeButton.layer.borderColor = UIColor.clear.cgColor
+                self.punchButton.layer.borderColor = UIColor.clear.cgColor
+                self.raceCarButton.layer.borderColor = UIColor.clear.cgColor
             }
             else if self.cursor.frame.intersects(self.punchButton.frame){
                 self.punchButton.layer.borderColor = UIColor.systemBlue.cgColor
@@ -591,6 +674,16 @@ extension SoundBoard: ARSCNViewDelegate {
                 self.resetColor(button: self.fairyButton)
                 self.resetColor(button: self.moneyButton)
                 self.resetColor(button: self.raceCarButton)
+                
+                self.menuButton.layer.borderColor = UIColor.clear.cgColor
+                self.miniGamesButton.layer.borderColor = UIColor.clear.cgColor
+                self.fartButton.layer.borderColor = UIColor.clear.cgColor
+                self.moneyButton.layer.borderColor = UIColor.clear.cgColor
+                self.woofButton.layer.borderColor = UIColor.clear.cgColor
+                self.meowButton.layer.borderColor = UIColor.clear.cgColor
+                self.policeButton.layer.borderColor = UIColor.clear.cgColor
+                self.fairyButton.layer.borderColor = UIColor.clear.cgColor
+                self.raceCarButton.layer.borderColor = UIColor.clear.cgColor
             }
             else if self.cursor.frame.intersects(self.raceCarButton.frame){
                 self.raceCarButton.layer.borderColor = UIColor.systemBlue.cgColor
@@ -628,6 +721,16 @@ extension SoundBoard: ARSCNViewDelegate {
                 self.resetColor(button: self.fairyButton)
                 self.resetColor(button: self.punchButton)
                 self.resetColor(button: self.moneyButton)
+                
+                self.menuButton.layer.borderColor = UIColor.clear.cgColor
+                self.miniGamesButton.layer.borderColor = UIColor.clear.cgColor
+                self.fartButton.layer.borderColor = UIColor.clear.cgColor
+                self.moneyButton.layer.borderColor = UIColor.clear.cgColor
+                self.woofButton.layer.borderColor = UIColor.clear.cgColor
+                self.meowButton.layer.borderColor = UIColor.clear.cgColor
+                self.policeButton.layer.borderColor = UIColor.clear.cgColor
+                self.fairyButton.layer.borderColor = UIColor.clear.cgColor
+                self.punchButton.layer.borderColor = UIColor.clear.cgColor
             }
             else{
                 self.menuButton.layer.borderColor = UIColor.clear.cgColor

@@ -324,7 +324,9 @@ SWIFT_CLASS("_TtC7EyePlay7EyePlay")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified playNowButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified miniGameButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified levelButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified emergencyButton;
 - (void)updateTimer;
+- (IBAction)pressEmergencyButton:(id _Nonnull)sender;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)viewDidLoad;

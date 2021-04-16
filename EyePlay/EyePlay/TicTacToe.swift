@@ -222,6 +222,10 @@ class TicTacToe: UIViewController{
         six.layer.borderWidth = 10;
         seven.layer.borderWidth = 10;
         eight.layer.borderWidth = 10;
+        menuButton.layer.borderWidth = 10;
+        miniGamesButton.layer.borderWidth = 10;
+        restartButton.layer.borderWidth = 10;
+        
         
         
         gameView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
@@ -482,6 +486,9 @@ extension TicTacToe: ARSCNViewDelegate {
             if (self.cursor.frame.intersects(self.menuButton.frame)){
                 
                 self.menuButton.layer.borderColor = UIColor.systemBlue.cgColor
+                self.miniGamesButton.layer.borderColor = UIColor.clear.cgColor
+                self.restartButton.layer.borderColor = UIColor.clear.cgColor
+
                 
                 
                 if !self.isTimerRunning{
@@ -525,6 +532,8 @@ extension TicTacToe: ARSCNViewDelegate {
             }
             else if (self.cursor.frame.intersects(self.restartButton.frame)) {
                 self.restartButton.layer.borderColor = UIColor.systemBlue.cgColor
+                self.miniGamesButton.layer.borderColor = UIColor.clear.cgColor
+                self.menuButton.layer.borderColor = UIColor.clear.cgColor
                 
                 if !self.isTimerRunning{
                     self.runTimer(button: self.restartButton)
@@ -567,6 +576,8 @@ extension TicTacToe: ARSCNViewDelegate {
             else if (self.cursor.frame.intersects(self.miniGamesButton.frame)){
                 
                 self.miniGamesButton.layer.borderColor = UIColor.systemBlue.cgColor
+                self.menuButton.layer.borderColor = UIColor.clear.cgColor
+                self.restartButton.layer.borderColor = UIColor.clear.cgColor
                 
                 if !self.isTimerRunning{
                     self.runTimer(button: self.miniGamesButton)

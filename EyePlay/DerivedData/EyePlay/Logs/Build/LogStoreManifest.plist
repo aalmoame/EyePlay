@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>0F0EB346-1F0A-447C-BD06-E0D0C7DD9880</key>
+		<key>07B9316A-B627-4FA3-88EA-7D321CB671CD</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -15,41 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>0F0EB346-1F0A-447C-BD06-E0D0C7DD9880.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>E</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>EyePlay project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>EyePlay</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Build EyePlay</string>
-			<key>timeStartedRecording</key>
-			<real>640185888.719396</real>
-			<key>timeStoppedRecording</key>
-			<real>640185888.89643896</real>
-			<key>title</key>
-			<string>Build EyePlay</string>
-			<key>uniqueIdentifier</key>
-			<string>0F0EB346-1F0A-447C-BD06-E0D0C7DD9880</string>
-		</dict>
-		<key>3F15DC83-82FF-462C-B303-A52C15A5CAFA</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>3F15DC83-82FF-462C-B303-A52C15A5CAFA.xcactivitylog</string>
+			<string>07B9316A-B627-4FA3-88EA-7D321CB671CD.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -66,13 +32,81 @@
 			<key>signature</key>
 			<string>Build EyePlay</string>
 			<key>timeStartedRecording</key>
-			<real>640014888.09128594</real>
+			<real>640283924.06452799</real>
 			<key>timeStoppedRecording</key>
-			<real>640014896.40238595</real>
+			<real>640283927.08030999</real>
 			<key>title</key>
 			<string>Build EyePlay</string>
 			<key>uniqueIdentifier</key>
-			<string>3F15DC83-82FF-462C-B303-A52C15A5CAFA</string>
+			<string>07B9316A-B627-4FA3-88EA-7D321CB671CD</string>
+		</dict>
+		<key>4A240E13-696E-43F0-AC0D-BD0BE5E8B20E</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>4A240E13-696E-43F0-AC0D-BD0BE5E8B20E.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>EyePlay project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>EyePlay</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build EyePlay</string>
+			<key>timeStartedRecording</key>
+			<real>640281162.43683505</real>
+			<key>timeStoppedRecording</key>
+			<real>640281166.91025102</real>
+			<key>title</key>
+			<string>Build EyePlay</string>
+			<key>uniqueIdentifier</key>
+			<string>4A240E13-696E-43F0-AC0D-BD0BE5E8B20E</string>
+		</dict>
+		<key>6F1C2934-288F-40D9-8F05-E4E762F8B88F</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>6F1C2934-288F-40D9-8F05-E4E762F8B88F.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>EyePlay project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>EyePlay</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build EyePlay</string>
+			<key>timeStartedRecording</key>
+			<real>640284294.94677806</real>
+			<key>timeStoppedRecording</key>
+			<real>640284296.64636505</real>
+			<key>title</key>
+			<string>Build EyePlay</string>
+			<key>uniqueIdentifier</key>
+			<string>6F1C2934-288F-40D9-8F05-E4E762F8B88F</string>
 		</dict>
 		<key>7B27A8D6-14A5-4ED6-8BE4-87B87DF4E0D2</key>
 		<dict>
@@ -108,7 +142,7 @@
 			<key>uniqueIdentifier</key>
 			<string>7B27A8D6-14A5-4ED6-8BE4-87B87DF4E0D2</string>
 		</dict>
-		<key>92563450-1A70-4329-B83C-0AD9DA77C590</key>
+		<key>99299133-E1F7-4619-BA48-F0988EF934AA</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -117,7 +151,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>92563450-1A70-4329-B83C-0AD9DA77C590.xcactivitylog</string>
+			<string>99299133-E1F7-4619-BA48-F0988EF934AA.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -134,15 +168,15 @@
 			<key>signature</key>
 			<string>Build EyePlay</string>
 			<key>timeStartedRecording</key>
-			<real>640185525.139557</real>
+			<real>640284333.74672794</real>
 			<key>timeStoppedRecording</key>
-			<real>640185534.97038102</real>
+			<real>640284342.33831203</real>
 			<key>title</key>
 			<string>Build EyePlay</string>
 			<key>uniqueIdentifier</key>
-			<string>92563450-1A70-4329-B83C-0AD9DA77C590</string>
+			<string>99299133-E1F7-4619-BA48-F0988EF934AA</string>
 		</dict>
-		<key>928872A6-8413-498F-A498-3ED35F7042FE</key>
+		<key>DB0E2062-EF01-4FD8-A37E-B163C2AC1359</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -151,7 +185,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>928872A6-8413-498F-A498-3ED35F7042FE.xcactivitylog</string>
+			<string>DB0E2062-EF01-4FD8-A37E-B163C2AC1359.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -168,15 +202,15 @@
 			<key>signature</key>
 			<string>Build EyePlay</string>
 			<key>timeStartedRecording</key>
-			<real>640185916.58656895</real>
+			<real>640282383.93531001</real>
 			<key>timeStoppedRecording</key>
-			<real>640185930.03207397</real>
+			<real>640282392.47935295</real>
 			<key>title</key>
 			<string>Build EyePlay</string>
 			<key>uniqueIdentifier</key>
-			<string>928872A6-8413-498F-A498-3ED35F7042FE</string>
+			<string>DB0E2062-EF01-4FD8-A37E-B163C2AC1359</string>
 		</dict>
-		<key>959C6148-2623-42F3-8347-D6EDB236115D</key>
+		<key>FEDE8EAD-9DE7-4DFC-B19F-A58E72D170BA</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -185,7 +219,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>959C6148-2623-42F3-8347-D6EDB236115D.xcactivitylog</string>
+			<string>FEDE8EAD-9DE7-4DFC-B19F-A58E72D170BA.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -202,115 +236,13 @@
 			<key>signature</key>
 			<string>Build EyePlay</string>
 			<key>timeStartedRecording</key>
-			<real>640186610.66375303</real>
+			<real>640283787.19329703</real>
 			<key>timeStoppedRecording</key>
-			<real>640186619.80123794</real>
+			<real>640283800.88125896</real>
 			<key>title</key>
 			<string>Build EyePlay</string>
 			<key>uniqueIdentifier</key>
-			<string>959C6148-2623-42F3-8347-D6EDB236115D</string>
-		</dict>
-		<key>9C85DD0A-CCA4-4DBC-AB59-C7F1D5C50352</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>9C85DD0A-CCA4-4DBC-AB59-C7F1D5C50352.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>EyePlay project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>EyePlay</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Build EyePlay</string>
-			<key>timeStartedRecording</key>
-			<real>640192429.04524505</real>
-			<key>timeStoppedRecording</key>
-			<real>640192432.77262497</real>
-			<key>title</key>
-			<string>Build EyePlay</string>
-			<key>uniqueIdentifier</key>
-			<string>9C85DD0A-CCA4-4DBC-AB59-C7F1D5C50352</string>
-		</dict>
-		<key>F1F0C6AC-8D68-4A71-B4FF-09DC463B8D9E</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>F1F0C6AC-8D68-4A71-B4FF-09DC463B8D9E.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>EyePlay project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>EyePlay</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Build EyePlay</string>
-			<key>timeStartedRecording</key>
-			<real>640186646.64599097</real>
-			<key>timeStoppedRecording</key>
-			<real>640186648.71524405</real>
-			<key>title</key>
-			<string>Build EyePlay</string>
-			<key>uniqueIdentifier</key>
-			<string>F1F0C6AC-8D68-4A71-B4FF-09DC463B8D9E</string>
-		</dict>
-		<key>F2A19DFC-9308-4F4C-8F81-2C6DA5E05005</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>F2A19DFC-9308-4F4C-8F81-2C6DA5E05005.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>EyePlay project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>EyePlay</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Build EyePlay</string>
-			<key>timeStartedRecording</key>
-			<real>640192353.91739905</real>
-			<key>timeStoppedRecording</key>
-			<real>640192367.42175901</real>
-			<key>title</key>
-			<string>Build EyePlay</string>
-			<key>uniqueIdentifier</key>
-			<string>F2A19DFC-9308-4F4C-8F81-2C6DA5E05005</string>
+			<string>FEDE8EAD-9DE7-4DFC-B19F-A58E72D170BA</string>
 		</dict>
 	</dict>
 </dict>

@@ -6,34 +6,6 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>20B10C52-EDBE-4205-959D-27BD46C9898C</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.ProvisioningLog</string>
-			<key>fileName</key>
-			<string>20B10C52-EDBE-4205-959D-27BD46C9898C.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>E</string>
-			</dict>
-			<key>signature</key>
-			<string>Update Signing</string>
-			<key>timeStartedRecording</key>
-			<real>640185902.19449794</real>
-			<key>timeStoppedRecording</key>
-			<real>640185904.00271499</real>
-			<key>title</key>
-			<string>Update Signing</string>
-			<key>uniqueIdentifier</key>
-			<string>20B10C52-EDBE-4205-959D-27BD46C9898C</string>
-		</dict>
 		<key>7FBCF5A7-4C4A-459A-ABC5-7D0D29B1FDEE</key>
 		<dict>
 			<key>className</key>
@@ -61,90 +33,6 @@
 			<string>Update Signing</string>
 			<key>uniqueIdentifier</key>
 			<string>7FBCF5A7-4C4A-459A-ABC5-7D0D29B1FDEE</string>
-		</dict>
-		<key>83432C93-E9E2-4862-B582-483035CAB093</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.ProvisioningLog</string>
-			<key>fileName</key>
-			<string>83432C93-E9E2-4862-B582-483035CAB093.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>Update Signing</string>
-			<key>timeStartedRecording</key>
-			<real>640185913.09469604</real>
-			<key>timeStoppedRecording</key>
-			<real>640185914.27531195</real>
-			<key>title</key>
-			<string>Update Signing</string>
-			<key>uniqueIdentifier</key>
-			<string>83432C93-E9E2-4862-B582-483035CAB093</string>
-		</dict>
-		<key>E86F7E19-66F2-403E-95BC-9735C496C70D</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.ProvisioningLog</string>
-			<key>fileName</key>
-			<string>E86F7E19-66F2-403E-95BC-9735C496C70D.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>E</string>
-			</dict>
-			<key>signature</key>
-			<string>Update Signing</string>
-			<key>timeStartedRecording</key>
-			<real>640185899.64482403</real>
-			<key>timeStoppedRecording</key>
-			<real>640185900.24159598</real>
-			<key>title</key>
-			<string>Update Signing</string>
-			<key>uniqueIdentifier</key>
-			<string>E86F7E19-66F2-403E-95BC-9735C496C70D</string>
-		</dict>
-		<key>F58B027C-B648-4D10-941E-8BD4FAAE6F48</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.ProvisioningLog</string>
-			<key>fileName</key>
-			<string>F58B027C-B648-4D10-941E-8BD4FAAE6F48.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>E</string>
-			</dict>
-			<key>signature</key>
-			<string>Update Signing</string>
-			<key>timeStartedRecording</key>
-			<real>640185834.44860494</real>
-			<key>timeStoppedRecording</key>
-			<real>640185835.46581697</real>
-			<key>title</key>
-			<string>Update Signing</string>
-			<key>uniqueIdentifier</key>
-			<string>F58B027C-B648-4D10-941E-8BD4FAAE6F48</string>
 		</dict>
 	</dict>
 </dict>
