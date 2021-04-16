@@ -228,9 +228,12 @@ extension EyePlay: ARSCNViewDelegate {
                 self.hoveringLevelSelect = false
                 self.hoveringMiniGames = true
                 self.hoveringEmergency = false
+                
                 self.resetColor(button: self.playNowButton)
                 self.resetColor(button: self.levelButton)
                 self.resetColor(button: self.settingsButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
+                
                 
             }
             else if self.cursor.frame.intersects(self.settingsButton.frame){
@@ -258,6 +261,8 @@ extension EyePlay: ARSCNViewDelegate {
                 self.resetColor(button: self.playNowButton)
                 self.resetColor(button: self.levelButton)
                 self.resetColor(button: self.miniGameButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
+
                 
                 
             }
@@ -285,6 +290,8 @@ extension EyePlay: ARSCNViewDelegate {
                 self.resetColor(button: self.settingsButton)
                 self.resetColor(button: self.levelButton)
                 self.resetColor(button: self.miniGameButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
+
             }
             else if self.cursor.frame.intersects(self.levelButton.frame){
                 
@@ -311,6 +318,8 @@ extension EyePlay: ARSCNViewDelegate {
                 self.resetColor(button: self.playNowButton)
                 self.resetColor(button: self.settingsButton)
                 self.resetColor(button: self.miniGameButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
+
             }
             else if self.cursor.frame.intersects(self.emergencyButton.frame){
                 
@@ -337,6 +346,7 @@ extension EyePlay: ARSCNViewDelegate {
                 self.resetColor(button: self.playNowButton)
                 self.resetColor(button: self.settingsButton)
                 self.resetColor(button: self.miniGameButton)
+                
             }
             else{
                 self.miniGameButton.layer.borderColor = UIColor.clear.cgColor
@@ -349,10 +359,13 @@ extension EyePlay: ARSCNViewDelegate {
                 self.hoveringLevelSelect = false
                 self.hoveringMiniGames = false
                 self.hoveringEmergency = false
+                
                 self.resetColor(button: self.playNowButton)
                 self.resetColor(button: self.settingsButton)
                 self.resetColor(button: self.miniGameButton)
                 self.resetColor(button: self.levelButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
+
                 
                 self.resetTimer()
 
