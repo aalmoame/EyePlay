@@ -30,6 +30,21 @@ class LevelSix: UIViewController, ARSessionDelegate {
     var hoveringMenu = false
     var hoveringGoal = false
     
+    var player: AVAudioPlayer?
+    
+    func playSelectionSound() {
+                
+        let path = Bundle.main.path(forResource: "select.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
+    
     func runTimer(button: UIButton) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(LevelSix.updateTimer)), userInfo: nil, repeats: true)
         isTimerRunning = true
@@ -65,7 +80,7 @@ class LevelSix: UIViewController, ARSessionDelegate {
     //configures the screen once its loaded up
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        playSelectionSound()
         //guard ARFaceTrackingConfiguration.isSupported else {
             //fatalError("Face tracking is not supported on this device")
         //}

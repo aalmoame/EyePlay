@@ -12,6 +12,7 @@ class EyePlay: UIViewController{
     @IBOutlet weak var playNowButton: UIButton!
     @IBOutlet weak var miniGameButton: UIButton!
     @IBOutlet weak var levelButton: UIButton!
+    @IBOutlet weak var emergencyButton: UIButton!
     
     let sceneNodes = nodes()
     let mainThread = DispatchQueue.main
@@ -23,6 +24,7 @@ class EyePlay: UIViewController{
     var hoveringSetting = false
     var hoveringPlay = false
     var hoveringLevelSelect = false
+    var hoveringEmergency = false
     
     var player: AVAudioPlayer?
     
@@ -57,7 +59,10 @@ class EyePlay: UIViewController{
     }
 
     
-
+    @IBAction func pressEmergencyButton(_ sender: Any) {
+        collisionEmergencyButton()
+    }
+    
 
     //sets the view up
     override func viewWillAppear(_ animated: Bool) {
@@ -76,6 +81,7 @@ class EyePlay: UIViewController{
     //configures the screen once its loaded up
     override func viewDidLoad() {
         super.viewDidLoad()
+        playSelectionSound()
 
         //guard ARFaceTrackingConfiguration.isSupported else {
             //fatalError("Face tracking is not supported on this device")
@@ -104,33 +110,54 @@ class EyePlay: UIViewController{
     
     //checks if the cursor is on top of the game button and if the user blinks
     func collisionMiniGameButton(){
-        playSelectionSound()
+        
             //go to game screen when user blinks over button
             mainThread.async {
+                self.playSelectionSound()
                 self.performSegue(withIdentifier: "MiniGameSegue", sender: self)
             }
     }
     func collisionSettingsButton(){
-        playSelectionSound()
+        
             //go to game screen when user blinks over button
             mainThread.async {
+                self.playSelectionSound()
                 self.performSegue(withIdentifier: "SettingsSegue", sender: self)
             }
     }
     
     func collisionPlayNowButton() {
-        playSelectionSound()
+        
         //go to level one when user blinks over button
         mainThread.async {
+            self.playSelectionSound()
             self.performSegue(withIdentifier: "LevelOneSegue", sender: self)
         }
     }
     
     func collisionLevelButton() {
         //go to level one when user blinks over button
-        playSelectionSound()
+        
         mainThread.async {
+            self.playSelectionSound()
             self.performSegue(withIdentifier: "LevelSelectorSegue", sender: self)
+        }
+    }
+    
+    func collisionEmergencyButton() {
+        mainThread.async {
+            self.playSelectionSound()
+            var image = UIImage(systemName: "ladybug")
+            image = image?.withTintColor(UIColor.black)
+            
+            JSSAlertView().show(
+                self,
+                  title: "ALERT",
+                  text: "User is requesting guidance",
+                  buttonText: "OK",
+                color: UIColor.white,
+                iconImage: image
+            )
         }
     }
     
@@ -200,6 +227,7 @@ extension EyePlay: ARSCNViewDelegate {
                 self.hoveringPlay = false
                 self.hoveringLevelSelect = false
                 self.hoveringMiniGames = true
+                self.hoveringEmergency = false
                 self.resetColor(button: self.playNowButton)
                 self.resetColor(button: self.levelButton)
                 self.resetColor(button: self.settingsButton)
@@ -226,7 +254,7 @@ extension EyePlay: ARSCNViewDelegate {
                 self.hoveringPlay = false
                 self.hoveringLevelSelect = false
                 self.hoveringMiniGames = false
-                
+                self.hoveringEmergency = false
                 self.resetColor(button: self.playNowButton)
                 self.resetColor(button: self.levelButton)
                 self.resetColor(button: self.miniGameButton)
@@ -253,6 +281,7 @@ extension EyePlay: ARSCNViewDelegate {
                 self.hoveringPlay = true
                 self.hoveringLevelSelect = false
                 self.hoveringMiniGames = false
+                self.hoveringEmergency = false
                 self.resetColor(button: self.settingsButton)
                 self.resetColor(button: self.levelButton)
                 self.resetColor(button: self.miniGameButton)
@@ -278,6 +307,33 @@ extension EyePlay: ARSCNViewDelegate {
                 self.hoveringPlay = false
                 self.hoveringLevelSelect = true
                 self.hoveringMiniGames = false
+                self.hoveringEmergency = false
+                self.resetColor(button: self.playNowButton)
+                self.resetColor(button: self.settingsButton)
+                self.resetColor(button: self.miniGameButton)
+            }
+            else if self.cursor.frame.intersects(self.emergencyButton.frame){
+                
+                self.emergencyButton.layer.borderColor = UIColor.systemBlue.cgColor
+                
+
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.emergencyButton)
+                }
+                
+                if self.hoveringEmergency && self.seconds <= 0 {
+                    self.collisionEmergencyButton()
+                    self.resetTimer()
+                }
+                else if !self.hoveringEmergency{
+                    self.resetTimer()
+                }
+                
+                self.hoveringSetting = false
+                self.hoveringPlay = false
+                self.hoveringLevelSelect = false
+                self.hoveringMiniGames = false
+                self.hoveringEmergency = true
                 self.resetColor(button: self.playNowButton)
                 self.resetColor(button: self.settingsButton)
                 self.resetColor(button: self.miniGameButton)
@@ -292,6 +348,7 @@ extension EyePlay: ARSCNViewDelegate {
                 self.hoveringPlay = false
                 self.hoveringLevelSelect = false
                 self.hoveringMiniGames = false
+                self.hoveringEmergency = false
                 self.resetColor(button: self.playNowButton)
                 self.resetColor(button: self.settingsButton)
                 self.resetColor(button: self.miniGameButton)

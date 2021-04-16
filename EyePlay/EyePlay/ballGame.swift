@@ -85,7 +85,7 @@ class ballGame: UIViewController{
         //guard ARFaceTrackingConfiguration.isSupported else {
             //fatalError("Face tracking is not supported on this device")
         //}
-        
+        playSelectionSound()
         cursor.frame.size = CGSize(width: cursorSize.width, height: cursorSize.height);
         cursor.tintColor = cursorColor;
         cursor.layer.zPosition = 1

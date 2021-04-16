@@ -52,6 +52,19 @@ class SoundBoard: UIViewController{
             // couldn't load file :(
         }
     }
+    
+    func playSelectionSound() {
+                
+        let path = Bundle.main.path(forResource: "select.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
 
     @IBAction func fartTapped(_ sender: Any) {
         collisionFart()
@@ -113,7 +126,7 @@ class SoundBoard: UIViewController{
     //configures the screen once its loaded up
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        playSelectionSound()
         //guard ARFaceTrackingConfiguration.isSupported else {
             //fatalError("Face tracking is not supported on this device")
         //}

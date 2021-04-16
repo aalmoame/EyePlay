@@ -140,7 +140,7 @@ class BugGame: UIViewController{
         //guard ARFaceTrackingConfiguration.isSupported else {
             //fatalError("Face tracking is not supported on this device")
         //}
-        
+        playSelectionSound()
 
         cursor.layer.zPosition = 1
         menuButton.layer.cornerRadius = 5;

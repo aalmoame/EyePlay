@@ -91,7 +91,7 @@ class CursorSize: UIViewController, ARSessionDelegate{
     //configures the screen once its loaded up
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        playSelectionSound()
         //guard ARFaceTrackingConfiguration.isSupported else {
             //fatalError("Face tracking is not supported on this device")
         //}
