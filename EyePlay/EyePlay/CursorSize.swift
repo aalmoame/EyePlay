@@ -135,7 +135,6 @@ class CursorSize: UIViewController, ARSessionDelegate{
         cursorSize.height = 150.0;
     }
     func collisionSettingsButton(){
-        playSelectionSound()
             mainThread.async {
                 self.performSegue(withIdentifier: "SettingsSegue", sender: self)
             }

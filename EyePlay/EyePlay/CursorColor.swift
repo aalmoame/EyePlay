@@ -134,7 +134,6 @@ class CursorColor: UIViewController, ARSessionDelegate{
         cursor.tintColor = cursorColor
     }
     func collisionSettingsButton(){
-        playSelectionSound()
             mainThread.async {
                 self.performSegue(withIdentifier: "SettingsSegue", sender: self)
             }
