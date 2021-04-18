@@ -18,6 +18,8 @@ class LevelSelector: UIViewController{
     @IBOutlet weak var levelSixButton: UIButton!
     @IBOutlet weak var levelSevenButton: UIButton!
     @IBOutlet weak var levelEightButton: UIButton!
+    @IBOutlet weak var emergencyButton: UIButton!
+    
     let sceneNodes = nodes()
     let mainThread = DispatchQueue.main
     
@@ -33,6 +35,7 @@ class LevelSelector: UIViewController{
     var hoveringSix = false
     var hoveringSeven = false
     var hoveringEight = false
+    var hoveringEmergency = false
     
     var player: AVAudioPlayer?
     
@@ -48,7 +51,40 @@ class LevelSelector: UIViewController{
             // couldn't load file :(
         }
     }
+    
+    
+    @IBAction func pressEmergency(_ sender: Any) {
+        collisionEmergencyButton()
+    }
+    
+    func collisionEmergencyButton() {
+        mainThread.async {
+            let path = Bundle.main.path(forResource: "emergency.mp3", ofType:nil)!
+            let url = URL(fileURLWithPath: path)
 
+            do {
+                self.player = try AVAudioPlayer(contentsOf: url)
+                self.player?.numberOfLoops = 1000
+                self.player?.play()
+            } catch {
+                // couldn't load file :(
+            }
+            var image = UIImage(systemName: "ladybug")
+            image = image?.withTintColor(UIColor.black)
+            
+            JSSAlertView().show(
+                self,
+                  title: "ALERT",
+                  text: "User is requesting guidance",
+                  buttonText: "OK",
+                color: UIColor.white,
+                iconImage: image
+            ).addAction {
+                self.player?.stop()
+            }
+        }
+    }
+    
     
     func runTimer(button: UIButton) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(LevelSelector.updateTimer)), userInfo: nil, repeats: true)
@@ -264,6 +300,7 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.hoveringSix = false
                 self.hoveringSeven = false
                 self.hoveringEight = false
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.levelOneButton)
                 self.resetColor(button: self.levelTwoButton)
@@ -273,6 +310,7 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.resetColor(button: self.levelSixButton)
                 self.resetColor(button: self.levelSevenButton)
                 self.resetColor(button: self.levelEightButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
 
             }
             else if self.cursor.frame.intersects(self.levelOneButton.frame){
@@ -301,6 +339,7 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.hoveringSix = false
                 self.hoveringSeven = false
                 self.hoveringEight = false
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.menuButton)
                 self.resetColor(button: self.levelTwoButton)
@@ -310,6 +349,7 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.resetColor(button: self.levelSixButton)
                 self.resetColor(button: self.levelSevenButton)
                 self.resetColor(button: self.levelEightButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
                 
             }
             else if self.cursor.frame.intersects(self.levelTwoButton.frame){
@@ -338,6 +378,7 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.hoveringSix = false
                 self.hoveringSeven = false
                 self.hoveringEight = false
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.menuButton)
                 self.resetColor(button: self.levelOneButton)
@@ -347,6 +388,7 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.resetColor(button: self.levelSixButton)
                 self.resetColor(button: self.levelSevenButton)
                 self.resetColor(button: self.levelEightButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
             }
             else if self.cursor.frame.intersects(self.levelThreeButton.frame){
                 
@@ -374,6 +416,7 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.hoveringSix = false
                 self.hoveringSeven = false
                 self.hoveringEight = false
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.menuButton)
                 self.resetColor(button: self.levelOneButton)
@@ -383,6 +426,7 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.resetColor(button: self.levelSixButton)
                 self.resetColor(button: self.levelSevenButton)
                 self.resetColor(button: self.levelEightButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
             }
             else if self.cursor.frame.intersects(self.levelFourButton.frame){
                 
@@ -410,6 +454,7 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.hoveringSix = false
                 self.hoveringSeven = false
                 self.hoveringEight = false
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.menuButton)
                 self.resetColor(button: self.levelOneButton)
@@ -419,6 +464,7 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.resetColor(button: self.levelSixButton)
                 self.resetColor(button: self.levelSevenButton)
                 self.resetColor(button: self.levelEightButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
             }
             else if self.cursor.frame.intersects(self.levelFiveButton.frame){
                 
@@ -446,6 +492,7 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.hoveringSix = false
                 self.hoveringSeven = false
                 self.hoveringEight = false
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.menuButton)
                 self.resetColor(button: self.levelOneButton)
@@ -455,6 +502,7 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.resetColor(button: self.levelSixButton)
                 self.resetColor(button: self.levelSevenButton)
                 self.resetColor(button: self.levelEightButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
             }
             else if self.cursor.frame.intersects(self.levelSixButton.frame){
                 
@@ -482,6 +530,7 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.hoveringSix = true
                 self.hoveringSeven = false
                 self.hoveringEight = false
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.menuButton)
                 self.resetColor(button: self.levelOneButton)
@@ -491,6 +540,7 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.resetColor(button: self.levelTwoButton)
                 self.resetColor(button: self.levelSevenButton)
                 self.resetColor(button: self.levelEightButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
             }
             else if self.cursor.frame.intersects(self.levelSevenButton.frame){
                 
@@ -518,6 +568,7 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.hoveringSix = false
                 self.hoveringSeven = true
                 self.hoveringEight = false
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.menuButton)
                 self.resetColor(button: self.levelOneButton)
@@ -527,6 +578,7 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.resetColor(button: self.levelSixButton)
                 self.resetColor(button: self.levelTwoButton)
                 self.resetColor(button: self.levelEightButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
             }
             else if self.cursor.frame.intersects(self.levelEightButton.frame){
                 
@@ -554,6 +606,7 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.hoveringSix = false
                 self.hoveringSeven = false
                 self.hoveringEight = true
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.menuButton)
                 self.resetColor(button: self.levelOneButton)
@@ -563,6 +616,45 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.resetColor(button: self.levelSixButton)
                 self.resetColor(button: self.levelSevenButton)
                 self.resetColor(button: self.levelTwoButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
+            }
+            else if self.cursor.frame.intersects(self.levelEightButton.frame){
+                
+                self.emergencyButton.layer.borderColor = UIColor.systemBlue.cgColor
+                
+
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.emergencyButton)
+                }
+                
+                if self.hoveringEmergency && self.seconds <= 0 {
+                    self.collisionEmergencyButton()
+                    self.resetTimer()
+                }
+                else if !self.hoveringEmergency{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringFour = false
+                self.hoveringFive = false
+                self.hoveringSix = false
+                self.hoveringSeven = false
+                self.hoveringEight = false
+                self.hoveringEmergency = true
+                
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.levelOneButton)
+                self.resetColor(button: self.levelThreeButton)
+                self.resetColor(button: self.levelFourButton)
+                self.resetColor(button: self.levelFiveButton)
+                self.resetColor(button: self.levelSixButton)
+                self.resetColor(button: self.levelSevenButton)
+                self.resetColor(button: self.levelTwoButton)
+                self.resetColor(button: self.levelEightButton)
             }
             else{
                 self.menuButton.layer.borderColor = UIColor.clear.cgColor
@@ -584,6 +676,7 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.hoveringSix = false
                 self.hoveringSeven = false
                 self.hoveringEight = false
+                self.hoveringEmergency = false
 
                 self.resetColor(button: self.menuButton)
                 self.resetColor(button: self.levelOneButton)
@@ -594,6 +687,7 @@ extension LevelSelector: ARSCNViewDelegate {
                 self.resetColor(button: self.levelSixButton)
                 self.resetColor(button: self.levelSevenButton)
                 self.resetColor(button: self.levelEightButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
 
                 self.resetTimer()
             }

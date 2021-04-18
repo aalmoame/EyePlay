@@ -146,7 +146,16 @@ class EyePlay: UIViewController{
     
     func collisionEmergencyButton() {
         mainThread.async {
-            self.playSelectionSound()
+            let path = Bundle.main.path(forResource: "emergency.mp3", ofType:nil)!
+            let url = URL(fileURLWithPath: path)
+
+            do {
+                self.player = try AVAudioPlayer(contentsOf: url)
+                self.player?.numberOfLoops = 1000
+                self.player?.play()
+            } catch {
+                // couldn't load file :(
+            }
             var image = UIImage(systemName: "ladybug")
             image = image?.withTintColor(UIColor.black)
             
@@ -157,7 +166,9 @@ class EyePlay: UIViewController{
                   buttonText: "OK",
                 color: UIColor.white,
                 iconImage: image
-            )
+            ).addAction {
+                self.player?.stop()
+            }
         }
     }
     
@@ -346,6 +357,7 @@ extension EyePlay: ARSCNViewDelegate {
                 self.resetColor(button: self.playNowButton)
                 self.resetColor(button: self.settingsButton)
                 self.resetColor(button: self.miniGameButton)
+                self.resetColor(button: self.levelButton)
                 
             }
             else{

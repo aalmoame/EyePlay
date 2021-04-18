@@ -13,6 +13,7 @@ class Settings: UIViewController, ARSessionDelegate{
     @IBOutlet weak var sizeButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var colorButton: UIButton!
+    @IBOutlet weak var emergencyButton: UIButton!
     
     let sceneNodes = nodes()
     let mainThread = DispatchQueue.main
@@ -23,6 +24,7 @@ class Settings: UIViewController, ARSessionDelegate{
     var hoveringMenu = false
     var hoveringSize = false
     var hoveringColor = false
+    var hoveringEmergency = false
     
     var player: AVAudioPlayer?
     
@@ -38,6 +40,11 @@ class Settings: UIViewController, ARSessionDelegate{
             // couldn't load file :(
         }
     }
+    
+    @IBAction func pressEmergency(_ sender: Any) {
+        collisionEmergencyButton()
+    }
+    
 
     func runTimer(button: UIButton) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(Settings.updateTimer)), userInfo: nil, repeats: true)
@@ -113,6 +120,33 @@ class Settings: UIViewController, ARSessionDelegate{
                 self.performSegue(withIdentifier: "ColorSegue", sender: self)
             }
     }
+    func collisionEmergencyButton() {
+        mainThread.async {
+            let path = Bundle.main.path(forResource: "emergency.mp3", ofType:nil)!
+            let url = URL(fileURLWithPath: path)
+
+            do {
+                self.player = try AVAudioPlayer(contentsOf: url)
+                self.player?.numberOfLoops = 1000
+                self.player?.play()
+            } catch {
+                // couldn't load file :(
+            }
+            var image = UIImage(systemName: "ladybug")
+            image = image?.withTintColor(UIColor.black)
+            
+            JSSAlertView().show(
+                self,
+                  title: "ALERT",
+                  text: "User is requesting guidance",
+                  buttonText: "OK",
+                color: UIColor.white,
+                iconImage: image
+            ).addAction {
+                self.player?.stop()
+            }
+        }
+    }
 }
 
 extension Settings: ARSCNViewDelegate {
@@ -179,9 +213,11 @@ extension Settings: ARSCNViewDelegate {
                 self.hoveringSize = true
                 self.hoveringMenu = false
                 self.hoveringColor = false
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.menuButton)
                 self.resetColor(button: self.colorButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
             }
             else if self.cursor.frame.intersects(self.colorButton.frame) {
                 self.colorButton.layer.borderColor = UIColor.systemBlue.cgColor
@@ -202,9 +238,11 @@ extension Settings: ARSCNViewDelegate {
                 self.hoveringSize = false
                 self.hoveringMenu = false
                 self.hoveringColor = true
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.sizeButton)
                 self.resetColor(button: self.menuButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
                 
             }
             else if self.cursor.frame.intersects(self.menuButton.frame) {
@@ -226,9 +264,36 @@ extension Settings: ARSCNViewDelegate {
                 self.hoveringSize = false
                 self.hoveringMenu = true
                 self.hoveringColor = false
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.sizeButton)
                 self.resetColor(button: self.colorButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
+            }
+            else if self.cursor.frame.intersects(self.emergencyButton.frame) {
+                self.emergencyButton.layer.borderColor = UIColor.systemBlue.cgColor
+                
+
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.emergencyButton)
+                }
+                
+                if self.hoveringEmergency && self.seconds <= 0 {
+                    self.collisionEmergencyButton()
+                    self.resetTimer()
+                }
+                else if !self.hoveringEmergency{
+                    self.resetTimer()
+                }
+                
+                self.hoveringSize = false
+                self.hoveringMenu = false
+                self.hoveringColor = false
+                self.hoveringEmergency = true
+                
+                self.resetColor(button: self.sizeButton)
+                self.resetColor(button: self.colorButton)
+                self.resetColor(button: self.menuButton)
             }
             else{
                 self.sizeButton.layer.borderColor = UIColor.clear.cgColor
@@ -238,10 +303,12 @@ extension Settings: ARSCNViewDelegate {
                 self.hoveringColor = false
                 self.hoveringSize = false
                 self.hoveringMenu = false
+                self.hoveringEmergency = false
 
                 self.resetColor(button: self.colorButton)
                 self.resetColor(button: self.menuButton)
                 self.resetColor(button: self.sizeButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
                 
                 self.resetTimer()
             }
