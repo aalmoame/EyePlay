@@ -26,7 +26,7 @@ class ballGame: UIViewController{
     
     var presentedPopUp = false
     
-    var seconds = 2
+    var seconds = selectionTime
     var timer = Timer()
     var isTimerRunning = false
     var hoveringMenu = false

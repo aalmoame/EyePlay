@@ -21,7 +21,7 @@ class SelectionTime: UIViewController{
     
     //sets the view up
     
-    var seconds = 2
+    var seconds = selectionTime
     var timer = Timer()
     var isTimerRunning = false
     var hoveringOne = false

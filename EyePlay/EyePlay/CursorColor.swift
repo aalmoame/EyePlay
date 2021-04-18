@@ -35,7 +35,7 @@ class CursorColor: UIViewController, ARSessionDelegate{
     
     //sets the view up
     
-    var seconds = 2
+    var seconds = selectionTime
     var timer = Timer()
     var isTimerRunning = false
     var hoveringBlue = false

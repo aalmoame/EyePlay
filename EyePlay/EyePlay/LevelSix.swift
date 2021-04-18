@@ -24,7 +24,7 @@ class LevelSix: UIViewController, ARSessionDelegate {
     let sceneNodes = nodes()
     let mainThread = DispatchQueue.main
     
-    var seconds = 2
+    var seconds = selectionTime
     var timer = Timer()
     var isTimerRunning = false
     var hoveringMenu = false

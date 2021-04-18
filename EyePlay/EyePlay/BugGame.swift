@@ -27,7 +27,7 @@ class BugGame: UIViewController{
     var isTimerRunningRoach = false
     var time_over = true
         
-    var seconds = 2
+    var seconds = selectionTime
     var timer = Timer()
     var isTimerRunning = false
     

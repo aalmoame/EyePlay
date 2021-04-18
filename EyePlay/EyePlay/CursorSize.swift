@@ -33,7 +33,7 @@ class CursorSize: UIViewController, ARSessionDelegate{
     let mainThread = DispatchQueue.main
     //sets the view up
     
-    var seconds = 2
+    var seconds = selectionTime
     var timer = Timer()
     var isTimerRunning = false
     var hoveringSmall = false
