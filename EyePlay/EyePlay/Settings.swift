@@ -276,6 +276,8 @@ extension Settings: ARSCNViewDelegate {
                 self.sizeButton.layer.borderColor = UIColor.clear.cgColor
                 self.colorButton.layer.borderColor = UIColor.clear.cgColor
                 self.menuButton.layer.borderColor = UIColor.clear.cgColor
+                self.selectionTimeButton.layer.borderColor = UIColor.clear.cgColor
+
                 
                 self.hoveringColor = false
                 self.hoveringSize = false

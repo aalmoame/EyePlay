@@ -1,13 +1,13 @@
 version: "Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
 options: "eb637bd838976b827b9d9e41fa78a7e4"
-build_time: [1618783600, 574206000]
+build_time: [1618785276, 111134000]
 inputs:
   "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/popUps/JSSAlertView+UIColor.swift": [1575251028, 0]
   "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/LevelTwo.swift": [1618712590, 735157419]
   "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/LevelEight.swift": [1618712590, 709326071]
   "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/MiniGames.swift": [1618712523, 593677831]
   "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/LevelFour.swift": [1618712590, 784585800]
-  "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/EyePlay.swift": [1618712590, 644575150]
+  "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/EyePlay.swift": [1618785078, 424680488]
   "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/Nodes+HitTest.swift": [1618321493, 30089653]
   "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/popUps/JSSAlertView.swift": [1617888990, 335013818]
   "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/BugGame.swift": [1618712590, 696380729]
@@ -25,7 +25,7 @@ inputs:
   "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/LevelOne.swift": [1618712590, 626552455]
   "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/CursorColor.swift": [1618712590, 661363412]
   "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/LevelFive.swift": [1618712590, 877482575]
-  "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/Settings.swift": [1618714863, 105817080]
+  "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/Settings.swift": [1618785262, 893518307]
   "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/popUps/JSSAlertViewResponder.swift": [1575251028, 0]
   "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/SceneDelegate.swift": [1617572797, 83286047]
   "/Users/amenal-moamen/Documents/GitHub/EyePlay/EyePlay/EyePlay/Constants+Helpers.swift": [1618712366, 795331449]

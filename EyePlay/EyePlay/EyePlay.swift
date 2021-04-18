@@ -110,10 +110,8 @@ class EyePlay: UIViewController{
     
     //checks if the cursor is on top of the game button and if the user blinks
     func collisionMiniGameButton(){
-        
-            //go to game screen when user blinks over button
+        self.playSelectionSound()
             mainThread.async {
-                self.playSelectionSound()
                 self.performSegue(withIdentifier: "MiniGameSegue", sender: self)
             }
     }

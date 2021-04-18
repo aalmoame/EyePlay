@@ -40,6 +40,142 @@
 			<key>uniqueIdentifier</key>
 			<string>118665F1-27CF-4D7E-BFA7-7AD488ACFEF4</string>
 		</dict>
+		<key>36A6E24A-9F18-4A11-987B-1A67EA38D406</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>36A6E24A-9F18-4A11-987B-1A67EA38D406.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>EyePlay project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>EyePlay</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run EyePlay</string>
+			<key>timeStartedRecording</key>
+			<real>640477597.15610504</real>
+			<key>timeStoppedRecording</key>
+			<real>640477625.91998804</real>
+			<key>title</key>
+			<string>Run EyePlay</string>
+			<key>uniqueIdentifier</key>
+			<string>36A6E24A-9F18-4A11-987B-1A67EA38D406</string>
+		</dict>
+		<key>45EF800B-ADDD-4F6B-8F9F-06DB153E11D8</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>45EF800B-ADDD-4F6B-8F9F-06DB153E11D8.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>EyePlay project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>EyePlay</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run EyePlay</string>
+			<key>timeStartedRecording</key>
+			<real>640477995.41580498</real>
+			<key>timeStoppedRecording</key>
+			<real>640478076.20682704</real>
+			<key>title</key>
+			<string>Run EyePlay</string>
+			<key>uniqueIdentifier</key>
+			<string>45EF800B-ADDD-4F6B-8F9F-06DB153E11D8</string>
+		</dict>
+		<key>49125330-96F9-493E-BC57-A0A09E2F840F</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>49125330-96F9-493E-BC57-A0A09E2F840F.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>EyePlay project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>EyePlay</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run EyePlay</string>
+			<key>timeStartedRecording</key>
+			<real>640477629.29536295</real>
+			<key>timeStoppedRecording</key>
+			<real>640477847.32733595</real>
+			<key>title</key>
+			<string>Run EyePlay</string>
+			<key>uniqueIdentifier</key>
+			<string>49125330-96F9-493E-BC57-A0A09E2F840F</string>
+		</dict>
+		<key>E89BDCB4-A266-46D5-9677-792A07B582D3</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>E89BDCB4-A266-46D5-9677-792A07B582D3.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>EyePlay project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>EyePlay</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run EyePlay</string>
+			<key>timeStartedRecording</key>
+			<real>640477847.20939505</real>
+			<key>timeStoppedRecording</key>
+			<real>640477986.51466095</real>
+			<key>title</key>
+			<string>Run EyePlay</string>
+			<key>uniqueIdentifier</key>
+			<string>E89BDCB4-A266-46D5-9677-792A07B582D3</string>
+		</dict>
 	</dict>
 </dict>
 </plist>
