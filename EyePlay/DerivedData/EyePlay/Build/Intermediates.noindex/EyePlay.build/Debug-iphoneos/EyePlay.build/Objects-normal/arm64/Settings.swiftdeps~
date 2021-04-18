@@ -25,6 +25,7 @@ provides-dynamic-lookup:
 - "runTimer"
 - "sceneNodes"
 - "seconds"
+- "selectionTimeButton"
 - "settingsView"
 - "sizeButton"
 - "timer"
@@ -52,8 +53,8 @@ depends-top-level:
 - !private "CGSize"
 - "CastingPrecedence"
 - "DispatchQueue"
-- "FloatLiteralType"
-- "IntegerLiteralType"
+- !private "FloatLiteralType"
+- !private "IntegerLiteralType"
 - "SCNNode"
 - "SCNSceneRenderer"
 - "Settings"
@@ -77,6 +78,8 @@ depends-top-level:
 - !private "player"
 - !private "sceneNodes"
 - !private "seconds"
+- "selectionTime"
+- !private "selectionTimeButton"
 - !private "settingsView"
 - !private "sizeButton"
 - !private "timer"
@@ -140,6 +143,8 @@ depends-member:
 - ["So17ARSCNViewDelegateP", "runTimer"]
 - ["So17ARSCNViewDelegateP", "sceneNodes"]
 - ["So17ARSCNViewDelegateP", "seconds"]
+- ["So17ARSCNViewDelegateP", "selectionTime"]
+- ["So17ARSCNViewDelegateP", "selectionTimeButton"]
 - ["So17ARSCNViewDelegateP", "session"]
 - ["So17ARSCNViewDelegateP", "sessionInterruptionEnded"]
 - ["So17ARSCNViewDelegateP", "sessionShouldAttemptRelocalization"]
@@ -191,6 +196,8 @@ depends-member:
 - ["So17ARSessionDelegateP", "runTimer"]
 - ["So17ARSessionDelegateP", "sceneNodes"]
 - ["So17ARSessionDelegateP", "seconds"]
+- ["So17ARSessionDelegateP", "selectionTime"]
+- ["So17ARSessionDelegateP", "selectionTimeButton"]
 - ["So17ARSessionDelegateP", "session"]
 - ["So17ARSessionDelegateP", "sessionInterruptionEnded"]
 - ["So17ARSessionDelegateP", "sessionShouldAttemptRelocalization"]
@@ -240,6 +247,8 @@ depends-member:
 - ["So17ARSessionObserverP", "runTimer"]
 - ["So17ARSessionObserverP", "sceneNodes"]
 - ["So17ARSessionObserverP", "seconds"]
+- ["So17ARSessionObserverP", "selectionTime"]
+- ["So17ARSessionObserverP", "selectionTimeButton"]
 - ["So17ARSessionObserverP", "session"]
 - ["So17ARSessionObserverP", "sessionInterruptionEnded"]
 - ["So17ARSessionObserverP", "sessionShouldAttemptRelocalization"]
@@ -356,6 +365,8 @@ depends-member:
 - !private ["s7CVarArgP", "sceneNodes"]
 - !private ["s7CVarArgP", "scheduledTimer"]
 - !private ["s7CVarArgP", "seconds"]
+- ["s7CVarArgP", "selectionTime"]
+- !private ["s7CVarArgP", "selectionTimeButton"]
 - ["s7CVarArgP", "session"]
 - ["s7CVarArgP", "sessionInterruptionEnded"]
 - ["s7CVarArgP", "sessionShouldAttemptRelocalization"]
@@ -443,6 +454,8 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "sceneNodes"]
 - !private ["s28CustomDebugStringConvertibleP", "scheduledTimer"]
 - !private ["s28CustomDebugStringConvertibleP", "seconds"]
+- ["s28CustomDebugStringConvertibleP", "selectionTime"]
+- !private ["s28CustomDebugStringConvertibleP", "selectionTimeButton"]
 - ["s28CustomDebugStringConvertibleP", "session"]
 - ["s28CustomDebugStringConvertibleP", "sessionInterruptionEnded"]
 - ["s28CustomDebugStringConvertibleP", "sessionShouldAttemptRelocalization"]
@@ -541,6 +554,8 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "sceneNodes"]
 - !private ["s23CustomStringConvertibleP", "scheduledTimer"]
 - !private ["s23CustomStringConvertibleP", "seconds"]
+- ["s23CustomStringConvertibleP", "selectionTime"]
+- !private ["s23CustomStringConvertibleP", "selectionTimeButton"]
 - ["s23CustomStringConvertibleP", "session"]
 - ["s23CustomStringConvertibleP", "sessionInterruptionEnded"]
 - ["s23CustomStringConvertibleP", "sessionShouldAttemptRelocalization"]
@@ -659,6 +674,8 @@ depends-member:
 - !private ["SQ", "sceneNodes"]
 - !private ["SQ", "scheduledTimer"]
 - !private ["SQ", "seconds"]
+- ["SQ", "selectionTime"]
+- !private ["SQ", "selectionTimeButton"]
 - ["SQ", "session"]
 - ["SQ", "sessionInterruptionEnded"]
 - ["SQ", "sessionShouldAttemptRelocalization"]
@@ -758,6 +775,8 @@ depends-member:
 - !private ["SH", "sceneNodes"]
 - !private ["SH", "scheduledTimer"]
 - !private ["SH", "seconds"]
+- ["SH", "selectionTime"]
+- !private ["SH", "selectionTimeButton"]
 - ["SH", "session"]
 - ["SH", "sessionInterruptionEnded"]
 - ["SH", "sessionShouldAttemptRelocalization"]
@@ -844,6 +863,8 @@ depends-member:
 - !private ["So8NSCodingP", "scene"]
 - ["So8NSCodingP", "sceneNodes"]
 - ["So8NSCodingP", "seconds"]
+- ["So8NSCodingP", "selectionTime"]
+- ["So8NSCodingP", "selectionTimeButton"]
 - ["So8NSCodingP", "session"]
 - ["So8NSCodingP", "sessionInterruptionEnded"]
 - ["So8NSCodingP", "sessionShouldAttemptRelocalization"]
@@ -924,6 +945,8 @@ depends-member:
 - ["So26NSExtensionRequestHandlingP", "runTimer"]
 - ["So26NSExtensionRequestHandlingP", "sceneNodes"]
 - ["So26NSExtensionRequestHandlingP", "seconds"]
+- ["So26NSExtensionRequestHandlingP", "selectionTime"]
+- ["So26NSExtensionRequestHandlingP", "selectionTimeButton"]
 - ["So26NSExtensionRequestHandlingP", "session"]
 - ["So26NSExtensionRequestHandlingP", "sessionInterruptionEnded"]
 - ["So26NSExtensionRequestHandlingP", "sessionShouldAttemptRelocalization"]
@@ -1031,6 +1054,8 @@ depends-member:
 - !private ["So8NSObjectC", "scheduledTimer"]
 - !private ["So8NSObjectC", "scheduledTimerWithTimeInterval"]
 - ["So8NSObjectC", "seconds"]
+- ["So8NSObjectC", "selectionTime"]
+- ["So8NSObjectC", "selectionTimeButton"]
 - ["So8NSObjectC", "session"]
 - ["So8NSObjectC", "sessionInterruptionEnded"]
 - ["So8NSObjectC", "sessionShouldAttemptRelocalization"]
@@ -1140,6 +1165,8 @@ depends-member:
 - !private ["So8NSObjectP", "scheduledTimer"]
 - !private ["So8NSObjectP", "scheduledTimerWithTimeInterval"]
 - ["So8NSObjectP", "seconds"]
+- ["So8NSObjectP", "selectionTime"]
+- ["So8NSObjectP", "selectionTimeButton"]
 - ["So8NSObjectP", "session"]
 - ["So8NSObjectP", "sessionInterruptionEnded"]
 - ["So8NSObjectP", "sessionShouldAttemptRelocalization"]
@@ -1283,6 +1310,8 @@ depends-member:
 - ["So24SCNSceneRendererDelegateP", "runTimer"]
 - ["So24SCNSceneRendererDelegateP", "sceneNodes"]
 - ["So24SCNSceneRendererDelegateP", "seconds"]
+- ["So24SCNSceneRendererDelegateP", "selectionTime"]
+- ["So24SCNSceneRendererDelegateP", "selectionTimeButton"]
 - ["So24SCNSceneRendererDelegateP", "session"]
 - ["So24SCNSceneRendererDelegateP", "sessionInterruptionEnded"]
 - ["So24SCNSceneRendererDelegateP", "sessionShouldAttemptRelocalization"]
@@ -1360,6 +1389,8 @@ depends-member:
 - ["7EyePlay8SettingsC", "runTimer"]
 - ["7EyePlay8SettingsC", "sceneNodes"]
 - ["7EyePlay8SettingsC", "seconds"]
+- ["7EyePlay8SettingsC", "selectionTime"]
+- ["7EyePlay8SettingsC", "selectionTimeButton"]
 - ["7EyePlay8SettingsC", "session"]
 - ["7EyePlay8SettingsC", "sessionInterruptionEnded"]
 - ["7EyePlay8SettingsC", "sessionShouldAttemptRelocalization"]
@@ -1448,6 +1479,8 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "scene"]
 - ["So21UIAppearanceContainerP", "sceneNodes"]
 - ["So21UIAppearanceContainerP", "seconds"]
+- ["So21UIAppearanceContainerP", "selectionTime"]
+- ["So21UIAppearanceContainerP", "selectionTimeButton"]
 - ["So21UIAppearanceContainerP", "session"]
 - ["So21UIAppearanceContainerP", "sessionInterruptionEnded"]
 - ["So21UIAppearanceContainerP", "sessionShouldAttemptRelocalization"]
@@ -1512,6 +1545,8 @@ depends-member:
 - ["So18UIContentContainerP", "runTimer"]
 - ["So18UIContentContainerP", "sceneNodes"]
 - ["So18UIContentContainerP", "seconds"]
+- ["So18UIContentContainerP", "selectionTime"]
+- ["So18UIContentContainerP", "selectionTimeButton"]
 - ["So18UIContentContainerP", "session"]
 - ["So18UIContentContainerP", "sessionInterruptionEnded"]
 - ["So18UIContentContainerP", "sessionShouldAttemptRelocalization"]
@@ -1599,6 +1634,8 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "scene"]
 - ["So18UIFocusEnvironmentP", "sceneNodes"]
 - ["So18UIFocusEnvironmentP", "seconds"]
+- ["So18UIFocusEnvironmentP", "selectionTime"]
+- ["So18UIFocusEnvironmentP", "selectionTimeButton"]
 - ["So18UIFocusEnvironmentP", "session"]
 - ["So18UIFocusEnvironmentP", "sessionInterruptionEnded"]
 - ["So18UIFocusEnvironmentP", "sessionShouldAttemptRelocalization"]
@@ -1699,6 +1736,8 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "scene"]
 - ["So30UIPasteConfigurationSupportingP", "sceneNodes"]
 - ["So30UIPasteConfigurationSupportingP", "seconds"]
+- ["So30UIPasteConfigurationSupportingP", "selectionTime"]
+- ["So30UIPasteConfigurationSupportingP", "selectionTimeButton"]
 - ["So30UIPasteConfigurationSupportingP", "session"]
 - ["So30UIPasteConfigurationSupportingP", "sessionInterruptionEnded"]
 - ["So30UIPasteConfigurationSupportingP", "sessionShouldAttemptRelocalization"]
@@ -1763,6 +1802,8 @@ depends-member:
 - !private ["So11UIResponderC", "scene"]
 - ["So11UIResponderC", "sceneNodes"]
 - ["So11UIResponderC", "seconds"]
+- ["So11UIResponderC", "selectionTime"]
+- ["So11UIResponderC", "selectionTimeButton"]
 - ["So11UIResponderC", "session"]
 - ["So11UIResponderC", "sessionInterruptionEnded"]
 - ["So11UIResponderC", "sessionShouldAttemptRelocalization"]
@@ -1828,6 +1869,8 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "scene"]
 - ["So30UIResponderStandardEditActionsP", "sceneNodes"]
 - ["So30UIResponderStandardEditActionsP", "seconds"]
+- ["So30UIResponderStandardEditActionsP", "selectionTime"]
+- ["So30UIResponderStandardEditActionsP", "selectionTimeButton"]
 - ["So30UIResponderStandardEditActionsP", "session"]
 - ["So30UIResponderStandardEditActionsP", "sessionInterruptionEnded"]
 - ["So30UIResponderStandardEditActionsP", "sessionShouldAttemptRelocalization"]
@@ -1887,6 +1930,8 @@ depends-member:
 - ["So16UIStateRestoringP", "runTimer"]
 - ["So16UIStateRestoringP", "sceneNodes"]
 - ["So16UIStateRestoringP", "seconds"]
+- ["So16UIStateRestoringP", "selectionTime"]
+- ["So16UIStateRestoringP", "selectionTimeButton"]
 - ["So16UIStateRestoringP", "session"]
 - ["So16UIStateRestoringP", "sessionInterruptionEnded"]
 - ["So16UIStateRestoringP", "sessionShouldAttemptRelocalization"]
@@ -1949,6 +1994,8 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "scene"]
 - ["So18UITraitEnvironmentP", "sceneNodes"]
 - ["So18UITraitEnvironmentP", "seconds"]
+- ["So18UITraitEnvironmentP", "selectionTime"]
+- ["So18UITraitEnvironmentP", "selectionTimeButton"]
 - ["So18UITraitEnvironmentP", "session"]
 - ["So18UITraitEnvironmentP", "sessionInterruptionEnded"]
 - ["So18UITraitEnvironmentP", "sessionShouldAttemptRelocalization"]
@@ -2014,6 +2061,8 @@ depends-member:
 - !private ["So23UIUserActivityRestoringP", "scene"]
 - ["So23UIUserActivityRestoringP", "sceneNodes"]
 - ["So23UIUserActivityRestoringP", "seconds"]
+- ["So23UIUserActivityRestoringP", "selectionTime"]
+- ["So23UIUserActivityRestoringP", "selectionTimeButton"]
 - ["So23UIUserActivityRestoringP", "session"]
 - ["So23UIUserActivityRestoringP", "sessionInterruptionEnded"]
 - ["So23UIUserActivityRestoringP", "sessionShouldAttemptRelocalization"]
@@ -2079,6 +2128,8 @@ depends-member:
 - ["So16UIViewControllerC", "runTimer"]
 - ["So16UIViewControllerC", "sceneNodes"]
 - ["So16UIViewControllerC", "seconds"]
+- ["So16UIViewControllerC", "selectionTime"]
+- ["So16UIViewControllerC", "selectionTimeButton"]
 - ["So16UIViewControllerC", "session"]
 - ["So16UIViewControllerC", "sessionInterruptionEnded"]
 - ["So16UIViewControllerC", "sessionShouldAttemptRelocalization"]
@@ -2174,6 +2225,8 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "sceneNodes"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "scheduledTimer"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "seconds"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "selectionTime"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "selectionTimeButton"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "session"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "sessionInterruptionEnded"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "sessionShouldAttemptRelocalization"]
@@ -2257,6 +2310,8 @@ depends-member:
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "sceneNodes"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "scheduledTimer"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "seconds"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "selectionTime"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "selectionTimeButton"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "session"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "sessionInterruptionEnded"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "sessionShouldAttemptRelocalization"]
@@ -2477,4 +2532,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "1efbf5cf3aaaa0c2c274483bd712cc7e"
+interface-hash: "969ac102f36c421ed41bdc4d2bc952a4"

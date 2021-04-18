@@ -646,6 +646,7 @@ SWIFT_CLASS("_TtC7EyePlay8Settings")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified sizeButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified colorButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified selectionTimeButton;
 - (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;

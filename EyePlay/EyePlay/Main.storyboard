@@ -1472,6 +1472,7 @@
                                 </state>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="uF8-4r-ma0" appends="YES" id="xOH-Hy-JIP"/>
+                                    <segue destination="PD6-Nj-Yn0" kind="presentation" identifier="SelectionTimeSegue" modalPresentationStyle="fullScreen" id="kUO-r0-TZT"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="timer" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iB2-kn-RQb">
@@ -1494,6 +1495,8 @@
                         <outlet property="colorButton" destination="tT0-U4-ofR" id="UcZ-rf-oQH"/>
                         <outlet property="cursor" destination="ozu-pC-p2U" id="ZLF-pJ-Uu3"/>
                         <outlet property="menuButton" destination="pPr-1W-5oW" id="7t1-tv-CLY"/>
+                        <outlet property="selectionTime" destination="17D-Qp-n6b" id="TuD-XC-aPa"/>
+                        <outlet property="selectionTimeButton" destination="17D-Qp-n6b" id="sDS-Ds-Pop"/>
                         <outlet property="settingsView" destination="NMZ-pJ-dCz" id="4og-xb-qLi"/>
                         <outlet property="sizeButton" destination="74p-og-FW9" id="f4V-BW-aS2"/>
                     </connections>
@@ -2380,18 +2383,18 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xf7-p9-tQx"/>
-        <segue reference="nfa-v9-alz"/>
+        <segue reference="Mz8-fw-bzg"/>
+        <segue reference="IJG-yJ-LpU"/>
         <segue reference="OLQ-Dw-1fg"/>
-        <segue reference="ONv-mP-K8R"/>
+        <segue reference="Lb4-yX-g3k"/>
         <segue reference="r54-Rz-WKa"/>
-        <segue reference="Tcj-Jm-8bc"/>
-        <segue reference="OjZ-dT-6Nr"/>
+        <segue reference="mir-m6-Bf9"/>
+        <segue reference="e6N-px-NC3"/>
         <segue reference="2fS-1o-VjY"/>
         <segue reference="JBf-mq-54y"/>
         <segue reference="icC-nz-vy5"/>
         <segue reference="70f-Ee-scQ"/>
-        <segue reference="VUj-RN-4qu"/>
+        <segue reference="1ie-tA-y9K"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1.circle.fill" catalog="system" width="128" height="121"/>

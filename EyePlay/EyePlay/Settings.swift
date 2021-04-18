@@ -13,6 +13,7 @@ class Settings: UIViewController, ARSessionDelegate{
     @IBOutlet weak var sizeButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var colorButton: UIButton!
+    @IBOutlet weak var selectionTimeButton: UIButton!
     
     let sceneNodes = nodes()
     let mainThread = DispatchQueue.main
@@ -23,6 +24,7 @@ class Settings: UIViewController, ARSessionDelegate{
     var hoveringMenu = false
     var hoveringSize = false
     var hoveringColor = false
+    var hoveringSelectionTime = false
     
     var player: AVAudioPlayer?
     
@@ -85,9 +87,11 @@ class Settings: UIViewController, ARSessionDelegate{
         sizeButton.layer.cornerRadius = 5;
         menuButton.layer.cornerRadius = 5;
         colorButton.layer.cornerRadius = 5;
+        selectionTimeButton.layer.cornerRadius = 5;
         sizeButton.layer.borderWidth = 10;
         menuButton.layer.borderWidth = 10;
         colorButton.layer.borderWidth = 10;
+        selectionTimeButton.layer.borderWidth = 10;
         settingsView.pointOfView?.addChildNode(sceneNodes.nodeInFrontOfScreen)
         settingsView.scene.background.contents = UIColor.black
         settingsView.delegate = self
@@ -111,6 +115,12 @@ class Settings: UIViewController, ARSessionDelegate{
         playSelectionSound()
             mainThread.async {
                 self.performSegue(withIdentifier: "ColorSegue", sender: self)
+            }
+    }
+    func collisionSelectionTime(){
+        playSelectionSound()
+            mainThread.async {
+                self.performSegue(withIdentifier: "SelectionTimeSegue", sender: self)
             }
     }
 }
@@ -179,9 +189,11 @@ extension Settings: ARSCNViewDelegate {
                 self.hoveringSize = true
                 self.hoveringMenu = false
                 self.hoveringColor = false
+                self.hoveringSelectionTime = false
                 
                 self.resetColor(button: self.menuButton)
                 self.resetColor(button: self.colorButton)
+                self.resetColor(button: self.selectionTimeButton)
             }
             else if self.cursor.frame.intersects(self.colorButton.frame) {
                 self.colorButton.layer.borderColor = UIColor.systemBlue.cgColor
@@ -202,9 +214,11 @@ extension Settings: ARSCNViewDelegate {
                 self.hoveringSize = false
                 self.hoveringMenu = false
                 self.hoveringColor = true
+                self.hoveringSelectionTime = false
                 
                 self.resetColor(button: self.sizeButton)
                 self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.selectionTimeButton)
                 
             }
             else if self.cursor.frame.intersects(self.menuButton.frame) {
@@ -226,9 +240,37 @@ extension Settings: ARSCNViewDelegate {
                 self.hoveringSize = false
                 self.hoveringMenu = true
                 self.hoveringColor = false
+                self.hoveringSelectionTime = false
                 
                 self.resetColor(button: self.sizeButton)
                 self.resetColor(button: self.colorButton)
+                self.resetColor(button: self.selectionTimeButton)
+            }
+            else if self.cursor.frame.intersects(self.selectionTimeButton.frame) {
+                self.selectionTimeButton.layer.borderColor = UIColor.systemBlue.cgColor
+
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.selectionTimeButton)
+                }
+                
+                if self.hoveringSelectionTime && self.seconds <= 0 {
+                    self.collisionSelectionTime()
+                    self.resetTimer()
+                    
+                }
+                else if !self.hoveringSelectionTime{
+                    self.resetTimer()
+                }
+                
+                self.hoveringSize = false
+                self.hoveringMenu = false
+                self.hoveringColor = false
+                self.hoveringSelectionTime = true
+                
+                self.resetColor(button: self.sizeButton)
+                self.resetColor(button: self.colorButton)
+                self.resetColor(button: self.menuButton)
+                
             }
             else{
                 self.sizeButton.layer.borderColor = UIColor.clear.cgColor
@@ -238,10 +280,12 @@ extension Settings: ARSCNViewDelegate {
                 self.hoveringColor = false
                 self.hoveringSize = false
                 self.hoveringMenu = false
+                self.hoveringSelectionTime = false
 
                 self.resetColor(button: self.colorButton)
                 self.resetColor(button: self.menuButton)
                 self.resetColor(button: self.sizeButton)
+                self.resetColor(button: self.selectionTimeButton)
                 
                 self.resetTimer()
             }
