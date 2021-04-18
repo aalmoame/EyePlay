@@ -40,40 +40,6 @@
 			<key>uniqueIdentifier</key>
 			<string>2A3A90D3-7120-455A-ACA9-8B72370E19BE</string>
 		</dict>
-		<key>99299133-E1F7-4619-BA48-F0988EF934AA</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>99299133-E1F7-4619-BA48-F0988EF934AA.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>EyePlay project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>EyePlay</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Build EyePlay</string>
-			<key>timeStartedRecording</key>
-			<real>640284333.74672794</real>
-			<key>timeStoppedRecording</key>
-			<real>640284342.33831203</real>
-			<key>title</key>
-			<string>Build EyePlay</string>
-			<key>uniqueIdentifier</key>
-			<string>99299133-E1F7-4619-BA48-F0988EF934AA</string>
-		</dict>
 	</dict>
 </dict>
 </plist>

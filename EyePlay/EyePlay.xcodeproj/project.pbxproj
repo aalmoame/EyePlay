@@ -29,6 +29,7 @@
 		4A7F8E6B2629F65300C60CFC /* meow2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4A7F8E692629F65300C60CFC /* meow2.mp3 */; };
 		4A83F99D25EA147800482A7E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F99C25EA147700482A7E /* Settings.swift */; };
 		4A83F9A225EA1A4B00482A7E /* CursorSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F9A125EA1A4B00482A7E /* CursorSize.swift */; };
+		4AA0722A262BCB94009F72BC /* SelectionTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA07229262BCB94009F72BC /* SelectionTime.swift */; };
 		4AD8C7692628789C00CD9887 /* SoundBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8C7682628789C00CD9887 /* SoundBoard.swift */; };
 		4AD8C77B26288D4900CD9887 /* woof.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4AD8C76D26288D4800CD9887 /* woof.mp3 */; };
 		4AD8C77C26288D4900CD9887 /* fairy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4AD8C76E26288D4900CD9887 /* fairy.mp3 */; };
@@ -112,6 +113,7 @@
 		4A7F8E692629F65300C60CFC /* meow2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meow2.mp3; sourceTree = "<group>"; };
 		4A83F99C25EA147700482A7E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4A83F9A125EA1A4B00482A7E /* CursorSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorSize.swift; sourceTree = "<group>"; };
+		4AA07229262BCB94009F72BC /* SelectionTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionTime.swift; sourceTree = "<group>"; };
 		4AD8C7682628789C00CD9887 /* SoundBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundBoard.swift; sourceTree = "<group>"; };
 		4AD8C76D26288D4800CD9887 /* woof.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = woof.mp3; sourceTree = "<group>"; };
 		4AD8C76E26288D4900CD9887 /* fairy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fairy.mp3; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				F676E7EE260FE85100C9A63F /* LevelSelector.swift */,
 				4A1356E42616823500F5FAB0 /* BugGame.swift */,
 				4AD8C7682628789C00CD9887 /* SoundBoard.swift */,
+				4AA07229262BCB94009F72BC /* SelectionTime.swift */,
 			);
 			path = EyePlay;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				4A1356E52616823500F5FAB0 /* BugGame.swift in Sources */,
 				4A1A39B525DA3BF900516AE9 /* AppDelegate.swift in Sources */,
 				F676E7EF260FE85100C9A63F /* LevelSelector.swift in Sources */,
+				4AA0722A262BCB94009F72BC /* SelectionTime.swift in Sources */,
 				F60386F7260817B000ED73DC /* LevelThree.swift in Sources */,
 				4ADBC463261F3D39001F42B0 /* JSSAlertView+Predefined.swift in Sources */,
 				4A1A3A6725DEBE0200516AE9 /* ballGame.swift in Sources */,

@@ -42,8 +42,10 @@ depends-top-level:
 - !private "rightEyeNode"
 - !private "||"
 depends-member:
+- ["So8ARAnchorC", ""]
 - !private ["So8ARAnchorC", "leftEyeTransform"]
 - !private ["So8ARAnchorC", "rightEyeTransform"]
+- !private ["So15ARAnchorCopyingP", ""]
 - !private ["So15ARAnchorCopyingP", "leftEyeTransform"]
 - !private ["So15ARAnchorCopyingP", "rightEyeTransform"]
 - !private ["So12ARFaceAnchorC", "leftEyeTransform"]
@@ -61,7 +63,7 @@ depends-member:
 - !private ["Sa", "map"]
 - !private ["Sa", "suffix"]
 - !private ["s10ArraySliceV", "map"]
-- !private ["SK", ""]
+- ["SK", ""]
 - !private ["SK", "append"]
 - !private ["SK", "average"]
 - !private ["SK", "count"]
@@ -120,7 +122,7 @@ depends-member:
 - ["s7CVarArgP", "withAlphaComponent"]
 - !private ["s7CVarArgP", "worldPosition"]
 - !private ["Sl", "Element"]
-- !private ["Sl", ""]
+- ["Sl", ""]
 - !private ["Sl", "append"]
 - !private ["Sl", "average"]
 - !private ["Sl", "count"]
@@ -240,8 +242,11 @@ depends-member:
 - !private ["Se", "y"]
 - !private ["7EyePlay9ConstantsV6DeviceV", "frameSize"]
 - !private ["7EyePlay9ConstantsV6DeviceV", "screenSize"]
+- ["So18OS_dispatch_objectC", ""]
 - !private ["So18OS_dispatch_objectC", "async"]
+- !private ["So18OS_dispatch_objectC", "init"]
 - !private ["So18OS_dispatch_objectC", "main"]
+- !private ["So18OS_dispatch_objectC", "sync"]
 - !private ["So17OS_dispatch_queueC", "async"]
 - !private ["So17OS_dispatch_queueC", "main"]
 - ["Sd", "pi"]
@@ -303,6 +308,7 @@ depends-member:
 - ["s25ExpressibleByArrayLiteralP", "init"]
 - !private ["s25ExpressibleByArrayLiteralP", "map"]
 - !private ["s25ExpressibleByArrayLiteralP", "suffix"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", ""]
 - ["s25ExpressibleByFloatLiteralP", "FloatLiteralType"]
 - ["s25ExpressibleByFloatLiteralP", ""]
 - !private ["s25ExpressibleByFloatLiteralP", "clamped"]
@@ -313,6 +319,9 @@ depends-member:
 - !private ["s27ExpressibleByIntegerLiteralP", "clamped"]
 - ["s27ExpressibleByIntegerLiteralP", "init"]
 - ["s27ExpressibleByIntegerLiteralP", "pi"]
+- ["s32ExpressibleByStringInterpolationP", ""]
+- ["s26ExpressibleByStringLiteralP", ""]
+- ["s33ExpressibleByUnicodeScalarLiteralP", ""]
 - ["Sf", "pi"]
 - ["s7Float16V", "pi"]
 - !private ["SF", "*"]
@@ -402,6 +411,7 @@ depends-member:
 - !private ["SH", "suffix"]
 - ["SH", "withAlphaComponent"]
 - !private ["SH", "worldPosition"]
+- ["s25LosslessStringConvertibleP", ""]
 - ["s25LosslessStringConvertibleP", "pi"]
 - !private ["SM", ""]
 - !private ["SM", "append"]
@@ -467,6 +477,7 @@ depends-member:
 - ["So21NSItemProviderWritingP", "green"]
 - ["So21NSItemProviderWritingP", "withAlphaComponent"]
 - ["So8NSObjectC", ""]
+- !private ["So8NSObjectC", "activate"]
 - ["So8NSObjectC", "addChildNode"]
 - !private ["So8NSObjectC", "async"]
 - !private ["So8NSObjectC", "center"]
@@ -479,6 +490,7 @@ depends-member:
 - ["So8NSObjectC", "fillMode"]
 - ["So8NSObjectC", "firstMaterial"]
 - ["So8NSObjectC", "geometry"]
+- ["So8NSObjectC", "geometryWithSources"]
 - ["So8NSObjectC", "green"]
 - !private ["So8NSObjectC", "hitTestWithSegment"]
 - !private ["So8NSObjectC", "hitTestWithSegmentFromPoint"]
@@ -487,14 +499,21 @@ depends-member:
 - !private ["So8NSObjectC", "leftEyeTransform"]
 - !private ["So8NSObjectC", "localCoordinates"]
 - !private ["So8NSObjectC", "main"]
+- ["So8NSObjectC", "node"]
+- ["So8NSObjectC", "nodeWithGeometry"]
 - ["So8NSObjectC", "planeWithWidth"]
 - ["So8NSObjectC", "position"]
 - ["So8NSObjectC", "radialSegmentCount"]
+- !private ["So8NSObjectC", "resume"]
 - !private ["So8NSObjectC", "rightEyeTransform"]
+- !private ["So8NSObjectC", "setTarget"]
 - !private ["So8NSObjectC", "simdTransform"]
+- !private ["So8NSObjectC", "suspend"]
+- !private ["So8NSObjectC", "sync"]
 - ["So8NSObjectC", "withAlphaComponent"]
 - !private ["So8NSObjectC", "worldPosition"]
 - ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "activate"]
 - ["So8NSObjectP", "addChildNode"]
 - !private ["So8NSObjectP", "async"]
 - !private ["So8NSObjectP", "center"]
@@ -507,6 +526,7 @@ depends-member:
 - ["So8NSObjectP", "fillMode"]
 - ["So8NSObjectP", "firstMaterial"]
 - ["So8NSObjectP", "geometry"]
+- ["So8NSObjectP", "geometryWithSources"]
 - ["So8NSObjectP", "green"]
 - !private ["So8NSObjectP", "hitTestWithSegment"]
 - !private ["So8NSObjectP", "hitTestWithSegmentFromPoint"]
@@ -515,11 +535,17 @@ depends-member:
 - !private ["So8NSObjectP", "leftEyeTransform"]
 - !private ["So8NSObjectP", "localCoordinates"]
 - !private ["So8NSObjectP", "main"]
+- ["So8NSObjectP", "node"]
+- ["So8NSObjectP", "nodeWithGeometry"]
 - ["So8NSObjectP", "planeWithWidth"]
 - ["So8NSObjectP", "position"]
 - ["So8NSObjectP", "radialSegmentCount"]
+- !private ["So8NSObjectP", "resume"]
 - !private ["So8NSObjectP", "rightEyeTransform"]
+- !private ["So8NSObjectP", "setTarget"]
 - !private ["So8NSObjectP", "simdTransform"]
+- !private ["So8NSObjectP", "suspend"]
+- !private ["So8NSObjectP", "sync"]
 - ["So8NSObjectP", "withAlphaComponent"]
 - !private ["So8NSObjectP", "worldPosition"]
 - ["So14NSSecureCodingP", ""]
@@ -551,8 +577,15 @@ depends-member:
 - !private ["Sj", "init"]
 - !private ["Sj", "magnitude"]
 - ["Sj", "pi"]
+- ["So9OS_objectC", ""]
+- !private ["So9OS_objectC", "activate"]
 - !private ["So9OS_objectC", "async"]
+- !private ["So9OS_objectC", "init"]
 - !private ["So9OS_objectC", "main"]
+- !private ["So9OS_objectC", "resume"]
+- !private ["So9OS_objectC", "setTarget"]
+- !private ["So9OS_objectC", "suspend"]
+- !private ["So9OS_objectC", "sync"]
 - !private ["Sk", ""]
 - !private ["Sk", "append"]
 - !private ["Sk", "average"]
@@ -649,7 +682,7 @@ depends-member:
 - !private ["7Combine9SchedulerP", "async"]
 - !private ["7Combine9SchedulerP", "main"]
 - !private ["ST", "Element"]
-- !private ["ST", ""]
+- ["ST", ""]
 - !private ["ST", "append"]
 - !private ["ST", "average"]
 - !private ["ST", "count"]
@@ -668,6 +701,8 @@ depends-member:
 - !private ["Sx", "distance"]
 - !private ["Sx", "init"]
 - ["Sx", "pi"]
+- ["s16TextOutputStreamP", ""]
+- ["s20TextOutputStreamableP", ""]
 - ["s20TextOutputStreamableP", "pi"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "center"]
 - !private ["So29UIAccessibilityIdentificationP", "center"]
@@ -700,11 +735,14 @@ depends-member:
 - !private ["So20UIFocusItemContainerP", "center"]
 - !private ["So11UIImageViewC", "center"]
 - !private ["So24UILargeContentViewerItemP", "center"]
+- !private ["So30UIPasteConfigurationSupportingP", ""]
 - !private ["So30UIPasteConfigurationSupportingP", "center"]
 - ["So11UIResponderC", ""]
 - !private ["So11UIResponderC", "center"]
+- !private ["So30UIResponderStandardEditActionsP", ""]
 - !private ["So30UIResponderStandardEditActionsP", "center"]
 - !private ["So18UITraitEnvironmentP", "center"]
+- !private ["So23UIUserActivityRestoringP", ""]
 - !private ["So23UIUserActivityRestoringP", "center"]
 - ["So6UIViewC", ""]
 - !private ["So6UIViewC", "center"]
@@ -733,10 +771,12 @@ depends-member:
 - !private ["s24_DestructorSafeContainerP", "map"]
 - !private ["s24_DestructorSafeContainerP", "suffix"]
 - ["s35_ExpressibleByBuiltinBooleanLiteralP", "init"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
 - ["s33_ExpressibleByBuiltinFloatLiteralP", "init"]
 - ["s33_ExpressibleByBuiltinFloatLiteralP", "pi"]
 - ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
 - ["s35_ExpressibleByBuiltinIntegerLiteralP", "pi"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
 - ["s26_ExpressibleByColorLiteralP", "clear"]
 - ["s26_ExpressibleByColorLiteralP", "green"]
 - ["s26_ExpressibleByColorLiteralP", "withAlphaComponent"]
@@ -834,21 +874,21 @@ depends-member:
 - ["7EyePlay5nodesC", "points"]
 - ["7EyePlay5nodesC", "rightEyeNode"]
 depends-nominal:
-- !private "So8ARAnchorC"
+- "So8ARAnchorC"
 - !private "So15ARAnchorCopyingP"
 - !private "So12ARFaceAnchorC"
 - !private "So11ARTrackableP"
 - "s18AdditiveArithmeticP"
 - !private "Sa"
 - !private "s10ArraySliceV"
-- !private "SK"
+- "SK"
 - "SB"
 - !private "So15CALayerDelegateP"
 - !private "12CoreGraphics7CGFloatV"
 - !private "So7CGPointV"
 - !private "So6CGSizeV"
 - "s7CVarArgP"
-- !private "Sl"
+- "Sl"
 - "SL"
 - !private "7EyePlay9ConstantsV"
 - !private "10Foundation15ContiguousBytesP"
@@ -858,14 +898,18 @@ depends-nominal:
 - !private "10Foundation12DataProtocolP"
 - "Se"
 - !private "7EyePlay9ConstantsV6DeviceV"
-- !private "So18OS_dispatch_objectC"
+- "So18OS_dispatch_objectC"
 - !private "So17OS_dispatch_queueC"
 - "Sd"
 - "SE"
 - "SQ"
 - "s25ExpressibleByArrayLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
 - "s25ExpressibleByFloatLiteralP"
 - "s27ExpressibleByIntegerLiteralP"
+- "s32ExpressibleByStringInterpolationP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
 - "Sf"
 - "s7Float16V"
 - "SF"
@@ -881,7 +925,7 @@ depends-nominal:
 - "So8NSObjectP"
 - "So14NSSecureCodingP"
 - "Sj"
-- !private "So9OS_objectC"
+- "So9OS_objectC"
 - !private "Sk"
 - !private "Sm"
 - !private "7EyePlay9ConstantsV6RangesV"
@@ -901,9 +945,10 @@ depends-nominal:
 - "So10SCNVector3V"
 - "s10SIMDScalarP"
 - !private "7Combine9SchedulerP"
-- !private "ST"
+- "ST"
 - "s13SignedNumericP"
 - "Sx"
+- "s16TextOutputStreamP"
 - "s20TextOutputStreamableP"
 - !private "So48UIAccessibilityContentSizeCategoryImageAdjustingP"
 - !private "So29UIAccessibilityIdentificationP"
@@ -929,8 +974,10 @@ depends-nominal:
 - "s30_CustomPlaygroundQuickLookableP"
 - !private "s24_DestructorSafeContainerP"
 - "s35_ExpressibleByBuiltinBooleanLiteralP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
 - "s33_ExpressibleByBuiltinFloatLiteralP"
 - "s35_ExpressibleByBuiltinIntegerLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
 - "s26_ExpressibleByColorLiteralP"
 - !private "s19_HasContiguousBytesP"
 - "s35_HasCustomAnyHashableRepresentationP"

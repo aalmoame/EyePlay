@@ -613,6 +613,32 @@ SWIFT_CLASS("_TtC7EyePlay13SceneDelegate")
 @end
 
 
+SWIFT_CLASS("_TtC7EyePlay13SelectionTime")
+@interface SelectionTime : UIViewController
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified oneButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified twoButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified threeButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified settingsButton;
+@property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified timeView;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
+- (IBAction)tapOne:(id _Nonnull)sender;
+- (IBAction)tapTwo:(id _Nonnull)sender;
+- (IBAction)tapThree:(id _Nonnull)sender;
+- (void)updateTimer;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface SelectionTime (SWIFT_EXTENSION(EyePlay)) <ARSCNViewDelegate>
+- (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
+- (void)renderer:(id <SCNSceneRenderer> _Nonnull)renderer didUpdateNode:(SCNNode * _Nonnull)node forAnchor:(ARAnchor * _Nonnull)anchor;
+@end
+
+
 SWIFT_CLASS("_TtC7EyePlay8Settings")
 @interface Settings : UIViewController <ARSessionDelegate>
 @property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified settingsView;

@@ -188,6 +188,7 @@ depends-member:
 - !private ["So8NSObjectC", "role"]
 - ["So8NSObjectC", "window"]
 - ["So8NSObjectP", "$main"]
+- ["So8NSObjectP", "Bool"]
 - ["So8NSObjectP", "ConnectionOptions"]
 - ["So8NSObjectP", "LaunchOptionsKey"]
 - ["So8NSObjectP", "Set"]
@@ -239,7 +240,9 @@ depends-member:
 - ["So21UIApplicationDelegateP", "init"]
 - ["So21UIApplicationDelegateP", "main"]
 - ["So21UIApplicationDelegateP", "window"]
+- ["So18UIFocusEnvironmentP", ""]
 - ["So30UIPasteConfigurationSupportingP", "$main"]
+- ["So30UIPasteConfigurationSupportingP", "Bool"]
 - ["So30UIPasteConfigurationSupportingP", "ConnectionOptions"]
 - ["So30UIPasteConfigurationSupportingP", "LaunchOptionsKey"]
 - ["So30UIPasteConfigurationSupportingP", "Set"]
@@ -289,6 +292,7 @@ depends-member:
 - ["So11UIResponderC", "main"]
 - ["So11UIResponderC", "window"]
 - ["So30UIResponderStandardEditActionsP", "$main"]
+- ["So30UIResponderStandardEditActionsP", "Bool"]
 - ["So30UIResponderStandardEditActionsP", "ConnectionOptions"]
 - ["So30UIResponderStandardEditActionsP", "LaunchOptionsKey"]
 - ["So30UIResponderStandardEditActionsP", "Set"]
@@ -317,6 +321,7 @@ depends-member:
 - !private ["So20UISceneConfigurationC", "init"]
 - !private ["So14UISceneSessionC", "role"]
 - ["So23UIUserActivityRestoringP", "$main"]
+- ["So23UIUserActivityRestoringP", "Bool"]
 - ["So23UIUserActivityRestoringP", "ConnectionOptions"]
 - ["So23UIUserActivityRestoringP", "LaunchOptionsKey"]
 - ["So23UIUserActivityRestoringP", "Set"]
@@ -343,6 +348,7 @@ depends-member:
 - ["So23UIUserActivityRestoringP", "window"]
 - !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "init"]
 - ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
+- ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
 - !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
 - ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "$main"]
@@ -412,6 +418,7 @@ depends-nominal:
 - "s20TextOutputStreamableP"
 - "So13UIApplicationC"
 - "So21UIApplicationDelegateP"
+- "So18UIFocusEnvironmentP"
 - "So30UIPasteConfigurationSupportingP"
 - "So11UIResponderC"
 - "So30UIResponderStandardEditActionsP"
@@ -421,6 +428,7 @@ depends-nominal:
 - "So23UIUserActivityRestoringP"
 - !private "s35_ExpressibleByBuiltinBooleanLiteralP"
 - "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s35_ExpressibleByBuiltinIntegerLiteralP"
 - !private "s34_ExpressibleByBuiltinStringLiteralP"
 - "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
 - "10Foundation27_KeyValueCodingAndObservingP"

@@ -16,6 +16,7 @@ import AVKit
 
 var cursorSize = CGSize(width: 50.0, height: 50.0);
 var cursorColor = UIColor.blue
+var selectionTime = 2
 
 
 extension CGPoint {

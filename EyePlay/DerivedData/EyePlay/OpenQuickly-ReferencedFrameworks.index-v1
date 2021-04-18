@@ -4,8 +4,8 @@
 <array>
 	<string>XCTest</string>
 	<string>SceneKit</string>
-	<string>Emoji</string>
 	<string>AVKit</string>
+	<string>Emoji</string>
 	<string>ARKit</string>
 	<string>VisionKit</string>
 	<string>UIKit</string>

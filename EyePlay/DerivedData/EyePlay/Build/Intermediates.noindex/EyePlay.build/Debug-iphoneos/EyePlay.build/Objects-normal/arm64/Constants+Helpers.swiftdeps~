@@ -75,7 +75,7 @@ depends-top-level:
 depends-member:
 - !private ["s18AdditiveArithmeticP", ""]
 - !private ["s18AdditiveArithmeticP", "init"]
-- !private ["SK", ""]
+- ["SK", ""]
 - !private ["SK", "lowerBound"]
 - !private ["SK", "upperBound"]
 - !private ["SB", "binade"]
@@ -143,7 +143,7 @@ depends-member:
 - !private ["SL", "<="]
 - !private ["SL", ">"]
 - !private ["SL", ">="]
-- !private ["SL", ""]
+- ["SL", ""]
 - !private ["SL", "init"]
 - ["7EyePlay9ConstantsV", "CGFloat"]
 - ["7EyePlay9ConstantsV", "CGSize"]
@@ -185,7 +185,7 @@ depends-member:
 - ["s17CustomReflectableP", "width"]
 - !private ["s17CustomReflectableP", "x"]
 - !private ["s17CustomReflectableP", "y"]
-- !private ["s23CustomStringConvertibleP", ""]
+- ["s23CustomStringConvertibleP", ""]
 - !private ["s23CustomStringConvertibleP", "animate"]
 - !private ["s23CustomStringConvertibleP", "backgroundColor"]
 - ["s23CustomStringConvertibleP", "blue"]
@@ -250,16 +250,16 @@ depends-member:
 - !private ["SQ", "withAlphaComponent"]
 - !private ["SQ", "x"]
 - !private ["SQ", "y"]
-- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", ""]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", ""]
 - !private ["s25ExpressibleByFloatLiteralP", "FloatLiteralType"]
 - !private ["s25ExpressibleByFloatLiteralP", ""]
 - !private ["s25ExpressibleByFloatLiteralP", "init"]
 - ["s27ExpressibleByIntegerLiteralP", "IntegerLiteralType"]
 - !private ["s27ExpressibleByIntegerLiteralP", ""]
 - ["s27ExpressibleByIntegerLiteralP", "init"]
-- !private ["s32ExpressibleByStringInterpolationP", ""]
-- !private ["s26ExpressibleByStringLiteralP", ""]
-- !private ["s33ExpressibleByUnicodeScalarLiteralP", ""]
+- ["s32ExpressibleByStringInterpolationP", ""]
+- ["s26ExpressibleByStringLiteralP", ""]
+- ["s33ExpressibleByUnicodeScalarLiteralP", ""]
 - !private ["SF", "*"]
 - !private ["SF", "*="]
 - !private ["SF", "+"]
@@ -317,7 +317,7 @@ depends-member:
 - !private ["SF", "truncatingRemainder"]
 - !private ["SF", "ulp"]
 - !private ["SF", "ulpOfOne"]
-- !private ["SH", ""]
+- ["SH", ""]
 - !private ["SH", "animate"]
 - !private ["SH", "backgroundColor"]
 - ["SH", "blue"]
@@ -332,7 +332,7 @@ depends-member:
 - !private ["SH", "systemBlue"]
 - !private ["SH", "upperBound"]
 - !private ["SH", "withAlphaComponent"]
-- !private ["s25LosslessStringConvertibleP", ""]
+- ["s25LosslessStringConvertibleP", ""]
 - ["So8NSCodingP", ""]
 - !private ["So8NSCodingP", "animate"]
 - !private ["So8NSCodingP", "backgroundColor"]
@@ -443,8 +443,8 @@ depends-member:
 - !private ["Sx", "advanced"]
 - !private ["Sx", "distance"]
 - !private ["Sx", "init"]
-- !private ["s16TextOutputStreamP", ""]
-- !private ["s20TextOutputStreamableP", ""]
+- ["s16TextOutputStreamP", ""]
+- ["s20TextOutputStreamableP", ""]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "layer"]
 - !private ["So29UIAccessibilityIdentificationP", "animate"]
 - !private ["So29UIAccessibilityIdentificationP", "draw"]
@@ -466,7 +466,7 @@ depends-member:
 - !private ["So17UICoordinateSpaceP", "layer"]
 - !private ["So13UIDynamicItemP", "animate"]
 - !private ["So13UIDynamicItemP", "layer"]
-- !private ["So18UIFocusEnvironmentP", ""]
+- ["So18UIFocusEnvironmentP", ""]
 - !private ["So18UIFocusEnvironmentP", "animate"]
 - !private ["So18UIFocusEnvironmentP", "layer"]
 - !private ["So11UIFocusItemP", "animate"]
@@ -517,10 +517,10 @@ depends-member:
 - !private ["s30_CustomPlaygroundQuickLookableP", "x"]
 - !private ["s30_CustomPlaygroundQuickLookableP", "y"]
 - !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "init"]
-- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
 - ["s33_ExpressibleByBuiltinFloatLiteralP", "init"]
 - ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
-- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
 - ["s26_ExpressibleByColorLiteralP", "blue"]
 - !private ["s26_ExpressibleByColorLiteralP", "cgColor"]
 - !private ["s26_ExpressibleByColorLiteralP", "systemBlue"]
@@ -564,7 +564,7 @@ depends-member:
 - !private ["s38__DefaultCustomPlaygroundQuickLookableP", "layer"]
 depends-nominal:
 - !private "s18AdditiveArithmeticP"
-- !private "SK"
+- "SK"
 - !private "SB"
 - !private "So7CALayerC"
 - !private "So15CALayerDelegateP"
@@ -576,7 +576,7 @@ depends-nominal:
 - "s7CVarArgP"
 - !private "SN"
 - "Sl"
-- !private "SL"
+- "SL"
 - "7EyePlay9ConstantsV"
 - "s28CustomDebugStringConvertibleP"
 - "s17CustomReflectableP"
@@ -585,15 +585,15 @@ depends-nominal:
 - "7EyePlay9ConstantsV6DeviceV"
 - "SE"
 - "SQ"
-- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
 - !private "s25ExpressibleByFloatLiteralP"
 - "s27ExpressibleByIntegerLiteralP"
-- !private "s32ExpressibleByStringInterpolationP"
-- !private "s26ExpressibleByStringLiteralP"
-- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "s32ExpressibleByStringInterpolationP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
 - !private "SF"
 - "SH"
-- !private "s25LosslessStringConvertibleP"
+- "s25LosslessStringConvertibleP"
 - "So8NSCodingP"
 - "So9NSCopyingP"
 - "So21NSItemProviderReadingP"
@@ -609,8 +609,8 @@ depends-nominal:
 - "ST"
 - !private "s13SignedNumericP"
 - !private "Sx"
-- !private "s16TextOutputStreamP"
-- !private "s20TextOutputStreamableP"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
 - !private "So48UIAccessibilityContentSizeCategoryImageAdjustingP"
 - !private "So29UIAccessibilityIdentificationP"
 - !private "So12UIAppearanceP"
@@ -621,7 +621,7 @@ depends-nominal:
 - "So9UIControlC"
 - !private "So17UICoordinateSpaceP"
 - !private "So13UIDynamicItemP"
-- !private "So18UIFocusEnvironmentP"
+- "So18UIFocusEnvironmentP"
 - !private "So11UIFocusItemP"
 - !private "So20UIFocusItemContainerP"
 - !private "So7UIImageC"
@@ -639,10 +639,10 @@ depends-nominal:
 - !private "s22_CVarArgPassedAsDoubleP"
 - "s30_CustomPlaygroundQuickLookableP"
 - !private "s35_ExpressibleByBuiltinBooleanLiteralP"
-- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
 - "s33_ExpressibleByBuiltinFloatLiteralP"
 - "s35_ExpressibleByBuiltinIntegerLiteralP"
-- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
 - "s26_ExpressibleByColorLiteralP"
 - !private "s26_ExpressibleByImageLiteralP"
 - "10Foundation27_KeyValueCodingAndObservingP"
