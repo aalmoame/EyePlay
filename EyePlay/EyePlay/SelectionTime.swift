@@ -14,6 +14,8 @@ class SelectionTime: UIViewController{
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet var timeView: ARSCNView!
     @IBOutlet weak var cursor: UIImageView!
+    @IBOutlet weak var emergencyButton: UIButton!
+    
     
     let sceneNodes = nodes()
     
@@ -28,6 +30,7 @@ class SelectionTime: UIViewController{
     var hoveringTwo = false
     var hoveringThree = false
     var hoveringSettings = false
+    var hoveringEmergency = false
     
     var player: AVAudioPlayer?
     
@@ -43,6 +46,10 @@ class SelectionTime: UIViewController{
             // couldn't load file :(
         }
     }
+    @IBAction func pressEmergency(_ sender: Any) {
+        collisionEmergencyButton()
+    }
+    
     @IBAction func tapOne(_ sender: Any) {
         collisionOne()
     }
@@ -134,6 +141,33 @@ class SelectionTime: UIViewController{
                 self.performSegue(withIdentifier: "SettingsSegue", sender: self)
             }
     }
+    func collisionEmergencyButton() {
+        mainThread.async {
+            let path = Bundle.main.path(forResource: "emergency.mp3", ofType:nil)!
+            let url = URL(fileURLWithPath: path)
+
+            do {
+                self.player = try AVAudioPlayer(contentsOf: url)
+                self.player?.numberOfLoops = 1000
+                self.player?.play()
+            } catch {
+                // couldn't load file :(
+            }
+            var image = UIImage(systemName: "ladybug")
+            image = image?.withTintColor(UIColor.black)
+            
+            JSSAlertView().show(
+                self,
+                  title: "ALERT",
+                  text: "User is requesting guidance",
+                  buttonText: "OK",
+                color: UIColor.white,
+                iconImage: image
+            ).addAction {
+                self.player?.stop()
+            }
+        }
+    }
     
 }
 
@@ -202,10 +236,12 @@ extension SelectionTime: ARSCNViewDelegate {
                 self.hoveringTwo = false
                 self.hoveringThree = false
                 self.hoveringSettings = false
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.oneButton)
                 self.resetColor(button: self.twoButton)
                 self.resetColor(button: self.settingsButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
 
             }
             else if self.cursor.frame.intersects(self.twoButton.frame){
@@ -228,10 +264,12 @@ extension SelectionTime: ARSCNViewDelegate {
                 self.hoveringTwo = true
                 self.hoveringThree = false
                 self.hoveringSettings = false
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.oneButton)
                 self.resetColor(button: self.threeButton)
                 self.resetColor(button: self.settingsButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
             }
             else if self.cursor.frame.intersects(self.threeButton.frame) {
                 self.threeButton.layer.borderColor = UIColor.systemBlue.cgColor
@@ -253,10 +291,12 @@ extension SelectionTime: ARSCNViewDelegate {
                 self.hoveringTwo = false
                 self.hoveringThree = true
                 self.hoveringSettings = false
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.oneButton)
                 self.resetColor(button: self.twoButton)
                 self.resetColor(button: self.settingsButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
             }
             else if self.cursor.frame.intersects(self.settingsButton.frame){
                 self.settingsButton.layer.borderColor = UIColor.systemBlue.cgColor
@@ -278,10 +318,39 @@ extension SelectionTime: ARSCNViewDelegate {
                 self.hoveringTwo = false
                 self.hoveringThree = false
                 self.hoveringSettings = true
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.oneButton)
                 self.resetColor(button: self.twoButton)
                 self.resetColor(button: self.threeButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
+            }
+            else if self.cursor.frame.intersects(self.emergencyButton.frame) {
+                self.emergencyButton.layer.borderColor = UIColor.systemBlue.cgColor
+                
+
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.emergencyButton)
+                }
+                
+                if self.hoveringEmergency && self.seconds <= 0 {
+                    self.collisionEmergencyButton()
+                    self.resetTimer()
+                }
+                else if !self.hoveringEmergency{
+                    self.resetTimer()
+                }
+                
+                self.hoveringOne = false
+                self.hoveringTwo = false
+                self.hoveringThree = false
+                self.hoveringSettings = false
+                self.hoveringEmergency = true
+                
+                self.resetColor(button: self.oneButton)
+                self.resetColor(button: self.twoButton)
+                self.resetColor(button: self.threeButton)
+                self.resetColor(button: self.settingsButton)
             }
             else{
                 self.oneButton.layer.borderColor = UIColor.clear.cgColor
@@ -293,10 +362,13 @@ extension SelectionTime: ARSCNViewDelegate {
                 self.hoveringOne = false
                 self.hoveringTwo = false
                 self.hoveringThree = false
+                self.hoveringEmergency = false
+                
                 self.resetColor(button: self.settingsButton)
                 self.resetColor(button: self.oneButton)
                 self.resetColor(button: self.twoButton)
                 self.resetColor(button: self.threeButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
                 
                 self.resetTimer()
             }

@@ -43,6 +43,10 @@ class LevelOne: UIViewController, ARSessionDelegate {
         }
     }
     
+    @IBAction func winLevelOne(_ sender: Any) {
+        collisionGoalBlock()
+    }
+    
     func runTimer(button: UIButton) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(LevelOne.updateTimer)), userInfo: nil, repeats: true)
         isTimerRunning = true
@@ -108,7 +112,28 @@ class LevelOne: UIViewController, ARSessionDelegate {
     
     func collisionGoalBlock(){
             mainThread.async {
-                self.performSegue(withIdentifier: "LevelTwoSegue", sender: self)
+                let path = Bundle.main.path(forResource: "winning.mp3", ofType:nil)!
+                let url = URL(fileURLWithPath: path)
+
+                do {
+                    self.player = try AVAudioPlayer(contentsOf: url)
+                    self.player?.play()
+                } catch {
+                    // couldn't load file :(
+                }
+                var image = UIImage(systemName: "ladybug")
+                image = image?.withTintColor(UIColor.black)
+                
+                JSSAlertView().show(
+                    self,
+                      title: "CONGRATS",
+                      text: "YOU BEAT THE LEVEL!",
+                      buttonText: "Next Level",
+                    color: UIColor.white,
+                    iconImage: image
+                ).addAction {
+                    self.performSegue(withIdentifier: "LevelTwoSegue", sender: self)
+                }
             }
     }
     

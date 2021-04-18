@@ -54,7 +54,7 @@ depends-top-level:
 - "AssignmentPrecedence"
 - "Bool"
 - "BooleanLiteralType"
-- !private "Bundle"
+- "Bundle"
 - !private "CGFloat"
 - !private "CGSize"
 - "CastingPrecedence"
@@ -72,7 +72,7 @@ depends-top-level:
 - "UIImage"
 - "UIImageView"
 - "UIViewController"
-- !private "URL"
+- "URL"
 - !private "animate"
 - !private "collisionEmergencyButton"
 - !private "cursor"
@@ -244,7 +244,9 @@ depends-member:
 - !private ["So11ARTrackableP", "rightEyeTransform"]
 - !private ["So15AVAudio3DMixingP", ""]
 - !private ["So13AVAudioPlayerC", "init"]
+- !private ["So13AVAudioPlayerC", "numberOfLoops"]
 - !private ["So13AVAudioPlayerC", "play"]
+- !private ["So13AVAudioPlayerC", "stop"]
 - !private ["So19AVAudioStereoMixingP", ""]
 - ["SK", ""]
 - !private ["So8NSBundleC", "main"]
@@ -332,6 +334,7 @@ depends-member:
 - !private ["s7CVarArgP", "mainView"]
 - !private ["s7CVarArgP", "miniGameButton"]
 - ["s7CVarArgP", "nodes"]
+- !private ["s7CVarArgP", "numberOfLoops"]
 - !private ["s7CVarArgP", "path"]
 - !private ["s7CVarArgP", "pause"]
 - !private ["s7CVarArgP", "performSegue"]
@@ -359,6 +362,7 @@ depends-member:
 - !private ["s7CVarArgP", "settingsButton"]
 - !private ["s7CVarArgP", "show"]
 - !private ["s7CVarArgP", "simdTransform"]
+- !private ["s7CVarArgP", "stop"]
 - !private ["s7CVarArgP", "systemBlue"]
 - !private ["s7CVarArgP", "timer"]
 - !private ["s7CVarArgP", "tintColor"]
@@ -432,6 +436,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "mainView"]
 - !private ["s28CustomDebugStringConvertibleP", "miniGameButton"]
 - ["s28CustomDebugStringConvertibleP", "nodes"]
+- !private ["s28CustomDebugStringConvertibleP", "numberOfLoops"]
 - !private ["s28CustomDebugStringConvertibleP", "path"]
 - !private ["s28CustomDebugStringConvertibleP", "pause"]
 - !private ["s28CustomDebugStringConvertibleP", "performSegue"]
@@ -460,6 +465,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "show"]
 - !private ["s28CustomDebugStringConvertibleP", "simdTransform"]
 - !private ["s28CustomDebugStringConvertibleP", "size"]
+- !private ["s28CustomDebugStringConvertibleP", "stop"]
 - !private ["s28CustomDebugStringConvertibleP", "systemBlue"]
 - !private ["s28CustomDebugStringConvertibleP", "timer"]
 - !private ["s28CustomDebugStringConvertibleP", "tintColor"]
@@ -544,6 +550,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "mainView"]
 - !private ["s23CustomStringConvertibleP", "miniGameButton"]
 - ["s23CustomStringConvertibleP", "nodes"]
+- !private ["s23CustomStringConvertibleP", "numberOfLoops"]
 - !private ["s23CustomStringConvertibleP", "path"]
 - !private ["s23CustomStringConvertibleP", "pause"]
 - !private ["s23CustomStringConvertibleP", "performSegue"]
@@ -571,6 +578,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "settingsButton"]
 - !private ["s23CustomStringConvertibleP", "show"]
 - !private ["s23CustomStringConvertibleP", "simdTransform"]
+- !private ["s23CustomStringConvertibleP", "stop"]
 - !private ["s23CustomStringConvertibleP", "systemBlue"]
 - !private ["s23CustomStringConvertibleP", "timer"]
 - !private ["s23CustomStringConvertibleP", "tintColor"]
@@ -677,6 +685,7 @@ depends-member:
 - !private ["SQ", "mainView"]
 - !private ["SQ", "miniGameButton"]
 - ["SQ", "nodes"]
+- !private ["SQ", "numberOfLoops"]
 - !private ["SQ", "path"]
 - !private ["SQ", "pause"]
 - !private ["SQ", "performSegue"]
@@ -705,6 +714,7 @@ depends-member:
 - !private ["SQ", "show"]
 - !private ["SQ", "simdTransform"]
 - !private ["SQ", "size"]
+- !private ["SQ", "stop"]
 - !private ["SQ", "systemBlue"]
 - !private ["SQ", "timer"]
 - !private ["SQ", "tintColor"]
@@ -859,6 +869,7 @@ depends-member:
 - !private ["SH", "mainView"]
 - !private ["SH", "miniGameButton"]
 - ["SH", "nodes"]
+- !private ["SH", "numberOfLoops"]
 - !private ["SH", "path"]
 - !private ["SH", "pause"]
 - !private ["SH", "performSegue"]
@@ -886,6 +897,7 @@ depends-member:
 - !private ["SH", "settingsButton"]
 - !private ["SH", "show"]
 - !private ["SH", "simdTransform"]
+- !private ["SH", "stop"]
 - !private ["SH", "systemBlue"]
 - !private ["SH", "timer"]
 - !private ["SH", "tintColor"]
@@ -900,6 +912,7 @@ depends-member:
 - !private ["7EyePlay12JSSAlertViewC", ""]
 - !private ["7EyePlay12JSSAlertViewC", "init"]
 - !private ["7EyePlay12JSSAlertViewC", "show"]
+- !private ["7EyePlay21JSSAlertViewResponderC", "addAction"]
 - ["s25LosslessStringConvertibleP", ""]
 - !private ["So17MTLCommandEncoderP", ""]
 - ["So8NSCodingP", "ARAnchor"]
@@ -1175,6 +1188,7 @@ depends-member:
 - !private ["So8NSObjectC", "node"]
 - !private ["So8NSObjectC", "nodeWithGeometry"]
 - ["So8NSObjectC", "nodes"]
+- !private ["So8NSObjectC", "numberOfLoops"]
 - !private ["So8NSObjectC", "path"]
 - !private ["So8NSObjectC", "pathForAuxiliaryExecutable"]
 - !private ["So8NSObjectC", "pathForResource"]
@@ -1212,6 +1226,7 @@ depends-member:
 - !private ["So8NSObjectC", "show"]
 - !private ["So8NSObjectC", "showViewController"]
 - !private ["So8NSObjectC", "simdTransform"]
+- !private ["So8NSObjectC", "stop"]
 - ["So8NSObjectC", "suspend"]
 - ["So8NSObjectC", "sync"]
 - !private ["So8NSObjectC", "systemBlue"]
@@ -1306,6 +1321,7 @@ depends-member:
 - !private ["So8NSObjectP", "node"]
 - !private ["So8NSObjectP", "nodeWithGeometry"]
 - ["So8NSObjectP", "nodes"]
+- !private ["So8NSObjectP", "numberOfLoops"]
 - !private ["So8NSObjectP", "path"]
 - !private ["So8NSObjectP", "pathForAuxiliaryExecutable"]
 - !private ["So8NSObjectP", "pathForResource"]
@@ -1343,6 +1359,7 @@ depends-member:
 - !private ["So8NSObjectP", "show"]
 - !private ["So8NSObjectP", "showViewController"]
 - !private ["So8NSObjectP", "simdTransform"]
+- !private ["So8NSObjectP", "stop"]
 - ["So8NSObjectP", "suspend"]
 - ["So8NSObjectP", "sync"]
 - !private ["So8NSObjectP", "systemBlue"]
@@ -2463,6 +2480,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "mainView"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "miniGameButton"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "nodes"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "numberOfLoops"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "path"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "pause"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "performSegue"]
@@ -2490,6 +2508,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "settingsButton"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "show"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "simdTransform"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "stop"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "systemBlue"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "timer"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "tintColor"]
@@ -2559,6 +2578,7 @@ depends-member:
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "mainView"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "miniGameButton"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "nodes"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "numberOfLoops"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "path"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "pause"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "performSegue"]
@@ -2586,6 +2606,7 @@ depends-member:
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "settingsButton"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "show"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "simdTransform"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "stop"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "systemBlue"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "timer"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "tintColor"]
@@ -2672,6 +2693,7 @@ depends-nominal:
 - "7EyePlayAAC"
 - "SH"
 - !private "7EyePlay12JSSAlertViewC"
+- !private "7EyePlay21JSSAlertViewResponderC"
 - "s25LosslessStringConvertibleP"
 - !private "So17MTLCommandEncoderP"
 - "So8NSCodingP"

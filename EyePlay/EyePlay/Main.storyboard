@@ -916,6 +916,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="winLevelOne:" destination="g6E-ax-Wgk" eventType="touchUpInside" id="sUA-os-rQc"/>
                                     <outletCollection property="gestureRecognizers" destination="9yC-33-WHo" appends="YES" id="sPx-Xc-uYU"/>
                                 </connections>
                             </button>
@@ -1323,6 +1324,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ny7-PI-lN1">
+                                <rect key="frame" x="20" y="14.5" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Emergency" backgroundImage="circle.fill" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressEmergency:" destination="Kd9-Hl-M1C" eventType="touchUpInside" id="W2K-Rn-Dtv"/>
+                                    <action selector="pressEmergency:" destination="FSq-CB-tc1" eventType="touchUpInside" id="nNv-9y-rnQ"/>
+                                    <action selector="pressEmergencyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Nf-dh-drz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z2f-03-ocw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1330,6 +1345,7 @@
                     <navigationItem key="navigationItem" id="utq-fq-Pb2"/>
                     <connections>
                         <outlet property="cursor" destination="0j9-ZO-fgG" id="Xc9-s5-V65"/>
+                        <outlet property="emergencyButton" destination="ny7-PI-lN1" id="mkN-qk-fbi"/>
                         <outlet property="levelEightButton" destination="jEF-dG-00K" id="u5f-bW-aOF"/>
                         <outlet property="levelFiveButton" destination="eqv-6O-4Rs" id="ozY-ue-LEs"/>
                         <outlet property="levelFourButton" destination="gww-9k-Qia" id="cbL-3H-eMG"/>
@@ -1485,6 +1501,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3p-nC-n6b">
+                                <rect key="frame" x="0.0" y="1043.5" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Emergency" backgroundImage="circle.fill" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressEmergency:" destination="Kd9-Hl-M1C" eventType="touchUpInside" id="G3Z-Mm-TJi"/>
+                                    <action selector="pressEmergency:" destination="NHp-vb-Hu3" eventType="touchUpInside" id="ktM-m4-Mhg"/>
+                                    <action selector="pressEmergency:" destination="FSq-CB-tc1" eventType="touchUpInside" id="oHr-Fz-td9"/>
+                                    <action selector="pressEmergencyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="edH-WE-8yl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pSg-w5-ekP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1494,6 +1525,7 @@
                     <connections>
                         <outlet property="colorButton" destination="tT0-U4-ofR" id="UcZ-rf-oQH"/>
                         <outlet property="cursor" destination="ozu-pC-p2U" id="ZLF-pJ-Uu3"/>
+                        <outlet property="emergencyButton" destination="V3p-nC-n6b" id="A52-SE-7Xl"/>
                         <outlet property="menuButton" destination="pPr-1W-5oW" id="7t1-tv-CLY"/>
                         <outlet property="selectionTimeButton" destination="17D-Qp-n6b" id="sDS-Ds-Pop"/>
                         <outlet property="settingsView" destination="NMZ-pJ-dCz" id="4og-xb-qLi"/>
@@ -1608,6 +1640,22 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xD-Cu-ZWP">
+                                <rect key="frame" x="0.0" y="1043.5" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Emergency" backgroundImage="circle.fill" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressEmergency:" destination="HcT-UW-2Pu" eventType="touchUpInside" id="4XO-33-4F8"/>
+                                    <action selector="pressEmergency:" destination="NHp-vb-Hu3" eventType="touchUpInside" id="QYa-RH-kMq"/>
+                                    <action selector="pressEmergency:" destination="FSq-CB-tc1" eventType="touchUpInside" id="f0x-Zg-w3D"/>
+                                    <action selector="pressEmergency:" destination="Kd9-Hl-M1C" eventType="touchUpInside" id="kqD-9H-kZW"/>
+                                    <action selector="pressEmergencyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ugr-8C-gcS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9ce-vF-1Dw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1617,6 +1665,7 @@
                     <connections>
                         <outlet property="cursor" destination="bV0-Fg-aY8" id="1Rn-lV-QTE"/>
                         <outlet property="cursorSizeView" destination="IAO-El-92E" id="NTc-VO-KFp"/>
+                        <outlet property="emergencyButton" destination="6xD-Cu-ZWP" id="KqC-OO-rON"/>
                         <outlet property="largeButton" destination="WUb-qP-h4P" id="DRh-Br-Ytw"/>
                         <outlet property="mediumButton" destination="9r3-iu-mgl" id="DuR-Ex-RjB"/>
                         <outlet property="settingsButton" destination="jwu-Nj-B6S" id="9yE-1u-xIs"/>
@@ -1706,6 +1755,22 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ld1-bZ-1rD">
+                                <rect key="frame" x="0.0" y="1043.5" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Emergency" backgroundImage="circle.fill" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressEmergency:" destination="tNQ-Kh-ULL" eventType="touchUpInside" id="2hG-jX-q2T"/>
+                                    <action selector="pressEmergency:" destination="NHp-vb-Hu3" eventType="touchUpInside" id="83w-Xm-gyH"/>
+                                    <action selector="pressEmergency:" destination="FSq-CB-tc1" eventType="touchUpInside" id="Hv4-sp-v2n"/>
+                                    <action selector="pressEmergency:" destination="Kd9-Hl-M1C" eventType="touchUpInside" id="L6t-Rw-Yke"/>
+                                    <action selector="pressEmergencyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="esP-ea-poi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aqq-XX-hyQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1716,6 +1781,7 @@
                         <outlet property="blueButton" destination="7qL-Au-a4j" id="qJE-7m-hIW"/>
                         <outlet property="cursor" destination="UaN-ez-Z52" id="7D2-FX-YgU"/>
                         <outlet property="cursorColorView" destination="a6F-EL-HPU" id="UuO-VF-CBE"/>
+                        <outlet property="emergencyButton" destination="Ld1-bZ-1rD" id="iH1-ou-0Qm"/>
                         <outlet property="grayButton" destination="drX-jN-dYv" id="r3H-8Q-kQz"/>
                         <outlet property="redButton" destination="klt-9b-yb8" id="KYz-td-BZR"/>
                         <outlet property="settingsButton" destination="YR2-PM-7Ra" id="JaO-kM-obx"/>
@@ -1834,6 +1900,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shk-1E-yZV">
+                                <rect key="frame" x="9" y="1023.5" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Emergency" backgroundImage="circle.fill" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressEmergency:" destination="Kd9-Hl-M1C" eventType="touchUpInside" id="Lcu-lX-YWe"/>
+                                    <action selector="pressEmergencyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6cF-f3-v58"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Sbn-f8-za4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1843,6 +1922,7 @@
                         <outlet property="ballGameButton" destination="RZZ-Iv-XRe" id="lUC-hO-TAu"/>
                         <outlet property="bugGameButton" destination="lQT-DW-1Jf" id="0fn-RS-uNc"/>
                         <outlet property="cursor" destination="Ugc-Uj-QR6" id="DJI-Do-fW8"/>
+                        <outlet property="emergencyButton" destination="shk-1E-yZV" id="67E-V8-vym"/>
                         <outlet property="mainMenuButton" destination="XjB-f0-7Gd" id="wbp-Cx-Awb"/>
                         <outlet property="miniGameView" destination="pwx-wA-71d" id="akN-BY-j9j"/>
                         <outlet property="soundBoardButton" destination="TJb-Fs-2Uy" id="BXM-Rt-P1l"/>
@@ -2341,6 +2421,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzR-Zn-oKb">
+                                <rect key="frame" x="0.0" y="1043.5" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Emergency" backgroundImage="circle.fill" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressEmergency:" destination="PD6-Nj-Yn0" eventType="touchUpInside" id="4jA-9E-uUl"/>
+                                    <action selector="pressEmergency:" destination="FSq-CB-tc1" eventType="touchUpInside" id="Est-QJ-1kw"/>
+                                    <action selector="pressEmergency:" destination="Kd9-Hl-M1C" eventType="touchUpInside" id="XNv-mO-ieF"/>
+                                    <action selector="pressEmergency:" destination="tNQ-Kh-ULL" eventType="touchUpInside" id="m46-5l-7Uo"/>
+                                    <action selector="pressEmergency:" destination="NHp-vb-Hu3" eventType="touchUpInside" id="xEq-Ra-4JO"/>
+                                    <action selector="pressEmergencyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ML0-6b-Mj7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fz5-se-JdK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2349,6 +2446,7 @@
                     <navigationItem key="navigationItem" id="SPY-Bu-d5Z"/>
                     <connections>
                         <outlet property="cursor" destination="FUG-sL-495" id="PhD-Wp-QBh"/>
+                        <outlet property="emergencyButton" destination="NzR-Zn-oKb" id="2Aq-Lb-Q8e"/>
                         <outlet property="oneButton" destination="G7R-pg-bBk" id="pXW-zW-baF"/>
                         <outlet property="settingsButton" destination="Dq4-Y0-s8u" id="4xi-gf-gpH"/>
                         <outlet property="threeButton" destination="rOk-cY-Q4H" id="ffx-zE-xuF"/>
@@ -2383,9 +2481,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Mz8-fw-bzg"/>
-        <segue reference="IJG-yJ-LpU"/>
-        <segue reference="OLQ-Dw-1fg"/>
-        <segue reference="Lb4-yX-g3k"/>
         <segue reference="r54-Rz-WKa"/>
         <segue reference="mir-m6-Bf9"/>
         <segue reference="e6N-px-NC3"/>

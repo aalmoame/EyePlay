@@ -13,6 +13,7 @@ class MiniGames: UIViewController, ARSessionDelegate{
     @IBOutlet weak var ballGameButton: UIButton!
     @IBOutlet weak var bugGameButton: UIButton!
     @IBOutlet weak var soundBoardButton: UIButton!
+    @IBOutlet weak var emergencyButton: UIButton!
     
     let sceneNodes = nodes()
     
@@ -25,6 +26,7 @@ class MiniGames: UIViewController, ARSessionDelegate{
     var hoveringBallGame = false
     var hoveringTicTacToe = false
     var hoveringBugGame = false
+    var hoveringEmergency = false
 
     var player: AVAudioPlayer?
     
@@ -105,6 +107,10 @@ class MiniGames: UIViewController, ARSessionDelegate{
     }
     
 
+    @IBAction func pressEmergency(_ sender: Any) {
+        collisionEmergencyButton()
+    }
+    
     func collisionMenuButton(){
         playSelectionSound()
             mainThread.async {
@@ -134,6 +140,33 @@ class MiniGames: UIViewController, ARSessionDelegate{
             mainThread.async {
                 self.performSegue(withIdentifier: "SoundBoardSegue", sender: self)
             }
+    }
+    func collisionEmergencyButton() {
+        mainThread.async {
+            let path = Bundle.main.path(forResource: "emergency.mp3", ofType:nil)!
+            let url = URL(fileURLWithPath: path)
+
+            do {
+                self.player = try AVAudioPlayer(contentsOf: url)
+                self.player?.numberOfLoops = 1000
+                self.player?.play()
+            } catch {
+                // couldn't load file :(
+            }
+            var image = UIImage(systemName: "ladybug")
+            image = image?.withTintColor(UIColor.black)
+            
+            JSSAlertView().show(
+                self,
+                  title: "ALERT",
+                  text: "User is requesting guidance",
+                  buttonText: "OK",
+                color: UIColor.white,
+                iconImage: image
+            ).addAction {
+                self.player?.stop()
+            }
+        }
     }
 }
 
@@ -201,11 +234,13 @@ extension MiniGames: ARSCNViewDelegate {
                 self.hoveringTicTacToe = false
                 self.hoveringBugGame = false
                 self.hoveringSoundBoard = false
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.ballGameButton)
                 self.resetColor(button: self.TicTacToeButton)
                 self.resetColor(button: self.bugGameButton)
                 self.resetColor(button: self.soundBoardButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
 
 
             }
@@ -229,11 +264,13 @@ extension MiniGames: ARSCNViewDelegate {
                 self.hoveringBallGame = false
                 self.hoveringTicTacToe = false
                 self.hoveringSoundBoard = true
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.ballGameButton)
                 self.resetColor(button: self.mainMenuButton)
                 self.resetColor(button: self.bugGameButton)
                 self.resetColor(button: self.TicTacToeButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
 
 
             }
@@ -257,11 +294,13 @@ extension MiniGames: ARSCNViewDelegate {
                 self.hoveringBallGame = false
                 self.hoveringTicTacToe = true
                 self.hoveringSoundBoard = false
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.ballGameButton)
                 self.resetColor(button: self.mainMenuButton)
                 self.resetColor(button: self.bugGameButton)
                 self.resetColor(button: self.soundBoardButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
 
 
             }
@@ -285,11 +324,13 @@ extension MiniGames: ARSCNViewDelegate {
                 self.hoveringBallGame = true
                 self.hoveringTicTacToe = false
                 self.hoveringSoundBoard = false
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.mainMenuButton)
                 self.resetColor(button: self.TicTacToeButton)
                 self.resetColor(button: self.bugGameButton)
                 self.resetColor(button: self.soundBoardButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
 
 
             }
@@ -313,12 +354,45 @@ extension MiniGames: ARSCNViewDelegate {
                 self.hoveringTicTacToe = false
                 self.hoveringBallGame = false
                 self.hoveringSoundBoard = false
+                self.hoveringEmergency = false
                 
                 
                 self.resetColor(button: self.mainMenuButton)
                 self.resetColor(button: self.TicTacToeButton)
                 self.resetColor(button: self.ballGameButton)
                 self.resetColor(button: self.soundBoardButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
+
+            }
+            else if self.cursor.frame.intersects(self.emergencyButton.frame){
+                self.emergencyButton.layer.borderColor = UIColor.systemBlue.cgColor
+                
+
+                if !self.isTimerRunning{
+                    self.runTimer(button: self.emergencyButton)
+                }
+                
+                if self.hoveringEmergency && self.seconds <= 0 {
+                    self.collisionEmergencyButton()
+                    self.resetTimer()
+                }
+                else if !self.hoveringEmergency{
+                    self.resetTimer()
+                }
+                
+                self.hoveringMenu = false
+                self.hoveringBugGame = false
+                self.hoveringTicTacToe = false
+                self.hoveringBallGame = false
+                self.hoveringSoundBoard = false
+                self.hoveringEmergency = true
+                
+                
+                self.resetColor(button: self.mainMenuButton)
+                self.resetColor(button: self.TicTacToeButton)
+                self.resetColor(button: self.ballGameButton)
+                self.resetColor(button: self.soundBoardButton)
+                self.resetColor(button: self.bugGameButton)
 
             }
             else{
@@ -334,12 +408,14 @@ extension MiniGames: ARSCNViewDelegate {
                 self.hoveringMenu = false
                 self.hoveringBugGame = false
                 self.hoveringSoundBoard = false
+                self.hoveringEmergency = false
 
                 self.resetColor(button: self.TicTacToeButton)
                 self.resetColor(button: self.mainMenuButton)
                 self.resetColor(button: self.ballGameButton)
                 self.resetColor(button: self.bugGameButton)
                 self.resetColor(button: self.soundBoardButton)
+                self.emergencyButton.backgroundColor = UIColor.clear
                 
                 self.resetTimer()
 
