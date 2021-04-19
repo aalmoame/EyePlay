@@ -60,7 +60,7 @@ class ballGame: UIViewController{
     func resetTimer(){
         timer.invalidate()
         isTimerRunning = false
-        seconds = 2
+        seconds = selectionTime
     }
     func resetColor(button: UIButton){
         button.layer.backgroundColor = UIColor.white.cgColor

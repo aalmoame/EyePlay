@@ -270,10 +270,12 @@ SWIFT_CLASS("_TtC7EyePlay11CursorColor")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified grayButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified settingsButton;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified emergencyButton;
 - (IBAction)blueButtonTouch:(id _Nonnull)sender;
 - (IBAction)redButtonTouch:(id _Nonnull)sender;
 - (IBAction)grayButtonTouch:(id _Nonnull)sender;
 - (IBAction)settingsButtonTouch:(id _Nonnull)sender;
+- (IBAction)pressEmergency:(id _Nonnull)sender;
 - (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
@@ -297,10 +299,12 @@ SWIFT_CLASS("_TtC7EyePlay10CursorSize")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified mediumButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified largeButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified settingsButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified emergencyButton;
 - (IBAction)smallButtonTouch:(id _Nonnull)sender;
 - (IBAction)mediumButtonTouch:(id _Nonnull)sender;
 - (IBAction)largeButtonTouch:(id _Nonnull)sender;
 - (IBAction)settingsButtonTouch:(id _Nonnull)sender;
+- (IBAction)pressEmergency:(id _Nonnull)sender;
 - (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
@@ -447,6 +451,7 @@ SWIFT_CLASS("_TtC7EyePlay8LevelOne")
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified goalBlock;
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified popUpView;
+- (IBAction)winLevelOne:(id _Nonnull)sender;
 - (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
@@ -475,6 +480,8 @@ SWIFT_CLASS("_TtC7EyePlay13LevelSelector")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified levelSixButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified levelSevenButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified levelEightButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified emergencyButton;
+- (IBAction)pressEmergency:(id _Nonnull)sender;
 - (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
@@ -583,10 +590,12 @@ SWIFT_CLASS("_TtC7EyePlay9MiniGames")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified ballGameButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified bugGameButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified soundBoardButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified emergencyButton;
 - (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)viewDidLoad;
+- (IBAction)pressEmergency:(id _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -621,6 +630,8 @@ SWIFT_CLASS("_TtC7EyePlay13SelectionTime")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified settingsButton;
 @property (nonatomic, strong) IBOutlet ARSCNView * _Null_unspecified timeView;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified cursor;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified emergencyButton;
+- (IBAction)pressEmergency:(id _Nonnull)sender;
 - (IBAction)tapOne:(id _Nonnull)sender;
 - (IBAction)tapTwo:(id _Nonnull)sender;
 - (IBAction)tapThree:(id _Nonnull)sender;
@@ -647,6 +658,8 @@ SWIFT_CLASS("_TtC7EyePlay8Settings")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified menuButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified colorButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified selectionTimeButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified emergencyButton;
+- (IBAction)pressEmergency:(id _Nonnull)sender;
 - (void)updateTimer;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;

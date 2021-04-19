@@ -71,7 +71,7 @@ class SelectionTime: UIViewController{
     func resetTimer(){
         timer.invalidate()
         isTimerRunning = false
-        seconds = 2
+        seconds = selectionTime
     }
     func resetColor(button: UIButton){
         button.layer.backgroundColor = UIColor.white.cgColor
@@ -123,17 +123,14 @@ class SelectionTime: UIViewController{
     func collisionOne(){
         playSelectionSound()
         selectionTime = 1
-        cursor.tintColor = cursorColor
     }
     func collisionTwo(){
         playSelectionSound()
         selectionTime = 2
-        cursor.tintColor = cursorColor
     }
     func collisionThree(){
         playSelectionSound()
         selectionTime = 3
-        cursor.tintColor = cursorColor
     }
     func collisionSettingsButton(){
         playSelectionSound()
@@ -225,7 +222,8 @@ extension SelectionTime: ARSCNViewDelegate {
                 }
                 
                 if self.hoveringOne && self.seconds <= 0 {
-                    self.collisionOne();                    self.resetTimer()
+                    self.collisionOne();
+                    self.resetTimer()
                     
                 }
                 else if !self.hoveringOne{
@@ -238,9 +236,10 @@ extension SelectionTime: ARSCNViewDelegate {
                 self.hoveringSettings = false
                 self.hoveringEmergency = false
                 
-                self.resetColor(button: self.oneButton)
+                self.resetColor(button: self.threeButton)
                 self.resetColor(button: self.twoButton)
                 self.resetColor(button: self.settingsButton)
+                self.resetColor(button: self.emergencyButton)
                 self.emergencyButton.backgroundColor = UIColor.clear
 
             }

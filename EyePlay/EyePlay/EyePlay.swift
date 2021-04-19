@@ -52,7 +52,7 @@ class EyePlay: UIViewController{
     func resetTimer(){
         timer.invalidate()
         isTimerRunning = false
-        seconds = 2
+        seconds = selectionTime
     }
     func resetColor(button: UIButton){
         button.layer.backgroundColor = UIColor.white.cgColor
@@ -110,8 +110,8 @@ class EyePlay: UIViewController{
     
     //checks if the cursor is on top of the game button and if the user blinks
     func collisionMiniGameButton(){
-        self.playSelectionSound()
             mainThread.async {
+                self.playSelectionSound()
                 self.performSegue(withIdentifier: "MiniGameSegue", sender: self)
             }
     }
@@ -242,7 +242,6 @@ extension EyePlay: ARSCNViewDelegate {
                 self.resetColor(button: self.levelButton)
                 self.resetColor(button: self.settingsButton)
                 self.emergencyButton.backgroundColor = UIColor.clear
-                
                 
             }
             else if self.cursor.frame.intersects(self.settingsButton.frame){

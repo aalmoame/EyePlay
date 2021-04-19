@@ -13,11 +13,8 @@ class Settings: UIViewController, ARSessionDelegate{
     @IBOutlet weak var sizeButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var colorButton: UIButton!
-<<<<<<< HEAD
     @IBOutlet weak var selectionTimeButton: UIButton!
-=======
     @IBOutlet weak var emergencyButton: UIButton!
->>>>>>> 0b9e75b589aad61af10ee8193950d909f0d41209
     
     let sceneNodes = nodes()
     let mainThread = DispatchQueue.main
@@ -28,11 +25,8 @@ class Settings: UIViewController, ARSessionDelegate{
     var hoveringMenu = false
     var hoveringSize = false
     var hoveringColor = false
-<<<<<<< HEAD
     var hoveringSelectionTime = false
-=======
     var hoveringEmergency = false
->>>>>>> 0b9e75b589aad61af10ee8193950d909f0d41209
     
     var player: AVAudioPlayer?
     
@@ -65,7 +59,7 @@ class Settings: UIViewController, ARSessionDelegate{
     func resetTimer(){
         timer.invalidate()
         isTimerRunning = false
-        seconds = 2
+        seconds = selectionTime
     }
     func resetColor(button: UIButton){
         button.layer.backgroundColor = UIColor.white.cgColor
@@ -130,13 +124,12 @@ class Settings: UIViewController, ARSessionDelegate{
                 self.performSegue(withIdentifier: "ColorSegue", sender: self)
             }
     }
-<<<<<<< HEAD
     func collisionSelectionTime(){
         playSelectionSound()
             mainThread.async {
                 self.performSegue(withIdentifier: "SelectionTimeSegue", sender: self)
             }
-=======
+    }
     func collisionEmergencyButton() {
         mainThread.async {
             let path = Bundle.main.path(forResource: "emergency.mp3", ofType:nil)!
@@ -163,7 +156,6 @@ class Settings: UIViewController, ARSessionDelegate{
                 self.player?.stop()
             }
         }
->>>>>>> 0b9e75b589aad61af10ee8193950d909f0d41209
     }
 }
 
@@ -231,19 +223,14 @@ extension Settings: ARSCNViewDelegate {
                 self.hoveringSize = true
                 self.hoveringMenu = false
                 self.hoveringColor = false
-<<<<<<< HEAD
                 self.hoveringSelectionTime = false
                 
                 self.resetColor(button: self.menuButton)
                 self.resetColor(button: self.colorButton)
                 self.resetColor(button: self.selectionTimeButton)
-=======
                 self.hoveringEmergency = false
-                
-                self.resetColor(button: self.menuButton)
-                self.resetColor(button: self.colorButton)
+
                 self.emergencyButton.backgroundColor = UIColor.clear
->>>>>>> 0b9e75b589aad61af10ee8193950d909f0d41209
             }
             else if self.cursor.frame.intersects(self.colorButton.frame) {
                 self.colorButton.layer.borderColor = UIColor.systemBlue.cgColor
@@ -264,19 +251,14 @@ extension Settings: ARSCNViewDelegate {
                 self.hoveringSize = false
                 self.hoveringMenu = false
                 self.hoveringColor = true
-<<<<<<< HEAD
                 self.hoveringSelectionTime = false
                 
                 self.resetColor(button: self.sizeButton)
                 self.resetColor(button: self.menuButton)
                 self.resetColor(button: self.selectionTimeButton)
-=======
                 self.hoveringEmergency = false
                 
-                self.resetColor(button: self.sizeButton)
-                self.resetColor(button: self.menuButton)
                 self.emergencyButton.backgroundColor = UIColor.clear
->>>>>>> 0b9e75b589aad61af10ee8193950d909f0d41209
                 
             }
             else if self.cursor.frame.intersects(self.menuButton.frame) {
@@ -298,8 +280,8 @@ extension Settings: ARSCNViewDelegate {
                 self.hoveringSize = false
                 self.hoveringMenu = true
                 self.hoveringColor = false
-<<<<<<< HEAD
                 self.hoveringSelectionTime = false
+                self.hoveringEmergency = false
                 
                 self.resetColor(button: self.sizeButton)
                 self.resetColor(button: self.colorButton)
@@ -318,11 +300,20 @@ extension Settings: ARSCNViewDelegate {
                     
                 }
                 else if !self.hoveringSelectionTime{
-=======
+                    self.resetTimer()
+                }
+                
                 self.hoveringEmergency = false
+                self.hoveringSize = false
+                self.hoveringMenu = false
+                self.hoveringColor = false
+                self.hoveringSelectionTime = true
+                    
                 
                 self.resetColor(button: self.sizeButton)
                 self.resetColor(button: self.colorButton)
+                self.resetColor(button: self.menuButton)
+                self.resetColor(button: self.emergencyButton)
                 self.emergencyButton.backgroundColor = UIColor.clear
             }
             else if self.cursor.frame.intersects(self.emergencyButton.frame) {
@@ -338,26 +329,19 @@ extension Settings: ARSCNViewDelegate {
                     self.resetTimer()
                 }
                 else if !self.hoveringEmergency{
->>>>>>> 0b9e75b589aad61af10ee8193950d909f0d41209
                     self.resetTimer()
                 }
                 
                 self.hoveringSize = false
                 self.hoveringMenu = false
                 self.hoveringColor = false
-<<<<<<< HEAD
                 self.hoveringSelectionTime = true
-=======
                 self.hoveringEmergency = true
->>>>>>> 0b9e75b589aad61af10ee8193950d909f0d41209
                 
                 self.resetColor(button: self.sizeButton)
                 self.resetColor(button: self.colorButton)
                 self.resetColor(button: self.menuButton)
-<<<<<<< HEAD
-                
-=======
->>>>>>> 0b9e75b589aad61af10ee8193950d909f0d41209
+
             }
             else{
                 self.sizeButton.layer.borderColor = UIColor.clear.cgColor
@@ -369,26 +353,19 @@ extension Settings: ARSCNViewDelegate {
                 self.hoveringColor = false
                 self.hoveringSize = false
                 self.hoveringMenu = false
-<<<<<<< HEAD
                 self.hoveringSelectionTime = false
-=======
                 self.hoveringEmergency = false
->>>>>>> 0b9e75b589aad61af10ee8193950d909f0d41209
 
                 self.resetColor(button: self.colorButton)
                 self.resetColor(button: self.menuButton)
                 self.resetColor(button: self.sizeButton)
-<<<<<<< HEAD
                 self.resetColor(button: self.selectionTimeButton)
-=======
                 self.emergencyButton.backgroundColor = UIColor.clear
->>>>>>> 0b9e75b589aad61af10ee8193950d909f0d41209
                 
                 self.resetTimer()
+            }
             }
 
         }
 
     }
-    
-}

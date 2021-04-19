@@ -2,6 +2,7 @@
 provides-top-level:
 - "cursorSize"
 - "cursorColor"
+- "selectionTime"
 - "Constants"
 - "-"
 - "resizeImage"
@@ -68,6 +69,7 @@ depends-top-level:
 - !private "isEmpty"
 - !private "reduce"
 - "resizeImage"
+- "selectionTime"
 - !private "sqrtf"
 - !private "x"
 - !private "y"
@@ -709,4 +711,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "784113f3f1f67e9e841e9e088d738167"
+interface-hash: "f992eb5551f166af231c3c5ec6045cb1"

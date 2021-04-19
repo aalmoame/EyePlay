@@ -54,6 +54,7 @@ depends-top-level:
 - "SCNVector3"
 - !private "SCNVector3Make"
 - "TernaryPrecedence"
+- !private "TimeInterval"
 - "UIButton"
 - "UIColor"
 - !private "UIGraphicsBeginImageContextWithOptions"
@@ -218,6 +219,7 @@ depends-member:
 - ["7EyePlay9ConstantsV6DeviceV", "frameSize"]
 - ["7EyePlay9ConstantsV6DeviceV", "init"]
 - ["7EyePlay9ConstantsV6DeviceV", "screenSize"]
+- !private ["Sd", "init"]
 - !private ["SE", "CGFloat"]
 - !private ["SE", "CGPoint"]
 - !private ["SE", "add"]
@@ -335,6 +337,7 @@ depends-member:
 - !private ["SH", "upperBound"]
 - !private ["SH", "withAlphaComponent"]
 - ["s25LosslessStringConvertibleP", ""]
+- !private ["s25LosslessStringConvertibleP", "init"]
 - ["So8NSCodingP", ""]
 - !private ["So8NSCodingP", "animate"]
 - !private ["So8NSCodingP", "backgroundColor"]
@@ -426,6 +429,7 @@ depends-member:
 - !private ["So10SCNVector3V", "x"]
 - !private ["So10SCNVector3V", "y"]
 - !private ["So10SCNVector3V", "z"]
+- !private ["s10SIMDScalarP", "init"]
 - ["ST", "CGFloat"]
 - ["ST", "CGPoint"]
 - ["ST", "Element"]
@@ -447,6 +451,7 @@ depends-member:
 - !private ["Sx", "init"]
 - ["s16TextOutputStreamP", ""]
 - ["s20TextOutputStreamableP", ""]
+- !private ["s20TextOutputStreamableP", "init"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "layer"]
 - !private ["So29UIAccessibilityIdentificationP", "animate"]
 - !private ["So29UIAccessibilityIdentificationP", "draw"]
@@ -529,6 +534,7 @@ depends-member:
 - !private ["s26_ExpressibleByColorLiteralP", "withAlphaComponent"]
 - !private ["s26_ExpressibleByImageLiteralP", "draw"]
 - !private ["s26_ExpressibleByImageLiteralP", "size"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "animate"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "backgroundColor"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "blue"]
@@ -585,6 +591,7 @@ depends-nominal:
 - "s23CustomStringConvertibleP"
 - "Se"
 - "7EyePlay9ConstantsV6DeviceV"
+- !private "Sd"
 - "SE"
 - "SQ"
 - "s43ExpressibleByExtendedGraphemeClusterLiteralP"
@@ -608,6 +615,7 @@ depends-nominal:
 - !private "SX"
 - "7EyePlay9ConstantsV6RangesV"
 - "So10SCNVector3V"
+- !private "s10SIMDScalarP"
 - "ST"
 - !private "s13SignedNumericP"
 - !private "Sx"
@@ -647,6 +655,7 @@ depends-nominal:
 - "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
 - "s26_ExpressibleByColorLiteralP"
 - !private "s26_ExpressibleByImageLiteralP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
 - "10Foundation27_KeyValueCodingAndObservingP"
 - "10Foundation37_KeyValueCodingAndObservingPublishingP"
 - "s21_ObjectiveCBridgeableP"

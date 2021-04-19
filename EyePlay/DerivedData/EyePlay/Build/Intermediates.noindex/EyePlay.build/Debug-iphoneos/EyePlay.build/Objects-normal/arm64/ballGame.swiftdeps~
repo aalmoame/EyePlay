@@ -57,9 +57,9 @@ depends-top-level:
 - !private "CGSize"
 - "CastingPrecedence"
 - "DispatchQueue"
-- "FloatLiteralType"
+- !private "FloatLiteralType"
 - !private "Int"
-- "IntegerLiteralType"
+- !private "IntegerLiteralType"
 - "SCNNode"
 - "SCNSceneRenderer"
 - !private "String"
@@ -91,6 +91,7 @@ depends-top-level:
 - !private "sceneNodes"
 - !private "scoreValue"
 - !private "seconds"
+- "selectionTime"
 - !private "timer"
 depends-member:
 - ["So8ARAnchorC", ""]
@@ -161,6 +162,7 @@ depends-member:
 - ["So17ARSCNViewDelegateP", "score"]
 - ["So17ARSCNViewDelegateP", "scoreValue"]
 - ["So17ARSCNViewDelegateP", "seconds"]
+- ["So17ARSCNViewDelegateP", "selectionTime"]
 - ["So17ARSCNViewDelegateP", "session"]
 - ["So17ARSCNViewDelegateP", "sessionInterruptionEnded"]
 - ["So17ARSCNViewDelegateP", "sessionShouldAttemptRelocalization"]
@@ -219,6 +221,7 @@ depends-member:
 - ["So17ARSessionObserverP", "score"]
 - ["So17ARSessionObserverP", "scoreValue"]
 - ["So17ARSessionObserverP", "seconds"]
+- ["So17ARSessionObserverP", "selectionTime"]
 - ["So17ARSessionObserverP", "session"]
 - ["So17ARSessionObserverP", "sessionInterruptionEnded"]
 - ["So17ARSessionObserverP", "sessionShouldAttemptRelocalization"]
@@ -368,6 +371,7 @@ depends-member:
 - !private ["s7CVarArgP", "scheduledTimer"]
 - !private ["s7CVarArgP", "scoreValue"]
 - !private ["s7CVarArgP", "seconds"]
+- ["s7CVarArgP", "selectionTime"]
 - ["s7CVarArgP", "session"]
 - ["s7CVarArgP", "sessionInterruptionEnded"]
 - ["s7CVarArgP", "sessionShouldAttemptRelocalization"]
@@ -468,6 +472,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "scheduledTimer"]
 - !private ["s28CustomDebugStringConvertibleP", "scoreValue"]
 - !private ["s28CustomDebugStringConvertibleP", "seconds"]
+- ["s28CustomDebugStringConvertibleP", "selectionTime"]
 - ["s28CustomDebugStringConvertibleP", "session"]
 - ["s28CustomDebugStringConvertibleP", "sessionInterruptionEnded"]
 - ["s28CustomDebugStringConvertibleP", "sessionShouldAttemptRelocalization"]
@@ -584,6 +589,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "scheduledTimer"]
 - !private ["s23CustomStringConvertibleP", "scoreValue"]
 - !private ["s23CustomStringConvertibleP", "seconds"]
+- ["s23CustomStringConvertibleP", "selectionTime"]
 - ["s23CustomStringConvertibleP", "session"]
 - ["s23CustomStringConvertibleP", "sessionInterruptionEnded"]
 - ["s23CustomStringConvertibleP", "sessionShouldAttemptRelocalization"]
@@ -723,6 +729,7 @@ depends-member:
 - !private ["SQ", "scheduledTimer"]
 - !private ["SQ", "scoreValue"]
 - !private ["SQ", "seconds"]
+- ["SQ", "selectionTime"]
 - ["SQ", "session"]
 - ["SQ", "sessionInterruptionEnded"]
 - ["SQ", "sessionShouldAttemptRelocalization"]
@@ -900,6 +907,7 @@ depends-member:
 - !private ["SH", "scheduledTimer"]
 - !private ["SH", "scoreValue"]
 - !private ["SH", "seconds"]
+- ["SH", "selectionTime"]
 - ["SH", "session"]
 - ["SH", "sessionInterruptionEnded"]
 - ["SH", "sessionShouldAttemptRelocalization"]
@@ -1001,6 +1009,7 @@ depends-member:
 - ["So8NSCodingP", "score"]
 - ["So8NSCodingP", "scoreValue"]
 - ["So8NSCodingP", "seconds"]
+- ["So8NSCodingP", "selectionTime"]
 - ["So8NSCodingP", "session"]
 - ["So8NSCodingP", "sessionInterruptionEnded"]
 - ["So8NSCodingP", "sessionShouldAttemptRelocalization"]
@@ -1091,6 +1100,7 @@ depends-member:
 - ["So26NSExtensionRequestHandlingP", "score"]
 - ["So26NSExtensionRequestHandlingP", "scoreValue"]
 - ["So26NSExtensionRequestHandlingP", "seconds"]
+- ["So26NSExtensionRequestHandlingP", "selectionTime"]
 - ["So26NSExtensionRequestHandlingP", "session"]
 - ["So26NSExtensionRequestHandlingP", "sessionInterruptionEnded"]
 - ["So26NSExtensionRequestHandlingP", "sessionShouldAttemptRelocalization"]
@@ -1210,6 +1220,7 @@ depends-member:
 - ["So8NSObjectC", "score"]
 - ["So8NSObjectC", "scoreValue"]
 - ["So8NSObjectC", "seconds"]
+- ["So8NSObjectC", "selectionTime"]
 - ["So8NSObjectC", "session"]
 - ["So8NSObjectC", "sessionInterruptionEnded"]
 - ["So8NSObjectC", "sessionShouldAttemptRelocalization"]
@@ -1332,6 +1343,7 @@ depends-member:
 - ["So8NSObjectP", "score"]
 - ["So8NSObjectP", "scoreValue"]
 - ["So8NSObjectP", "seconds"]
+- ["So8NSObjectP", "selectionTime"]
 - ["So8NSObjectP", "session"]
 - ["So8NSObjectP", "sessionInterruptionEnded"]
 - ["So8NSObjectP", "sessionShouldAttemptRelocalization"]
@@ -1493,6 +1505,7 @@ depends-member:
 - ["So24SCNSceneRendererDelegateP", "score"]
 - ["So24SCNSceneRendererDelegateP", "scoreValue"]
 - ["So24SCNSceneRendererDelegateP", "seconds"]
+- ["So24SCNSceneRendererDelegateP", "selectionTime"]
 - ["So24SCNSceneRendererDelegateP", "session"]
 - ["So24SCNSceneRendererDelegateP", "sessionInterruptionEnded"]
 - ["So24SCNSceneRendererDelegateP", "sessionShouldAttemptRelocalization"]
@@ -1639,6 +1652,7 @@ depends-member:
 - ["So21UIAppearanceContainerP", "score"]
 - ["So21UIAppearanceContainerP", "scoreValue"]
 - ["So21UIAppearanceContainerP", "seconds"]
+- ["So21UIAppearanceContainerP", "selectionTime"]
 - ["So21UIAppearanceContainerP", "session"]
 - ["So21UIAppearanceContainerP", "sessionInterruptionEnded"]
 - ["So21UIAppearanceContainerP", "sessionShouldAttemptRelocalization"]
@@ -1713,6 +1727,7 @@ depends-member:
 - ["So18UIContentContainerP", "score"]
 - ["So18UIContentContainerP", "scoreValue"]
 - ["So18UIContentContainerP", "seconds"]
+- ["So18UIContentContainerP", "selectionTime"]
 - ["So18UIContentContainerP", "session"]
 - ["So18UIContentContainerP", "sessionInterruptionEnded"]
 - ["So18UIContentContainerP", "sessionShouldAttemptRelocalization"]
@@ -1821,6 +1836,7 @@ depends-member:
 - ["So18UIFocusEnvironmentP", "score"]
 - ["So18UIFocusEnvironmentP", "scoreValue"]
 - ["So18UIFocusEnvironmentP", "seconds"]
+- ["So18UIFocusEnvironmentP", "selectionTime"]
 - ["So18UIFocusEnvironmentP", "session"]
 - ["So18UIFocusEnvironmentP", "sessionInterruptionEnded"]
 - ["So18UIFocusEnvironmentP", "sessionShouldAttemptRelocalization"]
@@ -1952,6 +1968,7 @@ depends-member:
 - ["So30UIPasteConfigurationSupportingP", "score"]
 - ["So30UIPasteConfigurationSupportingP", "scoreValue"]
 - ["So30UIPasteConfigurationSupportingP", "seconds"]
+- ["So30UIPasteConfigurationSupportingP", "selectionTime"]
 - ["So30UIPasteConfigurationSupportingP", "session"]
 - ["So30UIPasteConfigurationSupportingP", "sessionInterruptionEnded"]
 - ["So30UIPasteConfigurationSupportingP", "sessionShouldAttemptRelocalization"]
@@ -2030,6 +2047,7 @@ depends-member:
 - ["So11UIResponderC", "score"]
 - ["So11UIResponderC", "scoreValue"]
 - ["So11UIResponderC", "seconds"]
+- ["So11UIResponderC", "selectionTime"]
 - ["So11UIResponderC", "session"]
 - ["So11UIResponderC", "sessionInterruptionEnded"]
 - ["So11UIResponderC", "sessionShouldAttemptRelocalization"]
@@ -2108,6 +2126,7 @@ depends-member:
 - ["So30UIResponderStandardEditActionsP", "score"]
 - ["So30UIResponderStandardEditActionsP", "scoreValue"]
 - ["So30UIResponderStandardEditActionsP", "seconds"]
+- ["So30UIResponderStandardEditActionsP", "selectionTime"]
 - ["So30UIResponderStandardEditActionsP", "session"]
 - ["So30UIResponderStandardEditActionsP", "sessionInterruptionEnded"]
 - ["So30UIResponderStandardEditActionsP", "sessionShouldAttemptRelocalization"]
@@ -2177,6 +2196,7 @@ depends-member:
 - ["So16UIStateRestoringP", "score"]
 - ["So16UIStateRestoringP", "scoreValue"]
 - ["So16UIStateRestoringP", "seconds"]
+- ["So16UIStateRestoringP", "selectionTime"]
 - ["So16UIStateRestoringP", "session"]
 - ["So16UIStateRestoringP", "sessionInterruptionEnded"]
 - ["So16UIStateRestoringP", "sessionShouldAttemptRelocalization"]
@@ -2249,6 +2269,7 @@ depends-member:
 - ["So18UITraitEnvironmentP", "score"]
 - ["So18UITraitEnvironmentP", "scoreValue"]
 - ["So18UITraitEnvironmentP", "seconds"]
+- ["So18UITraitEnvironmentP", "selectionTime"]
 - ["So18UITraitEnvironmentP", "session"]
 - ["So18UITraitEnvironmentP", "sessionInterruptionEnded"]
 - ["So18UITraitEnvironmentP", "sessionShouldAttemptRelocalization"]
@@ -2327,6 +2348,7 @@ depends-member:
 - ["So23UIUserActivityRestoringP", "score"]
 - ["So23UIUserActivityRestoringP", "scoreValue"]
 - ["So23UIUserActivityRestoringP", "seconds"]
+- ["So23UIUserActivityRestoringP", "selectionTime"]
 - ["So23UIUserActivityRestoringP", "session"]
 - ["So23UIUserActivityRestoringP", "sessionInterruptionEnded"]
 - ["So23UIUserActivityRestoringP", "sessionShouldAttemptRelocalization"]
@@ -2408,6 +2430,7 @@ depends-member:
 - ["So16UIViewControllerC", "score"]
 - ["So16UIViewControllerC", "scoreValue"]
 - ["So16UIViewControllerC", "seconds"]
+- ["So16UIViewControllerC", "selectionTime"]
 - ["So16UIViewControllerC", "session"]
 - ["So16UIViewControllerC", "sessionInterruptionEnded"]
 - ["So16UIViewControllerC", "sessionShouldAttemptRelocalization"]
@@ -2522,6 +2545,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "scheduledTimer"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "scoreValue"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "seconds"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "selectionTime"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "session"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "sessionInterruptionEnded"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "sessionShouldAttemptRelocalization"]
@@ -2616,6 +2640,7 @@ depends-member:
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "scheduledTimer"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "scoreValue"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "seconds"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "selectionTime"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "session"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "sessionInterruptionEnded"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "sessionShouldAttemptRelocalization"]
@@ -2721,6 +2746,7 @@ depends-member:
 - ["7EyePlay8ballGameC", "score"]
 - ["7EyePlay8ballGameC", "scoreValue"]
 - ["7EyePlay8ballGameC", "seconds"]
+- ["7EyePlay8ballGameC", "selectionTime"]
 - ["7EyePlay8ballGameC", "session"]
 - ["7EyePlay8ballGameC", "sessionInterruptionEnded"]
 - ["7EyePlay8ballGameC", "sessionShouldAttemptRelocalization"]
@@ -2936,4 +2962,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "537d5ae592c2d61274820b6d1bc7e33e"
+interface-hash: "cfd572c4ac376de729886389500bc5c6"
